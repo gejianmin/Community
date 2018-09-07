@@ -162,6 +162,7 @@
 		50BFFB111FD5282D005F35CA /* UITableView+YRSafeCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 50BFFB0B1FD5282D005F35CA /* UITableView+YRSafeCategory.m */; };
 		50BFFB151FD528FB005F35CA /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 50BFFB141FD528FB005F35CA /* Reachability.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		50BFFB181FD52A78005F35CA /* InteractionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 50BFFB171FD52A78005F35CA /* InteractionViewController.m */; };
+		50CA871221421DB100D1A204 /* AreaSelectorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 50CA871121421DB100D1A204 /* AreaSelectorView.m */; };
 		50D77AD01FE0CA91007052E7 /* UserObjModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 50D77ACF1FE0CA91007052E7 /* UserObjModel.m */; };
 		50D77AD41FE10949007052E7 /* InforVillage_AppButtonRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 50D77AD31FE10949007052E7 /* InforVillage_AppButtonRequest.m */; };
 		50D77AD71FE1095F007052E7 /* InforVillage_AppButtonResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 50D77AD61FE1095F007052E7 /* InforVillage_AppButtonResponse.m */; };
@@ -521,6 +522,8 @@
 		50BFFB141FD528FB005F35CA /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 		50BFFB161FD52A78005F35CA /* InteractionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InteractionViewController.h; sourceTree = "<group>"; };
 		50BFFB171FD52A78005F35CA /* InteractionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InteractionViewController.m; sourceTree = "<group>"; };
+		50CA871021421DB100D1A204 /* AreaSelectorView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AreaSelectorView.h; sourceTree = "<group>"; };
+		50CA871121421DB100D1A204 /* AreaSelectorView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AreaSelectorView.m; sourceTree = "<group>"; };
 		50D77ACE1FE0CA91007052E7 /* UserObjModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UserObjModel.h; sourceTree = "<group>"; };
 		50D77ACF1FE0CA91007052E7 /* UserObjModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UserObjModel.m; sourceTree = "<group>"; };
 		50D77AD21FE10949007052E7 /* InforVillage_AppButtonRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InforVillage_AppButtonRequest.h; sourceTree = "<group>"; };
@@ -1300,6 +1303,8 @@
 				502473AC1FE26A47002EA673 /* InforADView.m */,
 				502473AE1FE29D22002EA673 /* InfoCategaryCell.h */,
 				502473AF1FE29D22002EA673 /* InfoCategaryCell.m */,
+				50CA871021421DB100D1A204 /* AreaSelectorView.h */,
+				50CA871121421DB100D1A204 /* AreaSelectorView.m */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -1756,6 +1761,7 @@
 			files = (
 				50D77B111FE148DF007052E7 /* InforADCell.m in Sources */,
 				50BFFAF81FD52818005F35CA /* NSString+JKUUID.m in Sources */,
+				50CA871221421DB100D1A204 /* AreaSelectorView.m in Sources */,
 				8614B7BD20F4617D0086546E /* ELCImagePickerController.m in Sources */,
 				50BFFAE81FD52818005F35CA /* NSString+JKContains.m in Sources */,
 				50D77ADB1FE10A20007052E7 /* InforVillage_AppButtonModel.m in Sources */,

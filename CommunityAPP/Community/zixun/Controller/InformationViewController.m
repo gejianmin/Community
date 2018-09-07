@@ -29,11 +29,13 @@
 #import "InforArticleCell.h"
 #import "InfoCategaryCell.h"
 
+#import "AreaSelectorView.h"
+
 #import "WebViewController.h"
 #import "InforButtonCateController.h"
 #import "ArtDetailViewController.h"
 
-@interface InformationViewController ()<UITableViewDataSource,UITableViewDelegate,FocusScrollViewDelegate,InforADCellDelegate,InfoCategaryCellDelegate,InforAppButtonCellDelegate>
+@interface InformationViewController ()<UITableViewDataSource,UITableViewDelegate,UINavigationControllerDelegate,FocusScrollViewDelegate,InforADCellDelegate,InfoCategaryCellDelegate,InforAppButtonCellDelegate>
 
 @property (nonatomic, strong) NSMutableArray *carouselArray;
 @property (nonatomic, strong) NSMutableArray *appButtonArray;
@@ -46,7 +48,8 @@
 @property (nonatomic, assign) NSInteger firstIndex;
 @property (nonatomic, assign) NSInteger secondIndex;
 @property (nonatomic, assign) NSInteger thirdIndex;
-
+//view
+@property(nonatomic, strong) AreaSelectorView * areaSelecotorV;//选择区域器
 @end
 
 @implementation InformationViewController
@@ -64,6 +67,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.navigationController.delegate = self;
+    
     [self villageButtonRequest];
     [self carouselRequest];
     [self noticeRequest];
@@ -80,7 +86,20 @@
         } else {
         }
     }
+    
 }
+
+// 当前页面隐藏导航条
+- (void)navigationController:(UINavigationController *)navigationController willShowViewController:(UIViewController *)viewController animated:(BOOL)animated {
+    // 判断要显示的控制器是否是自己
+    BOOL isShowHomePage = [viewController isKindOfClass:[self class]];
+    
+    [self.navigationController setNavigationBarHidden:isShowHomePage animated:YES];
+}
+- (void)dealloc {
+    self.navigationController.delegate = nil;
+}
+
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
 }
@@ -93,8 +112,19 @@
     
     self.tableView.frame = CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT - 49);
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    // 区域选择器
+    
+    [self createAreaSelector];
+}
+
+- (void)createAreaSelector {
+    
+    self.areaSelecotorV = [[AreaSelectorView alloc]initWithFrame:CGRectMake(0, 20,self.view.width/2, 30)];
+    [self.view addSubview:_areaSelecotorV];
     
 }
+
+
 - (void)refreshData
 {
     _firstIndex = 1;
