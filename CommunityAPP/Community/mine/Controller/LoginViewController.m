@@ -8,19 +8,26 @@
 
 #import "LoginViewController.h"
 #import "LoginView.h"
-
-@interface LoginViewController ()
+#import "RegisterVC.h"
+@interface LoginViewController ()<LoginViewDelegate>
 
 @property (nonatomic, strong) LoginView *logView;
+
+@property (nonatomic,copy) LoginViewControllerCallBack  callback;
+
 @end
 
 @implementation LoginViewController
-
+-(void)viewWillAppear:(BOOL)animated{
+    
+    self.navigationController.navigationBar.hidden = YES;
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.view.backgroundColor =RGB(250, 250, 250);
     self.logView = [[LoginView alloc] initWithFrame:CGRectMake(0, 64, SCREEN_WIDTH, SCREEN_HEIGHT - 64)];
+    self.logView.delegate = self;
     [self.view addSubview:_logView];
     
     [self setBar];
@@ -31,8 +38,56 @@
 - (void)cancle{
     [_logView.accountField resignFirstResponder];
     [_logView.passwordField resignFirstResponder];
-
 }
+#pragma mark--login
+-(void)loginViewDidLoginWithAccount:(NSString *)account password:(NSString *)password{
+    
+    
+}
+#pragma mark--注册，忘记密码，第三方登录
+-(void)loginViewDidLogin:(UIButton *)loginButton{
+    NSInteger  loginTag  = loginButton.tag;
+    switch (loginTag) {
+        case 1001://注册
+            {
+                RegisterVC * VC = [[RegisterVC alloc]init];
+                [self.navigationController pushViewController:VC animated:YES];
+            }
+            break;
+        case 1002://忘记密码
+        {
+            
+        }
+            break;
+        case 1003://微信登录
+        {
+            
+        }
+            break;
+        default:
+            break;
+    }
+    
+    
+}
+- (void)login {
+    
+    if (self.callback) {
+        self.callback(self);
+    }
+    
+}
++ (instancetype)showWithCallBack:(LoginViewControllerCallBack)callback {
+    UIWindow * window = [[UIApplication sharedApplication] keyWindow];
+    for (UIView * view  in window.subviews) {
+        [view removeAllSubviews];
+    }
+    LoginViewController * vc = [[LoginViewController alloc] init];
+    window.rootViewController = vc;
+    vc.callback = callback;
+    return vc;
+}
+
 - (void)setBar{
     self.title = @"账户登录";
     [self setLeftItemWithImageTarget:self];

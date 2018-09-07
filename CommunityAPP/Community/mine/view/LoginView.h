@@ -8,7 +8,21 @@
 
 #import <UIKit/UIKit.h>
 
+@class LoginView;
+@protocol LoginViewDelegate <NSObject>
+
+@optional
+
+- (void)loginViewDidLoginWithAccount:(NSString *)account password:(NSString *)password;
+- (void)loginViewDidLogin:(UIButton *)loginButton;
+
+@end
+
 @interface LoginView : UIView
+
 @property (nonatomic, strong) UITextField *accountField;
 @property (nonatomic, strong) UITextField *passwordField;
+
+@property (nonatomic, weak) id <LoginViewDelegate> delegate;
+
 @end

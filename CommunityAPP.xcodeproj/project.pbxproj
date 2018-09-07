@@ -218,6 +218,13 @@
 		86E907D120EB50E000208132 /* InterPostViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 86E907D020EB50E000208132 /* InterPostViewDataSource.m */; };
 		86E907D420EB55C100208132 /* InterPostDescCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 86E907D320EB55C100208132 /* InterPostDescCell.m */; };
 		86E907D720EB58F100208132 /* InterPostInfoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 86E907D620EB58F100208132 /* InterPostInfoCell.m */; };
+		F22428E12142651F0035D0F0 /* UIView+Shadow.m in Sources */ = {isa = PBXBuildFile; fileRef = F22428DB2142651E0035D0F0 /* UIView+Shadow.m */; };
+		F22428E22142651F0035D0F0 /* HHValidateButton.m in Sources */ = {isa = PBXBuildFile; fileRef = F22428DC2142651E0035D0F0 /* HHValidateButton.m */; };
+		F22428E32142651F0035D0F0 /* UIButton+LXMImagePosition.m in Sources */ = {isa = PBXBuildFile; fileRef = F22428DD2142651E0035D0F0 /* UIButton+LXMImagePosition.m */; };
+		F22428E8214274A20035D0F0 /* RegisterVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F22428E7214274A20035D0F0 /* RegisterVC.m */; };
+		F22428EB214274CC0035D0F0 /* ForgotPasswordVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F22428EA214274CC0035D0F0 /* ForgotPasswordVC.m */; };
+		F22428EE214275610035D0F0 /* ForgotView.m in Sources */ = {isa = PBXBuildFile; fileRef = F22428ED214275610035D0F0 /* ForgotView.m */; };
+		F2ADAFA0214252C900837A98 /* HHKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F2ADAF9F214252C900837A98 /* HHKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -633,6 +640,22 @@
 		86E907D620EB58F100208132 /* InterPostInfoCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InterPostInfoCell.m; sourceTree = "<group>"; };
 		99D2F012F0DC9278E2DBAD56 /* Pods-CommunityAPP.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CommunityAPP.release.xcconfig"; path = "Pods/Target Support Files/Pods-CommunityAPP/Pods-CommunityAPP.release.xcconfig"; sourceTree = "<group>"; };
 		E933CC2BF03537A660781A56 /* libPods-CommunityAPP.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CommunityAPP.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F22428DA214260920035D0F0 /* GSAColorConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GSAColorConfig.h; sourceTree = "<group>"; };
+		F22428DB2142651E0035D0F0 /* UIView+Shadow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Shadow.m"; sourceTree = "<group>"; };
+		F22428DC2142651E0035D0F0 /* HHValidateButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HHValidateButton.m; sourceTree = "<group>"; };
+		F22428DD2142651E0035D0F0 /* UIButton+LXMImagePosition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+LXMImagePosition.m"; sourceTree = "<group>"; };
+		F22428DE2142651E0035D0F0 /* UIButton+LXMImagePosition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+LXMImagePosition.h"; sourceTree = "<group>"; };
+		F22428DF2142651E0035D0F0 /* UIView+Shadow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Shadow.h"; sourceTree = "<group>"; };
+		F22428E02142651F0035D0F0 /* HHValidateButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HHValidateButton.h; sourceTree = "<group>"; };
+		F22428E4214265C70035D0F0 /* GSAFontConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GSAFontConfig.h; sourceTree = "<group>"; };
+		F22428E5214265C70035D0F0 /* GSAGloabConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GSAGloabConfig.h; sourceTree = "<group>"; };
+		F22428E6214274A20035D0F0 /* RegisterVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RegisterVC.h; sourceTree = "<group>"; };
+		F22428E7214274A20035D0F0 /* RegisterVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RegisterVC.m; sourceTree = "<group>"; };
+		F22428E9214274CC0035D0F0 /* ForgotPasswordVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ForgotPasswordVC.h; sourceTree = "<group>"; };
+		F22428EA214274CC0035D0F0 /* ForgotPasswordVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ForgotPasswordVC.m; sourceTree = "<group>"; };
+		F22428EC214275610035D0F0 /* ForgotView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ForgotView.h; sourceTree = "<group>"; };
+		F22428ED214275610035D0F0 /* ForgotView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ForgotView.m; sourceTree = "<group>"; };
+		F2ADAF9F214252C900837A98 /* HHKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = HHKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -640,6 +663,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F2ADAFA0214252C900837A98 /* HHKit.framework in Frameworks */,
 				5005613A1FDE66FA00B06F5F /* AdSupport.framework in Frameworks */,
 				500561381FDE66F200B06F5F /* libstdc++.6.0.9.tbd in Frameworks */,
 				500561361FDE66EA00B06F5F /* CoreTelephony.framework in Frameworks */,
@@ -911,6 +935,7 @@
 		508E50EF1FD1475B00D600C5 /* CommunityAPP */ = {
 			isa = PBXGroup;
 			children = (
+				F22428D92142607F0035D0F0 /* Config */,
 				50BFFA271FD51FD9005F35CA /* NetWork */,
 				50BFFA951FD52818005F35CA /* category */,
 				50BFFA871FD52728005F35CA /* Common */,
@@ -1159,6 +1184,10 @@
 				50BFFA7F1FD5257E005F35CA /* MineViewController.m */,
 				500561241FDC27BC00B06F5F /* LoginViewController.h */,
 				500561251FDC27BC00B06F5F /* LoginViewController.m */,
+				F22428E6214274A20035D0F0 /* RegisterVC.h */,
+				F22428E7214274A20035D0F0 /* RegisterVC.m */,
+				F22428E9214274CC0035D0F0 /* ForgotPasswordVC.h */,
+				F22428EA214274CC0035D0F0 /* ForgotPasswordVC.m */,
 				5011A137204D2EF4009AA7C3 /* PostActivityListController.h */,
 				5011A138204D2EF4009AA7C3 /* PostActivityListController.m */,
 				50DCAE5520510F0C00FE4370 /* MessageCenterController.h */,
@@ -1181,6 +1210,8 @@
 			children = (
 				500561271FDC27FC00B06F5F /* LoginView.h */,
 				500561281FDC27FC00B06F5F /* LoginView.m */,
+				F22428EC214275610035D0F0 /* ForgotView.h */,
+				F22428ED214275610035D0F0 /* ForgotView.m */,
 				501449AB2048038900DA8C5C /* LayoutButton.h */,
 				501449AC2048038900DA8C5C /* LayoutButton.m */,
 				50EC1E9D204E9CC300FCB48C /* PostActivityListCell.h */,
@@ -1377,6 +1408,12 @@
 		50BFFA951FD52818005F35CA /* category */ = {
 			isa = PBXGroup;
 			children = (
+				F22428E02142651F0035D0F0 /* HHValidateButton.h */,
+				F22428DC2142651E0035D0F0 /* HHValidateButton.m */,
+				F22428DE2142651E0035D0F0 /* UIButton+LXMImagePosition.h */,
+				F22428DD2142651E0035D0F0 /* UIButton+LXMImagePosition.m */,
+				F22428DF2142651E0035D0F0 /* UIView+Shadow.h */,
+				F22428DB2142651E0035D0F0 /* UIView+Shadow.m */,
 				50BFFA961FD52818005F35CA /* AssetHelper.h */,
 				50BFFA971FD52818005F35CA /* AssetHelper.m */,
 				50BFFB011FD5282D005F35CA /* YRClassSafeCategory */,
@@ -1622,6 +1659,7 @@
 		CC7C40DE4DC26179FD8B69DA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				F2ADAF9F214252C900837A98 /* HHKit.framework */,
 				500561391FDE66FA00B06F5F /* AdSupport.framework */,
 				500561371FDE66F200B06F5F /* libstdc++.6.0.9.tbd */,
 				500561351FDE66E900B06F5F /* CoreTelephony.framework */,
@@ -1632,6 +1670,16 @@
 				E933CC2BF03537A660781A56 /* libPods-CommunityAPP.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F22428D92142607F0035D0F0 /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				F22428E4214265C70035D0F0 /* GSAFontConfig.h */,
+				F22428E5214265C70035D0F0 /* GSAGloabConfig.h */,
+				F22428DA214260920035D0F0 /* GSAColorConfig.h */,
+			);
+			path = Config;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1741,10 +1789,12 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-CommunityAPP/Pods-CommunityAPP-resources.sh",
+				"${PODS_ROOT}/IQKeyboardManager/IQKeyboardManager/Resources/IQKeyboardManager.bundle",
 				"${PODS_ROOT}/SVProgressHUD/SVProgressHUD/SVProgressHUD.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/IQKeyboardManager.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/SVProgressHUD.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1853,6 +1903,7 @@
 				50D77AFF1FE11CF2007052E7 /* InforVillage_ADModel.m in Sources */,
 				50D77AFC1FE11CE4007052E7 /* InforVillage_ADResponse.m in Sources */,
 				50BFFAED1FD52818005F35CA /* NSString+JKHTML.m in Sources */,
+				F22428EE214275610035D0F0 /* ForgotView.m in Sources */,
 				50BFFAE71FD52818005F35CA /* NSString+JKBase64.m in Sources */,
 				5091B56F1FE79CCC003797EF /* InterTopicListResponse.m in Sources */,
 				507941551FE647E00093CDF9 /* SGPageTitleView.m in Sources */,
@@ -1869,6 +1920,7 @@
 				50BFFB151FD528FB005F35CA /* Reachability.m in Sources */,
 				86E907D120EB50E000208132 /* InterPostViewDataSource.m in Sources */,
 				507941241FE563100093CDF9 /* MJRefreshAutoGifFooter.m in Sources */,
+				F22428E22142651F0035D0F0 /* HHValidateButton.m in Sources */,
 				8614B7D220F461990086546E /* JYBLoadingIndicator.m in Sources */,
 				50BFFA861FD525AB005F35CA /* QuarterViewController.m in Sources */,
 				50BFFAF11FD52818005F35CA /* NSString+JKPinyin.m in Sources */,
@@ -1876,10 +1928,13 @@
 				5091B57B1FE7A12C003797EF /* InterPostListModel.m in Sources */,
 				863A556520F369DF00629350 /* JYBMultiImageView.m in Sources */,
 				50D77B171FE1503D007052E7 /* FocusScrollView.m in Sources */,
+				F22428E12142651F0035D0F0 /* UIView+Shadow.m in Sources */,
 				5091B5841FE7D773003797EF /* InterCateCell.m in Sources */,
 				50BFFADF1FD52818005F35CA /* NSData+JKAPNSToken.m in Sources */,
 				507941421FE647330093CDF9 /* InforButtonCateController.m in Sources */,
 				500561491FDE75EA00B06F5F /* NearCommunityResponse.m in Sources */,
+				F22428EB214274CC0035D0F0 /* ForgotPasswordVC.m in Sources */,
+				F22428E32142651F0035D0F0 /* UIButton+LXMImagePosition.m in Sources */,
 				5079416B1FE681290093CDF9 /* InfoArtListTool.m in Sources */,
 				500561461FDE75D400B06F5F /* NearCommunityRequest.m in Sources */,
 				50BFFB0F1FD5282D005F35CA /* NSNumber+YRSafeCategory.m in Sources */,
@@ -1919,6 +1974,7 @@
 				50D77B081FE148A2007052E7 /* InforAppButtonCell.m in Sources */,
 				86E907CE20EB229E00208132 /* NavigationViewController.m in Sources */,
 				5091B56C1FE79CBE003797EF /* InterTopicListRequest.m in Sources */,
+				F22428E8214274A20035D0F0 /* RegisterVC.m in Sources */,
 				507941521FE647E00093CDF9 /* UIView+SGFrame.m in Sources */,
 				5077BBEA1FE92DB30047BE77 /* PostCircleAddPicView.m in Sources */,
 				50D77AF61FE11715007052E7 /* InforVillage_ArticleCateModel.m in Sources */,

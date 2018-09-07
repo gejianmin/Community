@@ -13,7 +13,7 @@
 #import "LoginViewController.h"
 #import "NearCommunityController.h"
 #import "UserObjModel.h"
-
+#import "NavigationViewController.h"
 @interface AppDelegate ()
 
 @end
@@ -21,7 +21,6 @@
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-   
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(selectMainWindow:) name:SelectMainWindow object:nil];
     
@@ -35,12 +34,13 @@
 - (void)selectMainWindow:(NSNotification *)notify{
     if (![UserObjModel shareIntance].uid) {
         //用户未登录
-        if ([UserObjModel shareIntance].org_id) {
-            //游客用户点击附近社区
-            [self gotoMainWindow];
-        }else{
-            [self goToNearCommunity];
-        }
+        [self goToLogin];
+//        if ([UserObjModel shareIntance].org_id) {
+//            //游客用户点击附近社区
+//            [self gotoMainWindow];
+//        }else{
+//            [self goToNearCommunity];
+//        }
     }else{
     }
 //    [self gotoMainWindow];
@@ -52,8 +52,10 @@
 }
 - (void)goToLogin{
     LoginViewController *tabVC = [[LoginViewController alloc] init];
-    self.window.rootViewController = tabVC;
-    [self.window resignKeyWindow];
+    NavigationViewController *navi = [[NavigationViewController alloc]initWithRootViewController:tabVC];
+    navi.navigationBar.hidden = YES;
+    self.window.rootViewController = navi;
+    [self.window makeKeyAndVisible];
 }
 - (void)gotoMainWindow{
     TabBarViewController *tabVC = [[TabBarViewController alloc] init];
