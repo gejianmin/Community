@@ -25,6 +25,9 @@
 #import "HHValidateButton.h"
 #import "GSAGloabConfig.h"
 #import "GSAFontConfig.h"
+#import "HHTextField.h"
+#import "CustomBtn.h"
+#import "CustomLab.h"
 //#import "UINavigationController+FDFullscreenPopGesture.h"
 
 #define SCREEN_WIDTH                    CGRectGetWidth([[UIScreen mainScreen] bounds])

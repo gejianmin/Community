@@ -9,6 +9,8 @@
 #define URI_MAIN (@"http://api.sinoyjlm.com/")//主站URL
 
 //注册
+
+#define registerCode @"sms/registerCode"
 #define Register       @"members/create"
 #define Login       @"auth"
 #define NearVillage  @"villages/getNearVillage"

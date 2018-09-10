@@ -8,6 +8,19 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ForgotView : UIView
+@class ForgotView;
+@protocol ForgotViewDelegate <NSObject>
+
+@optional
+
+- (void)forgotViewDidLoginWithPhoneNum:(NSString *)phoneNum VFNum:(NSString *)VCNum password:(NSString *)password rePassword:(NSString *)repassword;
+- (void)forgotViewGetVFButtonWithPhoneNum:(NSString *)phoneNum;;
 
 @end
+
+@interface ForgotView : UIView
+@property (nonatomic, weak) id <ForgotViewDelegate> delegate;
+
+
+@end
+

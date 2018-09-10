@@ -7,6 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "UIViewController+OA_HUD.h"
+#import "UIViewController+OA_Nav.h"
 @interface BaseViewController : UIViewController
 @property (nonatomic, strong) UIColor *barBackGroundColor;//bar背景颜色
 @property (nonatomic, copy) NSString *headTitle;
