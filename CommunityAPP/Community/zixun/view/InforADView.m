@@ -42,7 +42,7 @@
     self.titleLabel.text = model.ad_name;
     self.contentLabel.text = @"五月天演唱会";
     
-    __weak typeof(self) tyself = self;
+//    __weak typeof(self) tyself = self;
     [self.imgView sd_setImageWithURL:[NSURL URLWithString:model.ad_thumb] placeholderImage:nil completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
         
 //        CGSize size = image.size;
