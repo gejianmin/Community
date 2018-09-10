@@ -192,6 +192,7 @@
 		50DCAE5A2051332500FE4370 /* MessageTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 50DCAE592051332500FE4370 /* MessageTableViewCell.m */; };
 		50DCAE5D2051332D00FE4370 /* NoticeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 50DCAE5C2051332D00FE4370 /* NoticeTableViewCell.m */; };
 		50EC1E9F204E9CC300FCB48C /* PostActivityListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 50EC1E9E204E9CC300FCB48C /* PostActivityListCell.m */; };
+		50FC929A21450593004A34FC /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 50FC929921450593004A34FC /* SearchViewController.m */; };
 		8614B7BD20F4617D0086546E /* ELCImagePickerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8614B7AD20F4617D0086546E /* ELCImagePickerController.m */; };
 		8614B7BE20F4617D0086546E /* ELCAssetCollectionPicker.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8614B7B120F4617D0086546E /* ELCAssetCollectionPicker.xib */; };
 		8614B7BF20F4617D0086546E /* Overlay.png in Resources */ = {isa = PBXBuildFile; fileRef = 8614B7B220F4617D0086546E /* Overlay.png */; };
@@ -589,6 +590,8 @@
 		50DCAE5C2051332D00FE4370 /* NoticeTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NoticeTableViewCell.m; sourceTree = "<group>"; };
 		50EC1E9D204E9CC300FCB48C /* PostActivityListCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PostActivityListCell.h; sourceTree = "<group>"; };
 		50EC1E9E204E9CC300FCB48C /* PostActivityListCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PostActivityListCell.m; sourceTree = "<group>"; };
+		50FC929821450593004A34FC /* SearchViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SearchViewController.h; sourceTree = "<group>"; };
+		50FC929921450593004A34FC /* SearchViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SearchViewController.m; sourceTree = "<group>"; };
 		7C434F2E18A2A042FD3D6954 /* Pods-CommunityAPP.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CommunityAPP.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CommunityAPP/Pods-CommunityAPP.debug.xcconfig"; sourceTree = "<group>"; };
 		8614B7AC20F4617D0086546E /* ELCAssetCollectionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ELCAssetCollectionCell.h; sourceTree = "<group>"; };
 		8614B7AD20F4617D0086546E /* ELCImagePickerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ELCImagePickerController.m; sourceTree = "<group>"; };
@@ -1298,6 +1301,8 @@
 			children = (
 				50BFFA781FD52546005F35CA /* InformationViewController.h */,
 				50BFFA791FD52546005F35CA /* InformationViewController.m */,
+				50FC929821450593004A34FC /* SearchViewController.h */,
+				50FC929921450593004A34FC /* SearchViewController.m */,
 				507941401FE647330093CDF9 /* InforButtonCateController.h */,
 				507941411FE647330093CDF9 /* InforButtonCateController.m */,
 				5079416C1FE69DA40093CDF9 /* ArtDetailViewController.h */,
@@ -1988,6 +1993,7 @@
 				507941301FE563100093CDF9 /* UIScrollView+MJExtension.m in Sources */,
 				50BFFAFD1FD52818005F35CA /* UIImage+ImageEffects.m in Sources */,
 				502473AA1FE261C5002EA673 /* LayerButton.m in Sources */,
+				50FC929A21450593004A34FC /* SearchViewController.m in Sources */,
 				50BFFB111FD5282D005F35CA /* UITableView+YRSafeCategory.m in Sources */,
 				50D77AD01FE0CA91007052E7 /* UserObjModel.m in Sources */,
 				8614B7D520F4619F0086546E /* JYBLoading.m in Sources */,

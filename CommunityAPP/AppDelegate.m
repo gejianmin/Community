@@ -35,12 +35,12 @@
     if (![UserObjModel shareIntance].uid) {
         //用户未登录
         [self goToLogin];
-//        if ([UserObjModel shareIntance].org_id) {
-//            //游客用户点击附近社区
-//            [self gotoMainWindow];
-//        }else{
-//            [self goToNearCommunity];
-//        }
+        if ([UserObjModel shareIntance].org_id) {
+            //游客用户点击附近社区
+            [self gotoMainWindow];
+        }else{
+            [self goToNearCommunity];
+        }
     }else{
     }
 //    [self gotoMainWindow];

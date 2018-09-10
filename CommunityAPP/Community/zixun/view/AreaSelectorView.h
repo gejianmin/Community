@@ -8,8 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
+typedef void(^ClickBlock)(void);
+
 @interface AreaSelectorView : UIView
 
+@property(nonatomic, copy)  ClickBlock clickBlock;//回调
 @property(nonatomic, strong) UIImageView * localImageV;//位置图标
 @property(nonatomic, strong) UILabel * localNameL;// 内容
 @property(nonatomic, strong) UIImageView * subImageV;// 下箭头

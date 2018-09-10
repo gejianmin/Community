@@ -34,7 +34,7 @@
 #import "WebViewController.h"
 #import "InforButtonCateController.h"
 #import "ArtDetailViewController.h"
-
+#import "SearchViewController.h"
 @interface InformationViewController ()<UITableViewDataSource,UITableViewDelegate,UINavigationControllerDelegate,FocusScrollViewDelegate,InforADCellDelegate,InfoCategaryCellDelegate,InforAppButtonCellDelegate>
 
 @property (nonatomic, strong) NSMutableArray *carouselArray;
@@ -113,15 +113,43 @@
     self.tableView.frame = CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT - 49);
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     // 区域选择器
-    
     [self createAreaSelector];
+    
+    // 搜索框按钮
+    [self createSearchBut];
 }
 
 - (void)createAreaSelector {
     
-    self.areaSelecotorV = [[AreaSelectorView alloc]initWithFrame:CGRectMake(0, 20,self.view.width/2, 30)];
+    self.areaSelecotorV = [[AreaSelectorView alloc]initWithFrame:CGRectMake(0, 40,220, 30)];
+    self.areaSelecotorV.clickBlock = ^{
+       
+        [UserObjModel shareIntance].org_id = nil;
+        [[NSNotificationCenter defaultCenter] postNotificationName:SelectMainWindow object:nil];
+        
+    };
     [self.view addSubview:_areaSelecotorV];
     
+}
+
+- (void)createSearchBut {
+    
+    UIButton *searchBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    searchBtn.backgroundColor = [[UIColor grayColor] colorWithAlphaComponent:0.5f];
+    searchBtn.frame = CGRectMake(self.view.frame.size.width - 50, 40, 30, 30);
+    searchBtn.layer.masksToBounds = YES;
+    searchBtn.layer.cornerRadius = 15;
+    [searchBtn setImage:[UIImage imageNamed:@"search"] forState:UIControlStateNormal];
+    [searchBtn addTarget:self action:@selector(searchBtnClick) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:searchBtn];
+    
+    
+}
+
+- (void)searchBtnClick {
+    
+    SearchViewController *searchVC = [[SearchViewController alloc]init];
+    [self.navigationController pushViewController:searchVC animated:YES];
 }
 
 
