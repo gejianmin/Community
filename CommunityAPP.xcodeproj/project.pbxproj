@@ -223,6 +223,17 @@
 		F22428E8214274A20035D0F0 /* RegisterVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F22428E7214274A20035D0F0 /* RegisterVC.m */; };
 		F22428EB214274CC0035D0F0 /* ForgotPasswordVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F22428EA214274CC0035D0F0 /* ForgotPasswordVC.m */; };
 		F22428EE214275610035D0F0 /* ForgotView.m in Sources */ = {isa = PBXBuildFile; fileRef = F22428ED214275610035D0F0 /* ForgotView.m */; };
+		F22428F521436CFD0035D0F0 /* CustomBtn.m in Sources */ = {isa = PBXBuildFile; fileRef = F22428EF21436CFC0035D0F0 /* CustomBtn.m */; };
+		F22428F621436CFD0035D0F0 /* HHTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = F22428F221436CFD0035D0F0 /* HHTextField.m */; };
+		F22428F721436CFD0035D0F0 /* CustomLab.m in Sources */ = {isa = PBXBuildFile; fileRef = F22428F421436CFD0035D0F0 /* CustomLab.m */; };
+		F22428FA21436DB10035D0F0 /* RegisterView.m in Sources */ = {isa = PBXBuildFile; fileRef = F22428F921436DB10035D0F0 /* RegisterView.m */; };
+		F22428FF2143A69F0035D0F0 /* UIViewController+OA_HUD.m in Sources */ = {isa = PBXBuildFile; fileRef = F22428FC2143A69F0035D0F0 /* UIViewController+OA_HUD.m */; };
+		F22429002143A69F0035D0F0 /* UIViewController+OA_Nav.m in Sources */ = {isa = PBXBuildFile; fileRef = F22428FD2143A69F0035D0F0 /* UIViewController+OA_Nav.m */; };
+		F22429032143BB720035D0F0 /* AppDelegate+SocialShare.m in Sources */ = {isa = PBXBuildFile; fileRef = F22429022143BB710035D0F0 /* AppDelegate+SocialShare.m */; };
+		F224290D2143BCC20035D0F0 /* CustomPresentation.m in Sources */ = {isa = PBXBuildFile; fileRef = F22429072143BCC20035D0F0 /* CustomPresentation.m */; };
+		F224290E2143BCC20035D0F0 /* JTDShareVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F22429092143BCC20035D0F0 /* JTDShareVC.m */; };
+		F224290F2143BCC20035D0F0 /* JTDSocialShare.m in Sources */ = {isa = PBXBuildFile; fileRef = F224290A2143BCC20035D0F0 /* JTDSocialShare.m */; };
+		F22429102143BCC20035D0F0 /* PresentTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = F224290B2143BCC20035D0F0 /* PresentTransition.m */; };
 		F2ADAFA0214252C900837A98 /* HHKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F2ADAF9F214252C900837A98 /* HHKit.framework */; };
 /* End PBXBuildFile section */
 
@@ -652,6 +663,28 @@
 		F22428EA214274CC0035D0F0 /* ForgotPasswordVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ForgotPasswordVC.m; sourceTree = "<group>"; };
 		F22428EC214275610035D0F0 /* ForgotView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ForgotView.h; sourceTree = "<group>"; };
 		F22428ED214275610035D0F0 /* ForgotView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ForgotView.m; sourceTree = "<group>"; };
+		F22428EF21436CFC0035D0F0 /* CustomBtn.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomBtn.m; sourceTree = "<group>"; };
+		F22428F021436CFC0035D0F0 /* CustomLab.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomLab.h; sourceTree = "<group>"; };
+		F22428F121436CFC0035D0F0 /* CustomBtn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomBtn.h; sourceTree = "<group>"; };
+		F22428F221436CFD0035D0F0 /* HHTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HHTextField.m; sourceTree = "<group>"; };
+		F22428F321436CFD0035D0F0 /* HHTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HHTextField.h; sourceTree = "<group>"; };
+		F22428F421436CFD0035D0F0 /* CustomLab.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomLab.m; sourceTree = "<group>"; };
+		F22428F821436DB10035D0F0 /* RegisterView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RegisterView.h; sourceTree = "<group>"; };
+		F22428F921436DB10035D0F0 /* RegisterView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RegisterView.m; sourceTree = "<group>"; };
+		F22428FB2143A69E0035D0F0 /* UIViewController+OA_HUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+OA_HUD.h"; sourceTree = "<group>"; };
+		F22428FC2143A69F0035D0F0 /* UIViewController+OA_HUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+OA_HUD.m"; sourceTree = "<group>"; };
+		F22428FD2143A69F0035D0F0 /* UIViewController+OA_Nav.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+OA_Nav.m"; sourceTree = "<group>"; };
+		F22428FE2143A69F0035D0F0 /* UIViewController+OA_Nav.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+OA_Nav.h"; sourceTree = "<group>"; };
+		F22429012143BB710035D0F0 /* AppDelegate+SocialShare.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AppDelegate+SocialShare.h"; sourceTree = "<group>"; };
+		F22429022143BB710035D0F0 /* AppDelegate+SocialShare.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AppDelegate+SocialShare.m"; sourceTree = "<group>"; };
+		F22429052143BCC20035D0F0 /* JTDShareVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JTDShareVC.h; sourceTree = "<group>"; };
+		F22429062143BCC20035D0F0 /* JTDSocialShare.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JTDSocialShare.h; sourceTree = "<group>"; };
+		F22429072143BCC20035D0F0 /* CustomPresentation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomPresentation.m; sourceTree = "<group>"; };
+		F22429082143BCC20035D0F0 /* PresentTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PresentTransition.h; sourceTree = "<group>"; };
+		F22429092143BCC20035D0F0 /* JTDShareVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JTDShareVC.m; sourceTree = "<group>"; };
+		F224290A2143BCC20035D0F0 /* JTDSocialShare.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JTDSocialShare.m; sourceTree = "<group>"; };
+		F224290B2143BCC20035D0F0 /* PresentTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PresentTransition.m; sourceTree = "<group>"; };
+		F224290C2143BCC20035D0F0 /* CustomPresentation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomPresentation.h; sourceTree = "<group>"; };
 		F2ADAF9F214252C900837A98 /* HHKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = HHKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -1034,6 +1067,7 @@
 		50BFFA4C1FD52147005F35CA /* ThirdPlaform */ = {
 			isa = PBXGroup;
 			children = (
+				F22429042143BCC20035D0F0 /* JTDSocialShare */,
 				8614B7AB20F4617D0086546E /* ELCImagePicker */,
 				507941431FE647E00093CDF9 /* SGPagingView */,
 				507940F01FE5630F0093CDF9 /* MJRefresh */,
@@ -1209,6 +1243,8 @@
 				500561281FDC27FC00B06F5F /* LoginView.m */,
 				F22428EC214275610035D0F0 /* ForgotView.h */,
 				F22428ED214275610035D0F0 /* ForgotView.m */,
+				F22428F821436DB10035D0F0 /* RegisterView.h */,
+				F22428F921436DB10035D0F0 /* RegisterView.m */,
 				501449AB2048038900DA8C5C /* LayoutButton.h */,
 				501449AC2048038900DA8C5C /* LayoutButton.m */,
 				50EC1E9D204E9CC300FCB48C /* PostActivityListCell.h */,
@@ -1403,6 +1439,18 @@
 		50BFFA951FD52818005F35CA /* category */ = {
 			isa = PBXGroup;
 			children = (
+				F22429012143BB710035D0F0 /* AppDelegate+SocialShare.h */,
+				F22429022143BB710035D0F0 /* AppDelegate+SocialShare.m */,
+				F22428FB2143A69E0035D0F0 /* UIViewController+OA_HUD.h */,
+				F22428FC2143A69F0035D0F0 /* UIViewController+OA_HUD.m */,
+				F22428FE2143A69F0035D0F0 /* UIViewController+OA_Nav.h */,
+				F22428FD2143A69F0035D0F0 /* UIViewController+OA_Nav.m */,
+				F22428F121436CFC0035D0F0 /* CustomBtn.h */,
+				F22428EF21436CFC0035D0F0 /* CustomBtn.m */,
+				F22428F021436CFC0035D0F0 /* CustomLab.h */,
+				F22428F421436CFD0035D0F0 /* CustomLab.m */,
+				F22428F321436CFD0035D0F0 /* HHTextField.h */,
+				F22428F221436CFD0035D0F0 /* HHTextField.m */,
 				F22428E02142651F0035D0F0 /* HHValidateButton.h */,
 				F22428DC2142651E0035D0F0 /* HHValidateButton.m */,
 				F22428DE2142651E0035D0F0 /* UIButton+LXMImagePosition.h */,
@@ -1677,6 +1725,21 @@
 			path = Config;
 			sourceTree = "<group>";
 		};
+		F22429042143BCC20035D0F0 /* JTDSocialShare */ = {
+			isa = PBXGroup;
+			children = (
+				F22429052143BCC20035D0F0 /* JTDShareVC.h */,
+				F22429092143BCC20035D0F0 /* JTDShareVC.m */,
+				F22429062143BCC20035D0F0 /* JTDSocialShare.h */,
+				F224290A2143BCC20035D0F0 /* JTDSocialShare.m */,
+				F224290C2143BCC20035D0F0 /* CustomPresentation.h */,
+				F22429072143BCC20035D0F0 /* CustomPresentation.m */,
+				F22429082143BCC20035D0F0 /* PresentTransition.h */,
+				F224290B2143BCC20035D0F0 /* PresentTransition.m */,
+			);
+			path = JTDSocialShare;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1710,8 +1773,8 @@
 				TargetAttributes = {
 					508E50EC1FD1475B00D600C5 = {
 						CreatedOnToolsVersion = 8.3.2;
-						DevelopmentTeam = TLYB38475N;
-						ProvisioningStyle = Manual;
+						DevelopmentTeam = Q523R4V974;
+						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 1;
@@ -1786,11 +1849,13 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-CommunityAPP/Pods-CommunityAPP-resources.sh",
 				"${PODS_ROOT}/IQKeyboardManager/IQKeyboardManager/Resources/IQKeyboardManager.bundle",
 				"${PODS_ROOT}/SVProgressHUD/SVProgressHUD/SVProgressHUD.bundle",
+				"${PODS_ROOT}/UMCShare/UMShare/UMSocialUI/UMSocialSDKResources.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/IQKeyboardManager.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/SVProgressHUD.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/UMSocialSDKResources.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1847,6 +1912,7 @@
 				5091B5601FE78E6F003797EF /* InterCarouseRequest.m in Sources */,
 				505FA8691FEA09540082AAB0 /* InterArtListTool.m in Sources */,
 				50BFFAFC1FD52818005F35CA /* UIImage+Helper.m in Sources */,
+				F22428F521436CFD0035D0F0 /* CustomBtn.m in Sources */,
 				50BFFAF91FD52818005F35CA /* NSString+JKXMLDictionary.m in Sources */,
 				50D77AE71FE111EC007052E7 /* InforVillage_NoticeRequest.m in Sources */,
 				50BFFAE21FD52818005F35CA /* NSData+JKEncrypt.m in Sources */,
@@ -1865,6 +1931,7 @@
 				5079412E1FE563100093CDF9 /* MJRefreshConst.m in Sources */,
 				50BFFAEF1FD52818005F35CA /* NSString+JKMIME.m in Sources */,
 				50BFFAFF1FD52818005F35CA /* UIView+Common.m in Sources */,
+				F22428F621436CFD0035D0F0 /* HHTextField.m in Sources */,
 				5015EE7B1FD9657C00D1637B /* RSAEncryptor.m in Sources */,
 				5005614D1FDE764100B06F5F /* NearCommunityModel.m in Sources */,
 				5079412F1FE563100093CDF9 /* NSBundle+MJRefresh.m in Sources */,
@@ -1924,6 +1991,7 @@
 				50D77B171FE1503D007052E7 /* FocusScrollView.m in Sources */,
 				F22428E12142651F0035D0F0 /* UIView+Shadow.m in Sources */,
 				5091B5841FE7D773003797EF /* InterCateCell.m in Sources */,
+				F22429102143BCC20035D0F0 /* PresentTransition.m in Sources */,
 				50BFFADF1FD52818005F35CA /* NSData+JKAPNSToken.m in Sources */,
 				507941421FE647330093CDF9 /* InforButtonCateController.m in Sources */,
 				500561491FDE75EA00B06F5F /* NearCommunityResponse.m in Sources */,
@@ -1942,6 +2010,7 @@
 				50BFFA801FD5257E005F35CA /* MineViewController.m in Sources */,
 				501449AD2048038900DA8C5C /* LayoutButton.m in Sources */,
 				508E50F51FD1475B00D600C5 /* AppDelegate.m in Sources */,
+				F22428FA21436DB10035D0F0 /* RegisterView.m in Sources */,
 				507941291FE563100093CDF9 /* MJRefreshBackStateFooter.m in Sources */,
 				8614B7C420F4617D0086546E /* ELCAssetCollectionPicker.m in Sources */,
 				5091B57E1FE7A462003797EF /* InterNearPostRequest.m in Sources */,
@@ -1963,16 +2032,21 @@
 				50BFFA431FD51FD9005F35CA /* BaseRequest.m in Sources */,
 				8614B7C920F461840086546E /* JYBBaseViewController.m in Sources */,
 				50BFFAF61FD52818005F35CA /* NSString+JKTrims.m in Sources */,
+				F224290F2143BCC20035D0F0 /* JTDSocialShare.m in Sources */,
 				8614B7DB20F463AB0086546E /* AppDelegateTool.m in Sources */,
 				50BFFA771FD52504005F35CA /* BaseViewController.m in Sources */,
 				50D77B081FE148A2007052E7 /* InforAppButtonCell.m in Sources */,
+				F224290E2143BCC20035D0F0 /* JTDShareVC.m in Sources */,
 				86E907CE20EB229E00208132 /* NavigationViewController.m in Sources */,
+				F22428FF2143A69F0035D0F0 /* UIViewController+OA_HUD.m in Sources */,
 				5091B56C1FE79CBE003797EF /* InterTopicListRequest.m in Sources */,
 				F22428E8214274A20035D0F0 /* RegisterVC.m in Sources */,
 				507941521FE647E00093CDF9 /* UIView+SGFrame.m in Sources */,
+				F22428F721436CFD0035D0F0 /* CustomLab.m in Sources */,
 				5077BBEA1FE92DB30047BE77 /* PostCircleAddPicView.m in Sources */,
 				50D77AF61FE11715007052E7 /* InforVillage_ArticleCateModel.m in Sources */,
 				50D77AD41FE10949007052E7 /* InforVillage_AppButtonRequest.m in Sources */,
+				F224290D2143BCC20035D0F0 /* CustomPresentation.m in Sources */,
 				508E50F21FD1475B00D600C5 /* main.m in Sources */,
 				5079416E1FE69DA50093CDF9 /* ArtDetailViewController.m in Sources */,
 				50BFFADE1FD52818005F35CA /* AssetHelper.m in Sources */,
@@ -1992,6 +2066,7 @@
 				50D77AED1FE11211007052E7 /* InforVillage_NoticeModel.m in Sources */,
 				5079413C1FE564BC0093CDF9 /* KOPageManager.m in Sources */,
 				507941201FE563100093CDF9 /* MJRefreshBackFooter.m in Sources */,
+				F22429002143A69F0035D0F0 /* UIViewController+OA_Nav.m in Sources */,
 				50BFFB0E1FD5282D005F35CA /* NSDictionary+YRSafeCategory.m in Sources */,
 				5091B5661FE78E98003797EF /* InterCarouseModel.m in Sources */,
 				5079412C1FE563100093CDF9 /* MJRefreshStateHeader.m in Sources */,
@@ -1999,6 +2074,7 @@
 				505FA8661FEA08080082AAB0 /* Inter_categaryResponse.m in Sources */,
 				50BFFAF51FD52818005F35CA /* NSString+JKStringPages.m in Sources */,
 				50D77B0B1FE148BA007052E7 /* InforCarouseCell.m in Sources */,
+				F22429032143BB720035D0F0 /* AppDelegate+SocialShare.m in Sources */,
 				5091B5571FE7618E003797EF /* InterAPPButtonRequest.m in Sources */,
 				50BFFA441FD51FD9005F35CA /* BaseResponse.m in Sources */,
 			);
@@ -2121,9 +2197,10 @@
 			baseConfigurationReference = 7C434F2E18A2A042FD3D6954 /* Pods-CommunityAPP.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer: BO Lyu (JZTSG43T57)";
-				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = TLYB38475N;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Q523R4V974;
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/CommunityAPP/ThirdPlaform/BMap",
@@ -2140,7 +2217,7 @@
 					"\"${PODS_ROOT}/Headers/Public/YYModel\"",
 				);
 				INFOPLIST_FILE = CommunityAPP/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2152,8 +2229,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.eguanjia.communityclient;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "c19988c9-2a9e-4d18-8064-6e79697c873d";
-				PROVISIONING_PROFILE_SPECIFIER = 1123;
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Debug;
 		};
@@ -2162,10 +2239,11 @@
 			baseConfigurationReference = 99D2F012F0DC9278E2DBAD56 /* Pods-CommunityAPP.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: BO Lyu (TLYB38475N)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: BO Lyu (TLYB38475N)";
-				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = TLYB38475N;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Q523R4V974;
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/CommunityAPP/ThirdPlaform/BMap",
@@ -2182,7 +2260,7 @@
 					"\"${PODS_ROOT}/Headers/Public/YYModel\"",
 				);
 				INFOPLIST_FILE = CommunityAPP/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2194,8 +2272,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.eguanjia.communityclient;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "5a3d755d-3624-4ab2-a1cb-5ce8b84c1ca4";
-				PROVISIONING_PROFILE_SPECIFIER = zhangyipei;
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Release;
 		};

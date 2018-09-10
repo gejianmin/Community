@@ -10,6 +10,13 @@
 
 @interface RegisterRequest : BaseRequest
 
+
+/**
+ 获取验证码
+
+ @param mobile 手机号（必选）
+ */
+- (void)setUserRegisterCodeWith:(NSString *)mobile;
 /**
  注册接口
  @param mobile 手机号 （必选）

@@ -9,6 +9,10 @@
 #import "LoginViewController.h"
 #import "LoginView.h"
 #import "RegisterVC.h"
+#import "ForgotPasswordVC.h"
+#import "JTDSocialShare.h"
+#import <AdSupport/AdSupport.h>
+#import "LoginRequest.h"
 @interface LoginViewController ()<LoginViewDelegate>
 
 @property (nonatomic, strong) LoginView *logView;
@@ -20,7 +24,7 @@
 @implementation LoginViewController
 -(void)viewWillAppear:(BOOL)animated{
     
-    self.navigationController.navigationBar.hidden = YES;
+    self.navigationController.navigationBar.hidden = YES ;
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -41,7 +45,18 @@
 }
 #pragma mark--login
 -(void)loginViewDidLoginWithAccount:(NSString *)account password:(NSString *)password{
-    
+    LoginRequest * request = [[LoginRequest alloc]init];
+    [request setUserLoignWith:nil password:nil];
+    [request setFinishedBlock:^(id object, id responseData) {
+        
+        NSLog(@"%@",object);
+//        tyself.model = object;
+//        [tyself fullData:tyself.model.communityArray];
+        
+        
+    } failedBlock:^(NSInteger error, id responseData) {
+        NSLog(@"%ld",error);
+    }];
     
 }
 #pragma mark--注册，忘记密码，第三方登录
@@ -56,11 +71,19 @@
             break;
         case 1002://忘记密码
         {
-            
+            ForgotPasswordVC * VC = [[ForgotPasswordVC alloc]init];
+            [self.navigationController pushViewController:VC animated:YES];
         }
             break;
         case 1003://微信登录
         {
+            [[JTDSocialShare ShareUMSocial] getUserInfoWithController:self withTag:weChatLoginType callBack:^(BOOL success, JTDUserInfoModel *model) {
+                if(success){
+                    [self thirdLoginWith:model loginType:weChatLoginType];
+                }else{
+                    //                    [self showToastHUD:@"登录异常" complete:nil];
+                }
+            }];
             
         }
             break;
@@ -70,8 +93,55 @@
     
     
 }
-- (void)login {
+-(void)thirdLoginWith:(JTDUserInfoModel *)model loginType:(NSInteger )loginType{
     
+    [self showToastHUD:nil];
+    NSString * sex;
+    NSString * openid;
+    if ([model.unionGender isEqualToString:@"男"]) {
+        sex = @"2";
+    }else{
+        sex = @"1";
+    }
+    if (loginType == sinaLoginType) {
+        openid = model.uid;
+    }else{
+        openid = model.openid;
+    }
+    NSDictionary * params = @{@"openid":openid,
+                              @"identifies":[self getIdentifiesSting],
+                              @"unionid":model.unionId?:@"",
+                              @"name": model.name,
+                              @"sex": sex,
+                              @"img": model.iconurl
+                              };
+    JTDWeakSelf
+//    [[[HHClient sharedInstance] sessionManager] IC_Post:ICPath_ThirdLogin params:params complete:^(id response, HHError *error) {
+//        [WeakSelf hideHUD];
+//        if (error) {
+//            [WeakSelf showToastHUD:error.errorDescription complete:nil];
+//        }else{
+//            HHUserInfo * model = [HHUserInfo mj_objectWithKeyValues:response[@"arr"]];
+//            [[HHClient sharedInstance] setUser:model];
+//            [[HHClient sharedInstance] setUserId:model.userId];
+//            [[NSUserDefaults standardUserDefaults] setObject:model.access_token forKey:@"ACCESSTOKEN"];
+//            [[NSUserDefaults standardUserDefaults] setObject:model.userId forKey:@"userID"];
+//            [WeakSelf login];
+//
+//        }
+//    }];
+    [self login];
+    
+}
+-(NSString *)getIdentifiesSting{
+    
+    NSString *adId = [[[ASIdentifierManager sharedManager] advertisingIdentifier] UUIDString];
+    NSString * adis = [adId stringByReplacingOccurrencesOfString:@"-" withString:@""];
+    return adis;
+}
+- (void)login {
+    [self hideHUD];
+    HHLog(@"登录成功");
     if (self.callback) {
         self.callback(self);
     }

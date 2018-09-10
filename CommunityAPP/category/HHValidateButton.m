@@ -48,8 +48,8 @@ static NSString  * const GSAContent_login_codeGet = @"获取验证码";
         self.durationOfCountDown = 60;
         // 设置button的默认标题为“获取验证码”
         [self setTitle:@"获取验证码" forState:UIControlStateNormal];
-        [self setTitleColor:kColorGray1 forState:UIControlStateNormal];
-        self.titleLabel.font = [UIFont systemFontOfSize:12];
+        [self setTitleColor:kColorWhite forState:UIControlStateNormal];
+        self.titleLabel.font = [UIFont systemFontOfSize:15];
         [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(updatePhoneNub:) name:@"updatePhoneNub" object:nil];
         
     }
@@ -97,7 +97,7 @@ static NSString  * const GSAContent_login_codeGet = @"获取验证码";
     if (self.tempDurationOfCountDown == 0) {
         // 设置IDCountDownButton的title为开始倒计时前的title
         [self setTitle:self.originalTitle forState:UIControlStateNormal];
-        [self setTitleColor:kColorGray1 forState:UIControlStateNormal];
+        [self setTitleColor:kColorWhite forState:UIControlStateNormal];
         // 恢复IDCountDownButton开始倒计时的能力
         self.tempDurationOfCountDown = self.durationOfCountDown;
         [self.countDownTimer invalidate];
@@ -143,10 +143,10 @@ static NSString  * const GSAContent_login_codeGet = @"获取验证码";
     self = [super initWithFrame:frame];
     if (self) {
         self.duration=time;
-        self.titleLabel.font=kFont15;
+        self.titleLabel.font=kFont18;
         [self setTitle:GSAContent_login_codeGet forState:UIControlStateNormal];
-        [self setTitleColor:kColorMainBlue forState:UIControlStateNormal];
-        [self setTitleColor:kColorMainBlue forState:UIControlStateDisabled];
+        [self setTitleColor:kColorWhite forState:UIControlStateNormal];
+        [self setTitleColor:kColorWhite forState:UIControlStateDisabled];
         
     }
     return self;
@@ -157,7 +157,7 @@ static NSString  * const GSAContent_login_codeGet = @"获取验证码";
     CGColorRef colorref = CGColorCreate(colorSpace,(CGFloat[]){ 0/255.0, 0/255.0, 0/255.0, 0 });
     [self.layer setBorderColor:colorref];//边框颜色
 //    self.backgroundColor = HEXCOLOR(0x68707e, 1);
-    self.backgroundColor = kColorWhite;
+    self.backgroundColor = kColorRed;
 
     _timer=[NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(timerChangeAction:) userInfo:nil repeats:YES];
 }

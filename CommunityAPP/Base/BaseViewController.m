@@ -18,6 +18,10 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.view.backgroundColor = [UIColor whiteColor];
+    //     判断是否有上级页面，有的话再调用
+    if ([self.navigationController.viewControllers indexOfObject:self] > 0) {
+        [self setupLeftBarButton];
+    }
 }
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];

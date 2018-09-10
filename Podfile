@@ -12,6 +12,12 @@ pod 'YYModel'
 pod 'PureLayout'
 pod 'Masonry'
 pod 'IQKeyboardManager'
+#友盟分享，QQ，微信，微博
+pod 'UMCCommon'
+pod 'UMCSecurityPlugins'
+pod 'UMCShare/UI'
+pod 'UMCShare/Social/ReducedWeChat'
+pod 'UMCShare/Social/ReducedQQ'
 end
 
 target 'HHKit' do

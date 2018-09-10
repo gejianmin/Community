@@ -23,11 +23,11 @@
     
     //post参数
     
-    NSString *key = [RSAEncryptor encryptString:@"111111" publicKey:RSA_Public_key];
+    NSString *key = [RSAEncryptor encryptString:password publicKey:RSA_Public_key];
     
     NSMutableDictionary *paramDic = [[NSMutableDictionary alloc] init];
-    [paramDic setValue:@"18510844448" forKey:@"mobile"];
-    [paramDic setValue:@"1234" forKey:@"code"];
+    [paramDic setValue:mobile forKey:@"mobile"];
+    [paramDic setValue:code  forKey:@"code"];
     [paramDic setValue:key forKey:@"password"];
     [paramDic setValue:key forKey:@"cpassword"];
     self.parameters = paramDic;//post参数
@@ -36,6 +36,15 @@
     [self.headerFields setObject:@"yezhu" forKey:@"identity"];
     
     self.urlPathString = [NSString stringWithFormat:@"%@%@",self.hostString,Register];
+
+}
+- (void)setUserRegisterCodeWith:(NSString *)mobile{
+    NSMutableDictionary *paramDic = [[NSMutableDictionary alloc] init];
+    [paramDic setValue:mobile forKey:@"mobile"];
+    self.parameters = paramDic;//post参数
+    self.headerFields = [NSMutableDictionary dictionary];
+    [self.headerFields setObject:@"yezhu" forKey:@"identity"];
+    self.urlPathString = [NSString stringWithFormat:@"%@%@",self.hostString,registerCode];
 
 }
 ResponserParserGenerate(RegisterResponse);

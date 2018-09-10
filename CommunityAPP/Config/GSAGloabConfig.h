@@ -17,8 +17,7 @@
 #define GSACountDownGeneralValue 60
 
 /*!< 弱引用 */
-#define GSAWeakSelf __weak typeof(self) WeakSelf = self;
-
+#define JTDWeakSelf __weak typeof(self) WeakSelf = self;
 //log日志打印,包含该函数名,行数
 #if DEBUG
 #define HHLog(id, ...) NSLog((@"%s [Line %d] " id),__PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__);
@@ -92,4 +91,16 @@ static NSString * const PSDefaultIconImage = @"icon_top_bg";/*!< icon默认图*/
 
 #define Width(v)                CGRectGetWidth((v).frame)
 #define Height(v)               CGRectGetHeight((v).frame)
+/*!< 是不是空字符串*/
+#define kStringIsEmpty(str) ([str isKindOfClass:[NSNull class]] || str == nil||[str isEqualToString:@"(null)"] ||[str length] < 1 ? YES : NO )
+/*!< 是不是空数组*/
+#define kArrayIsEmpty(array) (array == nil || [array isKindOfClass:[NSNull class]] || array.count == 0)
+/*!< 是不是空字典*/
+#define kDictIsEmpty(dic) (dic == nil || [dic isKindOfClass:[NSNull class]] || dic.allKeys == 0)
+/*!< 是不是空对象*/
+#define kObjectIsEmpty(_object) (_object == nil||[_object isKindOfClass:[NSNull class]]|| ([_object respondsToSelector:@selector(length)] && [(NSData *)_object length] == 0)|| ([_object respondsToSelector:@selector(count)] && [(NSArray *)_object count] == 0))
+
+/*!< 友盟分享*/
+#define USHARE_APPKEY @"5b9381ccb27b0a22830005c6"
+static NSString * kUMengShareNotification = @"kUMengShareNotification";
 #endif /* GSAGloabConfig_h */
