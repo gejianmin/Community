@@ -107,8 +107,7 @@
 - (void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
 //    self.fd_prefersNavigationBarHidden = NO;
-}
-- (void)setUpUI{
+} - (void)setUpUI{
     
     self.tableView.frame = CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT - 49);
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
@@ -128,7 +127,7 @@
         [[NSNotificationCenter defaultCenter] postNotificationName:SelectMainWindow object:nil];
         
     };
-    [self.view addSubview:_areaSelecotorV];
+    [self.tableView addSubview:_areaSelecotorV];
     
 }
 
@@ -141,7 +140,7 @@
     searchBtn.layer.cornerRadius = 15;
     [searchBtn setImage:[UIImage imageNamed:@"search"] forState:UIControlStateNormal];
     [searchBtn addTarget:self action:@selector(searchBtnClick) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:searchBtn];
+    [self.tableView addSubview:searchBtn];
     
     
 }

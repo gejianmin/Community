@@ -119,7 +119,6 @@
 		50BFFA7A1FD52546005F35CA /* InformationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 50BFFA791FD52546005F35CA /* InformationViewController.m */; };
 		50BFFA7D1FD52571005F35CA /* PublicCircleController.m in Sources */ = {isa = PBXBuildFile; fileRef = 50BFFA7C1FD52571005F35CA /* PublicCircleController.m */; };
 		50BFFA801FD5257E005F35CA /* MineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 50BFFA7F1FD5257E005F35CA /* MineViewController.m */; };
-		50BFFA861FD525AB005F35CA /* QuarterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 50BFFA851FD525AB005F35CA /* QuarterViewController.m */; };
 		50BFFA931FD52728005F35CA /* BlowClickButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 50BFFA8F1FD52728005F35CA /* BlowClickButton.m */; };
 		50BFFADE1FD52818005F35CA /* AssetHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 50BFFA971FD52818005F35CA /* AssetHelper.m */; };
 		50BFFADF1FD52818005F35CA /* NSData+JKAPNSToken.m in Sources */ = {isa = PBXBuildFile; fileRef = 50BFFA9A1FD52818005F35CA /* NSData+JKAPNSToken.m */; };
@@ -193,6 +192,7 @@
 		50DCAE5D2051332D00FE4370 /* NoticeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 50DCAE5C2051332D00FE4370 /* NoticeTableViewCell.m */; };
 		50EC1E9F204E9CC300FCB48C /* PostActivityListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 50EC1E9E204E9CC300FCB48C /* PostActivityListCell.m */; };
 		50FC929A21450593004A34FC /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 50FC929921450593004A34FC /* SearchViewController.m */; };
+		50FC929E214652FD004A34FC /* QuarterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 50FC929D214652FD004A34FC /* QuarterViewController.m */; };
 		8614B7BD20F4617D0086546E /* ELCImagePickerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8614B7AD20F4617D0086546E /* ELCImagePickerController.m */; };
 		8614B7BE20F4617D0086546E /* ELCAssetCollectionPicker.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8614B7B120F4617D0086546E /* ELCAssetCollectionPicker.xib */; };
 		8614B7BF20F4617D0086546E /* Overlay.png in Resources */ = {isa = PBXBuildFile; fileRef = 8614B7B220F4617D0086546E /* Overlay.png */; };
@@ -454,8 +454,6 @@
 		50BFFA7C1FD52571005F35CA /* PublicCircleController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PublicCircleController.m; path = ../PublicCircleController.m; sourceTree = "<group>"; };
 		50BFFA7E1FD5257E005F35CA /* MineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MineViewController.h; path = ../MineViewController.h; sourceTree = "<group>"; };
 		50BFFA7F1FD5257E005F35CA /* MineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MineViewController.m; path = ../MineViewController.m; sourceTree = "<group>"; };
-		50BFFA841FD525AB005F35CA /* QuarterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = QuarterViewController.h; path = ../QuarterViewController.h; sourceTree = "<group>"; };
-		50BFFA851FD525AB005F35CA /* QuarterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = QuarterViewController.m; path = ../QuarterViewController.m; sourceTree = "<group>"; };
 		50BFFA8E1FD52728005F35CA /* BlowClickButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BlowClickButton.h; sourceTree = "<group>"; };
 		50BFFA8F1FD52728005F35CA /* BlowClickButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BlowClickButton.m; sourceTree = "<group>"; };
 		50BFFA961FD52818005F35CA /* AssetHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AssetHelper.h; sourceTree = "<group>"; };
@@ -603,6 +601,8 @@
 		50EC1E9E204E9CC300FCB48C /* PostActivityListCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PostActivityListCell.m; sourceTree = "<group>"; };
 		50FC929821450593004A34FC /* SearchViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SearchViewController.h; sourceTree = "<group>"; };
 		50FC929921450593004A34FC /* SearchViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SearchViewController.m; sourceTree = "<group>"; };
+		50FC929C214652FD004A34FC /* QuarterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuarterViewController.h; sourceTree = "<group>"; };
+		50FC929D214652FD004A34FC /* QuarterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuarterViewController.m; sourceTree = "<group>"; };
 		7C434F2E18A2A042FD3D6954 /* Pods-CommunityAPP.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CommunityAPP.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CommunityAPP/Pods-CommunityAPP.debug.xcconfig"; sourceTree = "<group>"; };
 		8614B7AC20F4617D0086546E /* ELCAssetCollectionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ELCAssetCollectionCell.h; sourceTree = "<group>"; };
 		8614B7AD20F4617D0086546E /* ELCImagePickerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ELCImagePickerController.m; sourceTree = "<group>"; };
@@ -1133,10 +1133,7 @@
 		50BFFA5E1FD523DB005F35CA /* yikezhong */ = {
 			isa = PBXGroup;
 			children = (
-				50BFFA6C1FD52431005F35CA /* Controller */,
-				50BFFA6D1FD52431005F35CA /* model */,
-				50BFFA6E1FD52431005F35CA /* view */,
-				50BFFA6F1FD52431005F35CA /* viewModel */,
+				50FC929B214652E1004A34FC /* Controller */,
 			);
 			path = yikezhong;
 			sourceTree = "<group>";
@@ -1296,36 +1293,6 @@
 			sourceTree = "<group>";
 		};
 		50BFFA6B1FD52426005F35CA /* viewModel */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = viewModel;
-			sourceTree = "<group>";
-		};
-		50BFFA6C1FD52431005F35CA /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				50BFFA841FD525AB005F35CA /* QuarterViewController.h */,
-				50BFFA851FD525AB005F35CA /* QuarterViewController.m */,
-			);
-			path = Controller;
-			sourceTree = "<group>";
-		};
-		50BFFA6D1FD52431005F35CA /* model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = model;
-			sourceTree = "<group>";
-		};
-		50BFFA6E1FD52431005F35CA /* view */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = view;
-			sourceTree = "<group>";
-		};
-		50BFFA6F1FD52431005F35CA /* viewModel */ = {
 			isa = PBXGroup;
 			children = (
 			);
@@ -1657,6 +1624,15 @@
 			path = zixun;
 			sourceTree = "<group>";
 		};
+		50FC929B214652E1004A34FC /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				50FC929C214652FD004A34FC /* QuarterViewController.h */,
+				50FC929D214652FD004A34FC /* QuarterViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		8614B7AB20F4617D0086546E /* ELCImagePicker */ = {
 			isa = PBXGroup;
 			children = (
@@ -1938,6 +1914,7 @@
 				50BFFB001FD52818005F35CA /* UIView+Helper.m in Sources */,
 				5005613E1FDE680300B06F5F /* NearCommunityController.mm in Sources */,
 				507940EC1FE550ED0093CDF9 /* InforVillage_ListResponse.m in Sources */,
+				50FC929E214652FD004A34FC /* QuarterViewController.m in Sources */,
 				50D77AE11FE10F9A007052E7 /* InforVillage_CarouselResponse.m in Sources */,
 				5079412E1FE563100093CDF9 /* MJRefreshConst.m in Sources */,
 				50BFFAEF1FD52818005F35CA /* NSString+JKMIME.m in Sources */,
@@ -1994,7 +1971,6 @@
 				507941241FE563100093CDF9 /* MJRefreshAutoGifFooter.m in Sources */,
 				F22428E22142651F0035D0F0 /* HHValidateButton.m in Sources */,
 				8614B7D220F461990086546E /* JYBLoadingIndicator.m in Sources */,
-				50BFFA861FD525AB005F35CA /* QuarterViewController.m in Sources */,
 				50BFFAF11FD52818005F35CA /* NSString+JKPinyin.m in Sources */,
 				50BFFA4A1FD51FD9005F35CA /* NetWorkConfig.m in Sources */,
 				5091B57B1FE7A12C003797EF /* InterPostListModel.m in Sources */,

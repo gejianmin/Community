@@ -27,6 +27,12 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    UIButton *rightBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    [rightBtn setTitle:@"保存" forState:UIControlStateNormal];
+    [rightBtn setTitleColor:kColorGray4 forState:UIControlStateNormal];
+    rightBtn.titleLabel.font = kFont(14);
+    UIBarButtonItem *buttonItem = [[UIBarButtonItem alloc]initWithCustomView:rightBtn];
+    self.navigationItem.rightBarButtonItem = buttonItem;
     
     
 }
