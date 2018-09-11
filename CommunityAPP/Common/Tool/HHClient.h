@@ -16,4 +16,6 @@
     
 @property (nonatomic, strong) UserObjModel * user;//当前登录用户
 
+-(BOOL)isLogin;
+    
 @end

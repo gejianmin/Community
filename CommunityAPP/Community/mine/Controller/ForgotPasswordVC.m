@@ -29,7 +29,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"忘记密码";
-    self.forgotView = [[ForgotView alloc] initWithFrame:CGRectMake(0, 64, SCREEN_WIDTH, SCREEN_HEIGHT - 64)];
+    self.forgotView = [[ForgotView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT - 64)];
     self.forgotView.delegate = self;
     self.forgotView.backgroundColor = kColorGray9;
     [self.view addSubview:_forgotView];
@@ -62,6 +62,7 @@
 }
 #pragma mark--提交信息
 -(void)forgotViewDidLoginWithPhoneNum:(NSString *)phoneNum VFNum:(NSString *)VCNum password:(NSString *)password rePassword:(NSString *)repassword{
+    
     if (kStringIsEmpty(phoneNum)) {
         [self showToastHUD:@"手机号不能为空" complete:nil];
         return;
@@ -105,7 +106,13 @@
         JTDWeakSelf
         if(responseData){
             if([responseData[@"status"] isEqualToString:successCode]){
-                [self goToNearCommunity];
+                [self showToastHUD:@"修改密码成功，请重新登录" complete:^{
+                    JTDWeakSelf
+                    if (WeakSelf.callback){
+                        WeakSelf.callback(phoneNum, password);
+                    }
+                    [self.navigationController popViewControllerAnimated:YES];
+                }];
             }else if([responseData[@"status"] isEqualToString:failedCode]){
                 [WeakSelf showToastHUD:responseData[@"error"][@"message"] complete:nil];
             }
@@ -115,14 +122,12 @@
         NSLog(@"%ld",error);
     }];
 }
-    - (void)goToNearCommunity{
-        NearCommunityController *tabVC = [[NearCommunityController alloc] init];
-        NavigationViewController *navi = [[NavigationViewController alloc]initWithRootViewController:tabVC];
-        navi.navigationBar.hidden = YES;
-        UIWindow * window = [[UIApplication sharedApplication] keyWindow];
-        window.rootViewController = navi;
-        [window makeKeyAndVisible];
-    }
++(void)pushToForgotPasswordViewController:(UIViewController *)controller callBack:(ForgotPasswordCallback )callback{
+    
+    ForgotPasswordVC * VC = [[ForgotPasswordVC alloc]init];
+    VC.callback = callback;
+    [controller.navigationController pushViewController:VC animated:YES];
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
 }

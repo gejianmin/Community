@@ -8,16 +8,19 @@
 
 #import "BaseViewController.h"
 
-typedef void(^LoginViewControllerCallBack)(BaseViewController *VC);
+typedef void(^LoginSuccess)(void);
+typedef void(^LoginCancel)(void);
 
 @interface LoginViewController : BaseViewController
 
-/**
- 监听登录事件
- 
- @param callback 回调该控制器
- @return instance
- */
-+ (instancetype)showWithCallBack:(LoginViewControllerCallBack)callback;
+@property(nonatomic,copy) LoginSuccess   loginSuccess;
+@property(nonatomic,copy) LoginCancel    loginCanel;
+
+
++ (instancetype)showControllerWithSuccess:(LoginSuccess )loginSuccess cancel:(LoginCancel )loginCanel;
+    
+
 
 @end
+
+

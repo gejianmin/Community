@@ -9,6 +9,9 @@
 
 @interface LoginView ()
 
+    
+@property (nonatomic, strong) CustomBtn *cancelBtn;
+
 @property (nonatomic ,strong) UILabel *accountLabel;
 @property (nonatomic, strong) UILabel *passWordLabel;
 
@@ -34,16 +37,27 @@
 
 - (instancetype)initWithFrame:(CGRect)frame{
     if (self = [super initWithFrame:frame]) {
+        self.cancelBtn = [[CustomBtn alloc]initWithFrame:CGRectZero Tag:1004 Title:nil backgroundColor:kColorClear TitleTextColor:nil Font:0 Image:ImageNamed(@"icon_back")];
+        [self.cancelBtn addTarget:self action:@selector(loginEvent:) forControlEvents:UIControlEventTouchUpInside];
+        [self addSubview:self.cancelBtn];
+        
+        [self.cancelBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.left.equalTo(self.mas_left).offset(15);
+            make.top.equalTo(self.mas_top).offset(20);
+            make.height.equalTo(@20);
+            make.width.equalTo(@33);
+        }];
         
         UIImageView * iconView = [[UIImageView alloc]initWithFrame:CGRectMake(10, 10, 60, 60) color:kColorClear];
         [iconView makeCornerWithCornerRadius:8 borderWidth:0 borderColor:kColorClear];
         iconView.image = ImageNamed(@"icon");
         [self addSubview:iconView];
         [iconView mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.top.equalTo(self.mas_top).offset(20);
+            make.top.equalTo(self.mas_top).offset(20 + GSANavHeight);
             make.centerX.equalTo(self.mas_centerX);
             make.height.width.equalTo(@60);
         }];
+        
         self.accountBackView = [[UIView alloc] initWithFrame:CGRectMake(0, 200, SCREEN_WIDTH, 50)];
         [self addSubview:self.accountBackView];
         self.accountBackView.backgroundColor = [UIColor whiteColor];
@@ -66,7 +80,7 @@
         self.accountField.placeholder = @"请输入手机号";
         self.accountField.font = FONT(13);
         self.accountField.keyboardType = UIKeyboardTypePhonePad;
-        self.accountField.textColor = RGB(174, 174, 174);
+        self.accountField.textColor = kColorBlack;
         self.accountField.maxTextLength = 11;
         self.passWordBackView = [[UIView alloc] initWithFrame:CGRectMake(0, self.accountBackView.bottom + 8, SCREEN_WIDTH, 50)];
         [self addSubview:self.passWordBackView];
@@ -88,7 +102,7 @@
         self.passwordField.centerY = self.passWordBackView.height/2;
         self.passwordField.placeholder = @"请输入密码";
         self.passwordField.font = FONT(13);
-        self.passwordField.textColor = RGB(174, 174, 174);
+        self.passwordField.textColor = kColorBlack;
         
         
         self.loginButton = [UIButton buttonWithType:UIButtonTypeCustom];

@@ -17,12 +17,12 @@ typedef NS_ENUM(NSInteger, StateEnum)
 @interface JTDShareVC : BaseViewController
 
 @property (nonatomic, strong) JTDShareContent *shareContentModel;
-//@property (nonatomic, strong) JTDShareContent * model;
-//@property (nonatomic, assign) StateEnum  type;
+@property (nonatomic, strong) JTDShareContent * model;
+@property (nonatomic, assign) StateEnum  type;
 
 - (void)showPaySuccessWithResult:(StateEnum)result andController:(UIViewController *)controller;
     
-//+(instancetype)shareToController:(UIViewController *)controller shareModel:(JTDShareContent *)model shareType:(StateEnum)shareType;
++(void)shareToController:(UIViewController *)controller shareModel:(JTDShareContent *)model shareType:(StateEnum)shareType;
     
 @property (nonatomic,assign) StateEnum payState;
 

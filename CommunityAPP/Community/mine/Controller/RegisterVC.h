@@ -8,6 +8,10 @@
 
 #import "BaseViewController.h"
 
-@interface RegisterVC : BaseViewController
+typedef void(^RegisterCallback)(NSString * phone, NSString * password);
 
+@interface RegisterVC : BaseViewController
+ @property(nonatomic,copy) RegisterCallback   callback;
+    
++(void)pushToRegisterViewController:(UIViewController *)controller callBack:( RegisterCallback )callback;
 @end

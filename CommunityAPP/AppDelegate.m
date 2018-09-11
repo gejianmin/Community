@@ -34,13 +34,9 @@
     return YES;
 }
 - (void)selectMainWindow:(NSNotification *)notify{
-    if (kStringIsEmpty([[HHClient sharedInstance] user].token)) {/** 用户未登录*/
-        [self goToLogin];
-    }else if (!kStringIsEmpty([[HHClient sharedInstance] user].token)&&
-              kStringIsEmpty([[HHClient sharedInstance] user].org_id)){/** 用户已登录，未选择社区*/
+     if (kStringIsEmpty([[HHClient sharedInstance] user].org_id)){/**未选择社区*/
         [self goToNearCommunity];
-    }else if (!kStringIsEmpty([[HHClient sharedInstance] user].token)&&
-              !kStringIsEmpty([[HHClient sharedInstance] user].org_id)) {/** 用户已登录，已选择社区*/
+    }else if (!kStringIsEmpty([[HHClient sharedInstance] user].org_id)) {/**已选择社区*/
         [self gotoMainWindow];
     }else{
         

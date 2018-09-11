@@ -19,11 +19,9 @@
 #import "HHClient.h"
 @interface LoginViewController ()<LoginViewDelegate>
     
-    @property (nonatomic, strong) LoginView *logView;
+@property (nonatomic, strong) LoginView *logView;
     
-    @property (nonatomic,copy) LoginViewControllerCallBack  callback;
-    
-    @end
+@end
 
 @implementation LoginViewController
 -(void)viewWillAppear:(BOOL)animated{
@@ -34,7 +32,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.view.backgroundColor =RGB(250, 250, 250);
-    self.logView = [[LoginView alloc] initWithFrame:CGRectMake(0, 64, SCREEN_WIDTH, SCREEN_HEIGHT - 64)];
+    self.logView = [[LoginView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT - 64)];
     self.logView.delegate = self;
     [self.view addSubview:_logView];
     
@@ -58,8 +56,7 @@
             if([responseData[@"status"] isEqualToString:successCode]){
                 UserObjModel * model = [UserObjModel yy_modelWithJSON:responseData[@"data"]];
                 [[HHClient sharedInstance] setUser:model];
-                [self goToNearCommunity];
-
+                [self loginSuccessEvent];
             }else if([responseData[@"status"] isEqualToString:failedCode]){
                 [self showToastHUD:responseData[@"error"][@"message"] complete:nil];
             }
@@ -81,14 +78,20 @@
     switch (loginTag) {
         case 1001://注册
         {
-            RegisterVC * VC = [[RegisterVC alloc]init];
-            [self.navigationController pushViewController:VC animated:YES];
+            [RegisterVC pushToRegisterViewController:self callBack:^(NSString *phone, NSString *password) {
+                JTDWeakSelf
+                WeakSelf.logView.accountField.text = phone;
+                WeakSelf.logView.passwordField.text = password;
+            }];
         }
         break;
         case 1002://忘记密码
         {
-            ForgotPasswordVC * VC = [[ForgotPasswordVC alloc]init];
-            [self.navigationController pushViewController:VC animated:YES];
+            [ForgotPasswordVC pushToForgotPasswordViewController:self callBack:^(NSString *phone, NSString *password){
+                JTDWeakSelf
+                WeakSelf.logView.accountField.text = phone;
+                WeakSelf.logView.passwordField.text = password;
+            }];
         }
         break;
         case 1003://微信登录
@@ -97,12 +100,16 @@
                 if(success){
                     [self thirdLoginWith:model loginType:weChatLoginType];
                 }else{
-                    //                    [self showToastHUD:@"登录异常" complete:nil];
+                    [self showToastHUD:@"登录异常" complete:nil];
                 }
             }];
             
         }
         break;
+        case 1004:
+        {
+            [self loginCancelEvent];
+        }
         default:
         break;
     }
@@ -110,28 +117,17 @@
     
 }
 -(void)thirdLoginWith:(JTDUserInfoModel *)model loginType:(NSInteger )loginType{
-    
     [self showHUDText:nil];
-    NSString * sex;
-    NSString * openid;
-    if ([model.unionGender isEqualToString:@"男"]) {
-        sex = @"2";
-    }else{
-        sex = @"1";
-    }
-    if (loginType == sinaLoginType) {
-        openid = model.uid;
-    }else{
-        openid = model.openid;
-    }
     JTDWeakSelf
     LoginRequest * request = [[LoginRequest alloc]init];
-    [request setUserLoignWithThirdOpen_id:openid union_id:model.unionId];//model.unionId
+    [request setUserLoignWithThirdOpen_id:model.openid union_id:model.unionId];
     [request setFinishedBlock:^(id object, id responseData) {
         [self hideHUD];
         if(responseData){
             if([responseData[@"status"] isEqualToString:successCode]){
-                [WeakSelf goToNearCommunity];
+                UserObjModel * model = [UserObjModel yy_modelWithJSON:responseData[@"data"]];
+                [[HHClient sharedInstance] setUser:model];
+                [WeakSelf loginSuccessEvent];
             }else if([responseData[@"status"] isEqualToString:failedCode]){
                 [WeakSelf showToastHUD:responseData[@"error"][@"message"] complete:nil];
             }
@@ -139,9 +135,6 @@
     } failedBlock:^(NSInteger error, id responseData) {
         NSLog(@"%ld",error);
     }];
-    
-//    [self login];
-    
 }
 -(NSString *)getIdentifiesSting{
     
@@ -149,39 +142,47 @@
     NSString * adis = [adId stringByReplacingOccurrencesOfString:@"-" withString:@""];
     return adis;
 }
-- (void)login {
-    [self hideHUD];
-    HHLog(@"登录成功");
-    if (self.callback) {
-        self.callback(self);
-    }
-    
-}
-- (void)goToNearCommunity{
-    NearCommunityController *tabVC = [[NearCommunityController alloc] init];
-    NavigationViewController *navi = [[NavigationViewController alloc]initWithRootViewController:tabVC];
-    navi.navigationBar.hidden = YES;
-    UIWindow * window = [[UIApplication sharedApplication] keyWindow];
-    window.rootViewController = navi;
-    [window makeKeyAndVisible];
-}
-- (void)goToLogin{
-    LoginViewController *tabVC = [[LoginViewController alloc] init];
-    NavigationViewController *navi = [[NavigationViewController alloc]initWithRootViewController:tabVC];
-    navi.navigationBar.hidden = YES;
-    UIWindow * window = [[UIApplication sharedApplication] keyWindow];
-    window.rootViewController = navi;
-    [window makeKeyAndVisible];
-}
-+ (instancetype)showWithCallBack:(LoginViewControllerCallBack)callback {
-    UIWindow * window = [[UIApplication sharedApplication] keyWindow];
-    for (UIView * view  in window.subviews) {
-        [view removeAllSubviews];
-    }
+
+//- (void)goToNearCommunity{
+//    NearCommunityController *tabVC = [[NearCommunityController alloc] init];
+//    NavigationViewController *navi = [[NavigationViewController alloc]initWithRootViewController:tabVC];
+//    navi.navigationBar.hidden = YES;
+//    UIWindow * window = [[UIApplication sharedApplication] keyWindow];
+//    window.rootViewController = navi;
+//    [window makeKeyAndVisible];
+//}
+//- (void)goToLogin{
+//    LoginViewController *tabVC = [[LoginViewController alloc] init];
+//    NavigationViewController *navi = [[NavigationViewController alloc]initWithRootViewController:tabVC];
+//    navi.navigationBar.hidden = YES;
+//    UIWindow * window = [[UIApplication sharedApplication] keyWindow];
+//    window.rootViewController = navi;
+//    [window makeKeyAndVisible];
+//}
++ (instancetype)showControllerWithSuccess:(LoginSuccess )loginSuccess cancel:(LoginCancel )loginCanel{
     LoginViewController * vc = [[LoginViewController alloc] init];
-    window.rootViewController = vc;
-    vc.callback = callback;
+    vc.loginSuccess = loginSuccess;
+    vc.loginCanel = loginCanel;
+    NavigationViewController * nav = [[NavigationViewController alloc] initWithRootViewController:vc];
+    UIWindow * window = [[UIApplication sharedApplication] keyWindow];
+    [window.rootViewController presentViewController:nav animated:YES completion:nil];
     return vc;
+}
+-(void)loginSuccessEvent{
+    JTDWeakSelf
+    [self dismissViewControllerAnimated:YES completion:^{
+        if (WeakSelf.loginSuccess) {
+            WeakSelf.loginSuccess();
+        }
+    }];
+    }
+- (void)loginCancelEvent{
+    JTDWeakSelf
+    [self dismissViewControllerAnimated:YES completion:^{
+        if (WeakSelf.loginCanel) {
+            WeakSelf.loginCanel();
+        }
+    }];
 }
     
 - (void)setBar{
@@ -192,6 +193,8 @@
 - (void)back{
     NSLog(@"1111");
 }
+    
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
 }

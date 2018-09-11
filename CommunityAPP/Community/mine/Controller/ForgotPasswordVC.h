@@ -8,6 +8,12 @@
 
 #import "BaseViewController.h"
 
+typedef void(^ForgotPasswordCallback)(NSString * phone, NSString * password);
 @interface ForgotPasswordVC : BaseViewController
+    
+@property(nonatomic,copy) ForgotPasswordCallback   callback;
+    
++(void)pushToForgotPasswordViewController:(UIViewController *)controller callBack:(ForgotPasswordCallback )callback;
 
 @end
+

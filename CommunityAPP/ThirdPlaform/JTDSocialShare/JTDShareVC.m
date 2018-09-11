@@ -19,16 +19,16 @@
 
 @implementation JTDShareVC
 
-//+(instancetype)shareToController:(UIViewController *)controller shareModel:(JTDShareContent *)model shareType:(StateEnum)shareType{
-//    if (self == [self shareToController:controller shareModel:model shareType:shareType]){
-//        _model = model;
-//        _type = shareType;
-//        self.transitioningDelegate = self.transtionDelegate;
-//        self.modalPresentationStyle = UIModalPresentationCustom;
-//        [controller presentViewController:self animated:YES completion:nil];
-//    }
-//    return self;
-//}
++(void)shareToController:(UIViewController *)controller shareModel:(JTDShareContent *)model shareType:(StateEnum)shareType{
+    JTDShareVC * VC = [[JTDShareVC alloc]init];
+    VC.model = [[JTDShareContent alloc]init];
+    VC.model = model;
+    VC.type = shareType;
+    VC.transitioningDelegate = VC.transtionDelegate;
+    VC.modalPresentationStyle = UIModalPresentationCustom;
+    [controller presentViewController:VC animated:YES completion:nil];
+    
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor clearColor];
@@ -74,7 +74,7 @@
 }
 
 - (void)shareBtnClick:(UIButton *)btn{
-    [JTDSocialShare ShareUMSocial].shareContentModel=self.shareContentModel;
+    [JTDSocialShare ShareUMSocial].shareContentModel=self.model;
     [[JTDSocialShare ShareUMSocial] showSocialWithTag:btn.tag];
     [self dissMiss:nil];
 }

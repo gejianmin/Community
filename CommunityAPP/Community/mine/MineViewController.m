@@ -12,11 +12,16 @@
 #import "SetUpViewController.h"
 #import "LayerButton.h"
 #import "LayoutButton.h"
+#import "LoginViewController.h"
+
 @interface MineViewController ()
 
 @property (nonatomic,strong) UIView *headView;
 @property (nonatomic,strong) UIImageView *headImgView;
 @property (nonatomic,strong) UILabel *nameLabel;
+@property (nonatomic,strong) CustomBtn *loginBtn;
+@property (nonatomic,strong) CustomBtn *settingBtn;
+
 @property (nonatomic,strong) UILabel *jifenLabel;
 
 @property (nonatomic,strong) UILabel *yuer;
@@ -36,10 +41,19 @@
     self.view.backgroundColor = [UIColor whiteColor];
     
 //    [self.navBar setRightItemWithTarget:self action:@selector(setUp) normalImage:[UIImage imageNamed:@"set"] selectedImage:[UIImage imageNamed:@"set"]];
+    [self addRightBarItemWithImage:ImageNamed(@"set") target:self action:@selector(setUp)];
 
     self.headView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 200)];
     [self.view addSubview:self.headView];
     self.headView.backgroundColor = [UIColor redColor];
+    
+    self.settingBtn = [[CustomBtn alloc]initWithFrame:CGRectMake(self.headView.right + 10, 15, 25, 25) Tag:0 Title:nil backgroundColor:kColorClear TitleTextColor:kColorWhite Font:15.0 Image:ImageNamed(@"set")];
+    self.settingBtn.top = self.headView.top + 15;
+    self.settingBtn.left = self.headView.right - 40;
+    self.settingBtn.right = self.headView.right - 15;
+    [self.settingBtn addTarget:self action:@selector(setUp) forControlEvents:UIControlEventTouchUpInside];
+    [self.headView addSubview:self.settingBtn];
+    
     
     self.headImgView = [[UIImageView alloc] initWithFrame:CGRectMake(10, 100, 60, 60)];
     self.headImgView.backgroundColor = [UIColor grayColor];
@@ -47,14 +61,28 @@
     self.headImgView.layer.masksToBounds = YES;
     [self.headView addSubview:self.headImgView];
     
-    self.nameLabel = [[UILabel alloc] initWithFrame:CGRectMake(self.headImgView.right + 10, 0, 200, 16)];
-    self.nameLabel.text = @"点击登录";
-    self.nameLabel.centerY =self.headImgView.centerY;
-    self.nameLabel.textColor = [UIColor whiteColor];
-    self.nameLabel.font = FONT(15);
-    self.nameLabel.textAlignment = NSTextAlignmentLeft;
-    [self.headView addSubview:self.nameLabel];
+//    self.nameLabel = [[UILabel alloc] initWithFrame:CGRectMake(self.headImgView.right + 10, 0, 200, 16)];
+//    self.nameLabel.text = @"点击登录";
+//    self.nameLabel.centerY =self.headImgView.centerY;
+//    self.nameLabel.textColor = [UIColor whiteColor];
+//    self.nameLabel.font = FONT(15);
+//    self.nameLabel.textAlignment = NSTextAlignmentLeft;
+//    [self.headView addSubview:self.nameLabel];
     
+    self.loginBtn = [[CustomBtn alloc]initWithFrame:CGRectMake(self.headImgView.right + 10, 0, 200, 16) Tag:0 Title:@"点击登录" backgroundColor:kColorClear TitleTextColor:kColorWhite Font:15.0 Image:nil];
+    self.loginBtn.centerY = self.headImgView.centerY;
+    self.loginBtn.left = self.headImgView.right + 5;
+    self.loginBtn.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
+    [self.loginBtn addTarget:self action:@selector(loginBtnEvent:) forControlEvents:UIControlEventTouchUpInside];
+    [self.headView addSubview:self.loginBtn];
+//    if(![[HHClient sharedInstance]isLogin]){
+//        self.loginBtn.enabled = YES;
+//        [self.loginBtn setTitle:@"点击登录" forState:UIControlStateNormal];
+//    }else{
+//        NSString * mobile = [NSString stringWithFormat:@"%@",[[HHClient sharedInstance] user].mobile];
+//        [self.loginBtn setTitle:mobile forState:UIControlStateNormal];
+//        self.loginBtn.enabled = NO;
+//    }
     UIView *alphaView = [[UIView alloc] initWithFrame:CGRectMake(SCREEN_WIDTH - 110, 0, 300, 32)];
     [self.headView addSubview:alphaView];
     alphaView.backgroundColor = [UIColor whiteColor];
@@ -245,18 +273,26 @@
 }
 #pragma mark--分享
 -(void)shareEvent{
-    JTDShareVC *share = [[JTDShareVC alloc]init];
     JTDShareContent * model = [[JTDShareContent alloc]init];
     model.centent = @"赵万里";
     model.name = @"万里无云";
     model.images = @"icon";
-    share.shareContentModel = model;
-    [share showPaySuccessWithResult:PayStateShare andController:self];
+    [JTDShareVC shareToController:self shareModel:model shareType:PayStateShare];
 }
 #pragma mark--分享成功
 -(void)shareSuccess{
     [self showToastHUD:@"分享成功" complete:nil];
 }
+-(void)loginBtnEvent:(CustomBtn *)sender{
+    [LoginViewController showControllerWithSuccess:^{
+        NSString * mobile = [NSString stringWithFormat:@"%@",[[HHClient sharedInstance] user].mobile];
+        [self.loginBtn setTitle:mobile forState:UIControlStateNormal];
+        self.loginBtn.enabled = NO;
+    } cancel:^{
+        
+    }];
+}
+    
 - (void)orderList:(UIButton *)sender{
     switch (sender.tag - 1000) {
         case 0:

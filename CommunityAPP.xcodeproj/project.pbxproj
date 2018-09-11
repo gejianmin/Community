@@ -237,6 +237,7 @@
 		F224290F2143BCC20035D0F0 /* JTDSocialShare.m in Sources */ = {isa = PBXBuildFile; fileRef = F224290A2143BCC20035D0F0 /* JTDSocialShare.m */; };
 		F22429102143BCC20035D0F0 /* PresentTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = F224290B2143BCC20035D0F0 /* PresentTransition.m */; };
 		F24C5CEE21474F32003B5A87 /* HHClient.m in Sources */ = {isa = PBXBuildFile; fileRef = F24C5CED21474F32003B5A87 /* HHClient.m */; };
+		F24C5CF12147B005003B5A87 /* SettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F24C5CF02147B005003B5A87 /* SettingViewController.m */; };
 		F2ADAFA0214252C900837A98 /* HHKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F2ADAF9F214252C900837A98 /* HHKit.framework */; };
 /* End PBXBuildFile section */
 
@@ -694,6 +695,8 @@
 		F224290C2143BCC20035D0F0 /* CustomPresentation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomPresentation.h; sourceTree = "<group>"; };
 		F24C5CEC21474F32003B5A87 /* HHClient.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HHClient.h; sourceTree = "<group>"; };
 		F24C5CED21474F32003B5A87 /* HHClient.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HHClient.m; sourceTree = "<group>"; };
+		F24C5CEF2147B005003B5A87 /* SettingViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SettingViewController.h; sourceTree = "<group>"; };
+		F24C5CF02147B005003B5A87 /* SettingViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SettingViewController.m; sourceTree = "<group>"; };
 		F2ADAF9F214252C900837A98 /* HHKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = HHKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -1231,6 +1234,8 @@
 				50DCAE5620510F0C00FE4370 /* MessageCenterController.m */,
 				50388DBD2057C761001AB86B /* SetUpViewController.h */,
 				50388DBE2057C761001AB86B /* SetUpViewController.m */,
+				F24C5CEF2147B005003B5A87 /* SettingViewController.h */,
+				F24C5CF02147B005003B5A87 /* SettingViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1871,6 +1876,7 @@
 				8614B7D820F461A40086546E /* MBProgressHUD.m in Sources */,
 				86E907D720EB58F100208132 /* InterPostInfoCell.m in Sources */,
 				5091B5721FE79CF8003797EF /* InterTopicListModel.m in Sources */,
+				F24C5CF12147B005003B5A87 /* SettingViewController.m in Sources */,
 				504BDF6B1FDA35B70028D59D /* RequestBaseModel.m in Sources */,
 				5091B5811FE7A46E003797EF /* InterNearPostResponse.m in Sources */,
 				5015EE721FD91AF400D1637B /* RegisterRequest.m in Sources */,
