@@ -44,9 +44,12 @@
         [self.contentView addSubview:self.watchImgView];
         
         self.zanImgView = [[UIImageView alloc] init];
+        self.zanImgView.backgroundColor = [UIColor yellowColor];
         UIImage *zanImg = [UIImage imageNamed:@"weidianzan"];
         self.zanImgView.image = zanImg;
-        self.zanImgView.size = zanImg.size;
+        self.zanImgView.width = 20;
+        self.zanImgView.height = 20;
+//        self.zanImgView.size = zanImg.size;
         [self.contentView addSubview:self.zanImgView];
         
         self.watchLabel = [[UILabel alloc] init];
@@ -55,6 +58,7 @@
         [self.contentView addSubview:self.watchLabel];
         
         self.zanLabel = [[UILabel alloc] init];
+        self.zanLabel.backgroundColor = [UIColor redColor];
         self.zanLabel.textColor = RGB(150, 150, 150);
         self.zanLabel.font = FONT(13);
         [self.contentView addSubview:self.zanLabel];
