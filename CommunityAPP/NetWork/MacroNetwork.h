@@ -10,10 +10,13 @@
 
 //注册
 
-#define registerCode @"sms/registerCode"
+#define registerCode @"sms/registerCode"//获取验证码
 #define Register       @"members/create"
 #define Login       @"auth"
 #define NearVillage  @"villages/getNearVillage"
+
+#define resetPasswd @"sms/resetPasswd"//获取验证码
+#define forgetPassword @"members/forgetPassword"//忘记密码
 
 
 //资讯页面

@@ -65,6 +65,7 @@
         self.accountField.centerY = self.accountBackView.height/2;
         self.accountField.placeholder = @"请输入手机号";
         self.accountField.font = FONT(13);
+        self.accountField.keyboardType = UIKeyboardTypePhonePad;
         self.accountField.textColor = RGB(174, 174, 174);
         self.accountField.maxTextLength = 11;
         self.passWordBackView = [[UIView alloc] initWithFrame:CGRectMake(0, self.accountBackView.bottom + 8, SCREEN_WIDTH, 50)];

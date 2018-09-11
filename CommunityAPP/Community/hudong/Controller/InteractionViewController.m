@@ -117,7 +117,7 @@ typedef NS_ENUM(NSInteger,RefreshState) {
     __weak typeof(self) tyself = self;
     InterAPPButtonRequest *request = [[InterAPPButtonRequest alloc] init];
     
-    NSString *ord_ID = [UserObjModel shareIntance].vid;
+    NSString *ord_ID = [[HHClient sharedInstance] user].vid;
     [request interAPPButtonRequestWithID:ord_ID];
     [request setFinishedBlock:^(id object, id responseData) {
         
@@ -193,8 +193,8 @@ typedef NS_ENUM(NSInteger,RefreshState) {
     __weak typeof(self) tyself = self;
     InterNearPostRequest *request = [[InterNearPostRequest alloc] init];
     
-    CGFloat lng = [UserObjModel shareIntance].lng;
-    CGFloat lat = [UserObjModel shareIntance].lat;
+    CGFloat lng = [[HHClient sharedInstance] user].lng;
+    CGFloat lat = [[HHClient sharedInstance] user].lat;
     
     CGFloat miters = 0;
     if ([_rightTitle containsString:@"3"]) {
@@ -239,7 +239,7 @@ typedef NS_ENUM(NSInteger,RefreshState) {
     __weak typeof(self) tyself = self;
     InterCarouseRequest *request = [[InterCarouseRequest alloc] init];
     
-    NSString *ord_ID = [UserObjModel shareIntance].vid;
+    NSString *ord_ID = [[HHClient sharedInstance] user].vid;
     [request interCarouseRequestWithID:ord_ID];
     [request setFinishedBlock:^(id object, id responseData) {
         

@@ -16,4 +16,10 @@
  @param password 密码
  */
 - (void)setUserLoignWith:(NSString *)mobile password:(NSString *)password;
+    /**
+     第三方用户登录
+     @param open_id 手机号
+     @param password 密码
+     */
+- (void)setUserLoignWithThirdOpen_id:(NSString *)open_id union_id:(NSString *)union_id;
 @end

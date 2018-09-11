@@ -94,10 +94,10 @@
     [self setCommunity:model];
 }
 - (void)setCommunity:(CommunityModel *)model{
-    [UserObjModel shareIntance].address = model.address;
-    [UserObjModel shareIntance].vid = model.vid;
-    [UserObjModel shareIntance].org_id = model.org_id;
-    [UserObjModel shareIntance].org_name = model.org_name;
+    [[HHClient sharedInstance] user].address = model.address;
+    [[HHClient sharedInstance] user].vid = model.vid;
+    [[HHClient sharedInstance] user].org_id = model.org_id;
+    [[HHClient sharedInstance] user].org_name = model.org_name;
     [[NSNotificationCenter defaultCenter] postNotificationName:SelectMainWindow object:nil];
 }
 - (void)setBMKLocation{
@@ -155,8 +155,8 @@
                 return;
             }
             CLLocationCoordinate2D  coordinate = location.location.coordinate;
-            [UserObjModel shareIntance].lat = coordinate.latitude;
-            [UserObjModel shareIntance].lng = coordinate.longitude;
+            [[HHClient sharedInstance] user].lat = coordinate.latitude;
+            [[HHClient sharedInstance] user].lng = coordinate.longitude;
             [self setNearVillageRequestWith:coordinate.latitude log:coordinate.longitude];
             _location = location;
             

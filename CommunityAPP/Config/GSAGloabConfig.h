@@ -103,4 +103,13 @@ static NSString * const PSDefaultIconImage = @"icon_top_bg";/*!< icon默认图*/
 /*!< 友盟分享*/
 #define USHARE_APPKEY @"5b9381ccb27b0a22830005c6"
 static NSString * kUMengShareNotification = @"kUMengShareNotification";
+/*!< code码*/
+#define successCode @"success"
+#define failedCode @"failed"
+#define ACCESSTOKEN @"ACCESSTOKEN"
+
+
+
+
+
 #endif /* GSAGloabConfig_h */
