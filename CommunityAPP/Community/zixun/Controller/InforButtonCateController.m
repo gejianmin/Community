@@ -42,11 +42,11 @@
         } else {
         }
     }
-    
-//    self.tableView.frame = CGRectMake(0, 52, SCREEN_WIDTH, self.view.height - 52);
-    [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(@52);
+
+    [self.tableView mas_remakeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(self.view.mas_top).offset(50);
         make.left.right.bottom.mas_equalTo(self.view);
+
     }];
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     
@@ -137,7 +137,7 @@
     configure.titleSelectedColor = [UIColor redColor];
     configure.indicatorColor = [UIColor redColor];
     
-    SGPageTitleView *pageTitleView = [SGPageTitleView pageTitleViewWithFrame:CGRectMake(2.0f, 0, SCREEN_WIDTH, 50) delegate:self titleNames:titleArray configure:configure];
+    SGPageTitleView *pageTitleView = [SGPageTitleView pageTitleViewWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 50) delegate:self titleNames:titleArray configure:configure];
     pageTitleView.backgroundColor = [UIColor whiteColor];
     pageTitleView.isShowBottomSeparator = NO;
     pageTitleView.isNeedBounces = NO;
@@ -195,6 +195,11 @@
     
     ArtDetailViewController *vc = [[ArtDetailViewController alloc] init];
     vc.art_id =model.article_id;
+    vc.titleContent = model.title;
+    vc.createTime = model.create_time;
+    vc.zanNum = model.favorites;
+    
+    vc.articleModel = model;
     [self.navigationController pushViewController:vc animated:YES];
 
 }

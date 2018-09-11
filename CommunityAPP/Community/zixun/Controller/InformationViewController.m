@@ -123,7 +123,7 @@
     self.areaSelecotorV = [[AreaSelectorView alloc]initWithFrame:CGRectMake(0, 40,220, 30)];
     self.areaSelecotorV.clickBlock = ^{
        
-        [UserObjModel shareIntance].org_id = nil;
+        [HHClient sharedInstance].user.org_id = nil;
         [[NSNotificationCenter defaultCenter] postNotificationName:SelectMainWindow object:nil];
         
     };
