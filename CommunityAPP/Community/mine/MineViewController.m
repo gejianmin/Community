@@ -12,7 +12,6 @@
 #import "SetUpViewController.h"
 #import "LayerButton.h"
 #import "LayoutButton.h"
-
 @interface MineViewController ()
 
 @property (nonatomic,strong) UIView *headView;
@@ -242,11 +241,26 @@
             currentH = button.bottom;
         }
     }
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(shareSuccess) name:kUMengShareNotification object:nil];
+}
+#pragma mark--分享
+-(void)shareEvent{
+    JTDShareVC *share = [[JTDShareVC alloc]init];
+    JTDShareContent * model = [[JTDShareContent alloc]init];
+    model.centent = @"赵万里";
+    model.name = @"万里无云";
+    model.images = @"icon";
+    share.shareContentModel = model;
+    [share showPaySuccessWithResult:PayStateShare andController:self];
+}
+#pragma mark--分享成功
+-(void)shareSuccess{
+    [self showToastHUD:@"分享成功" complete:nil];
 }
 - (void)orderList:(UIButton *)sender{
     switch (sender.tag - 1000) {
         case 0:
-            
+        [self shareEvent];
             break;
         case 1:
         {

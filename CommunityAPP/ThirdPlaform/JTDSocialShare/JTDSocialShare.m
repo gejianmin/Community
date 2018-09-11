@@ -25,12 +25,11 @@
 }
 -(void)setShareContentModel:(JTDShareContent *)shareContentModel{
     _shareContentModel = shareContentModel;
-//    shareContentModel.shareURL=[NSString stringWithFormat:@"%@%@uid=%@&d_id=%@",kDefaultBaseURL,ICPath_UserShare_H5,[[[HHClient sharedInstance]user]userId],shareContentModel.d_Id];
-    shareContentModel.shareTitle=[NSString stringWithFormat:@"%@的这个萌宠太有意思了",shareContentModel.name];
+    shareContentModel.shareURL=[NSString stringWithFormat:@"%@",@"www.baidu.com"];
+    shareContentModel.shareTitle=[NSString stringWithFormat:@"%@",shareContentModel.name];
     shareContentModel.shareContent = shareContentModel.centent?:@" ";
-    NSArray * array = [NSString stringTrasformtoArray:shareContentModel.images];
     UIImageView * simage = [[UIImageView alloc]init];
-//    [simage sd_setImageWithURL:[NSURL URLWithString:IMAGERURL(array.firstObject)] placeholderImage:ImageNamed(@"icon-logo")];
+    [simage sd_setImageWithURL:nil placeholderImage:ImageNamed(@"icon")];
     shareContentModel.shareImage=simage.image;
 }
 #pragma mark--分享
@@ -40,7 +39,7 @@
         
         //        self.shareContentModel=[HHShareContent fualCardShareMode];
     }
-    NSArray *snsArray = @[@(UMSocialPlatformType_QQ),@(UMSocialPlatformType_WechatSession),@(UMSocialPlatformType_WechatTimeLine),@(UMSocialPlatformType_Sina)];
+    NSArray *snsArray = @[@(UMSocialPlatformType_QQ),@(UMSocialPlatformType_Qzone),@(UMSocialPlatformType_WechatSession),@(UMSocialPlatformType_WechatTimeLine)];
     
     UMShareWebpageObject *shareObject=[UMShareWebpageObject shareObjectWithTitle:self.shareContentModel.shareTitle descr:self.shareContentModel.shareContent thumImage:self.shareContentModel.shareImage];
     
