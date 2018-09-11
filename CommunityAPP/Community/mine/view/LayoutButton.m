@@ -41,7 +41,6 @@
     return self;
 }
 - (CGRect)imageRectForContentRect:(CGRect)contentRect{
-    NSLog(@"444");
     UIImage *image = [UIImage imageNamed:_imageName];
     return CGRectMake((self.bounds.size.width - image.size.width)/2, 0, image.size.width, image.size.width);
 }

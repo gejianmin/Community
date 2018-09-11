@@ -10,10 +10,6 @@
 #import <UShareUI/UShareUI.h>
 #import <UMCommon/UMCommon.h>
 
-/*
- App Key：2749079857
- App Secret：071ed7341a438c18d48b6e32d14ed613
- */
 #define QQAPP_ID @"1106389887"
 #define QQAPP_KEY @"wVcD6m1sbGzAqiuT"
 #define WECHATAPP_ID @"wx0b0a05160fd4a3b0"

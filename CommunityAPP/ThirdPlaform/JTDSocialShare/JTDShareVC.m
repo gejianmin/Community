@@ -19,6 +19,16 @@
 
 @implementation JTDShareVC
 
+//+(instancetype)shareToController:(UIViewController *)controller shareModel:(JTDShareContent *)model shareType:(StateEnum)shareType{
+//    if (self == [self shareToController:controller shareModel:model shareType:shareType]){
+//        _model = model;
+//        _type = shareType;
+//        self.transitioningDelegate = self.transtionDelegate;
+//        self.modalPresentationStyle = UIModalPresentationCustom;
+//        [controller presentViewController:self animated:YES completion:nil];
+//    }
+//    return self;
+//}
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor clearColor];
@@ -28,19 +38,20 @@
     [self.view addSubview:self.backView];
     UILabel *label = [[UILabel alloc]initWithFrame:CGRectMake(0, 20, HH_SCREEN_W, 20)];
     label.textAlignment = NSTextAlignmentCenter;
-    label.text = @"分享至";
+    label.text = @"选择分享平台";
     label.font = [UIFont systemFontOfSize:14];
     label.textColor = [UIColor blackColor];
     UIView *line = [[UIView alloc]initWithFrame:CGRectMake(0, CGRectGetMaxY(label.frame) + 20, _backView.frame.size.width, 0.5)];
     line.backgroundColor = kColorWhite1;
     
-    NSArray *title = @[@"QQ",@"微信好友",@"朋友圈",@"微博",];
-    NSArray *image = @[@"qq_icon",@"wechat_icon",@"wechatTimeline_icon",@"sina_icon"];
-    CGFloat width = 60;
-    CGFloat height = 80;
+    NSArray *title = @[@"QQ好友",@"QQ空间",@"微信",@"朋友圈"];//
+    NSArray *image = @[@"share_qq",@"share_qzone",@"share_weixin",@"share_friend"];
+    CGFloat width = 80;
+    CGFloat height = 90;
     CGFloat spacing = (_backView.frame.size.width - width *4) / 5;
     for (int i = 0; i <title.count ; i++) {
         UIButton * btn = [UIButton buttonWithType:UIButtonTypeCustom];
+//        btn.backgroundColor = kColorRed;
         btn.titleLabel.font = [UIFont systemFontOfSize:14];
         btn.frame = CGRectMake(spacing + (spacing + width)*i, CGRectGetMaxY(line.frame)+ 40, width, height);
         btn.tag = 1000 + i;
@@ -63,11 +74,9 @@
 }
 
 - (void)shareBtnClick:(UIButton *)btn{
-    
     [JTDSocialShare ShareUMSocial].shareContentModel=self.shareContentModel;
     [[JTDSocialShare ShareUMSocial] showSocialWithTag:btn.tag];
     [self dissMiss:nil];
-    
 }
 -(UIView *)backView{
     if (!_backView) {
@@ -110,6 +119,7 @@
     
     [self dismissViewControllerAnimated:YES completion:^{}];
 }
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

@@ -30,6 +30,7 @@
 #import "CustomBtn.h"
 #import "CustomLab.h"
 #import "HHClient.h"
+#import "JTDShareVC.h""
 //#import "UINavigationController+FDFullscreenPopGesture.h"
 
 #define SCREEN_WIDTH                    CGRectGetWidth([[UIScreen mainScreen] bounds])
