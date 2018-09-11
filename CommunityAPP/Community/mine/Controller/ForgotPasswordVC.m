@@ -7,13 +7,15 @@
 //
 
 #import "ForgotPasswordVC.h"
-
+#import "RegisterRequest.h"
 #import "ForgotView.h"
+#import "NearCommunityController.h"
+#import "NavigationViewController.h"
 @interface ForgotPasswordVC ()<ForgotViewDelegate>
-
-@property (nonatomic, strong) ForgotView * forgotView;
-
-@end
+    
+    @property (nonatomic, strong) ForgotView * forgotView;
+    
+    @end
 
 @implementation ForgotPasswordVC
 -(void)viewWillAppear:(BOOL)animated{
@@ -32,7 +34,7 @@
     self.forgotView.backgroundColor = kColorGray9;
     [self.view addSubview:_forgotView];
 }
--(void)forgotViewGetVFButtonWithPhoneNum:(NSString *)phoneNum{
+-(void)forgotViewGetVFWithButton:(HHCaptchaButton *)sender phoneNum:(NSString *)phoneNum{
     if (phoneNum.length==0) {
         [self showToastHUD:@"手机号码不能为空" complete:nil ];
         return;
@@ -40,19 +42,20 @@
         [self showToastHUD:@"您输入的手机号码格式不正确" complete:nil ];
     }else{
         [self showHUDText:@"验证码发送中..."];
-        
-        
-        //        [[[HHClient sharedInstance] sessionManager] IC_Post:ICPath_GetCode params:@{@"phone":self.mobileTF.text} complete:^(id response, HHError *error) {
-        //            [WeakSelf hideHUD];
-        //            if (error) {
-        //                [WeakSelf showToastHUD:error.errorDescription complete:nil];
-        //            }else{
-        //
-        //                sender.enabled=NO;
-        //                [sender startTimer];
-        //                //                [WeakSelf showToastHUD:@"验证码发送成功" complete:nil];
-        //            }
-        //        }];
+        RegisterRequest * request = [[RegisterRequest alloc]init];
+        [request setUserforgotPasswordGetCodeWith:phoneNum];
+        [request setFinishedBlock:^(id object, id responseData) {
+            [self hideHUD];
+            NSLog(@"返回值==%@",responseData);
+            sender.enabled=NO;
+            [sender startTimer];
+            //        tyself.model = object;
+            //        [tyself fullData:tyself.model.communityArray];
+            
+            
+        } failedBlock:^(NSInteger error, id responseData) {
+            NSLog(@"%ld",error);
+        }];
     }
     
     
@@ -95,11 +98,34 @@
             return;
         }
     }
-    
+    RegisterRequest * request = [[RegisterRequest alloc]init];
+    [request setUserResetPasswordWith:phoneNum code:VCNum password:password cpassword:repassword];
+    [request setFinishedBlock:^(id object, id responseData) {
+        
+        JTDWeakSelf
+        if(responseData){
+            if([responseData[@"status"] isEqualToString:successCode]){
+                [self goToNearCommunity];
+            }else if([responseData[@"status"] isEqualToString:failedCode]){
+                [WeakSelf showToastHUD:responseData[@"error"][@"message"] complete:nil];
+            }
+        }
+        
+    } failedBlock:^(NSInteger error, id responseData) {
+        NSLog(@"%ld",error);
+    }];
 }
+    - (void)goToNearCommunity{
+        NearCommunityController *tabVC = [[NearCommunityController alloc] init];
+        NavigationViewController *navi = [[NavigationViewController alloc]initWithRootViewController:tabVC];
+        navi.navigationBar.hidden = YES;
+        UIWindow * window = [[UIApplication sharedApplication] keyWindow];
+        window.rootViewController = navi;
+        [window makeKeyAndVisible];
+    }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
 }
-
-
-@end
+    
+    
+    @end

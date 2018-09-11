@@ -7,10 +7,41 @@
 //
 
 #import "UserObjModel.h"
+#define kFastDecode u_int count=0;\
+objc_property_t *properties=class_copyPropertyList([self class], &count);\
+for (int i=0; i<count; i++) {\
+const char* pname=property_getName(properties[i]);\
+NSString *key=[NSString stringWithUTF8String:pname];\
+id value=[aDecoder decodeObjectForKey:key];\
+if (value) {\
+[self setValue:value forKey:key];\
+}\
+}\
+free(properties);
+
+#define kFastEncode     u_int count=0;\
+objc_property_t *properties=class_copyPropertyList([self class], &count);\
+for (int i=0; i<count; i++) {\
+const char* pname=property_getName(properties[i]);\
+NSString *key=[NSString stringWithUTF8String:pname];\
+id value=[self valueForKey:key];\
+[aCoder encodeObject:value forKey:key];\
+}\
+free(properties);
 
 static UserObjModel *userObj = nil;
-@implementation UserObjModel
 
+@implementation UserObjModel
+-(instancetype)initWithCoder:(NSCoder *)aDecoder{
+        if (self=[super init]) {
+            kFastDecode
+        }
+        return self;
+    }
+-(void)encodeWithCoder:(NSCoder *)aCoder{
+    kFastEncode
+}
+    
 + (instancetype)shareIntance{
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
@@ -26,5 +57,6 @@ static UserObjModel *userObj = nil;
     }
     return self;
 }
-
+    
 @end
+

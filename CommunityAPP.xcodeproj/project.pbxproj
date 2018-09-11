@@ -236,6 +236,7 @@
 		F224290E2143BCC20035D0F0 /* JTDShareVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F22429092143BCC20035D0F0 /* JTDShareVC.m */; };
 		F224290F2143BCC20035D0F0 /* JTDSocialShare.m in Sources */ = {isa = PBXBuildFile; fileRef = F224290A2143BCC20035D0F0 /* JTDSocialShare.m */; };
 		F22429102143BCC20035D0F0 /* PresentTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = F224290B2143BCC20035D0F0 /* PresentTransition.m */; };
+		F24C5CEE21474F32003B5A87 /* HHClient.m in Sources */ = {isa = PBXBuildFile; fileRef = F24C5CED21474F32003B5A87 /* HHClient.m */; };
 		F2ADAFA0214252C900837A98 /* HHKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F2ADAF9F214252C900837A98 /* HHKit.framework */; };
 /* End PBXBuildFile section */
 
@@ -691,6 +692,8 @@
 		F224290A2143BCC20035D0F0 /* JTDSocialShare.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JTDSocialShare.m; sourceTree = "<group>"; };
 		F224290B2143BCC20035D0F0 /* PresentTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PresentTransition.m; sourceTree = "<group>"; };
 		F224290C2143BCC20035D0F0 /* CustomPresentation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomPresentation.h; sourceTree = "<group>"; };
+		F24C5CEC21474F32003B5A87 /* HHClient.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HHClient.h; sourceTree = "<group>"; };
+		F24C5CED21474F32003B5A87 /* HHClient.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HHClient.m; sourceTree = "<group>"; };
 		F2ADAF9F214252C900837A98 /* HHKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = HHKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -1558,6 +1561,8 @@
 				50D77ACF1FE0CA91007052E7 /* UserObjModel.m */,
 				8614B7D920F463AB0086546E /* AppDelegateTool.h */,
 				8614B7DA20F463AB0086546E /* AppDelegateTool.m */,
+				F24C5CEC21474F32003B5A87 /* HHClient.h */,
+				F24C5CED21474F32003B5A87 /* HHClient.m */,
 			);
 			path = Tool;
 			sourceTree = "<group>";
@@ -2017,6 +2022,7 @@
 				86567D5A20EE250600106A6F /* IKHeightPickerView.m in Sources */,
 				5079411F1FE563100093CDF9 /* MJRefreshAutoFooter.m in Sources */,
 				50BFFA431FD51FD9005F35CA /* BaseRequest.m in Sources */,
+				F24C5CEE21474F32003B5A87 /* HHClient.m in Sources */,
 				8614B7C920F461840086546E /* JYBBaseViewController.m in Sources */,
 				50BFFAF61FD52818005F35CA /* NSString+JKTrims.m in Sources */,
 				F224290F2143BCC20035D0F0 /* JTDSocialShare.m in Sources */,

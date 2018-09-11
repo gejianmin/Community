@@ -125,8 +125,8 @@
     return _getValidateBtn;
 }
 -(void)getValidateButtonAction:(HHCaptchaButton *)sender{
-    if ([self .delegate respondsToSelector:@selector(forgotViewGetVFButtonWithPhoneNum:)]) {
-        [self.delegate forgotViewGetVFButtonWithPhoneNum:self.phoneNumField.text];
+    if ([self .delegate respondsToSelector:@selector(forgotViewGetVFWithButton: phoneNum:)]) {
+        [self.delegate forgotViewGetVFWithButton:sender phoneNum:self.phoneNumField.text];
     }
     
     

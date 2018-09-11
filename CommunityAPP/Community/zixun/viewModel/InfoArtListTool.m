@@ -18,7 +18,7 @@
     _reqStatus = RequestStatus_Responding;
     
     InforVillage_ListRequest *request = [[InforVillage_ListRequest alloc] init];
-    NSString *ord_ID = [UserObjModel shareIntance].vid;
+    NSString *ord_ID = [[HHClient sharedInstance] user].vid;
     [request InforVillage_ListRequestWithCat_id:_cat_id vid:ord_ID page:_pageIndex];
     [request setFinishedBlock:^(id object, id responseData) {
         

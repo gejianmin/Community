@@ -19,6 +19,7 @@
 #import <SVProgressHUD.h>
 #import <Masonry.h>
 #import <HHKit/HHKit.h>
+#import <YYModel/YYModel.h>
 
 #import "GSAColorConfig.h"
 #import "UIView+Shadow.h"
@@ -28,6 +29,7 @@
 #import "HHTextField.h"
 #import "CustomBtn.h"
 #import "CustomLab.h"
+#import "HHClient.h"
 //#import "UINavigationController+FDFullscreenPopGesture.h"
 
 #define SCREEN_WIDTH                    CGRectGetWidth([[UIScreen mainScreen] bounds])

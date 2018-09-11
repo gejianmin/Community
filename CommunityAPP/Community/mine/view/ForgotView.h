@@ -14,7 +14,7 @@
 @optional
 
 - (void)forgotViewDidLoginWithPhoneNum:(NSString *)phoneNum VFNum:(NSString *)VCNum password:(NSString *)password rePassword:(NSString *)repassword;
-- (void)forgotViewGetVFButtonWithPhoneNum:(NSString *)phoneNum;;
+- (void)forgotViewGetVFWithButton:(HHCaptchaButton *)sender phoneNum:(NSString *)phoneNum;
 
 @end
 

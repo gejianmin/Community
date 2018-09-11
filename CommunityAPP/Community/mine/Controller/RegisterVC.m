@@ -9,6 +9,8 @@
 #import "RegisterVC.h"
 #import "RegisterView.h"
 #import "RegisterRequest.h"
+#import "NearCommunityController.h"
+#import "NavigationViewController.h"
 @interface RegisterVC ()<RegisterViewDelegate>
 
 @property (nonatomic, strong) RegisterView *registerView;
@@ -56,17 +58,6 @@
         } failedBlock:^(NSInteger error, id responseData) {
             NSLog(@"%ld",error);
         }];
-//        [[[HHClient sharedInstance] sessionManager] IC_Post:ICPath_GetCode params:@{@"phone":self.mobileTF.text} complete:^(id response, HHError *error) {
-//            [WeakSelf hideHUD];
-//            if (error) {
-//                [WeakSelf showToastHUD:error.errorDescription complete:nil];
-//            }else{
-//
-//                sender.enabled=NO;
-//                [sender startTimer];
-//                //                [WeakSelf showToastHUD:@"验证码发送成功" complete:nil];
-//            }
-//        }];
     }
     
     
@@ -109,7 +100,31 @@
             return;
         }
     }
+    RegisterRequest * request = [[RegisterRequest alloc]init];
+    [request setUserRegisterWith:phoneNum code:VCNum password:password cpassword:repassword];
+    [request setFinishedBlock:^(id object, id responseData) {
+        JTDWeakSelf
+        if(responseData){
+            if([responseData[@"status"] isEqualToString:successCode]){
+                [self goToNearCommunity];
+            }else if([responseData[@"status"] isEqualToString:failedCode]){
+                [WeakSelf showToastHUD:responseData[@"error"][@"message"] complete:nil];
+            }
+        }
+        
+        
+    } failedBlock:^(NSInteger error, id responseData) {
+        NSLog(@"%ld",error);
+    }];
     
+}
+- (void)goToNearCommunity{
+    NearCommunityController *tabVC = [[NearCommunityController alloc] init];
+    NavigationViewController *navi = [[NavigationViewController alloc]initWithRootViewController:tabVC];
+    navi.navigationBar.hidden = YES;
+    UIWindow * window = [[UIApplication sharedApplication] keyWindow];
+    window.rootViewController = navi;
+    [window makeKeyAndVisible];
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
