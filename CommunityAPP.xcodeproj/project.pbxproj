@@ -161,6 +161,9 @@
 		50BFFB111FD5282D005F35CA /* UITableView+YRSafeCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 50BFFB0B1FD5282D005F35CA /* UITableView+YRSafeCategory.m */; };
 		50BFFB151FD528FB005F35CA /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 50BFFB141FD528FB005F35CA /* Reachability.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		50BFFB181FD52A78005F35CA /* InteractionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 50BFFB171FD52A78005F35CA /* InteractionViewController.m */; };
+		50C2F3FC21478F540048E5CB /* ArtDetailBottomView.m in Sources */ = {isa = PBXBuildFile; fileRef = 50C2F3FB21478F540048E5CB /* ArtDetailBottomView.m */; };
+		50C2F3FE21478F800048E5CB /* ArtDetailBottomView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 50C2F3FD21478F800048E5CB /* ArtDetailBottomView.xib */; };
+		50C2F4022147AF090048E5CB /* GuidePagesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 50C2F4002147AF090048E5CB /* GuidePagesViewController.m */; };
 		50CA871221421DB100D1A204 /* AreaSelectorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 50CA871121421DB100D1A204 /* AreaSelectorView.m */; };
 		50D77AD01FE0CA91007052E7 /* UserObjModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 50D77ACF1FE0CA91007052E7 /* UserObjModel.m */; };
 		50D77AD41FE10949007052E7 /* InforVillage_AppButtonRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 50D77AD31FE10949007052E7 /* InforVillage_AppButtonRequest.m */; };
@@ -540,6 +543,11 @@
 		50BFFB141FD528FB005F35CA /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 		50BFFB161FD52A78005F35CA /* InteractionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InteractionViewController.h; sourceTree = "<group>"; };
 		50BFFB171FD52A78005F35CA /* InteractionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InteractionViewController.m; sourceTree = "<group>"; };
+		50C2F3FA21478F540048E5CB /* ArtDetailBottomView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ArtDetailBottomView.h; sourceTree = "<group>"; };
+		50C2F3FB21478F540048E5CB /* ArtDetailBottomView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ArtDetailBottomView.m; sourceTree = "<group>"; };
+		50C2F3FD21478F800048E5CB /* ArtDetailBottomView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ArtDetailBottomView.xib; sourceTree = "<group>"; };
+		50C2F4002147AF090048E5CB /* GuidePagesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GuidePagesViewController.m; sourceTree = "<group>"; };
+		50C2F4012147AF090048E5CB /* GuidePagesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GuidePagesViewController.h; sourceTree = "<group>"; };
 		50CA871021421DB100D1A204 /* AreaSelectorView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AreaSelectorView.h; sourceTree = "<group>"; };
 		50CA871121421DB100D1A204 /* AreaSelectorView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AreaSelectorView.m; sourceTree = "<group>"; };
 		50D77ACE1FE0CA91007052E7 /* UserObjModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UserObjModel.h; sourceTree = "<group>"; };
@@ -1347,6 +1355,9 @@
 				502473AF1FE29D22002EA673 /* InfoCategaryCell.m */,
 				50CA871021421DB100D1A204 /* AreaSelectorView.h */,
 				50CA871121421DB100D1A204 /* AreaSelectorView.m */,
+				50C2F3FA21478F540048E5CB /* ArtDetailBottomView.h */,
+				50C2F3FB21478F540048E5CB /* ArtDetailBottomView.m */,
+				50C2F3FD21478F800048E5CB /* ArtDetailBottomView.xib */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -1383,19 +1394,12 @@
 		50BFFA871FD52728005F35CA /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				50C2F3FF2147AEF00048E5CB /* Controller */,
 				50D77ACD1FE0CA80007052E7 /* Tool */,
-				50BFFA8B1FD52728005F35CA /* Controller */,
 				50BFFA8C1FD52728005F35CA /* Model */,
 				50BFFA8D1FD52728005F35CA /* Views */,
 			);
 			path = Common;
-			sourceTree = "<group>";
-		};
-		50BFFA8B1FD52728005F35CA /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Controller;
 			sourceTree = "<group>";
 		};
 		50BFFA8C1FD52728005F35CA /* Model */ = {
@@ -1552,6 +1556,15 @@
 			);
 			name = Reachability;
 			path = ../NetWork/Reachability;
+			sourceTree = "<group>";
+		};
+		50C2F3FF2147AEF00048E5CB /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				50C2F4012147AF090048E5CB /* GuidePagesViewController.h */,
+				50C2F4002147AF090048E5CB /* GuidePagesViewController.m */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 		50D77ACD1FE0CA80007052E7 /* Tool */ = {
@@ -1805,6 +1818,7 @@
 				8614B7C220F4617D0086546E /* Overlay@2x.png in Resources */,
 				5079412D1FE563100093CDF9 /* MJRefresh.bundle in Resources */,
 				508E50FB1FD1475B00D600C5 /* Main.storyboard in Resources */,
+				50C2F3FE21478F800048E5CB /* ArtDetailBottomView.xib in Resources */,
 				8614B7C120F4617D0086546E /* goods_add_plus@2x.png in Resources */,
 				8614B7BE20F4617D0086546E /* ELCAssetCollectionPicker.xib in Resources */,
 			);
@@ -1900,6 +1914,7 @@
 				50BFFAF41FD52818005F35CA /* NSString+JKSize.m in Sources */,
 				505FA8631FEA07F80082AAB0 /* Inter_categaryRequest.m in Sources */,
 				8614B7C620F4617D0086546E /* ELCAlbumPickerController.m in Sources */,
+				50C2F4022147AF090048E5CB /* GuidePagesViewController.m in Sources */,
 				50BFFAF01FD52818005F35CA /* NSString+JKNormalRegex.m in Sources */,
 				5091B5601FE78E6F003797EF /* InterCarouseRequest.m in Sources */,
 				505FA8691FEA09540082AAB0 /* InterArtListTool.m in Sources */,
@@ -1926,6 +1941,7 @@
 				50BFFAFF1FD52818005F35CA /* UIView+Common.m in Sources */,
 				F22428F621436CFD0035D0F0 /* HHTextField.m in Sources */,
 				5015EE7B1FD9657C00D1637B /* RSAEncryptor.m in Sources */,
+				50C2F3FC21478F540048E5CB /* ArtDetailBottomView.m in Sources */,
 				5005614D1FDE764100B06F5F /* NearCommunityModel.m in Sources */,
 				5079412F1FE563100093CDF9 /* NSBundle+MJRefresh.m in Sources */,
 				50D77ADE1FE10F69007052E7 /* InforVillage_CarouselRequest.m in Sources */,

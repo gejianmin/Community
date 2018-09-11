@@ -195,6 +195,11 @@
     
     ArtDetailViewController *vc = [[ArtDetailViewController alloc] init];
     vc.art_id =model.article_id;
+    vc.titleContent = model.title;
+    vc.createTime = model.create_time;
+    vc.zanNum = model.favorites;
+    
+    vc.articleModel = model;
     [self.navigationController pushViewController:vc animated:YES];
 
 }
