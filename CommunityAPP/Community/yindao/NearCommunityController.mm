@@ -94,10 +94,18 @@
     [self setCommunity:model];
 }
 - (void)setCommunity:(CommunityModel *)model{
-    [[HHClient sharedInstance] user].address = model.address;
-    [[HHClient sharedInstance] user].vid = model.vid;
-    [[HHClient sharedInstance] user].org_id = model.org_id;
-    [[HHClient sharedInstance] user].org_name = model.org_name;
+    if(![[HHClient sharedInstance] isLogin]){
+        UserObjModel *userModel = [[UserObjModel alloc]init];
+        userModel.org_id = model.org_id;
+        userModel.vid = model.vid;
+        userModel.org_name = model.org_name;
+    }else{
+        [[HHClient sharedInstance] user].org_id = model.org_id;
+        [[HHClient sharedInstance] user].vid = model.vid;
+        [[HHClient sharedInstance] user].org_name = model.org_name;
+    }
+        
+    
     [[NSNotificationCenter defaultCenter] postNotificationName:SelectMainWindow object:nil];
 }
 - (void)setBMKLocation{

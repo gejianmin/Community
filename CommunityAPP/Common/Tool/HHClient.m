@@ -11,7 +11,9 @@
 static NSString *const HHUserCacheKey = @"HHUserCacheKey";
 
 @implementation HHClient
-    @synthesize user=_user;
+    
+@synthesize user=_user;
+    
 + (instancetype)sharedInstance{
     static HHClient *instance=nil;
     static dispatch_once_t onceToken;

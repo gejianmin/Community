@@ -7,13 +7,13 @@
 //
 
 #import "SetUpViewController.h"
-
+#import "SetUpTableViewCell.h"
 @interface SetUpViewController ()<UITableViewDelegate,UITableViewDataSource>
-@property (nonatomic,strong) UITableView *tableView;
-@end
+    @property (nonatomic,strong) UITableView *tableView;
+    @end
 
 @implementation SetUpViewController
-
+    
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
@@ -21,29 +21,40 @@
     [self setLeftItemWithImageTarget:self];
     self.title = @"设置";
     
-    self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, self.view.width, self.view.height) style:UITableViewStylePlain];
+    self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, self.view.width, self.view.height) style:UITableViewStyleGrouped];
     self.tableView.backgroundColor = [UIColor greenColor];
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
+    [self.tableView registerClass:[SetUpTableViewCell class] forCellReuseIdentifier:NSStringFromClass([SetUpTableViewCell class])];
     [self.view addSubview:self.tableView];
     
+}
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    SetUpTableViewCell * cell =[tableView dequeueReusableCellWithIdentifier:NSStringFromClass([SetUpTableViewCell class])];
+    
+    
+    return cell;
+}
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+        
+        return 5;
+}
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    
+    return 5;
+}
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(nonnull NSIndexPath *)indexPath{
+    
+    return 56.0;
 }
 - (void)back{
     [self.navigationController popViewControllerAnimated:YES];
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
-
-@end
+    
+    
+    
+    @end

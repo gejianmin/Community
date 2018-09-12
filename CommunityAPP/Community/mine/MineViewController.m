@@ -47,12 +47,17 @@
     [self.view addSubview:self.headView];
     self.headView.backgroundColor = [UIColor redColor];
     
-    self.settingBtn = [[CustomBtn alloc]initWithFrame:CGRectMake(self.headView.right + 10, 15, 25, 25) Tag:0 Title:nil backgroundColor:kColorClear TitleTextColor:kColorWhite Font:15.0 Image:ImageNamed(@"set")];
-    self.settingBtn.top = self.headView.top + 15;
-    self.settingBtn.left = self.headView.right - 40;
-    self.settingBtn.right = self.headView.right - 15;
+    self.settingBtn = [[CustomBtn alloc]initWithFrame:CGRectZero Tag:0 Title:nil backgroundColor:kColorClear TitleTextColor:kColorWhite Font:15.0 Image:ImageNamed(@"set")];
+    
+
     [self.settingBtn addTarget:self action:@selector(setUp) forControlEvents:UIControlEventTouchUpInside];
     [self.headView addSubview:self.settingBtn];
+    [self.settingBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(self.headView.mas_top).offset(15);
+        make.right.equalTo(self.headView.mas_right).offset(0);
+        make.width.height.equalTo(@70);
+
+    }];
     
     
     self.headImgView = [[UIImageView alloc] initWithFrame:CGRectMake(10, 100, 60, 60)];
