@@ -8,6 +8,10 @@
 
 #import "BaseTableViewCell.h"
 
+static NSString *const kNormalCellReuseIdentifier = @"kNormalCellReuseIdentifier";
+static NSString *const kButtonCellReuseIdentifier = @"kButtonCellReuseIdentifier";
+static NSString *const kButtonCellAgreeActionReuseIdentifier = @"kButtonCellAgreeActionReuseIdentifier";
+static NSString *const kImageCellReuseIdentifier = @"kImageCellReuseIdentifier";
 @interface SetUpTableViewCell : BaseTableViewCell
 
 @end
