@@ -12,6 +12,7 @@
 #import "LoginRequest.h"
 #import "LoginViewController.h"
 #import "NearCommunityController.h"
+#import "GuidePagesViewController.h"
 #import "UserObjModel.h"
 #import "NavigationViewController.h"
 #import "AppDelegate+SocialShare.h"
@@ -34,13 +35,24 @@
     return YES;
 }
 - (void)selectMainWindow:(NSNotification *)notify{
-     if (kStringIsEmpty([[HHClient sharedInstance] user].org_id)){/**未选择社区*/
+    NSUserDefaults *userDef = [NSUserDefaults standardUserDefaults];
+    BOOL isFirstLoginAPP = [userDef objectForKey:@"notFirst"];
+    if (!isFirstLoginAPP) {
+        [self goToGuidePage];
+    }else if (kStringIsEmpty([[HHClient sharedInstance] user].org_id)){/**未选择社区*/
         [self goToNearCommunity];
     }else if (!kStringIsEmpty([[HHClient sharedInstance] user].org_id)) {/**已选择社区*/
+        NSLog(@"%@",[[HHClient sharedInstance] user].org_id);
         [self gotoMainWindow];
     }else{
         
     }
+}
+// 引导页
+- (void)goToGuidePage {
+    GuidePagesViewController *gpvc = [[GuidePagesViewController alloc]init];
+    self.window.rootViewController = gpvc;
+    [self.window resignKeyWindow];
 }
 - (void)goToNearCommunity{
     NearCommunityController *tabVC = [[NearCommunityController alloc] init];

@@ -54,11 +54,11 @@
     myScrollView.bounces = NO;
     myScrollView.pagingEnabled = YES;
     myScrollView.showsHorizontalScrollIndicator = NO;
-    myScrollView.contentSize = CGSizeMake(WIDTH * 3, HEIGHT);
+    myScrollView.contentSize = CGSizeMake(WIDTH * 4, HEIGHT);
     myScrollView.delegate = self;
     [self.view addSubview:myScrollView];
     
-    pageControl = [[UIPageControl alloc] initWithFrame:CGRectMake(WIDTH / 4, HEIGHT * 15 / 16, WIDTH / 4, HEIGHT / 16)];
+    pageControl = [[UIPageControl alloc] initWithFrame:CGRectMake(WIDTH / 8 * 3, HEIGHT * 15 / 16, WIDTH / 4, HEIGHT / 16)];
     // 设置页数
     pageControl.numberOfPages = 4;
     // 设置页码的点的颜色
@@ -83,10 +83,8 @@
     [useDef setBool:flag forKey:@"notFirst"];
     [useDef synchronize];
     // 切换根视图控制器
-//    CRMLoginViewController *login = [[CRMLoginViewController alloc]init];
-//    JDNavigationController *navi = [[JDNavigationController alloc]initWithRootViewController:login];
-//    navi.navigationBar.hidden = YES;
-//    self.view.window.rootViewController = navi;
+    [[NSNotificationCenter defaultCenter] postNotificationName:SelectMainWindow object:nil];
+    
 }
 
 
