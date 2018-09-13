@@ -6,7 +6,7 @@
 //  Copyright © 2018年 zhangyipei. All rights reserved.
 //
 
-#import "BaseViewController.h"
-@interface SearchViewController : BaseViewController
+#import "BaseTableViewController.h"
+@interface SearchViewController : BaseTableViewController
 
 @end

@@ -30,6 +30,7 @@
 #import "InfoCategaryCell.h"
 
 #import "AreaSelectorView.h"
+#import "CategaryHeadView.h"
 
 #import "WebViewController.h"
 #import "InforButtonCateController.h"
@@ -148,6 +149,7 @@
 - (void)searchBtnClick {
     
     SearchViewController *searchVC = [[SearchViewController alloc]init];
+    searchVC.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:searchVC animated:YES];
 }
 
@@ -295,7 +297,8 @@
 }
 #pragma mark ----UITableView Delegate
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
-    return 6;
+//    return 6;
+      return 5;
 }
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     switch (section) {
@@ -311,10 +314,10 @@
         case 3:
             return 1;
             break;
+//        case 4:
+//            return 1;
+//            break;
         case 4:
-            return 1;
-            break;
-        case 5:
         {
             Village_ArticleCateModel *model = self.listArray[_currenIndex];
             return model.article_list.count;
@@ -339,10 +342,10 @@
         case 3:
             return 160;
             break;
+//        case 4:
+//            return 50;
+//            break;
         case 4:
-            return 50;
-            break;
-        case 5:
         {
             Village_ArticleCateModel *model = self.listArray[_currenIndex];
             if (model.article_list.count>0) {
@@ -355,6 +358,38 @@
             break;
     }
     return 0;
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
+    
+    if (section == 4 ) {
+        
+        static NSString *headerViewId = @"headerViewId";
+        CategaryHeadView *headerView = [tableView dequeueReusableHeaderFooterViewWithIdentifier:headerViewId];
+        if (!headerView) {
+            headerView = [[CategaryHeadView alloc]initWithReuseIdentifier:headerViewId];
+
+        }
+        headerView.delagate = self;
+        headerView.categoryArray = self.listArray;
+        return headerView;
+        
+//        CategaryView *view = [[CategaryView alloc]initWithFrame:CGRectMake(0, 0, HH_SCREEN_W, 50)];
+//        view.delagate  = self;
+//        view.backgroundColor = [UIColor whiteColor];
+//        view.categoryArray = self.listArray;
+//        return view;
+    }else{
+        
+        return nil;
+    }
+}
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+    if (section == 4 ) {
+        return 60.0f;
+    }else{
+        return 0;
+    }
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     if (indexPath.section == 0) {
@@ -393,16 +428,18 @@
         cell.delegate = self;
         cell.adArray = self.adArray;
         return cell;
-    }else if (indexPath.section == 4){
-        static NSString *indentifier = @"InfoCategaryCell";
-        InfoCategaryCell *cell = [tableView dequeueReusableCellWithIdentifier:indentifier];
-        if (!cell) {
-            cell = [[InfoCategaryCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:indentifier];
-        }
-        cell.delagate = self;
-        cell.categoryArray = self.listArray;
-        return cell;
-    }else if (indexPath.section == 5){
+    }
+//    else if (indexPath.section == 4){
+//        static NSString *indentifier = @"InfoCategaryCell";
+//        InfoCategaryCell *cell = [tableView dequeueReusableCellWithIdentifier:indentifier];
+//        if (!cell) {
+//            cell = [[InfoCategaryCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:indentifier];
+//        }
+//        cell.delagate = self;
+//        cell.categoryArray = self.listArray;
+//        return cell;
+//    }
+    else if (indexPath.section == 4){
         static NSString *indentifier = @"InforArticleCell";
         InforArticleCell *cell = [tableView dequeueReusableCellWithIdentifier:indentifier];
         if (!cell) {
@@ -428,10 +465,10 @@
         case 3:
             return 10;
             break;
+//        case 4:
+//            return 10;
+//            break;
         case 4:
-            return 10;
-            break;
-        case 5:
             return 0;
             break;
         default:
