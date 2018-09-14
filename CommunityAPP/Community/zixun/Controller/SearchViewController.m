@@ -7,11 +7,13 @@
 //
 
 #import "SearchViewController.h"
-
-@interface SearchViewController ()<UITextFieldDelegate>
+#import "InfoArt_SearchRequest.h"
+#import "InforVillage_ArticleCateModel.h"
+#import "InforArticleCell.h"
+@interface SearchViewController ()<UITextFieldDelegate,UITableViewDataSource,UITableViewDelegate>
 
 @property(nonatomic, strong) UIView * searchView;//搜索框视图
-
+@property (nonatomic, strong) NSMutableArray *listArray;
 @end
 
 @implementation SearchViewController
@@ -28,7 +30,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     UIButton *rightBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    [rightBtn setTitle:@"保存" forState:UIControlStateNormal];
+    [rightBtn setTitle:@"搜索" forState:UIControlStateNormal];
     [rightBtn setTitleColor:kColorGray4 forState:UIControlStateNormal];
     rightBtn.titleLabel.font = kFont(14);
     UIBarButtonItem *buttonItem = [[UIBarButtonItem alloc]initWithCustomView:rightBtn];
@@ -57,13 +59,54 @@
         tf.delegate = self;
         tf.placeholder = @"请输入搜索内容";
         [tf setValue:[UIFont boldSystemFontOfSize:13] forKeyPath:@"_placeholderLabel.font"];
+        [tf addTarget:self action:@selector(textFieldChangeEvent:) forControlEvents:UIControlEventEditingChanged];
         [self.searchView addSubview:tf];
         
         
     }
     return _searchView;
 }
+- (NSMutableArray *)listArray {
+    if (!_listArray) {
+        _listArray = [[NSMutableArray alloc]init];
+    }
+    return _listArray;
+    
+}
 
+- (void)textFieldChangeEvent:(UITextField *)textTF {
+    
+    __weak typeof(self) tyself = self;
+    // 发送请求
+    InfoArt_SearchRequest *request = [[InfoArt_SearchRequest alloc]init];
+    [request interPostSearchRequestWithContent:textTF.text];
+    [request setFinishedBlock:^(id object, id responseData) {
+        
+        InforVillage_ArticleCateModel *model = object;
+        tyself.listArray = [model.Village_ArticleCateArray mutableCopy];
+        [self.tableView reloadData];
+        
+    } failedBlock:^(NSInteger error, id responseData) {
+        NSLog(@"请求失败");
+    }];
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return self.listArray.count;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    static NSString *indentifier = @"InforArticleCell";
+    InforArticleCell *cell = [tableView dequeueReusableCellWithIdentifier:indentifier];
+    if (!cell) {
+        cell = [[InforArticleCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:indentifier];
+    }
+    Village_ArticleCateModel *model = self.listArray[indexPath.row];
+    cell.model = model.article_list[indexPath.row];
+    return cell;
+    
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

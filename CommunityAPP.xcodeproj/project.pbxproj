@@ -87,6 +87,11 @@
 		507941681FE6779B0093CDF9 /* InfoArt_DetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 507941671FE6779B0093CDF9 /* InfoArt_DetailModel.m */; };
 		5079416B1FE681290093CDF9 /* InfoArtListTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 5079416A1FE681290093CDF9 /* InfoArtListTool.m */; };
 		5079416E1FE69DA50093CDF9 /* ArtDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5079416D1FE69DA40093CDF9 /* ArtDetailViewController.m */; };
+		507E40A82148F8CA00BACFDB /* CategaryHeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 507E40A72148F8CA00BACFDB /* CategaryHeadView.m */; };
+		507FCB3D214A0A98000A0C9A /* InfoArt_SearchRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 507FCB3C214A0A98000A0C9A /* InfoArt_SearchRequest.m */; };
+		507FCB40214A0AB8000A0C9A /* InfoArt_SearchResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 507FCB3F214A0AB8000A0C9A /* InfoArt_SearchResponse.m */; };
+		507FCB43214A44DF000A0C9A /* InfoArt_ShareAddRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 507FCB42214A44DF000A0C9A /* InfoArt_ShareAddRequest.m */; };
+		507FCB46214A4B9C000A0C9A /* InfoArt_ShareAddOnceResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 507FCB45214A4B9C000A0C9A /* InfoArt_ShareAddOnceResponse.m */; };
 		508E50F21FD1475B00D600C5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 508E50F11FD1475B00D600C5 /* main.m */; };
 		508E50F51FD1475B00D600C5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 508E50F41FD1475B00D600C5 /* AppDelegate.m */; };
 		508E50FB1FD1475B00D600C5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 508E50F91FD1475B00D600C5 /* Main.storyboard */; };
@@ -401,6 +406,16 @@
 		5079416A1FE681290093CDF9 /* InfoArtListTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InfoArtListTool.m; sourceTree = "<group>"; };
 		5079416C1FE69DA40093CDF9 /* ArtDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ArtDetailViewController.h; sourceTree = "<group>"; };
 		5079416D1FE69DA40093CDF9 /* ArtDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ArtDetailViewController.m; sourceTree = "<group>"; };
+		507E40A62148F8CA00BACFDB /* CategaryHeadView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CategaryHeadView.h; sourceTree = "<group>"; };
+		507E40A72148F8CA00BACFDB /* CategaryHeadView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CategaryHeadView.m; sourceTree = "<group>"; };
+		507FCB3B214A0A98000A0C9A /* InfoArt_SearchRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InfoArt_SearchRequest.h; sourceTree = "<group>"; };
+		507FCB3C214A0A98000A0C9A /* InfoArt_SearchRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InfoArt_SearchRequest.m; sourceTree = "<group>"; };
+		507FCB3E214A0AB8000A0C9A /* InfoArt_SearchResponse.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InfoArt_SearchResponse.h; sourceTree = "<group>"; };
+		507FCB3F214A0AB8000A0C9A /* InfoArt_SearchResponse.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InfoArt_SearchResponse.m; sourceTree = "<group>"; };
+		507FCB41214A44DF000A0C9A /* InfoArt_ShareAddRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InfoArt_ShareAddRequest.h; sourceTree = "<group>"; };
+		507FCB42214A44DF000A0C9A /* InfoArt_ShareAddRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InfoArt_ShareAddRequest.m; sourceTree = "<group>"; };
+		507FCB44214A4B9C000A0C9A /* InfoArt_ShareAddOnceResponse.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InfoArt_ShareAddOnceResponse.h; sourceTree = "<group>"; };
+		507FCB45214A4B9C000A0C9A /* InfoArt_ShareAddOnceResponse.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InfoArt_ShareAddOnceResponse.m; sourceTree = "<group>"; };
 		508E50ED1FD1475B00D600C5 /* CommunityAPP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CommunityAPP.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		508E50F11FD1475B00D600C5 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		508E50F31FD1475B00D600C5 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -1341,6 +1356,8 @@
 				50D77B101FE148DF007052E7 /* InforADCell.m */,
 				50D77B121FE148FA007052E7 /* InforArticleCell.h */,
 				50D77B131FE148FA007052E7 /* InforArticleCell.m */,
+				507E40A62148F8CA00BACFDB /* CategaryHeadView.h */,
+				507E40A72148F8CA00BACFDB /* CategaryHeadView.m */,
 				502473AB1FE26A47002EA673 /* InforADView.h */,
 				502473AC1FE26A47002EA673 /* InforADView.m */,
 				502473AE1FE29D22002EA673 /* InfoCategaryCell.h */,
@@ -1607,6 +1624,14 @@
 				507941611FE677760093CDF9 /* InfoArt_DetailRequest.m */,
 				507941631FE677860093CDF9 /* InfoArt_DetailResponse.h */,
 				507941641FE677860093CDF9 /* InfoArt_DetailResponse.m */,
+				507FCB3B214A0A98000A0C9A /* InfoArt_SearchRequest.h */,
+				507FCB3C214A0A98000A0C9A /* InfoArt_SearchRequest.m */,
+				507FCB3E214A0AB8000A0C9A /* InfoArt_SearchResponse.h */,
+				507FCB3F214A0AB8000A0C9A /* InfoArt_SearchResponse.m */,
+				507FCB41214A44DF000A0C9A /* InfoArt_ShareAddRequest.h */,
+				507FCB42214A44DF000A0C9A /* InfoArt_ShareAddRequest.m */,
+				507FCB44214A4B9C000A0C9A /* InfoArt_ShareAddOnceResponse.h */,
+				507FCB45214A4B9C000A0C9A /* InfoArt_ShareAddOnceResponse.m */,
 			);
 			path = zixun;
 			sourceTree = "<group>";
@@ -1940,6 +1965,7 @@
 				50BFFAF71FD52818005F35CA /* NSString+JKURLEncode.m in Sources */,
 				50BFFB101FD5282D005F35CA /* NSString+YRSafeCategory.m in Sources */,
 				507941541FE647E00093CDF9 /* SGPageContentView.m in Sources */,
+				507FCB40214A0AB8000A0C9A /* InfoArt_SearchResponse.m in Sources */,
 				50BFFAEB1FD52818005F35CA /* NSString+JKEncrypt.m in Sources */,
 				F24C5CF921490473003B5A87 /* PublicCircleController.m in Sources */,
 				86E907D420EB55C100208132 /* InterPostDescCell.m in Sources */,
@@ -1959,9 +1985,11 @@
 				50BFFAF91FD52818005F35CA /* NSString+JKXMLDictionary.m in Sources */,
 				50D77AE71FE111EC007052E7 /* InforVillage_NoticeRequest.m in Sources */,
 				50BFFAE21FD52818005F35CA /* NSData+JKEncrypt.m in Sources */,
+				507FCB43214A44DF000A0C9A /* InfoArt_ShareAddRequest.m in Sources */,
 				50D77AF01FE116E8007052E7 /* InforVillage_ArticleCateRequest.m in Sources */,
 				50BFFA591FD52348005F35CA /* TabBarViewController.m in Sources */,
 				507941311FE563100093CDF9 /* UIScrollView+MJRefresh.m in Sources */,
+				507FCB46214A4B9C000A0C9A /* InfoArt_ShareAddOnceResponse.m in Sources */,
 				507941651FE677860093CDF9 /* InfoArt_DetailResponse.m in Sources */,
 				502473B01FE29D22002EA673 /* InfoCategaryCell.m in Sources */,
 				5077BBE91FE92DB30047BE77 /* PostCircleAddPicImageView.m in Sources */,
@@ -2067,6 +2095,7 @@
 				507941211FE563100093CDF9 /* MJRefreshComponent.m in Sources */,
 				5077BBE11FE922AA0047BE77 /* InterPostViewController.m in Sources */,
 				5091B5691FE7973A003797EF /* InterListCell.m in Sources */,
+				507FCB3D214A0A98000A0C9A /* InfoArt_SearchRequest.m in Sources */,
 				50BFFAEA1FD52818005F35CA /* NSString+JKEmoji.m in Sources */,
 				507941321FE563100093CDF9 /* UIView+MJExtension.m in Sources */,
 				5015EE751FD91B0E00D1637B /* RegisterResponse.m in Sources */,
@@ -2082,6 +2111,7 @@
 				8614B7C920F461840086546E /* JYBBaseViewController.m in Sources */,
 				50BFFAF61FD52818005F35CA /* NSString+JKTrims.m in Sources */,
 				F224290F2143BCC20035D0F0 /* JTDSocialShare.m in Sources */,
+				507E40A82148F8CA00BACFDB /* CategaryHeadView.m in Sources */,
 				8614B7DB20F463AB0086546E /* AppDelegateTool.m in Sources */,
 				50BFFA771FD52504005F35CA /* BaseViewController.m in Sources */,
 				50D77B081FE148A2007052E7 /* InforAppButtonCell.m in Sources */,

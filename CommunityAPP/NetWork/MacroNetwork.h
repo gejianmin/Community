@@ -31,6 +31,8 @@
 #define infoArt_categray            @"articleCates/child" //某个文章分类
 #define infoArt_categray_list       @"infoArt_categray_list" //某个文章分类的列表
 #define infoArt_articles            @"articles"//文章详情
+#define infoArt_search              @"articles/search"//搜索
+#define infoArt_shareCountAdd       @"articles/addShareNum"//分享成功 + 1
 
 //互动
 #define inter_FourmBtn              @"appbtns/getFourmBtnByVillage" //互动按钮

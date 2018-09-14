@@ -10,10 +10,13 @@
 #import "InfoArt_DetailRequest.h"
 #import "InfoArt_DetailModel.h"
 #import "ArtDetailBottomView.h"
+#import "InfoArt_ShareAddRequest.h"
 @interface ArtDetailViewController ()<UIWebViewDelegate>
 
 @property (nonatomic, strong) UIWebView *webView;
-@property(nonatomic, strong) UIView * articleHeaderV;//文章标题
+@property(nonatomic, strong) UIView * articleHeaderV;//文章标题背景视图
+@property(nonatomic, strong) UILabel * titleL;//文章头
+@property(nonatomic, strong) UILabel * timeL;//创建时间
 @property(nonatomic, strong) ArtDetailBottomView * bottomV;
 @end
 
@@ -24,6 +27,7 @@
 
     [self createUI];
 
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(shareSuccess) name:kUMengShareNotification object:nil];
     
     self.view.backgroundColor = [UIColor whiteColor];
     self.automaticallyAdjustsScrollViewInsets = NO;
@@ -36,6 +40,8 @@
         
         InfoArt_DetailModel *model = object;
         tyself.headTitle = model.title;
+        self.titleL.text = model.title;
+        self.timeL.text = model.create_time;
         self.bottomV.model  = model;
         [tyself.webView loadHTMLString:model.content baseURL:nil];
         
@@ -60,26 +66,24 @@
         
     }];
     //标题
-    UILabel *title = [[UILabel alloc]init];
-    title.text = self.titleContent?:@"";
-    title.numberOfLines = 0;
-    title.font = kFont(17);
-    [self.articleHeaderV addSubview:title];
-    [title mas_makeConstraints:^(MASConstraintMaker *make) {
+    self.titleL = [[UILabel alloc]init];
+    _titleL.numberOfLines = 0;
+    _titleL.font = kFont(17);
+    [self.articleHeaderV addSubview:_titleL];
+    [self.titleL mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self.articleHeaderV.mas_top);
         make.left.equalTo(self.articleHeaderV.mas_left);
         make.right.equalTo(self.articleHeaderV.mas_right);
         
     }];
     //创建时间
-    UILabel *timeL = [[UILabel alloc]init];
-    timeL.text = self.createTime?:@"";
-    timeL.textColor = kColorGray4;
-    timeL.font = kFont(14);
-    [self.articleHeaderV addSubview:timeL];
-    [timeL mas_makeConstraints:^(MASConstraintMaker *make) {
+    self.timeL = [[UILabel alloc]init];
+    _timeL.textColor = kColorGray4;
+    _timeL.font = kFont(14);
+    [self.articleHeaderV addSubview:_timeL];
+    [self.timeL mas_makeConstraints:^(MASConstraintMaker *make) {
         make.right.equalTo(self.articleHeaderV.mas_right).offset(-15);
-        make.top.equalTo(title.mas_bottom).offset(5);
+        make.top.equalTo(_titleL.mas_bottom).offset(5);
         make.bottom.equalTo(self.articleHeaderV.mas_bottom).offset(-5);
         
     }];
@@ -116,9 +120,31 @@
 
 // 分享
 - (void)share {
-    
+    JTDShareContent * model = [[JTDShareContent alloc]init];
+    model.centent = @"赵万里";
+    model.name = @"万里无云";
+    model.images = @"icon";
+    [JTDShareVC shareToController:self shareModel:model shareType:PayStateShare];
     
 }
+
+#pragma mark--分享成功
+-(void)shareSuccess{
+    
+    [self showToastHUD:@"分享成功" complete:nil];
+    
+    InfoArt_ShareAddRequest *request = [[InfoArt_ShareAddRequest alloc]init];
+    [request shareCountAddOnce:self.art_id];
+    [request setFinishedBlock:^(id object, id responseData) {
+       
+        NSLog(@"请求成功");
+        
+    } failedBlock:^(NSInteger error, id responseData) {
+        NSLog(@"请求失败");
+    }];
+}
+    
+
 - (void)back{
     [self.navigationController popViewControllerAnimated:YES];
 }
