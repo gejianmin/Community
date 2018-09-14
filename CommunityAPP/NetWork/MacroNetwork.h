@@ -18,7 +18,8 @@
 #define resetPasswd @"sms/resetPasswd"//获取验证码
 #define forgetPassword @"members/forgetPassword"//忘记密码
 
-
+//公共圈
+#define publicCircleList @"api/v1/public_apps"
 //资讯页面
 #define InforVillage_AppButton      @"appbtns/getAppBtnByVillage" //首页按钮
 #define InforVillage_Carousel       @"advs/getV1cAdvByVillage"//轮播图
@@ -38,6 +39,9 @@
 #define inter_postList                @"posts/getPosts"//互动帖子列表
 #define inter_NearPostList                @"posts/getPostsByKm"//互动附近帖子列表
 
+//HTML5
+#define  MINE_BALANCE_RECHARGE  @"http://quarter.sinoyjlm.com/recharge"//余额
+#define  Quarter_HTML5  @"http://quarter.sinoyjlm.com"
 //code规则（post接口之后加的安全方面的认证协议）
 #define kCodeVersion  @"versionkey"
 #define kCodeFunction @"functionkey"

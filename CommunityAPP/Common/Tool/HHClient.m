@@ -50,4 +50,9 @@ static NSString *const HHUserCacheKey = @"HHUserCacheKey";
         return YES;
     }
 }
+    /*!< 清除缓存**/
+- (void)clearMemory {
+    self.user = nil;
+    [[NSUserDefaults standardUserDefaults] removeObjectForKey:HHUserCacheKey];
+}
     @end

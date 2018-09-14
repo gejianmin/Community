@@ -43,7 +43,7 @@
     [wkUController addUserScript:wkUserScript];
     
     self.webView = [[WKWebView alloc] initWithFrame: CGRectMake(0, 0, SCREEN_WIDTH, self.view.height) configuration:wkWebConfig];
-    
+    self.webView.navigationDelegate=self;
     [self.view addSubview:_webView];
 
     
@@ -87,6 +87,16 @@
 //        NSString *jsonString = [CommonTool jsonStringFromDictionary:paras];
 //        [self.jsBridge callHandler:@"getWebData" data:jsonString];
 //    }
+    [webView evaluateJavaScript:@"document.title" completionHandler:^(id _Nullable title, NSError * _Nullable error) {
+        if (self.customTitle) {
+            self.title=self.customTitle;
+        }else{
+            if (title) {
+                self.title=title;
+            }
+            
+        }
+    }];
 }
 
 - (void)webView:(WKWebView *)webView didFailNavigation:(null_unspecified WKNavigation *)navigation withError:(NSError *)error

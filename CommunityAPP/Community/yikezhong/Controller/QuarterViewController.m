@@ -7,10 +7,11 @@
 //
 
 #import "QuarterViewController.h"
-
+#import "WebViewController.h"
 @interface QuarterViewController ()
-@property (nonatomic, strong) UIWebView *webView;
+
 @property (nonatomic, strong) UIActivityIndicatorView *indicatorView;
+
 @end
 
 @implementation QuarterViewController
@@ -19,31 +20,102 @@
     [super viewDidLoad];
     
     self.view.backgroundColor = [UIColor whiteColor];
-    self.webView = [[UIWebView alloc] init];
+    self.title = self.headTitle;
+    // 开启日志，方便调试
+    //[WKWebViewJavascriptBridge enableLogging];
+    WKWebViewConfiguration *wkWebConfig = [[WKWebViewConfiguration alloc] init];
+    WKUserContentController *wkUController = [[WKUserContentController alloc] init];
+    wkWebConfig.userContentController = wkUController;
+    
+    //自适应屏幕的宽度js
+    
+    NSString *jSString = @"var meta = document.createElement('meta'); meta.setAttribute('name', 'viewport'); meta.setAttribute('content', 'width=device-width'); document.getElementsByTagName('head')[0].appendChild(meta);";
+    
+    WKUserScript *wkUserScript = [[WKUserScript alloc] initWithSource:jSString injectionTime:WKUserScriptInjectionTimeAtDocumentEnd forMainFrameOnly:YES];
+    //添加js调用
+    [wkUController addUserScript:wkUserScript];
+    self.webView = [[WKWebView alloc] initWithFrame: CGRectMake(0, 0, SCREEN_WIDTH, HH_SCREEN_H-GSA_TabbarHeight-GSANavHeight) configuration:wkWebConfig];
+    self.webView.navigationDelegate=self;
     [self.view addSubview:_webView];
-    
-    [self.webView mas_makeConstraints:^(MASConstraintMaker *make) {
-//        make.top.equalTo(0);
-        make.top.bottom.left.right.equalTo(self.view);
-    }];
-    NSLog(@"self.view  = %@",[NSValue valueWithCGRect:self.view.frame]);
+    [self.view addSubview:self.indicatorView];
+    self.indicatorView.center = CGPointMake(self.view.center.x, self.view.center.y-100);
+        // 给webview建立JS与OjbC的沟通桥梁
+        self.jsBridge = [WKWebViewJavascriptBridge bridgeForWebView:_webView];
+        // 设置代理，如果不需要实现，可以不设置
+        [_jsBridge setWebViewDelegate:self];
+    [self registerJavaScriptHandler];
+    NSString * token = [[[HHClient sharedInstance]user] token];
+    NSString * vid = [[[HHClient sharedInstance]user] vid];
+    NSString * lat = [NSString stringWithFormat:@"%.6f",[[[HHClient sharedInstance]user] lat]];
+    NSString * lng = [NSString stringWithFormat:@"%.6f",[[[HHClient sharedInstance]user] lng]];
+    [self.webView evaluateJavaScript:[NSString stringWithFormat:@"localStorage.setItem('token','%@')", token] completionHandler:nil];
+    [self.webView evaluateJavaScript:[NSString stringWithFormat:@"localStorage.setItem('vid','%@')", vid] completionHandler:nil];
+    [self.webView evaluateJavaScript:[NSString stringWithFormat:@"localStorage.setItem('lat','%@')", lat] completionHandler:nil];
+    [self.webView evaluateJavaScript:[NSString stringWithFormat:@"localStorage.setItem('lng','%@')", lng] completionHandler:nil];
+    [self.webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:Quarter_HTML5]]];
+}
+- (void)back{
+    [self.navigationController popViewControllerAnimated:YES];
+}
+- (void)registerJavaScriptHandler
+{
+    // 子类若有需求可以重写
+}
 
-    
-    if ([self.webView.scrollView respondsToSelector:@selector(setContentInsetAdjustmentBehavior:)]) {
-        if (@available(iOS 11.0, *)) {
-            self.webView.scrollView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
-        } else {
-            // Fallback on earlier versions
+// MARK: WKNavigationDelegate
+- (void)webView:(WKWebView *)webView didStartProvisionalNavigation:(null_unspecified WKNavigation *)navigation
+{
+    [self.indicatorView startAnimating];
+    NSLog(@"webview didStartNavigation");
+}
+
+- (void)webView:(WKWebView *)webView didFinishNavigation:(WKNavigation *)navigation
+{
+    [self.indicatorView stopAnimating];
+    [webView evaluateJavaScript:@"document.title" completionHandler:^(id _Nullable title, NSError * _Nullable error) {
+        if (self.customTitle) {
+            self.title=self.customTitle;
+        }else{
+            if (title) {
+                self.title=title;
+            }
+            
         }
-    }
+    }];
+}
+- (void)webView:(WKWebView *)webView didFailNavigation:(null_unspecified WKNavigation *)navigation withError:(NSError *)error
+{
+    [self.indicatorView stopAnimating];
+    NSLog(@"webview didFailNavigation");
+}
 
-    NSURL *url = [NSURL URLWithString:@"http://quarter.sinoyjlm.com"];
-    [self.webView setScalesPageToFit:YES];//自动缩放以适应屏幕
-    [self.webView loadRequest:[NSURLRequest requestWithURL:url]];
+#pragma mark - 返回
+- (void)backButtonPressed:(UIButton *)sender
+{
+    // 第二个判断防止重定向导致页面无法返回问题
+    if ([self.webView canGoBack] && [self.webView.backForwardList.backList count]>1)
+    {
+        [self.webView goBack];
+        [self goBackAction];
+    } else {
+        [self.navigationController popViewControllerAnimated:YES];
+        [self WebBack];
+    }
+}
+- (void)goBackAction{// 子类若有需求可以重写
     
+}
+- (void)WebBack{
     
-    self.indicatorView = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
-    [self.indicatorView setHidesWhenStopped:YES];
+}
+- (UIActivityIndicatorView *)indicatorView{
+    
+    if (!_indicatorView)
+    {
+        _indicatorView = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
+        _indicatorView.hidesWhenStopped = YES;
+    }
+    return _indicatorView;
 }
 
 - (void)viewDidLayoutSubviews{
@@ -52,13 +124,10 @@
 -(void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    //    [self preferredStatusBarStyle];
-    //    [self setStatusBarBackgroundColor:RGB(254, 104, 157)];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 - (void)webViewDidFinishLoad:(UIWebView *)webView

@@ -8,6 +8,7 @@
 
 #import "BaseViewController.h"
 
+typedef void(^LogOutcallBack)(void);
 @interface SetUpViewController : BaseViewController
-
+@property(nonatomic,copy) LogOutcallBack   logOutcallBack;
 @end

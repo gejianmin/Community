@@ -9,9 +9,18 @@
 #import "BaseTableViewCell.h"
 
 static NSString *const kNormalCellReuseIdentifier = @"kNormalCellReuseIdentifier";
-static NSString *const kButtonCellReuseIdentifier = @"kButtonCellReuseIdentifier";
-static NSString *const kButtonCellAgreeActionReuseIdentifier = @"kButtonCellAgreeActionReuseIdentifier";
 static NSString *const kImageCellReuseIdentifier = @"kImageCellReuseIdentifier";
-@interface SetUpTableViewCell : BaseTableViewCell
+static NSString *const kSwichCellReuseIdentifier = @"kSwichCellReuseIdentifier";
 
-@end
+@interface SetUpTableViewCell : BaseTableViewCell
+    
+@property (nonatomic ,strong) UIImageView*imgView;
+@property (nonatomic ,strong) UILabel *titleLabel;
+@property (nonatomic ,strong) CustomLab *leftLabel;
+@property (nonatomic ,strong) CustomLab *rightLabel;
+@property (nonatomic ,strong) CustomLab *nickLabel;
+@property (nonatomic ,strong) CustomLab *VIPLabel;
+@property(nonatomic,strong) UIImageView  * iconIma;
+-(BOOL)isMessageNotificationServiceOpen;
+- (instancetype)initWithReuseIdentifier:(NSString *)reuseIdentifier indexPath:(NSIndexPath *)indexPath;
+    @end

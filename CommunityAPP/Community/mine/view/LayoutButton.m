@@ -42,7 +42,7 @@
 }
 - (CGRect)imageRectForContentRect:(CGRect)contentRect{
     UIImage *image = [UIImage imageNamed:_imageName];
-    return CGRectMake((self.bounds.size.width - image.size.width)/2, 0, image.size.width, image.size.width);
+    return CGRectMake((self.bounds.size.width - image.size.width-10)/2, 0, image.size.width+10, image.size.height+10);
 }
 
 - (CGRect)titleRectForContentRect:(CGRect)contentRect{

@@ -117,7 +117,6 @@
 		50BFFA591FD52348005F35CA /* TabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 50BFFA581FD52348005F35CA /* TabBarViewController.m */; };
 		50BFFA771FD52504005F35CA /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 50BFFA761FD52504005F35CA /* BaseViewController.m */; };
 		50BFFA7A1FD52546005F35CA /* InformationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 50BFFA791FD52546005F35CA /* InformationViewController.m */; };
-		50BFFA7D1FD52571005F35CA /* PublicCircleController.m in Sources */ = {isa = PBXBuildFile; fileRef = 50BFFA7C1FD52571005F35CA /* PublicCircleController.m */; };
 		50BFFA801FD5257E005F35CA /* MineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 50BFFA7F1FD5257E005F35CA /* MineViewController.m */; };
 		50BFFA931FD52728005F35CA /* BlowClickButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 50BFFA8F1FD52728005F35CA /* BlowClickButton.m */; };
 		50BFFADE1FD52818005F35CA /* AssetHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 50BFFA971FD52818005F35CA /* AssetHelper.m */; };
@@ -240,8 +239,13 @@
 		F224290F2143BCC20035D0F0 /* JTDSocialShare.m in Sources */ = {isa = PBXBuildFile; fileRef = F224290A2143BCC20035D0F0 /* JTDSocialShare.m */; };
 		F22429102143BCC20035D0F0 /* PresentTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = F224290B2143BCC20035D0F0 /* PresentTransition.m */; };
 		F24C5CEE21474F32003B5A87 /* HHClient.m in Sources */ = {isa = PBXBuildFile; fileRef = F24C5CED21474F32003B5A87 /* HHClient.m */; };
-		F24C5CF12147B005003B5A87 /* SettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F24C5CF02147B005003B5A87 /* SettingViewController.m */; };
 		F24C5CF42147BA8E003B5A87 /* SetUpHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = F24C5CF32147BA8E003B5A87 /* SetUpHeaderView.m */; };
+		F24C5CF921490473003B5A87 /* PublicCircleController.m in Sources */ = {isa = PBXBuildFile; fileRef = F24C5CF821490473003B5A87 /* PublicCircleController.m */; };
+		F24C5CFE21490A41003B5A87 /* PublicCircleCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F24C5CFD21490A41003B5A87 /* PublicCircleCell.m */; };
+		F24C5D0121490A5E003B5A87 /* PublicCircleModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F24C5D0021490A5E003B5A87 /* PublicCircleModel.m */; };
+		F24C5D0521491184003B5A87 /* publicCircleList_Request.m in Sources */ = {isa = PBXBuildFile; fileRef = F24C5D0421491184003B5A87 /* publicCircleList_Request.m */; };
+		F24C5D082149129A003B5A87 /* publicCircleList_Response.m in Sources */ = {isa = PBXBuildFile; fileRef = F24C5D072149129A003B5A87 /* publicCircleList_Response.m */; };
+		F24C5D0E214914E7003B5A87 /* InForPublicCirCleList_Model.m in Sources */ = {isa = PBXBuildFile; fileRef = F24C5D0D214914E7003B5A87 /* InForPublicCirCleList_Model.m */; };
 		F2ADAFA0214252C900837A98 /* HHKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F2ADAF9F214252C900837A98 /* HHKit.framework */; };
 /* End PBXBuildFile section */
 
@@ -456,8 +460,6 @@
 		50BFFA761FD52504005F35CA /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
 		50BFFA781FD52546005F35CA /* InformationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InformationViewController.h; sourceTree = "<group>"; };
 		50BFFA791FD52546005F35CA /* InformationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InformationViewController.m; sourceTree = "<group>"; };
-		50BFFA7B1FD52571005F35CA /* PublicCircleController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PublicCircleController.h; path = ../PublicCircleController.h; sourceTree = "<group>"; };
-		50BFFA7C1FD52571005F35CA /* PublicCircleController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PublicCircleController.m; path = ../PublicCircleController.m; sourceTree = "<group>"; };
 		50BFFA7E1FD5257E005F35CA /* MineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MineViewController.h; path = ../MineViewController.h; sourceTree = "<group>"; };
 		50BFFA7F1FD5257E005F35CA /* MineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MineViewController.m; path = ../MineViewController.m; sourceTree = "<group>"; };
 		50BFFA8E1FD52728005F35CA /* BlowClickButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BlowClickButton.h; sourceTree = "<group>"; };
@@ -704,10 +706,21 @@
 		F224290C2143BCC20035D0F0 /* CustomPresentation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomPresentation.h; sourceTree = "<group>"; };
 		F24C5CEC21474F32003B5A87 /* HHClient.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HHClient.h; sourceTree = "<group>"; };
 		F24C5CED21474F32003B5A87 /* HHClient.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HHClient.m; sourceTree = "<group>"; };
-		F24C5CEF2147B005003B5A87 /* SettingViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SettingViewController.h; sourceTree = "<group>"; };
-		F24C5CF02147B005003B5A87 /* SettingViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SettingViewController.m; sourceTree = "<group>"; };
 		F24C5CF22147BA8E003B5A87 /* SetUpHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SetUpHeaderView.h; sourceTree = "<group>"; };
 		F24C5CF32147BA8E003B5A87 /* SetUpHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SetUpHeaderView.m; sourceTree = "<group>"; };
+		F24C5CF52148F33E003B5A87 /* CommunityAPP.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CommunityAPP.entitlements; sourceTree = "<group>"; };
+		F24C5CF721490473003B5A87 /* PublicCircleController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PublicCircleController.h; sourceTree = "<group>"; };
+		F24C5CF821490473003B5A87 /* PublicCircleController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PublicCircleController.m; sourceTree = "<group>"; };
+		F24C5CFC21490A41003B5A87 /* PublicCircleCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = PublicCircleCell.h; path = CommunityAPP/Community/public/PublicCircleCell.h; sourceTree = SOURCE_ROOT; };
+		F24C5CFD21490A41003B5A87 /* PublicCircleCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = PublicCircleCell.m; path = CommunityAPP/Community/public/PublicCircleCell.m; sourceTree = SOURCE_ROOT; };
+		F24C5CFF21490A5E003B5A87 /* PublicCircleModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = PublicCircleModel.h; path = CommunityAPP/Community/public/PublicCircleModel.h; sourceTree = SOURCE_ROOT; };
+		F24C5D0021490A5E003B5A87 /* PublicCircleModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = PublicCircleModel.m; path = CommunityAPP/Community/public/PublicCircleModel.m; sourceTree = SOURCE_ROOT; };
+		F24C5D0321491183003B5A87 /* publicCircleList_Request.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = publicCircleList_Request.h; sourceTree = "<group>"; };
+		F24C5D0421491184003B5A87 /* publicCircleList_Request.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = publicCircleList_Request.m; sourceTree = "<group>"; };
+		F24C5D062149129A003B5A87 /* publicCircleList_Response.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = publicCircleList_Response.h; sourceTree = "<group>"; };
+		F24C5D072149129A003B5A87 /* publicCircleList_Response.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = publicCircleList_Response.m; sourceTree = "<group>"; };
+		F24C5D0C214914E7003B5A87 /* InForPublicCirCleList_Model.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InForPublicCirCleList_Model.h; sourceTree = "<group>"; };
+		F24C5D0D214914E7003B5A87 /* InForPublicCirCleList_Model.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InForPublicCirCleList_Model.m; sourceTree = "<group>"; };
 		F2ADAF9F214252C900837A98 /* HHKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = HHKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -988,6 +1001,7 @@
 		508E50EF1FD1475B00D600C5 /* CommunityAPP */ = {
 			isa = PBXGroup;
 			children = (
+				F24C5CF52148F33E003B5A87 /* CommunityAPP.entitlements */,
 				F22428D92142607F0035D0F0 /* Config */,
 				50BFFA271FD51FD9005F35CA /* NetWork */,
 				50BFFA951FD52818005F35CA /* category */,
@@ -1068,6 +1082,7 @@
 		50BFFA271FD51FD9005F35CA /* NetWork */ = {
 			isa = PBXGroup;
 			children = (
+				F24C5D0221491125003B5A87 /* publicCircle */,
 				5091B5531FE760F3003797EF /* hudong */,
 				50D77AD11FE107E2007052E7 /* zixun */,
 				504BDF681FDA35A00028D59D /* Model */,
@@ -1139,10 +1154,9 @@
 		50BFFA5D1FD523DB005F35CA /* public */ = {
 			isa = PBXGroup;
 			children = (
-				50BFFA681FD52426005F35CA /* Controller */,
-				50BFFA691FD52426005F35CA /* model */,
-				50BFFA6A1FD52426005F35CA /* view */,
-				50BFFA6B1FD52426005F35CA /* viewModel */,
+				F24C5CFB21490A11003B5A87 /* Model */,
+				F24C5CFA21490A11003B5A87 /* View */,
+				F24C5CF621490473003B5A87 /* Controller */,
 			);
 			path = public;
 			sourceTree = "<group>";
@@ -1245,8 +1259,6 @@
 				50DCAE5620510F0C00FE4370 /* MessageCenterController.m */,
 				50388DBD2057C761001AB86B /* SetUpViewController.h */,
 				50388DBE2057C761001AB86B /* SetUpViewController.m */,
-				F24C5CEF2147B005003B5A87 /* SettingViewController.h */,
-				F24C5CF02147B005003B5A87 /* SettingViewController.m */,
 				F24C5CF22147BA8E003B5A87 /* SetUpHeaderView.h */,
 				F24C5CF32147BA8E003B5A87 /* SetUpHeaderView.m */,
 			);
@@ -1284,36 +1296,6 @@
 			sourceTree = "<group>";
 		};
 		50BFFA671FD5241B005F35CA /* viewModel */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = viewModel;
-			sourceTree = "<group>";
-		};
-		50BFFA681FD52426005F35CA /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				50BFFA7B1FD52571005F35CA /* PublicCircleController.h */,
-				50BFFA7C1FD52571005F35CA /* PublicCircleController.m */,
-			);
-			path = Controller;
-			sourceTree = "<group>";
-		};
-		50BFFA691FD52426005F35CA /* model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = model;
-			sourceTree = "<group>";
-		};
-		50BFFA6A1FD52426005F35CA /* view */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = view;
-			sourceTree = "<group>";
-		};
-		50BFFA6B1FD52426005F35CA /* viewModel */ = {
 			isa = PBXGroup;
 			children = (
 			);
@@ -1754,6 +1736,46 @@
 			path = JTDSocialShare;
 			sourceTree = "<group>";
 		};
+		F24C5CF621490473003B5A87 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				F24C5CF721490473003B5A87 /* PublicCircleController.h */,
+				F24C5CF821490473003B5A87 /* PublicCircleController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		F24C5CFA21490A11003B5A87 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F24C5CFC21490A41003B5A87 /* PublicCircleCell.h */,
+				F24C5CFD21490A41003B5A87 /* PublicCircleCell.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F24C5CFB21490A11003B5A87 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F24C5CFF21490A5E003B5A87 /* PublicCircleModel.h */,
+				F24C5D0021490A5E003B5A87 /* PublicCircleModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		F24C5D0221491125003B5A87 /* publicCircle */ = {
+			isa = PBXGroup;
+			children = (
+				F24C5D0321491183003B5A87 /* publicCircleList_Request.h */,
+				F24C5D0421491184003B5A87 /* publicCircleList_Request.m */,
+				F24C5D062149129A003B5A87 /* publicCircleList_Response.h */,
+				F24C5D072149129A003B5A87 /* publicCircleList_Response.m */,
+				F24C5D0C214914E7003B5A87 /* InForPublicCirCleList_Model.h */,
+				F24C5D0D214914E7003B5A87 /* InForPublicCirCleList_Model.m */,
+			);
+			path = publicCircle;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1792,6 +1814,9 @@
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 1;
+							};
+							com.apple.Push = {
+								enabled = 0;
 							};
 						};
 					};
@@ -1895,7 +1920,6 @@
 				8614B7D820F461A40086546E /* MBProgressHUD.m in Sources */,
 				86E907D720EB58F100208132 /* InterPostInfoCell.m in Sources */,
 				5091B5721FE79CF8003797EF /* InterTopicListModel.m in Sources */,
-				F24C5CF12147B005003B5A87 /* SettingViewController.m in Sources */,
 				504BDF6B1FDA35B70028D59D /* RequestBaseModel.m in Sources */,
 				5091B5811FE7A46E003797EF /* InterNearPostResponse.m in Sources */,
 				5015EE721FD91AF400D1637B /* RegisterRequest.m in Sources */,
@@ -1917,6 +1941,7 @@
 				50BFFB101FD5282D005F35CA /* NSString+YRSafeCategory.m in Sources */,
 				507941541FE647E00093CDF9 /* SGPageContentView.m in Sources */,
 				50BFFAEB1FD52818005F35CA /* NSString+JKEncrypt.m in Sources */,
+				F24C5CF921490473003B5A87 /* PublicCircleController.m in Sources */,
 				86E907D420EB55C100208132 /* InterPostDescCell.m in Sources */,
 				50BFFAEE1FD52818005F35CA /* NSString+JKMatcher.m in Sources */,
 				8614B7CE20F4618F0086546E /* UIView+Ext.m in Sources */,
@@ -1956,6 +1981,7 @@
 				5005614D1FDE764100B06F5F /* NearCommunityModel.m in Sources */,
 				5079412F1FE563100093CDF9 /* NSBundle+MJRefresh.m in Sources */,
 				50D77ADE1FE10F69007052E7 /* InforVillage_CarouselRequest.m in Sources */,
+				F24C5D0121490A5E003B5A87 /* PublicCircleModel.m in Sources */,
 				507940EF1FE551080093CDF9 /* InforVillage_ListModel.m in Sources */,
 				5091B5751FE7A10E003797EF /* InterPostListRequest.m in Sources */,
 				50BFFAE61FD52818005F35CA /* NSData+JKzlib.m in Sources */,
@@ -1964,11 +1990,14 @@
 				50BFFAE51FD52818005F35CA /* NSData+JKPCM.m in Sources */,
 				500561261FDC27BC00B06F5F /* LoginViewController.m in Sources */,
 				50BFFB181FD52A78005F35CA /* InteractionViewController.m in Sources */,
+				F24C5CFE21490A41003B5A87 /* PublicCircleCell.m in Sources */,
 				50BFFAE41FD52818005F35CA /* NSData+JKHash.m in Sources */,
+				F24C5D0E214914E7003B5A87 /* InForPublicCirCleList_Model.m in Sources */,
 				50DCAE5720510F0C00FE4370 /* MessageCenterController.m in Sources */,
 				F24C5CF42147BA8E003B5A87 /* SetUpHeaderView.m in Sources */,
 				500561291FDC27FC00B06F5F /* LoginView.m in Sources */,
 				5011A139204D2EF4009AA7C3 /* PostActivityListController.m in Sources */,
+				F24C5D082149129A003B5A87 /* publicCircleList_Response.m in Sources */,
 				507941381FE563430093CDF9 /* FooterRefreshView.m in Sources */,
 				50BFFA7A1FD52546005F35CA /* InformationViewController.m in Sources */,
 				50D77AE41FE10FA7007052E7 /* InforVillage_CarouselModel.m in Sources */,
@@ -1994,7 +2023,6 @@
 				8614B7C320F4617D0086546E /* ELCAssetCollectionCell.m in Sources */,
 				5091B5781FE7A11C003797EF /* InterPostListResponse.m in Sources */,
 				8614B7C520F4617D0086546E /* ELCAsset.m in Sources */,
-				50BFFA7D1FD52571005F35CA /* PublicCircleController.m in Sources */,
 				50BFFB0D1FD5282D005F35CA /* NSArray+YRSafeCategory.m in Sources */,
 				507941231FE563100093CDF9 /* MJRefreshHeader.m in Sources */,
 				5079415F1FE6534D0093CDF9 /* InfoArt_categaryModel.m in Sources */,
@@ -2064,6 +2092,7 @@
 				F22428E8214274A20035D0F0 /* RegisterVC.m in Sources */,
 				507941521FE647E00093CDF9 /* UIView+SGFrame.m in Sources */,
 				F22428F721436CFD0035D0F0 /* CustomLab.m in Sources */,
+				F24C5D0521491184003B5A87 /* publicCircleList_Request.m in Sources */,
 				5077BBEA1FE92DB30047BE77 /* PostCircleAddPicView.m in Sources */,
 				50D77AF61FE11715007052E7 /* InforVillage_ArticleCateModel.m in Sources */,
 				50D77AD41FE10949007052E7 /* InforVillage_AppButtonRequest.m in Sources */,

@@ -32,6 +32,7 @@
 #import "HHClient.h"
 #import "UserObjModel.h"
 #import "JTDShareVC.h""
+#import "MacroNetwork.h"
 //#import "UINavigationController+FDFullscreenPopGesture.h"
 
 #define SCREEN_WIDTH                    CGRectGetWidth([[UIScreen mainScreen] bounds])

@@ -7,7 +7,17 @@
 //
 
 #import "BaseViewController.h"
+#import <WebKit/WebKit.h>
+#import "WKWebViewJavascriptBridge.h"
+@interface QuarterViewController : BaseViewController<WKNavigationDelegate>
 
-@interface QuarterViewController : BaseViewController
+@property (nonatomic, strong) NSString *urlString;
+@property (nonatomic, strong) WKWebView *webView;
+@property (nonatomic, strong) NSString *customTitle;
 
+@property (nonatomic, strong) WKWebViewJavascriptBridge *jsBridge;
+//子类重写 -h5页面回退
+- (void)goBackAction;
+//子类重写 -h5页面关闭
+- (void)WebBack;
 @end

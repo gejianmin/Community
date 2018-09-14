@@ -20,7 +20,9 @@
     return @{@"Village_ModelArray" : [Village_AppButtonModel class]};
 }
 @end
+
 @implementation Village_AppButtonModel
+    
 +(NSDictionary *)modelCustomPropertyMapper
 {
     return @{

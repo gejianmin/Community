@@ -12,6 +12,8 @@ pod 'YYModel'
 pod 'PureLayout'
 pod 'Masonry'
 pod 'IQKeyboardManager'
+#WEB
+pod 'WebViewJavascriptBridge', '~> 5.0'
 #友盟分享，QQ，微信，微博
 pod 'UMCCommon'
 pod 'UMCSecurityPlugins'

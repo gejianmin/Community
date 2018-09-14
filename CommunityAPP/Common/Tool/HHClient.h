@@ -18,4 +18,5 @@
 
 -(BOOL)isLogin;
     
+- (void)clearMemory;/** 清除缓存*/
 @end
