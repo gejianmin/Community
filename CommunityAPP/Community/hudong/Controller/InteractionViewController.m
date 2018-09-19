@@ -24,12 +24,13 @@
 #import "InterPostListModel.h"
 
 #import "InforCarouseCell.h"
-#import "InforAppButtonCell.h"
+//#import "InforAppButtonCell.h"
+#import "InteractionAppButtonCell.h"
 #import "InterListCell.h"
-#import "InterCateCell.h"
-
+//#import "InterCateCell.h"
+#import "InterCateView.h"
 #import "ListTableView.h"
-
+#import "InteractionDetailVC.h"
 typedef NS_ENUM(NSInteger,RefreshState) {
     RefreshState_Unknow,
     RefreshState_Refrsh,
@@ -37,6 +38,8 @@ typedef NS_ENUM(NSInteger,RefreshState) {
 };
 
 @interface InteractionViewController ()<InforAppButtonCellDelegate,FocusScrollViewDelegate,ListTableViewDelegate,InterCateCellDelagate>
+
+
 @property (nonatomic, strong) NSMutableArray *appButtonArray;
 @property (nonatomic, strong) NSMutableArray *carouselArray;
 @property (nonatomic, strong) NSMutableArray *listArray;
@@ -44,7 +47,7 @@ typedef NS_ENUM(NSInteger,RefreshState) {
 @property (nonatomic,copy) NSArray *topicListArray;//话题数组
 
 @property (nonatomic, strong) ListTableView *listTabView;
-
+@property(nonatomic,strong) InterCateView  * interCateView;
 @property (nonatomic, strong) UIView * currentTopicBtn;
 @property (nonatomic, strong) UIButton *fabuButton;
 
@@ -60,7 +63,7 @@ typedef NS_ENUM(NSInteger,RefreshState) {
 @implementation InteractionViewController
 
 
-#define instanceArray [NSArray arrayWithObjects:@"范围",@"3千米",@"5千米",@"10千米",@"20千米", nil]
+#define instanceArray [NSArray arrayWithObjects:@"3千米",@"5千米",@"10千米",@"20千米", nil]
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -252,7 +255,7 @@ typedef NS_ENUM(NSInteger,RefreshState) {
 }
 #pragma mark ----UITableView Delegate
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
-    return 4;
+    return 3;
 }
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     switch (section) {
@@ -262,10 +265,10 @@ typedef NS_ENUM(NSInteger,RefreshState) {
         case 1:
             return 1;
             break;
+//        case 2:
+//            return 0;
+//            break;
         case 2:
-            return 1;
-            break;
-        case 3:
             return self.listArray.count;
             break;
         default:
@@ -279,12 +282,11 @@ typedef NS_ENUM(NSInteger,RefreshState) {
             return 200;
             break;
         case 1:
-            return 100;
+        {
+            return [InteractionAppButtonCell getHeight:self.appButtonArray.count];
+        }
             break;
         case 2:
-            return 50;
-            break;
-        case 3:
         {
             PostListModel *model = self.listArray[indexPath.row];
             return [InterListCell getHeight:model];
@@ -296,8 +298,7 @@ typedef NS_ENUM(NSInteger,RefreshState) {
     return 0;
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    if (indexPath.section == 0) {
-        
+    if (indexPath.section == 0) {/** 轮播图*/
         static NSString *indentifier = @"InforCarouseCell";
         InforCarouseCell *cell = [tableView dequeueReusableCellWithIdentifier:indentifier];
         if (!cell) {
@@ -306,34 +307,16 @@ typedef NS_ENUM(NSInteger,RefreshState) {
         }
         cell.carouselArray = self.carouselArray;
         return cell;
-    }else if (indexPath.section == 1){
+    }else if (indexPath.section == 1){/** 按钮*/
         static NSString *indentifier = @"InforAppButtonCell";
-        InforAppButtonCell *cell = [tableView dequeueReusableCellWithIdentifier:indentifier];
+        InteractionAppButtonCell *cell = [tableView dequeueReusableCellWithIdentifier:indentifier];
         if (!cell) {
-            cell = [[InforAppButtonCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:indentifier];
+            cell = [[InteractionAppButtonCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:indentifier];
         }
         cell.delegate = self;
         cell.infoArray = self.appButtonArray;
         return cell;
-    }else if (indexPath.section == 2){
-        static NSString *indentifier = @"InterCateCell";
-        InterCateCell *cell = [tableView dequeueReusableCellWithIdentifier:indentifier];
-        if (!cell) {
-            cell = [[InterCateCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:indentifier];
-        }
-        cell.delegate = self;
-        cell.firstLabel.text = _leftTitle;
-        [cell.thirdButton setTitle:_rightTitle forState:UIControlStateNormal];
-        [cell.secondButton addTarget:self action:@selector(selectFirstButton:) forControlEvents:UIControlEventTouchUpInside];
-        [cell.thirdButton addTarget:self action:@selector(selectFirstButton:) forControlEvents:UIControlEventTouchUpInside];
-
-        if ([_rightTitle isEqualToString:@"范围"]) {
-            [cell.thirdButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-        }else{
-            [cell.thirdButton setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
-        }
-        return cell;
-    }else if (indexPath.section == 3){
+    }else if (indexPath.section == 2){/** 邻里圈*/
         static NSString *indentifier = @"InterListCell";
         InterListCell *cell = [tableView dequeueReusableCellWithIdentifier:indentifier];
         if (!cell) {
@@ -344,18 +327,26 @@ typedef NS_ENUM(NSInteger,RefreshState) {
     }
     return nil;
 }
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+    if (indexPath.section == 2) {
+        PostListModel *model = self.listArray[indexPath.row];
+        InteractionDetailVC *VC = [[InteractionDetailVC alloc] init];
+        VC.model = model;
+        VC.hidesBottomBarWhenPushed = YES;
+        [self.navigationController pushViewController:VC animated:YES];
+    }
+} 
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
     switch (section) {
         case 0:
             return 0;
             break;
         case 1:
-            return 5;
+            return 0;
             break;
         case 2:
-            return 5;
-            break;
-        case 3:
             return 0;
             break;
         default:
@@ -363,20 +354,53 @@ typedef NS_ENUM(NSInteger,RefreshState) {
     }
     return 0;
 }
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    [tableView deselectRowAtIndexPath:indexPath animated:YES];
-//
-//    Village_ArticleCateModel *model = self.listArray[_currenIndex];
-//    Village_ArticleListModel *listModel = model.article_list[indexPath.row];
-//
-//    ArtDetailViewController *vc = [[ArtDetailViewController alloc] init];
-//    vc.art_id =listModel.article_id;
-//    [self.rdv_tabBarController setTabBarHidden:YES animated:YES];
-//    [self.navigationController pushViewController:vc animated:YES];
-    
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
+    if(section == 2){
+        return 50;
+    }else{
+        return 0.0001;
+    }
 }
+-(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
+    UIView * headerView = [[UIView alloc]init];
+    if (section == 2) {
+        if (self.topicListArray.count!=0) {
+        
+        [headerView setBackgroundColor:kColorGray9];
+        self.interCateView = [[InterCateView alloc]initWithFrame:CGRectMake(0, 0, HH_SCREEN_W, 50)];
+        [headerView addSubview:self.interCateView];
+        self.interCateView.delegate = self;
+        self.interCateView.firstLabel.text = _leftTitle;
+        [self.interCateView.thirdButton setTitle:_rightTitle forState:UIControlStateNormal];
+        [self.interCateView.secondButton addTarget:self action:@selector(selectFirstButton:) forControlEvents:UIControlEventTouchUpInside];
+        [self.interCateView.thirdButton addTarget:self action:@selector(selectFirstButton:) forControlEvents:UIControlEventTouchUpInside];
+        if (_currentTopicBtn.tag == 100) {
+            [self.interCateView.firstLabel setTextColor:kColorRed];
+            [self.interCateView.secondButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+            [self.interCateView.thirdButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+        }if (_currentTopicBtn.tag == 101) {
+            [self.interCateView.firstLabel setTextColor:kColorBlack];
+            [self.interCateView.secondButton setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
+            [self.interCateView.thirdButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+        }if (_currentTopicBtn.tag == 102) {
+            [self.interCateView.firstLabel setTextColor:kColorBlack];
+            [self.interCateView.thirdButton setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
+            [self.interCateView.secondButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+        }
+        }
+    }
+    return headerView;
+}
+-(UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section{
+    UIView * headerView = [[UIView alloc]init];
+    return headerView;
+}
+#pragma mark--类别筛选
 - (void)tapSelect:(UIView *)sender{
     _currentTopicBtn = sender;
+    [self.interCateView.secondButton setTitleColor:kColorBlack forState:UIControlStateNormal];
+    [self.interCateView.thirdButton setTitleColor:kColorBlack forState:UIControlStateNormal];
+
 //    [UIView animateWithDuration:0.15 animations:^{
 //        sender.imageView.transform = CGAffineTransformMakeRotation(M_PI);
 //    }];
@@ -396,8 +420,10 @@ typedef NS_ENUM(NSInteger,RefreshState) {
     
     [self showListTableView:rect titleArray:titleArray];
 }
-
+#pragma mark--距离筛选
 - (void)selectFirstButton:(UIButton *)sender{
+    
+    _currentTopicBtn = sender;
     if (sender.tag == 101){
         //最新
         _pageCount = 1;//重置刷新页数
@@ -405,7 +431,7 @@ typedef NS_ENUM(NSInteger,RefreshState) {
         [self postListRequest];
     }else{
         //范围
-        CGPoint point = [sender convertPoint:CGPointMake(0, 0) toView:[UIApplication sharedApplication].keyWindow];
+        CGPoint point = [sender convertPoint:CGPointMake(0, 0) toView:self.view];//[UIApplication sharedApplication].keyWindow
         CGRect rect = CGRectMake(point.x, point.y, sender.width, sender.height);
         [self showListTableView:rect titleArray:instanceArray];
         
@@ -469,8 +495,7 @@ typedef NS_ENUM(NSInteger,RefreshState) {
     
     Village_AppButtonModel *model = self.appButtonArray[index];
     InterButtonCateController *vc = [[InterButtonCateController alloc] init];
-    vc.cat_id = model.linkurl;
-    vc.headTitle = model.title;
+    vc.model = model;
     vc.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:vc animated:YES];
 }

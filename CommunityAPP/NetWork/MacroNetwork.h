@@ -37,7 +37,12 @@
 //互动
 #define inter_FourmBtn              @"appbtns/getFourmBtnByVillage" //互动按钮
 #define inter_Village_Carousel      @"advs/getV3cAdvByVillage"//互动轮播图
-#define inter_topics                @"topics"//互动话题列表
+#define inter_topics                @"topics"//互动话题头部信息
+#define inter_followTopic           @"topics/followTopic"//互动话题列表
+#define inter_activeDetail          @"posts/read"//获取帖子详情
+#define inter_getComment            @"posts/getComment"//获取帖子的评论
+#define inter_replayComment         @"posts/replayComment"//回复评论
+
 #define inter_postList                @"posts/getPosts"//互动帖子列表
 #define inter_NearPostList                @"posts/getPostsByKm"//互动附近帖子列表
 

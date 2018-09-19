@@ -12,7 +12,7 @@
 
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier{
     if (self = [super initWithStyle:style reuseIdentifier:reuseIdentifier]) {
-        
+        self.selectionStyle = UITableViewCellSelectionStyleNone;
         self.imgView = [[UIImageView alloc] init];
         self.imgView.layer.cornerRadius = 25.0;
         self.imgView.layer.masksToBounds = YES;

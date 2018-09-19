@@ -252,6 +252,18 @@
 		F24C5D082149129A003B5A87 /* publicCircleList_Response.m in Sources */ = {isa = PBXBuildFile; fileRef = F24C5D072149129A003B5A87 /* publicCircleList_Response.m */; };
 		F24C5D0E214914E7003B5A87 /* InForPublicCirCleList_Model.m in Sources */ = {isa = PBXBuildFile; fileRef = F24C5D0D214914E7003B5A87 /* InForPublicCirCleList_Model.m */; };
 		F2ADAFA0214252C900837A98 /* HHKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F2ADAF9F214252C900837A98 /* HHKit.framework */; };
+		F2BBFFC2214B617200C81E4F /* InterCateView.m in Sources */ = {isa = PBXBuildFile; fileRef = F2BBFFC1214B617200C81E4F /* InterCateView.m */; };
+		F2BBFFC5214B91CD00C81E4F /* InteractionAppButtonCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F2BBFFC4214B91CD00C81E4F /* InteractionAppButtonCell.m */; };
+		F2BBFFC8214BBC9500C81E4F /* InterButtonCateHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = F2BBFFC7214BBC9500C81E4F /* InterButtonCateHeaderView.m */; };
+		F2BBFFCB214F9B5800C81E4F /* InteractionDetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F2BBFFCA214F9B5800C81E4F /* InteractionDetailVC.m */; };
+		F2BBFFCE214FB38400C81E4F /* interactionDetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F2BBFFCD214FB38400C81E4F /* interactionDetailModel.m */; };
+		F2BBFFD1214FB55E00C81E4F /* interactionDetailRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = F2BBFFD0214FB55E00C81E4F /* interactionDetailRequest.m */; };
+		F2BBFFD4214FB59800C81E4F /* interactionDetailResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = F2BBFFD3214FB59800C81E4F /* interactionDetailResponse.m */; };
+		F2BBFFD72150883300C81E4F /* inter_commentListReqest.m in Sources */ = {isa = PBXBuildFile; fileRef = F2BBFFD62150883300C81E4F /* inter_commentListReqest.m */; };
+		F2BBFFDA21508AED00C81E4F /* inter_commentResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = F2BBFFD921508AED00C81E4F /* inter_commentResponse.m */; };
+		F2BBFFDD21508D5300C81E4F /* inter_commentModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F2BBFFDC21508D5300C81E4F /* inter_commentModel.m */; };
+		F2BBFFE02150A05B00C81E4F /* inter_commentHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = F2BBFFDF2150A05B00C81E4F /* inter_commentHeaderView.m */; };
+		F2BBFFE32150A1F500C81E4F /* inter_commentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F2BBFFE22150A1F500C81E4F /* inter_commentCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -737,6 +749,30 @@
 		F24C5D0C214914E7003B5A87 /* InForPublicCirCleList_Model.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InForPublicCirCleList_Model.h; sourceTree = "<group>"; };
 		F24C5D0D214914E7003B5A87 /* InForPublicCirCleList_Model.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InForPublicCirCleList_Model.m; sourceTree = "<group>"; };
 		F2ADAF9F214252C900837A98 /* HHKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = HHKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F2BBFFC0214B617200C81E4F /* InterCateView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InterCateView.h; sourceTree = "<group>"; };
+		F2BBFFC1214B617200C81E4F /* InterCateView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InterCateView.m; sourceTree = "<group>"; };
+		F2BBFFC3214B91CD00C81E4F /* InteractionAppButtonCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InteractionAppButtonCell.h; sourceTree = "<group>"; };
+		F2BBFFC4214B91CD00C81E4F /* InteractionAppButtonCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InteractionAppButtonCell.m; sourceTree = "<group>"; };
+		F2BBFFC6214BBC9500C81E4F /* InterButtonCateHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InterButtonCateHeaderView.h; sourceTree = "<group>"; };
+		F2BBFFC7214BBC9500C81E4F /* InterButtonCateHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InterButtonCateHeaderView.m; sourceTree = "<group>"; };
+		F2BBFFC9214F9B5800C81E4F /* InteractionDetailVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InteractionDetailVC.h; sourceTree = "<group>"; };
+		F2BBFFCA214F9B5800C81E4F /* InteractionDetailVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InteractionDetailVC.m; sourceTree = "<group>"; };
+		F2BBFFCC214FB38400C81E4F /* interactionDetailModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = interactionDetailModel.h; sourceTree = "<group>"; };
+		F2BBFFCD214FB38400C81E4F /* interactionDetailModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = interactionDetailModel.m; sourceTree = "<group>"; };
+		F2BBFFCF214FB55E00C81E4F /* interactionDetailRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = interactionDetailRequest.h; sourceTree = "<group>"; };
+		F2BBFFD0214FB55E00C81E4F /* interactionDetailRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = interactionDetailRequest.m; sourceTree = "<group>"; };
+		F2BBFFD2214FB59800C81E4F /* interactionDetailResponse.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = interactionDetailResponse.h; sourceTree = "<group>"; };
+		F2BBFFD3214FB59800C81E4F /* interactionDetailResponse.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = interactionDetailResponse.m; sourceTree = "<group>"; };
+		F2BBFFD52150883300C81E4F /* inter_commentListReqest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = inter_commentListReqest.h; sourceTree = "<group>"; };
+		F2BBFFD62150883300C81E4F /* inter_commentListReqest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = inter_commentListReqest.m; sourceTree = "<group>"; };
+		F2BBFFD821508AED00C81E4F /* inter_commentResponse.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = inter_commentResponse.h; sourceTree = "<group>"; };
+		F2BBFFD921508AED00C81E4F /* inter_commentResponse.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = inter_commentResponse.m; sourceTree = "<group>"; };
+		F2BBFFDB21508D5300C81E4F /* inter_commentModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = inter_commentModel.h; sourceTree = "<group>"; };
+		F2BBFFDC21508D5300C81E4F /* inter_commentModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = inter_commentModel.m; sourceTree = "<group>"; };
+		F2BBFFDE2150A05B00C81E4F /* inter_commentHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = inter_commentHeaderView.h; sourceTree = "<group>"; };
+		F2BBFFDF2150A05B00C81E4F /* inter_commentHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = inter_commentHeaderView.m; sourceTree = "<group>"; };
+		F2BBFFE12150A1F500C81E4F /* inter_commentCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = inter_commentCell.h; sourceTree = "<group>"; };
+		F2BBFFE22150A1F500C81E4F /* inter_commentCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = inter_commentCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1073,6 +1109,14 @@
 				505FA8621FEA07F80082AAB0 /* Inter_categaryRequest.m */,
 				505FA8641FEA08080082AAB0 /* Inter_categaryResponse.h */,
 				505FA8651FEA08080082AAB0 /* Inter_categaryResponse.m */,
+				F2BBFFCF214FB55E00C81E4F /* interactionDetailRequest.h */,
+				F2BBFFD0214FB55E00C81E4F /* interactionDetailRequest.m */,
+				F2BBFFD2214FB59800C81E4F /* interactionDetailResponse.h */,
+				F2BBFFD3214FB59800C81E4F /* interactionDetailResponse.m */,
+				F2BBFFD52150883300C81E4F /* inter_commentListReqest.h */,
+				F2BBFFD62150883300C81E4F /* inter_commentListReqest.m */,
+				F2BBFFD821508AED00C81E4F /* inter_commentResponse.h */,
+				F2BBFFD921508AED00C81E4F /* inter_commentResponse.m */,
 			);
 			path = hudong;
 			sourceTree = "<group>";
@@ -1090,6 +1134,10 @@
 				5091B57A1FE7A12C003797EF /* InterPostListModel.m */,
 				505FA85B1FEA038F0082AAB0 /* InterButton_categaryModel.h */,
 				505FA85C1FEA038F0082AAB0 /* InterButton_categaryModel.m */,
+				F2BBFFCC214FB38400C81E4F /* interactionDetailModel.h */,
+				F2BBFFCD214FB38400C81E4F /* interactionDetailModel.m */,
+				F2BBFFDB21508D5300C81E4F /* inter_commentModel.h */,
+				F2BBFFDC21508D5300C81E4F /* inter_commentModel.m */,
 			);
 			path = hudong;
 			sourceTree = "<group>";
@@ -1200,6 +1248,8 @@
 			children = (
 				50BFFB161FD52A78005F35CA /* InteractionViewController.h */,
 				50BFFB171FD52A78005F35CA /* InteractionViewController.m */,
+				F2BBFFC9214F9B5800C81E4F /* InteractionDetailVC.h */,
+				F2BBFFCA214F9B5800C81E4F /* InteractionDetailVC.m */,
 				5077BBDF1FE922AA0047BE77 /* InterPostViewController.h */,
 				5077BBE01FE922AA0047BE77 /* InterPostViewController.m */,
 				505FA85E1FEA04B50082AAB0 /* InterButtonCateController.h */,
@@ -1236,12 +1286,22 @@
 				5091B5681FE7973A003797EF /* InterListCell.m */,
 				5091B5821FE7D773003797EF /* InterCateCell.h */,
 				5091B5831FE7D773003797EF /* InterCateCell.m */,
+				F2BBFFC0214B617200C81E4F /* InterCateView.h */,
+				F2BBFFC1214B617200C81E4F /* InterCateView.m */,
 				5091B5851FE7DCB8003797EF /* ListTableView.h */,
 				5091B5861FE7DCB8003797EF /* ListTableView.m */,
 				86E907D220EB55C100208132 /* InterPostDescCell.h */,
 				86E907D320EB55C100208132 /* InterPostDescCell.m */,
 				86E907D520EB58F100208132 /* InterPostInfoCell.h */,
 				86E907D620EB58F100208132 /* InterPostInfoCell.m */,
+				F2BBFFC3214B91CD00C81E4F /* InteractionAppButtonCell.h */,
+				F2BBFFC4214B91CD00C81E4F /* InteractionAppButtonCell.m */,
+				F2BBFFC6214BBC9500C81E4F /* InterButtonCateHeaderView.h */,
+				F2BBFFC7214BBC9500C81E4F /* InterButtonCateHeaderView.m */,
+				F2BBFFDE2150A05B00C81E4F /* inter_commentHeaderView.h */,
+				F2BBFFDF2150A05B00C81E4F /* inter_commentHeaderView.m */,
+				F2BBFFE12150A1F500C81E4F /* inter_commentCell.h */,
+				F2BBFFE22150A1F500C81E4F /* inter_commentCell.m */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -1941,6 +2001,7 @@
 				50BFFAE81FD52818005F35CA /* NSString+JKContains.m in Sources */,
 				50D77ADB1FE10A20007052E7 /* InforVillage_AppButtonModel.m in Sources */,
 				5079413F1FE56D710093CDF9 /* WebViewController.m in Sources */,
+				F2BBFFC8214BBC9500C81E4F /* InterButtonCateHeaderView.m in Sources */,
 				50DCAE5D2051332D00FE4370 /* NoticeTableViewCell.m in Sources */,
 				8614B7D820F461A40086546E /* MBProgressHUD.m in Sources */,
 				86E907D720EB58F100208132 /* InterPostInfoCell.m in Sources */,
@@ -1998,6 +2059,8 @@
 				50BFFB001FD52818005F35CA /* UIView+Helper.m in Sources */,
 				5005613E1FDE680300B06F5F /* NearCommunityController.mm in Sources */,
 				507940EC1FE550ED0093CDF9 /* InforVillage_ListResponse.m in Sources */,
+				F2BBFFCE214FB38400C81E4F /* interactionDetailModel.m in Sources */,
+				F2BBFFC5214B91CD00C81E4F /* InteractionAppButtonCell.m in Sources */,
 				50FC929E214652FD004A34FC /* QuarterViewController.m in Sources */,
 				50D77AE11FE10F9A007052E7 /* InforVillage_CarouselResponse.m in Sources */,
 				5079412E1FE563100093CDF9 /* MJRefreshConst.m in Sources */,
@@ -2013,12 +2076,15 @@
 				507940EF1FE551080093CDF9 /* InforVillage_ListModel.m in Sources */,
 				5091B5751FE7A10E003797EF /* InterPostListRequest.m in Sources */,
 				50BFFAE61FD52818005F35CA /* NSData+JKzlib.m in Sources */,
+				F2BBFFE32150A1F500C81E4F /* inter_commentCell.m in Sources */,
 				50D77B1A1FE15061007052E7 /* PageControl.m in Sources */,
 				50BFFAF31FD52818005F35CA /* NSString+JKScore.m in Sources */,
 				50BFFAE51FD52818005F35CA /* NSData+JKPCM.m in Sources */,
 				500561261FDC27BC00B06F5F /* LoginViewController.m in Sources */,
 				50BFFB181FD52A78005F35CA /* InteractionViewController.m in Sources */,
 				F24C5CFE21490A41003B5A87 /* PublicCircleCell.m in Sources */,
+				F2BBFFE02150A05B00C81E4F /* inter_commentHeaderView.m in Sources */,
+				F2BBFFD72150883300C81E4F /* inter_commentListReqest.m in Sources */,
 				50BFFAE41FD52818005F35CA /* NSData+JKHash.m in Sources */,
 				F24C5D0E214914E7003B5A87 /* InForPublicCirCleList_Model.m in Sources */,
 				50DCAE5720510F0C00FE4370 /* MessageCenterController.m in Sources */,
@@ -2042,6 +2108,7 @@
 				50D77AFF1FE11CF2007052E7 /* InforVillage_ADModel.m in Sources */,
 				50D77AFC1FE11CE4007052E7 /* InforVillage_ADResponse.m in Sources */,
 				50BFFAED1FD52818005F35CA /* NSString+JKHTML.m in Sources */,
+				F2BBFFD4214FB59800C81E4F /* interactionDetailResponse.m in Sources */,
 				F22428EE214275610035D0F0 /* ForgotView.m in Sources */,
 				50BFFAE71FD52818005F35CA /* NSString+JKBase64.m in Sources */,
 				5091B56F1FE79CCC003797EF /* InterTopicListResponse.m in Sources */,
@@ -2060,6 +2127,7 @@
 				507941241FE563100093CDF9 /* MJRefreshAutoGifFooter.m in Sources */,
 				F22428E22142651F0035D0F0 /* HHValidateButton.m in Sources */,
 				8614B7D220F461990086546E /* JYBLoadingIndicator.m in Sources */,
+				F2BBFFCB214F9B5800C81E4F /* InteractionDetailVC.m in Sources */,
 				50BFFAF11FD52818005F35CA /* NSString+JKPinyin.m in Sources */,
 				50BFFA4A1FD51FD9005F35CA /* NetWorkConfig.m in Sources */,
 				5091B57B1FE7A12C003797EF /* InterPostListModel.m in Sources */,
@@ -2094,11 +2162,13 @@
 				50BFFAE01FD52818005F35CA /* NSData+JKBase64.m in Sources */,
 				507941211FE563100093CDF9 /* MJRefreshComponent.m in Sources */,
 				5077BBE11FE922AA0047BE77 /* InterPostViewController.m in Sources */,
+				F2BBFFC2214B617200C81E4F /* InterCateView.m in Sources */,
 				5091B5691FE7973A003797EF /* InterListCell.m in Sources */,
 				507FCB3D214A0A98000A0C9A /* InfoArt_SearchRequest.m in Sources */,
 				50BFFAEA1FD52818005F35CA /* NSString+JKEmoji.m in Sources */,
 				507941321FE563100093CDF9 /* UIView+MJExtension.m in Sources */,
 				5015EE751FD91B0E00D1637B /* RegisterResponse.m in Sources */,
+				F2BBFFDD21508D5300C81E4F /* inter_commentModel.m in Sources */,
 				507941391FE563430093CDF9 /* HeaderRefreshView.m in Sources */,
 				50BFFAE11FD52818005F35CA /* NSData+JKDataCache.m in Sources */,
 				507941591FE6520B0093CDF9 /* InfoArt_categaryRequest.m in Sources */,
@@ -2128,6 +2198,8 @@
 				50D77AD41FE10949007052E7 /* InforVillage_AppButtonRequest.m in Sources */,
 				F224290D2143BCC20035D0F0 /* CustomPresentation.m in Sources */,
 				508E50F21FD1475B00D600C5 /* main.m in Sources */,
+				F2BBFFDA21508AED00C81E4F /* inter_commentResponse.m in Sources */,
+				F2BBFFD1214FB55E00C81E4F /* interactionDetailRequest.m in Sources */,
 				5079416E1FE69DA50093CDF9 /* ArtDetailViewController.m in Sources */,
 				50BFFADE1FD52818005F35CA /* AssetHelper.m in Sources */,
 				50EC1E9F204E9CC300FCB48C /* PostActivityListCell.m in Sources */,

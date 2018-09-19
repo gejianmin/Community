@@ -17,4 +17,11 @@
  */
 - (void)InfoArt_categaryRequestWithCat_ID:(NSString *)cat_id;
 
+/**
+ 获取某帖子分类的所有子类头部信息
+ 
+ @param linkUrl 帖子分类
+ */
+- (void)InfoArt_categaryRequestWithLinkUrl:(NSString *)linkUrl;
+
 @end

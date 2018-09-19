@@ -21,17 +21,39 @@
     
     self.headerFields = [NSMutableDictionary dictionary];
     [self.headerFields setObject:@"yezhu" forKey:@"identity"];
+    [self.headerFields setObject:[[[HHClient sharedInstance]user]token] forKey:@"authorization"];
+
+    //    NSMutableDictionary *paramDic = [[NSMutableDictionary alloc] init];
+    //    [paramDic setValue:cat_id forKey:@"id"];
+    //    self.parameters = paramDic;//post参数
+    
+    //    self.urlPathString = [NSString stringWithFormat:@"%@%@/%@",self.hostString,infoArt_categray,cat_id];
+//    if ([cat_id containsString:@"http://"]) {
+//        self.urlPathString = cat_id;
+//    }else{
+//        self.urlPathString = [NSString stringWithFormat:@"http://%@",cat_id];
+        self.urlPathString = [NSString stringWithFormat:@"%@%@/%@",self.hostString,inter_followTopic,cat_id];
+
+//    }
+    
+}
+- (void)InfoArt_categaryRequestWithLinkUrl:(NSString *)linkUrl{
+    
+    self.headerFields = [NSMutableDictionary dictionary];
+    [self.headerFields setObject:@"yezhu" forKey:@"identity"];
+    [self.headerFields setObject:[[[HHClient sharedInstance]user]token] forKey:@"authorization"];
     
     //    NSMutableDictionary *paramDic = [[NSMutableDictionary alloc] init];
     //    [paramDic setValue:cat_id forKey:@"id"];
     //    self.parameters = paramDic;//post参数
     
     //    self.urlPathString = [NSString stringWithFormat:@"%@%@/%@",self.hostString,infoArt_categray,cat_id];
-    if ([cat_id containsString:@"http://"]) {
-        self.urlPathString = cat_id;
+    if ([linkUrl containsString:@"http://"]) {
+        self.urlPathString = linkUrl;
     }else{
-        self.urlPathString = [NSString stringWithFormat:@"http://%@",cat_id];
+        self.urlPathString = [NSString stringWithFormat:@"http://%@",linkUrl];
     }
+    
     
 }
 ResponserParserGenerate(Inter_categaryResponse)

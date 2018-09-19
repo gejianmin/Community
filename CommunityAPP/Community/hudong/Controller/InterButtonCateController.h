@@ -7,8 +7,11 @@
 //
 
 #import "BaseTableViewController.h"
-
+#import "InforVillage_AppButtonModel.h"
 @interface InterButtonCateController : BaseTableViewController
-@property (nonatomic, copy) NSString *cat_id;
+
+//@property (nonatomic, copy) NSString *cat_id;
+
+@property(nonatomic,strong) Village_AppButtonModel * model;
 
 @end

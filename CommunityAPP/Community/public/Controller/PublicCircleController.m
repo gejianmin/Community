@@ -25,6 +25,8 @@
     [super viewDidLoad];
     [self carouselRequest];
     [self publicCircleListRequest];
+    [self setupCollectionView];
+
 }
 - (void)publicCircleListRequest{
     JTDWeakSelf
@@ -34,7 +36,7 @@
         NSArray * list = [NSArray yy_modelArrayWithClass:[InForPublicCirCleList_Model class] json:responseData[@"data"]];
         [WeakSelf.datasourceArray removeAllObjects];
         [WeakSelf.datasourceArray addObjectsFromArray:list];
-        [WeakSelf setupCollectionView];
+//        [WeakSelf setupCollectionView];
         [WeakSelf.gsa_collectionView reloadData];
     } failedBlock:^(NSInteger error, id responseData) {
         
@@ -46,13 +48,16 @@
 }
     //每个section的item个数
 -(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
-    return 7;
+    return self.datasourceArray.count;
 }
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     
     PublicCircleCell *cell = (PublicCircleCell *)[collectionView dequeueReusableCellWithReuseIdentifier:NSStringFromClass([PublicCircleCell class]) forIndexPath:indexPath];
-    InForPublicCirCleList_Model *model = self.datasourceArray[indexPath.row];
-    cell.model = model;
+//    cell.backgroundColor = kColorGray7;
+    if (self.datasourceArray) {
+        InForPublicCirCleList_Model *model = self.datasourceArray[indexPath.row];
+        cell.model = model;
+    }
     return cell;
 }
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
@@ -66,12 +71,12 @@
 //设置每个item的UIEdgeInsets
 - (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout insetForSectionAtIndex:(NSInteger)section
     {
-        return UIEdgeInsetsMake(0, 0, 0, 0);
+        return UIEdgeInsetsMake(5, 5, 5, 5);
     }
       //设置每个item的尺寸
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath{
     CGFloat width = 93;
-    return CGSizeMake(width, width);
+    return CGSizeMake(width-10, width);
 }
     
 - (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath{

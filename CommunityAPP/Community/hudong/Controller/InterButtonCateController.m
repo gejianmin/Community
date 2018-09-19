@@ -14,21 +14,32 @@
 #import "InterArtListTool.h"
 #import "Inter_categaryRequest.h"
 #import "InterListCell.h"
+#import "InterPostListRequest.h"
+#import "InterButtonCateHeaderView.h"
+typedef NS_ENUM(NSInteger,RefreshState) {
+    RefreshState_Unknow,
+    RefreshState_Refrsh,
+    RefreshState_LoadMore
+};
 
 @interface InterButtonCateController ()<SGPageTitleViewDelegate,UITableViewDelegate,UITableViewDataSource>
 @property (nonatomic, strong) NSMutableArray *cateArray;
 @property (nonatomic, strong) NSMutableArray *listArray;
 @property (nonatomic, assign) NSInteger currentIndex;
+@property (nonatomic, copy) NSString *topic_id;
+@property (nonatomic, assign) RefreshState status;
+@property(nonatomic,strong) InterButtonCateHeaderView * headerView;
+@property (nonatomic, assign) NSInteger pageCount;
 @end
 
 @implementation InterButtonCateController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
     self.view.backgroundColor = RGB(240, 240, 240);
-    
-    self.tableView.frame = CGRectMake(0, 64 + 52, SCREEN_WIDTH, SCREEN_HEIGHT - 52 - 64);
+    _pageCount = 1;
+    self.tableView.frame = CGRectMake(0, GSANavHeight, SCREEN_WIDTH, SCREEN_HEIGHT-GSANavHeight );
+    [self.tableView setTableHeaderView:[self tableViewHeaderView]];
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     
     _currentIndex = 0;
@@ -36,124 +47,115 @@
     [self setLeftItemWithImageTarget:self];
     self.title = self.headTitle;
     
-    [self setCateGaryRequest];
+    [self setCateGaryHeaderRequest];
     
     [self addRefreshHeaderView];
     [self addRefreshFooterView];
 }
+-(UIView *)tableViewHeaderView{
+    
+    self.headerView = [[InterButtonCateHeaderView alloc]initWithFrame:CGRectMake(0, 0, HH_SCREEN_W, 169) color:kColorWhite];
+    return self.headerView;
+}
 - (void)refreshData
 {
-    InterArtListTool *tool = self.listArray[_currentIndex];
-    tool.status = RequestMode_Rrefresh;
-    
-    [self requestDataList];
+    _pageCount = 1;
+    _status = RefreshState_Refrsh;
+        [self postListRequest];
+   
 }
 - (void)getMoreData
 {
-    InterArtListTool *tool = self.listArray[_currentIndex];
-    tool.status = RequestMode_LoadMore;
+    _status = RefreshState_LoadMore;
+        [self postListRequest];
     
-    [self requestDataList];
 }
-//分类请求
-- (void)requestDataList{
-    __weak typeof(self) tyself = self;
-    
-    InterArtListTool *tool = self.listArray[_currentIndex];
-    
-    [tool inforVillage_ListRequestSuccess:^(id object) {
-        
-        [tyself.tableView reloadData];
-        [tyself.tableView.mj_footer endRefreshing];
-        [tyself.tableView.mj_header endRefreshing];
-    } fail:^{
-        
-        [tyself.tableView.mj_footer endRefreshing];
-        [tyself.tableView.mj_header endRefreshing];
-    }];
-}
-- (void)setCateGaryRequest{
-    
+-(void)setCateGaryHeaderRequest{
     __weak typeof(self) tyself = self;
     Inter_categaryRequest *request = [[Inter_categaryRequest alloc] init];
-    [request InfoArt_categaryRequestWithCat_ID:self.cat_id];
+    [request InfoArt_categaryRequestWithLinkUrl:self.model.linkurl];
     [request setFinishedBlock:^(id object, id responseData) {
-        
-        InterButton_categaryModel *model = object;
-        tyself.cateArray = [model.data mutableCopy];
-        if (tyself.cateArray.count>0) {
-            
-            [tyself setSGpage];
-            //创建模型
-            for (int i = 0; i<tyself.cateArray.count; i++) {
-                
-                Inter_categaryModel *cateModel = tyself.cateArray[i];
-                
-                InterArtListTool *tool = [[InterArtListTool alloc] init];
-                tool.currentIndex = i;
-                tool.cat_id = cateModel.topic_id;
-                tool.pageIndex = 1;//要请求的页码数
-                [tyself.listArray addObject:tool];
-            }
-            
-            //            //默认请求第一个分类数据
-            //            [tyself requestDataList];
-            
-            
-        }
+        Inter_categaryModel * model = [Inter_categaryModel yy_modelWithJSON:responseData[@"data"]];
+        self.headerView.model = model;
+        tyself.topic_id = model.topic_id;
+        [tyself postListRequest];
         
     } failedBlock:^(NSInteger error, id responseData) {
         
     }];
 }
-- (void)setSGpage{
+//
+//- (void)setCateGaryRequestWithCat_Id:(NSString *)cat_Id{
+//    
+//    __weak typeof(self) tyself = self;
+//    Inter_categaryRequest *request = [[Inter_categaryRequest alloc] init];
+//    [request InfoArt_categaryRequestWithCat_ID:cat_Id];
+//    [request setFinishedBlock:^(id object, id responseData) {
+//        InterButton_categaryModel * model = object;
+//        tyself.cateArray = [model.data mutableCopy];
+//        if (tyself.cateArray.count>0) {
+//            
+//            [tyself setSGpage];
+//            //创建模型
+//            for (int i = 0; i<tyself.cateArray.count; i++) {
+//                
+//                Inter_categaryModel *cateModel = tyself.cateArray[i];
+//                
+//                InterArtListTool *tool = [[InterArtListTool alloc] init];
+//                tool.currentIndex = i;
+//                tool.cat_id = cateModel.topic_id;
+//                tool.pageIndex = 1;//要请求的页码数
+//                [tyself.listArray addObject:tool];
+//            }
+//            
+//            //            //默认请求第一个分类数据
+//            //            [tyself requestDataList];
+//            
+//            
+//        }
+//        
+//    } failedBlock:^(NSInteger error, id responseData) {
+//        
+//    }];
+//}
+//帖子列表数据
+- (void)postListRequest{
+    [SVProgressHUD showInfoWithStatus:@"正在加载"];
+    __weak typeof(self) tyself = self;
+    InterPostListRequest *request = [[InterPostListRequest alloc] init];
+    [request interPostListRequestWithTopic_id:_topic_id page:_pageCount];
     
-    NSMutableArray *titleArray = [NSMutableArray array];
-    for (Inter_categaryModel *model in self.cateArray) {
-        [titleArray addObject:model.topic_name];
-    }
-    
-    SGPageTitleViewConfigure *configure = [SGPageTitleViewConfigure pageTitleViewConfigure];
-    configure.titleColor = [UIColor blackColor];
-    configure.spacingBetweenButtons = 30.f;
-    configure.titleFont = FONT(14);
-    configure.titleSelectedColor = [UIColor redColor];
-    configure.indicatorColor = [UIColor redColor];
-    
-    SGPageTitleView *pageTitleView = [SGPageTitleView pageTitleViewWithFrame:CGRectMake(2.0f, 64, SCREEN_WIDTH, 50) delegate:self titleNames:titleArray configure:configure];
-    pageTitleView.backgroundColor = [UIColor whiteColor];
-    pageTitleView.isShowBottomSeparator = NO;
-    pageTitleView.isNeedBounces = NO;
-    pageTitleView.offSetAnimated = YES;
-    pageTitleView.selectedIndex = 0;
-    
-    [self.view addSubview:pageTitleView];
-}
-#pragma mark -- SGPageTitleViewDelegate
-- (void)pageTitleView:(SGPageTitleView *)pageTitleView selectedIndex:(NSInteger)selectedIndex{
-    _currentIndex = selectedIndex;
-    
-    InterArtListTool *tool = self.listArray[selectedIndex];
-    if (tool.dataArray.count<=0 & tool.reqStatus != RequestStatus_Responding) {
+    [request setFinishedBlock:^(id object, id responseData) {
         
-        [self.tableView.mj_header beginRefreshing];
-    }else{
-        //        if (tool.reqStatus == RequestStatus_Responding) {
-        //            [self.tableView.mj_footer beginRefreshing];
-        //        }else{
-        //            [self.tableView.mj_footer endRefreshing];
-        //
-        //        }
-        [self.tableView reloadData];
-    }
+        InterPostListModel *model = object;
+        
+        if (tyself.status == RefreshState_Refrsh) {
+            //刷新
+            tyself.listArray = [model.list mutableCopy];
+        }else{
+            [tyself.listArray addObjectsFromArray:model.list];
+            tyself.pageCount ++;
+        }
+        [SVProgressHUD dismiss];
+        [tyself.tableView reloadData];
+        
+        [tyself.tableView.mj_header endRefreshing];
+        [tyself.tableView.mj_footer endRefreshing];
+        
+    } failedBlock:^(NSInteger error, id responseData) {
+        [SVProgressHUD dismiss];
+        
+        [tyself.tableView.mj_header endRefreshing];
+        [tyself.tableView.mj_footer endRefreshing];
+    }];
 }
+
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
     return 1;
 }
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     if (self.listArray.count>0) {
-        InterArtListTool *tool = self.listArray[_currentIndex];
-        return tool.dataArray.count;
+        return self.listArray.count;
     }
     return 0;
 }
@@ -163,22 +165,16 @@
     if (!cell) {
         cell = [[InterListCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:indentifier];
     }
-    InterArtListTool *tool = self.listArray[_currentIndex];
-    cell.model = tool.dataArray[indexPath.row];
+    cell.model = self.listArray[indexPath.row];
+
     return cell;
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return 110;
+    PostListModel *model = self.listArray[indexPath.row];
+    return [InterListCell getHeight:model];
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    
-//    InfoArtListTool *tool = self.listArray[_currentIndex];
-//    Village_ArticleListModel *model = tool.dataArray[indexPath.row];
-//
-//    ArtDetailViewController *vc = [[ArtDetailViewController alloc] init];
-//    vc.art_id =model.article_id;
-//    [self.navigationController pushViewController:vc animated:YES];
     
 }
 - (void)back{

@@ -18,16 +18,14 @@
 - (instancetype)initWithFrame:(CGRect)frame{
     if (self = [super initWithFrame:frame]) {
         
-        self.backgroundColor = [UIColor clearColor];
-        
+//        self.backgroundColor = COLORHEXAndALPHA(0x000000,0.98*0.7);
         UIView *backView = [[UIView alloc] initWithFrame:self.bounds];
         [self addSubview:backView];
-        backView.backgroundColor = [UIColor clearColor];
+        backView.backgroundColor = kColorClear ;
 
         UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tap:)];
         tap.delegate = self;
         [backView addGestureRecognizer:tap];
-        
         self.tableView = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStylePlain];
         self.tableView.delegate =self;
         self.tableView.dataSource = self;
@@ -48,7 +46,7 @@
     [self.tableView reloadData];
 }
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
-    return 1;
+    return 2;
 }
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     return self.titleArray.count;
@@ -77,6 +75,7 @@
     }
     NSLog(@"123124214");
 }
+
 - (void)tap:(UITapGestureRecognizer *)sender{
     CGPoint point = [sender locationInView:self];
     

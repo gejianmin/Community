@@ -23,7 +23,7 @@
     _tableView.dataSource = self;
     _tableView.delegate = self;
     _tableView.tableFooterView = [UIView new];
-    
+    [_tableView setTableHeaderView:[self tableViewHeaderView]];
     _tableView.estimatedRowHeight = 0;
     _tableView.estimatedSectionHeaderHeight = 0;
     _tableView.estimatedSectionFooterHeight = 0;
@@ -34,7 +34,10 @@
     }];
 
 }
-
+-(UIView *)tableViewHeaderView{
+    
+    return nil;
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

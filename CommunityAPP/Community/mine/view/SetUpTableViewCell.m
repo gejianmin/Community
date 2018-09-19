@@ -9,10 +9,10 @@
 #import "SetUpTableViewCell.h"
 
 @interface SetUpTableViewCell ()
-    
-    
-    @property(nonatomic,strong) UISwitch  * pushSwitch;
-    @end
+
+@property(nonatomic,strong) UISwitch  * pushSwitch;
+
+@end
 @implementation SetUpTableViewCell
     
 - (instancetype)initWithReuseIdentifier:(NSString *)reuseIdentifier indexPath:(NSIndexPath *)indexPath{
