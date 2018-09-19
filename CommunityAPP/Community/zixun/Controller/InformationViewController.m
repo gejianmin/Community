@@ -36,7 +36,7 @@
 #import "InforButtonCateController.h"
 #import "ArtDetailViewController.h"
 #import "SearchViewController.h"
-@interface InformationViewController ()<UITableViewDataSource,UITableViewDelegate,UINavigationControllerDelegate,FocusScrollViewDelegate,InforADCellDelegate,InfoCategaryCellDelegate,InforAppButtonCellDelegate>
+@interface InformationViewController ()<UITableViewDataSource,UITableViewDelegate,UINavigationControllerDelegate,FocusScrollViewDelegate,InforADCellDelegate,InfoCategaryCellDelegate,InforAppButtonCellDelegate,UIScrollViewDelegate>
 
 @property (nonatomic, strong) NSMutableArray *carouselArray;
 @property (nonatomic, strong) NSMutableArray *appButtonArray;
@@ -51,6 +51,7 @@
 @property (nonatomic, assign) NSInteger thirdIndex;
 //view
 @property(nonatomic, strong) AreaSelectorView * areaSelecotorV;//选择区域器
+@property(nonatomic, strong) UIView * statusBarV; //白色状态栏
 @end
 
 @implementation InformationViewController
@@ -64,6 +65,19 @@
         
     }
     return self;
+}
+
+#pragma mark -- LazyLoad
+
+- (UIView *)statusBarV {
+    if (!_statusBarV) {
+        _statusBarV = [[UIView alloc]init];
+        _statusBarV.backgroundColor = [UIColor whiteColor];
+        _statusBarV.frame = CGRectMake(0, 0, HH_SCREEN_W, 20);
+        _statusBarV.hidden = YES;
+    }
+    return _statusBarV;
+    
 }
 
 - (void)viewDidLoad {
@@ -89,7 +103,17 @@
     }
     
 }
-
+//
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    
+    CGFloat contentOffsetY = scrollView.contentOffset.y;
+    if (contentOffsetY > 200) {//向上滑
+        self.statusBarV.hidden = NO;
+    }else{
+        self.statusBarV.hidden = YES;
+    }
+    
+}
 // 当前页面隐藏导航条
 - (void)navigationController:(UINavigationController *)navigationController willShowViewController:(UIViewController *)viewController animated:(BOOL)animated {
     // 判断要显示的控制器是否是自己
@@ -110,6 +134,7 @@
 //    self.fd_prefersNavigationBarHidden = NO;
 } - (void)setUpUI{
     
+    [self.view addSubview:self.statusBarV];
     self.tableView.frame = CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT - 49);
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     // 区域选择器

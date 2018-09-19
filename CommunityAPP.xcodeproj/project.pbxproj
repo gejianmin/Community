@@ -42,6 +42,8 @@
 		505FA8631FEA07F80082AAB0 /* Inter_categaryRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 505FA8621FEA07F80082AAB0 /* Inter_categaryRequest.m */; };
 		505FA8661FEA08080082AAB0 /* Inter_categaryResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 505FA8651FEA08080082AAB0 /* Inter_categaryResponse.m */; };
 		505FA8691FEA09540082AAB0 /* InterArtListTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 505FA8681FEA09540082AAB0 /* InterArtListTool.m */; };
+		5060336B21522749006A1A83 /* QRCodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5060336A21522749006A1A83 /* QRCodeViewController.m */; };
+		506033702152301C006A1A83 /* CDZQRScanView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5060336E2152301C006A1A83 /* CDZQRScanView.m */; };
 		5077BBE11FE922AA0047BE77 /* InterPostViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5077BBE01FE922AA0047BE77 /* InterPostViewController.m */; };
 		5077BBE41FE929660047BE77 /* PlaceholderTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5077BBE21FE929650047BE77 /* PlaceholderTextView.m */; };
 		5077BBE91FE92DB30047BE77 /* PostCircleAddPicImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5077BBE51FE92DB30047BE77 /* PostCircleAddPicImageView.m */; };
@@ -327,6 +329,10 @@
 		505FA8651FEA08080082AAB0 /* Inter_categaryResponse.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Inter_categaryResponse.m; sourceTree = "<group>"; };
 		505FA8671FEA09540082AAB0 /* InterArtListTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InterArtListTool.h; sourceTree = "<group>"; };
 		505FA8681FEA09540082AAB0 /* InterArtListTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InterArtListTool.m; sourceTree = "<group>"; };
+		5060336921522749006A1A83 /* QRCodeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QRCodeViewController.h; sourceTree = "<group>"; };
+		5060336A21522749006A1A83 /* QRCodeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QRCodeViewController.m; sourceTree = "<group>"; };
+		5060336E2152301C006A1A83 /* CDZQRScanView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDZQRScanView.m; sourceTree = "<group>"; };
+		5060336F2152301C006A1A83 /* CDZQRScanView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDZQRScanView.h; sourceTree = "<group>"; };
 		5077BBDF1FE922AA0047BE77 /* InterPostViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InterPostViewController.h; sourceTree = "<group>"; };
 		5077BBE01FE922AA0047BE77 /* InterPostViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InterPostViewController.m; sourceTree = "<group>"; };
 		5077BBE21FE929650047BE77 /* PlaceholderTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlaceholderTextView.m; sourceTree = "<group>"; };
@@ -881,6 +887,23 @@
 			path = "Reigster&loginModel";
 			sourceTree = "<group>";
 		};
+		5060336C21523009006A1A83 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				5060336D2152301C006A1A83 /* CDZQRScanView */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		5060336D2152301C006A1A83 /* CDZQRScanView */ = {
+			isa = PBXGroup;
+			children = (
+				5060336F2152301C006A1A83 /* CDZQRScanView.h */,
+				5060336E2152301C006A1A83 /* CDZQRScanView.m */,
+			);
+			path = CDZQRScanView;
+			sourceTree = "<group>";
+		};
 		507940F01FE5630F0093CDF9 /* MJRefresh */ = {
 			isa = PBXGroup;
 			children = (
@@ -1227,6 +1250,7 @@
 		50BFFA5E1FD523DB005F35CA /* yikezhong */ = {
 			isa = PBXGroup;
 			children = (
+				5060336C21523009006A1A83 /* View */,
 				50FC929B214652E1004A34FC /* Controller */,
 			);
 			path = yikezhong;
@@ -1724,6 +1748,8 @@
 			children = (
 				50FC929C214652FD004A34FC /* QuarterViewController.h */,
 				50FC929D214652FD004A34FC /* QuarterViewController.m */,
+				5060336921522749006A1A83 /* QRCodeViewController.h */,
+				5060336A21522749006A1A83 /* QRCodeViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -2028,6 +2054,7 @@
 				507941541FE647E00093CDF9 /* SGPageContentView.m in Sources */,
 				507FCB40214A0AB8000A0C9A /* InfoArt_SearchResponse.m in Sources */,
 				50BFFAEB1FD52818005F35CA /* NSString+JKEncrypt.m in Sources */,
+				506033702152301C006A1A83 /* CDZQRScanView.m in Sources */,
 				F24C5CF921490473003B5A87 /* PublicCircleController.m in Sources */,
 				86E907D420EB55C100208132 /* InterPostDescCell.m in Sources */,
 				50BFFAEE1FD52818005F35CA /* NSString+JKMatcher.m in Sources */,
@@ -2227,6 +2254,7 @@
 				505FA8661FEA08080082AAB0 /* Inter_categaryResponse.m in Sources */,
 				50BFFAF51FD52818005F35CA /* NSString+JKStringPages.m in Sources */,
 				50D77B0B1FE148BA007052E7 /* InforCarouseCell.m in Sources */,
+				5060336B21522749006A1A83 /* QRCodeViewController.m in Sources */,
 				F22429032143BB720035D0F0 /* AppDelegate+SocialShare.m in Sources */,
 				5091B5571FE7618E003797EF /* InterAPPButtonRequest.m in Sources */,
 				50BFFA441FD51FD9005F35CA /* BaseResponse.m in Sources */,

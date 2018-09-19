@@ -8,14 +8,96 @@
 
 #import "QuarterViewController.h"
 #import "WebViewController.h"
-@interface QuarterViewController ()
+#import "QRCodeViewController.h"
+@interface QuarterViewController ()<UIGestureRecognizerDelegate,UITextFieldDelegate>
 
 @property (nonatomic, strong) UIActivityIndicatorView *indicatorView;
-
+@property(nonatomic, strong) UIView  * navigationBarV;// 自定义的导航条
 @end
 
 @implementation QuarterViewController
 
+// 导航条自定义
+
+- (void)viewWillAppear:(BOOL)animated {
+    
+    [super viewWillAppear:animated];
+    [self.navigationController.navigationBar addSubview:self.navigationBarV];
+}
+
+- (void)viewDidDisappear:(BOOL)animated {
+    [super viewDidDisappear: animated];
+    [self.navigationBarV removeFromSuperview];
+}
+
+- (UIView *)navigationBarV {
+    if (!_navigationBarV) {
+        _navigationBarV = [[UIView alloc]initWithFrame:CGRectMake(0, 0, HH_SCREEN_W, GSANavgationBarHeight)];
+        _navigationBarV.backgroundColor = [UIColor whiteColor];
+        UIImageView *imageV = [[UIImageView alloc]init];
+        imageV.userInteractionEnabled = YES;
+        imageV.image = [UIImage imageNamed:@"saoyisao"];
+        [_navigationBarV addSubview:imageV];
+        [imageV mas_makeConstraints:^(MASConstraintMaker *make) {
+           
+            make.left.equalTo(_navigationBarV.mas_left).offset(16);
+            make.centerY.equalTo(_navigationBarV.mas_centerY);
+            make.width.height.equalTo(@30);
+        }];
+        
+        // 给二维码点击按钮添加手势
+        UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(QRcodeClick)];
+        [imageV addGestureRecognizer:tap];
+        
+        UIView *grayBackV = [[UIView alloc]init];
+        grayBackV.backgroundColor = kColorGray8;
+        grayBackV.layer.masksToBounds = YES;
+        grayBackV.layer.cornerRadius = 5;
+        [_navigationBarV addSubview:grayBackV];
+        [grayBackV mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.left.equalTo(imageV.mas_right).offset(16);
+            make.centerY.equalTo(imageV.mas_centerY);
+            make.right.equalTo(_navigationBarV.mas_right).offset(-16);
+            make.height.equalTo(imageV.mas_height);
+            
+        }];
+        
+        UIImageView *searchImageV = [[UIImageView alloc]init];
+        searchImageV.image = [UIImage imageNamed:@"search_black"];
+        searchImageV.frame = CGRectMake(8, 5, 20, 20);
+        [grayBackV addSubview:searchImageV];
+        
+        //搜索框
+        UITextField *searchTF = [[UITextField alloc]init];
+        searchTF.delegate = self;
+        searchTF.borderStyle = UITextBorderStyleNone;
+        searchTF.placeholder = @"  请输入想要购买的商品或服务";
+        [grayBackV addSubview:searchTF];
+        [searchTF mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.left.equalTo(searchImageV.mas_right);
+            make.centerY.equalTo(searchImageV.mas_centerY);
+            make.right.equalTo(grayBackV.mas_right).offset(-16);
+        }];
+        [searchTF addTarget:self action:@selector(searchValueChange) forControlEvents:UIControlEventTouchUpInside];
+        
+    }
+    return _navigationBarV;
+    
+}
+
+- (BOOL)textFieldShouldBeginEditing:(UITextField *)textField {
+    
+    NSLog(@"点击了搜索框");
+    return NO;
+    
+}
+// 二维码点击
+- (void)QRcodeClick {
+    
+    QRCodeViewController *qrVC = [[QRCodeViewController alloc]init];
+    qrVC.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:qrVC animated:YES];
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -121,10 +203,7 @@
 - (void)viewDidLayoutSubviews{
     NSLog(@"self.view  = %@",[NSValue valueWithCGRect:self.view.frame]);
 }
--(void)viewWillAppear:(BOOL)animated
-{
-    [super viewWillAppear:animated];
-}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
