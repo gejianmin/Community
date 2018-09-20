@@ -10,6 +10,7 @@
 #import "InterButtonCateController.h"
 #import "WebViewController.h"
 #import "InterPostViewController.h"
+#import "MLPhotoBrowserViewController.h"
 
 #import "InterAPPButtonRequest.h"
 #import "InterCarouseRequest.h"
@@ -31,12 +32,14 @@
 #import "InterCateView.h"
 #import "ListTableView.h"
 #import "InteractionDetailVC.h"
+
 typedef NS_ENUM(NSInteger,RefreshState) {
     RefreshState_Unknow,
     RefreshState_Refrsh,
     RefreshState_LoadMore
 };
 
+@class MLPhoto;
 @interface InteractionViewController ()<InforAppButtonCellDelegate,FocusScrollViewDelegate,ListTableViewDelegate,InterCateCellDelagate>
 
 
@@ -316,6 +319,7 @@ typedef NS_ENUM(NSInteger,RefreshState) {
         cell.delegate = self;
         cell.infoArray = self.appButtonArray;
         return cell;
+        
     }else if (indexPath.section == 2){/** 邻里圈*/
         static NSString *indentifier = @"InterListCell";
         InterListCell *cell = [tableView dequeueReusableCellWithIdentifier:indentifier];
@@ -323,6 +327,16 @@ typedef NS_ENUM(NSInteger,RefreshState) {
             cell = [[InterListCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:indentifier];
         }
         cell.model = self.listArray[indexPath.row];
+        // 图片的点击回调
+        __weak typeof(self) weakSelf = self;
+        cell.tapBlock = ^(NSInteger index,NSMutableArray<MLPhoto *> *photos) {
+            MLPhotoBrowserViewController *browserVC = [[MLPhotoBrowserViewController alloc] init];
+            browserVC.curPage = index;/** 点击的第几张图片*/
+            browserVC.photos = photos; //存的是myphoto的对象
+            browserVC.hidesBottomBarWhenPushed = YES;
+            [browserVC displayForVC:weakSelf];
+        };
+
         return cell;
     }
     return nil;

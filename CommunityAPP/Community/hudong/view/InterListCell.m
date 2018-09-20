@@ -7,6 +7,10 @@
 //
 
 #import "InterListCell.h"
+#import "MLPhoto.h"
+@interface InterListCell()<UIGestureRecognizerDelegate>
+@property(nonatomic, strong) NSMutableArray <MLPhoto *>* photos;
+@end
 
 @implementation InterListCell
 
@@ -41,23 +45,42 @@
         self.priceLabel.font = FONT(16);
         [self.contentView addSubview:self.priceLabel];
         
+        // 给图片添加点击手势
+        UITapGestureRecognizer *tap1 = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(imageViewTapClick:)];
+        tap1.delegate = self;
+        UITapGestureRecognizer *tap2 = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(imageViewTapClick:)];
+        tap2.delegate = self;
+        UITapGestureRecognizer *tap3 = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(imageViewTapClick:)];
+        tap3.delegate = self;
+        
         self.firstImgView = [[UIImageView alloc] init];
+        self.firstImgView.tag = 10;
+        self.firstImgView.userInteractionEnabled = YES;
         self.firstImgView.backgroundColor = [UIColor grayColor];
         self.firstImgView.contentMode = UIViewContentModeScaleAspectFill;
         self.firstImgView.clipsToBounds = YES;
         [self.contentView addSubview:self.firstImgView];
+        [self.firstImgView addGestureRecognizer:tap1];
         
         self.secondImgView = [[UIImageView alloc] init];
+        self.secondImgView.tag = 11;
+        self.secondImgView.userInteractionEnabled = YES;
         self.secondImgView.backgroundColor = [UIColor grayColor];
         self.secondImgView.contentMode = UIViewContentModeScaleAspectFill;
         self.secondImgView.clipsToBounds = YES;
         [self.contentView addSubview:self.secondImgView];
+        [self.secondImgView addGestureRecognizer:tap2];
+
         
         self.thirdImgView = [[UIImageView alloc] init];
+        self.thirdImgView.tag = 12;
+        self.thirdImgView.userInteractionEnabled = YES;
         self.thirdImgView.backgroundColor = [UIColor grayColor];
         self.thirdImgView.contentMode = UIViewContentModeScaleAspectFill;
         self.thirdImgView.clipsToBounds = YES;
         [self.contentView addSubview:self.thirdImgView];
+        [self.thirdImgView addGestureRecognizer:tap3];
+
         
         self.line = [[UIView alloc] init];
         self.line.backgroundColor = [UIColor grayColor];
@@ -86,6 +109,24 @@
         [self.contentView addSubview:self.starButton];
     }
     return self;
+}
+
+// 图片点击事件
+- (void)imageViewTapClick:(UIGestureRecognizer *)tap {
+    NSInteger index  =  tap.view.tag - 10;
+    self.tapBlock(index,self.photos);
+    
+}
+- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldReceiveTouch:(UITouch *)touch {
+
+    
+    if ([NSStringFromClass([touch.view class]) isEqualToString:@"UITableViewCellContentView"]) {
+        
+        return NO;
+        
+    }
+    return YES;
+    
 }
 - (void)setModel:(PostListModel *)model{
     _model = model;
@@ -131,14 +172,21 @@
         
         PostImagesListModel *imageModel = model.images[0];
         [_firstImgView sd_setImageWithURL:[NSURL URLWithString:imageModel.img_src]];
+        
+        [self addPhoto:imageModel.img_src];
+        
+        
     }else if (model.images.count <= 2){
         _firstImgView.hidden = NO;
         _secondImgView.hidden = NO;
         _thirdImgView.hidden = YES;
         PostImagesListModel *imageModel1 = model.images[0];
         [_firstImgView sd_setImageWithURL:[NSURL URLWithString:imageModel1.img_src]];
+        [self addPhoto:imageModel1.img_src];
         PostImagesListModel *imageModel2 = model.images[1];
         [_secondImgView sd_setImageWithURL:[NSURL URLWithString:imageModel2.img_src]];
+        [self addPhoto:imageModel2.img_src];
+
     }else if (model.images.count >= 3){
         _firstImgView.hidden = NO;
         _secondImgView.hidden = NO;
@@ -146,11 +194,14 @@
         
         PostImagesListModel *imageModel1 = model.images[0];
         [_firstImgView sd_setImageWithURL:[NSURL URLWithString:imageModel1.img_src]];
+         [self addPhoto:imageModel1.img_src];
         PostImagesListModel *imageModel2 = model.images[1];
         [_secondImgView sd_setImageWithURL:[NSURL URLWithString:imageModel2.img_src]];
-        
+        [self addPhoto:imageModel2.img_src];
         PostImagesListModel *imageModel3 = model.images[2];
         [_thirdImgView sd_setImageWithURL:[NSURL URLWithString:imageModel3.img_src]];
+        [self addPhoto:imageModel3.img_src];
+
     }
     
     [self.watchButton setTitle:model.views forState:UIControlStateNormal];
@@ -163,6 +214,16 @@
 
     [self setNeedsLayout];
 }
+
+- (void)addPhoto:(NSString *)imageUrl {
+    
+    MLPhoto *photo = [[MLPhoto alloc]init];
+    photo.thumbImageUrl = [NSURL URLWithString:imageUrl];
+    photo.originalImageUrl = [NSURL URLWithString:imageUrl];
+    [self.photos addObject:photo];
+    
+}
+
 - (void)layoutSubviews{
     [super layoutSubviews];
     self.imgView.frame = CGRectMake(10, 10, 50, 50);
@@ -227,5 +288,11 @@
     }
     h = h + 10 + 50 + 5;
     return h;
+}
+- (NSMutableArray<MLPhoto *> *)photos {
+    if (!_photos) {
+        _photos = [[NSMutableArray alloc]init];
+    }
+    return _photos;
 }
 @end
