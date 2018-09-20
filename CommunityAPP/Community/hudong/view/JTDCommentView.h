@@ -14,13 +14,15 @@ typedef void(^JTDCommentViewCallBack)(NSString * content);
 
 + (instancetype)presentViewWithContentCallback:(JTDCommentViewCallBack)callback;
 + (instancetype)presentViewWithMaxNumber:(NSInteger)maxnum    andContentCallback:(JTDCommentViewCallBack)callback;
+@property(nonatomic,strong)CustomLab * comments_lbl;
+@property(nonatomic,strong)CustomBtn * send_btn;
 
 @end
 
 @protocol PDTopViewDelegate <NSObject>
 @optional
 
--(void)sendButtonEventDelegateWithButton:(UIButton *)sender;
+-(void)sendButtonEventDelegateWithButton:(CustomBtn *)sender;
 
 @end
 
@@ -29,5 +31,9 @@ typedef void(^JTDCommentViewCallBack)(NSString * content);
 @property (nonatomic,weak) id<PDTopViewDelegate>delegate;
 @property(nonatomic,strong)UIButton * chat_btn;
 @property(nonatomic,strong)CustomBtn * comments_btn;
+@property(nonatomic,strong)CustomLab * comments_lbl;
+@property(nonatomic,strong)CustomBtn * send_btn;
+
+
 
 @end

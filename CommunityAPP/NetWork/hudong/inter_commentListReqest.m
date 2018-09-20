@@ -39,7 +39,7 @@ ResponserParserGenerate(inter_commentResponse);
     }
     return self;
 }
-- (void)interReplayCommentListRequestWithID:(NSString *)ID comment:(NSString *)comment{
+- (void)interReplayCommentListRequestWithID:(NSString *)ID comment:(NSString *)comment commentUrl:(NSString *)commentUrl{
     
     self.headerFields = [NSMutableDictionary dictionary];
     [self.headerFields setObject:@"yezhu" forKey:@"identity"];
@@ -49,7 +49,7 @@ ResponserParserGenerate(inter_commentResponse);
         [paramDic setValue:comment forKey:@"comment"];
         self.parameters = paramDic;//post参数
     
-    self.urlPathString = [NSString stringWithFormat:@"%@%@/%@",self.hostString,inter_replayComment,ID];
+    self.urlPathString = [NSString stringWithFormat:@"%@%@/%@",self.hostString,commentUrl,ID];
     
     
 }
