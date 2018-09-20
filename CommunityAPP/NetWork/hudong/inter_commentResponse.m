@@ -17,3 +17,13 @@
     [self showFinishedResultDataInMainThreadToUI:model];
 }
 @end
+
+@implementation inter_replayCommentResponse
+
+- (void)parseBackData{
+    NSDictionary *jsonObject=self.responseData;
+    inter_replayCommentModel *model =  [inter_replayCommentModel yy_modelWithJSON:jsonObject];
+    [self showFinishedResultDataInMainThreadToUI:model];
+}
+
+@end

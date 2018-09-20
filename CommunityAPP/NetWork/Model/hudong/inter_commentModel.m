@@ -39,3 +39,6 @@
              };
 }
 @end
+@implementation inter_replayCommentModel
+
+@end

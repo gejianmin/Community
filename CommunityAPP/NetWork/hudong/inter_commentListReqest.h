@@ -18,3 +18,13 @@
 - (void)interCommentListRequestWithID:(NSString *)ID;
 
 @end
+@interface inter_replayCommentListReqest : BaseRequest
+
+/**
+ 回复评论
+ 
+ @param ID 帖子ID
+ */
+- (void)interReplayCommentListRequestWithID:(NSString *)ID comment:(NSString *)comment;
+
+@end

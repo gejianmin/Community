@@ -251,6 +251,7 @@
 		F24C5D0521491184003B5A87 /* publicCircleList_Request.m in Sources */ = {isa = PBXBuildFile; fileRef = F24C5D0421491184003B5A87 /* publicCircleList_Request.m */; };
 		F24C5D082149129A003B5A87 /* publicCircleList_Response.m in Sources */ = {isa = PBXBuildFile; fileRef = F24C5D072149129A003B5A87 /* publicCircleList_Response.m */; };
 		F24C5D0E214914E7003B5A87 /* InForPublicCirCleList_Model.m in Sources */ = {isa = PBXBuildFile; fileRef = F24C5D0D214914E7003B5A87 /* InForPublicCirCleList_Model.m */; };
+		F2A44D37215343B1008F8549 /* JTDCommentView.m in Sources */ = {isa = PBXBuildFile; fileRef = F2A44D36215343B0008F8549 /* JTDCommentView.m */; };
 		F2ADAFA0214252C900837A98 /* HHKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F2ADAF9F214252C900837A98 /* HHKit.framework */; };
 		F2BBFFC2214B617200C81E4F /* InterCateView.m in Sources */ = {isa = PBXBuildFile; fileRef = F2BBFFC1214B617200C81E4F /* InterCateView.m */; };
 		F2BBFFC5214B91CD00C81E4F /* InteractionAppButtonCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F2BBFFC4214B91CD00C81E4F /* InteractionAppButtonCell.m */; };
@@ -748,6 +749,8 @@
 		F24C5D072149129A003B5A87 /* publicCircleList_Response.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = publicCircleList_Response.m; sourceTree = "<group>"; };
 		F24C5D0C214914E7003B5A87 /* InForPublicCirCleList_Model.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InForPublicCirCleList_Model.h; sourceTree = "<group>"; };
 		F24C5D0D214914E7003B5A87 /* InForPublicCirCleList_Model.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InForPublicCirCleList_Model.m; sourceTree = "<group>"; };
+		F2A44D35215343B0008F8549 /* JTDCommentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JTDCommentView.h; sourceTree = "<group>"; };
+		F2A44D36215343B0008F8549 /* JTDCommentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JTDCommentView.m; sourceTree = "<group>"; };
 		F2ADAF9F214252C900837A98 /* HHKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = HHKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F2BBFFC0214B617200C81E4F /* InterCateView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InterCateView.h; sourceTree = "<group>"; };
 		F2BBFFC1214B617200C81E4F /* InterCateView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InterCateView.m; sourceTree = "<group>"; };
@@ -1270,6 +1273,8 @@
 		50BFFA621FD5240E005F35CA /* view */ = {
 			isa = PBXGroup;
 			children = (
+				F2A44D35215343B0008F8549 /* JTDCommentView.h */,
+				F2A44D36215343B0008F8549 /* JTDCommentView.m */,
 				863A556220F369DF00629350 /* JYBMultiImageView.h */,
 				863A556120F369DE00629350 /* JYBMultiImageView.m */,
 				863A556420F369DF00629350 /* UIImageButton.h */,
@@ -2040,6 +2045,7 @@
 				50C2F4022147AF090048E5CB /* GuidePagesViewController.m in Sources */,
 				50BFFAF01FD52818005F35CA /* NSString+JKNormalRegex.m in Sources */,
 				5091B5601FE78E6F003797EF /* InterCarouseRequest.m in Sources */,
+				F2A44D37215343B1008F8549 /* JTDCommentView.m in Sources */,
 				505FA8691FEA09540082AAB0 /* InterArtListTool.m in Sources */,
 				50BFFAFC1FD52818005F35CA /* UIImage+Helper.m in Sources */,
 				F22428F521436CFD0035D0F0 /* CustomBtn.m in Sources */,

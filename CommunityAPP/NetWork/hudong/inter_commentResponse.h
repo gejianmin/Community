@@ -11,3 +11,7 @@
 @interface inter_commentResponse : BaseResponse
 
 @end
+
+@interface inter_replayCommentResponse : BaseResponse
+
+@end

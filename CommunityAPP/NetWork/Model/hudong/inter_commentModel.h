@@ -34,3 +34,10 @@
 
 
 @end
+
+@interface inter_replayCommentModel : RequestBaseModel
+
+@property (nonatomic, copy) NSString * comment;/** 评论内容*/;
+
+
+@end
