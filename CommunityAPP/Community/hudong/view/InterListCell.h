@@ -9,6 +9,10 @@
 #import "BaseTableViewCell.h"
 #import "InterPostListModel.h"
 
+@class MLPhoto;
+typedef void(^ImageTapBlock)(NSInteger index,NSMutableArray <MLPhoto *>*photos);/** 图片点击回调*/
+typedef void(^buttonClick)(UIButton *button);
+
 @interface InterListCell : BaseTableViewCell
 @property (nonatomic ,strong) UIImageView *imgView;
 @property (nonatomic ,strong) UILabel *nameLabel;
@@ -24,6 +28,7 @@
 @property (nonatomic ,strong) UIButton *starButton;
 
 @property (nonatomic ,strong) PostListModel *model;
-
+@property(nonatomic, copy) ImageTapBlock tapBlock;/** 图片点击回调*/
+@property(nonatomic, copy) buttonClick btnClickBlock;/** 按钮点击回调*/
 + (CGFloat)getHeight:(PostListModel *)model;
 @end
