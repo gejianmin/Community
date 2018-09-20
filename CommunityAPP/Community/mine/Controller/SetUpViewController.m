@@ -8,6 +8,7 @@
 
 #import "SetUpViewController.h"
 #import "SetUpTableViewCell.h"
+#import "MyHarvestAddressVC.h"
 @interface SetUpViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property (nonatomic,strong) UITableView *tableView;
 @property(nonatomic,strong) NSArray  * dataSourceArray;
@@ -97,7 +98,12 @@
     return cell;
 }
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    
+    if(indexPath.section == 0){
+    }else if(indexPath.section == 1){
+        MyHarvestAddressVC * VC = [[MyHarvestAddressVC alloc]init];
+        [self.navigationController pushViewController:VC animated:YES];
+    }else{
+    }
     
 }
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
