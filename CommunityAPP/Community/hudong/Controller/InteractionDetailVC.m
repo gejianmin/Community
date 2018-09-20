@@ -13,6 +13,8 @@
 #import "inter_commentCell.h"
 #import "inter_commentModel.h"
 #import "JTDCommentView.h"
+#import "MLPhoto.h"
+#import "MLPhotoBrowserViewController.h"
 @interface InteractionDetailVC ()<UITableViewDelegate,UITableViewDataSource,PDTopViewDelegate>
 {
     NSString * _commentPid;
@@ -22,7 +24,7 @@
 @property(nonatomic,strong) NSMutableArray  * headerDataSourceArray;
 @property(nonatomic,strong) NSMutableArray  * dataSourceArray;
 @property(nonatomic,strong)PSPersonSentView * commentsView;
-
+@property(nonatomic, strong) NSMutableArray<MLPhoto *> * photos;
 @end
 
 @implementation InteractionDetailVC
@@ -118,6 +120,23 @@
                 }
             }];
         }
+    }else if (indexPath.section == 0) {
+        for (interactionDetailImageModel *model in self.headerDataSourceArray) {
+            
+            MLPhoto *photo = [[MLPhoto alloc]init];
+            photo.thumbImageUrl = [NSURL URLWithString:model.img_src];
+            photo.originalImageUrl = [NSURL URLWithString:model.img_src];
+            [self.photos addObject:photo];
+        }
+        JTDWeakSelf
+        MLPhotoBrowserViewController *browserVC = [[MLPhotoBrowserViewController alloc] init];
+        browserVC.curPage = indexPath.row;/** 点击的第几张图片*/
+        browserVC.photos = self.photos; //存的是myphoto的对象
+        browserVC.hidesBottomBarWhenPushed = YES;
+        [browserVC displayForVC:WeakSelf];
+//        interactionDetailImageModel *model = self.headerDataSourceArray[indexPath.row];
+        
+        
     }
 }
 #pragma mark--直接发评论
@@ -243,6 +262,15 @@
     }
     return _dataSourceArray;
 }
+
+- (NSMutableArray<MLPhoto *> *)photos {
+    
+    if (!_photos) {
+        _photos = [[NSMutableArray alloc ] init];
+    }
+    return _photos;
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
 }

@@ -95,11 +95,14 @@
         [self.contentView addSubview:self.watchButton];
         
         self.commentButton = [UIButton buttonWithType:UIButtonTypeCustom];
+        self.commentButton.tag = 11;
         self.commentButton.width = SCREEN_WIDTH/3;
         [self.commentButton setTitleColor:[UIColor grayColor] forState:UIControlStateNormal];
         self.commentButton.titleLabel.font = FONT(13);
         [self.commentButton setImage:[UIImage imageNamed:@"liuyan"] forState:UIControlStateNormal];
+        [self.commentButton addTarget:self action:@selector(buttonClick:) forControlEvents:UIControlEventTouchUpInside];
         [self.contentView addSubview:self.commentButton];
+        
         
         self.starButton = [UIButton buttonWithType:UIButtonTypeCustom];
         self.starButton.width = SCREEN_WIDTH/3;
@@ -110,7 +113,10 @@
     }
     return self;
 }
-
+- (void)buttonClick:(UIButton *)btn{
+    NSLog(@"内部点击来说");
+    self.btnClickBlock(btn);
+}
 // 图片点击事件
 - (void)imageViewTapClick:(UIGestureRecognizer *)tap {
     NSInteger index  =  tap.view.tag - 10;

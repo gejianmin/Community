@@ -336,6 +336,17 @@ typedef NS_ENUM(NSInteger,RefreshState) {
             browserVC.hidesBottomBarWhenPushed = YES;
             [browserVC displayForVC:weakSelf];
         };
+        // 评论按钮的点击回调
+        cell.btnClickBlock = ^(UIButton *button) {
+            NSLog(@"点击回调回到控制器");
+            if (button.tag == 11) {//评论按钮点击
+                PostListModel *model = self.listArray[indexPath.row];
+                InteractionDetailVC *VC = [[InteractionDetailVC alloc] init];
+                VC.model = model;
+                VC.hidesBottomBarWhenPushed = YES;
+                [self.navigationController pushViewController:VC animated:YES];
+            }
+        };
 
         return cell;
     }
@@ -345,11 +356,11 @@ typedef NS_ENUM(NSInteger,RefreshState) {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
     if (indexPath.section == 2) {
-        PostListModel *model = self.listArray[indexPath.row];
-        InteractionDetailVC *VC = [[InteractionDetailVC alloc] init];
-        VC.model = model;
-        VC.hidesBottomBarWhenPushed = YES;
-        [self.navigationController pushViewController:VC animated:YES];
+//        PostListModel *model = self.listArray[indexPath.row];
+//        InteractionDetailVC *VC = [[InteractionDetailVC alloc] init];
+//        VC.model = model;
+//        VC.hidesBottomBarWhenPushed = YES;
+//        [self.navigationController pushViewController:VC animated:YES];
     }
 } 
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
