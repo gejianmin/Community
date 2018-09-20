@@ -22,7 +22,7 @@
     [[UMSocialManager defaultManager] openLog:YES];
     [[UMSocialManager defaultManager] setUmSocialAppkey:USHARE_APPKEY];
     [UMSocialGlobal shareInstance].isClearCacheWhenGetUserInfo = YES;/*!< 登录授权是否清缓存*/
-    [[UMSocialManager defaultManager] setPlaform:UMSocialPlatformType_QQ appKey:QQAPP_ID appSecret:QQAPP_KEY redirectURL:nil];
+     [[UMSocialManager defaultManager] setPlaform:UMSocialPlatformType_QQ appKey:QQAPP_ID appSecret:QQAPP_KEY redirectURL:nil];
     [[UMSocialManager defaultManager] setPlaform:UMSocialPlatformType_WechatSession appKey:[AppDelegate getweChatAPPID] appSecret:WECHATAPP_KEY redirectURL:nil];
 //    [[UMSocialManager defaultManager] setPlaform:UMSocialPlatformType_Sina appKey:SinaAPP_Key appSecret:SinaAPP_Secret redirectURL:@"https://api.weibo.com/oauth2/default.html"];
     /*!< 友盟数据统计*/

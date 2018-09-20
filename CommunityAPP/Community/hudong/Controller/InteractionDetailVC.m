@@ -12,11 +12,16 @@
 #import "inter_commentHeaderView.h"
 #import "inter_commentCell.h"
 #import "inter_commentModel.h"
-@interface InteractionDetailVC ()<UITableViewDelegate,UITableViewDataSource>
+#import "JTDCommentView.h"
+@interface InteractionDetailVC ()<UITableViewDelegate,UITableViewDataSource,PDTopViewDelegate>
+{
+    NSString * _commentPid;
+}
 @property(nonatomic,strong) inter_commentHeaderView  * headerView;
 @property(nonatomic,strong) UITableView  * tableView;
 @property(nonatomic,strong) NSMutableArray  * headerDataSourceArray;
 @property(nonatomic,strong) NSMutableArray  * dataSourceArray;
+@property(nonatomic,strong)PSPersonSentView * commentsView;
 
 @end
 
@@ -31,7 +36,9 @@
     [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.bottom.left.right.equalTo(self.view);
     }];
-    
+    self.commentsView = [[PSPersonSentView alloc]initWithFrame:CGRectMake(0, HH_SCREEN_H-GSA_TabbarHeight-GSANavHeight, HH_SCREEN_W , GSA_TabbarHeight) color:kColorWhite];
+    self.commentsView.delegate = self;
+    [self.view addSubview:self.commentsView];
 }
 #pragma mark--帖子详情
 - (void)interactionDetailRequest{
@@ -41,6 +48,7 @@
     [request setFinishedBlock:^(id object, id responseData) {
         interactionDetailModel * model = [interactionDetailModel yy_modelWithJSON:responseData[@"data"]];
         WeakSelf.headerView.model = model;
+        _commentPid = model.uid;
         [WeakSelf.headerDataSourceArray removeAllObjects];
         [WeakSelf.headerDataSourceArray addObjectsFromArray:model.images];
         [self.tableView reloadData];
@@ -99,7 +107,45 @@
     }
     return cell;
 }
-
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    if (indexPath.section != 0) {
+        inter_commentCellModel * model = self.dataSourceArray[indexPath.row];
+        if (![model.cellType isEqualToString:kCommentCellThirdReuseIdentifier]) {
+            JTDWeakSelf
+            [JTDCommentView presentViewWithMaxNumber:400 andContentCallback:^(NSString *content) {
+                if (![NSObject isBlankString:content]) {
+                    [WeakSelf interReplayCommentRequestWithCid:model.cid comment:content];
+                }
+            }];
+        }
+    }
+}
+#pragma mark--直接发评论
+-(void)sendButtonEventDelegateWithButton:(UIButton *)sender{
+    if (sender.tag == 1001) {//评论
+        [JTDCommentView presentViewWithMaxNumber:400 andContentCallback:^(NSString *content) {
+            if (![NSObject isBlankString:content]) {
+                [self interReplayCommentRequestWithCid:_commentPid comment:content];
+            }else{
+            }
+        }];
+    }else{//表情
+    }
+}
+#pragma mark--回复评论
+- (void)interReplayCommentRequestWithCid:(NSString *)cid comment:(NSString *)comment{
+    inter_replayCommentListReqest *request = [[inter_replayCommentListReqest alloc] init];
+    [request interReplayCommentListRequestWithID:cid comment:comment];
+    [request setFinishedBlock:^(id object, id responseData) {
+        JTDWeakSelf
+        if ([responseData[@"status"] isEqualToString:successCode]) {
+            [WeakSelf interCommentRequest];
+        }else if ([responseData[@"status"] isEqualToString:failedCode]) {
+            [self showToastHUD:responseData[@"error"][@"message"] complete:nil];
+        }
+    } failedBlock:^(NSInteger error, id responseData) {
+    }];
+}
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     if (section == 0) {
         return self.headerDataSourceArray.count;
@@ -129,9 +175,11 @@
 }
 #pragma mark--评论列表
 - (void)interCommentRequest{
+    [self showHUDText:nil];
     inter_commentListReqest *request = [[inter_commentListReqest alloc] init];
     [request interCommentListRequestWithID:self.model.pid];
     [request setFinishedBlock:^(id object, id responseData) {
+        [self hideHUD];
         JTDWeakSelf
         if ([responseData[@"status"] isEqualToString:successCode]) {
             [WeakSelf.dataSourceArray removeAllObjects];

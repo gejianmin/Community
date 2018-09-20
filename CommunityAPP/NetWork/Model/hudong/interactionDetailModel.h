@@ -27,6 +27,7 @@
 @property (nonatomic, copy) NSString * face;/** icon*/
 @property (nonatomic, copy) NSString * nickname;/** 昵称*/
 @property (nonatomic, copy) NSString * uid;/** 用户ID*/
+@property (nonatomic, copy) NSString * pid;/** 用户ID*/
 
 
 @property (nonatomic, copy) NSString *views;
