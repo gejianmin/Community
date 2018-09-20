@@ -166,7 +166,7 @@
             [self showToastHUD:@"评论成功" complete:nil];
             [WeakSelf interCommentRequest];
         }else if ([responseData[@"status"] isEqualToString:failedCode]) {
-            [self showToastHUD:responseData[@"error"][@"message"] complete:nil];
+//            [self showToastHUD:responseData[@"error"][@"message"] complete:nil];
         }
     } failedBlock:^(NSInteger error, id responseData) {
         [self hideHUD];
