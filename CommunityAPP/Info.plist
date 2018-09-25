@@ -5,7 +5,7 @@
 	<key>NSCameraUsageDescription</key>
 	<string>社区里需要获取您的相机权限</string>
 	<key>CFBundleDevelopmentRegion</key>
-	<string>en</string>
+	<string>zh_CN</string>
 	<key>CFBundleDisplayName</key>
 	<string>社区里</string>
 	<key>CFBundleExecutable</key>

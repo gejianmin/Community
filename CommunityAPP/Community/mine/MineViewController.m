@@ -279,11 +279,11 @@
 }
 #pragma mark--分享
 -(void)shareEvent{
-    JTDShareContent * model = [[JTDShareContent alloc]init];
-    model.centent = @"赵万里";
-    model.name = @"万里无云";
-    model.images = @"icon";
-    [JTDShareVC shareToController:self shareModel:model shareType:PayStateShare];
+//    JTDShareContent * model = [[JTDShareContent alloc]init];
+//    model.centent = @"赵万里";
+//    model.name = @"万里无云";
+//    model.images = @"icon";
+//    [JTDShareVC shareToController:self shareModel:model shareType:PayStateShare];
 }
 #pragma mark--分享成功
 -(void)shareSuccess{

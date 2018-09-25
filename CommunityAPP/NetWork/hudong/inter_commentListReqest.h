@@ -25,6 +25,6 @@
  
  @param ID 帖子ID
  */
-- (void)interReplayCommentListRequestWithID:(NSString *)ID comment:(NSString *)comment;
+- (void)interReplayCommentListRequestWithID:(NSString *)ID comment:(NSString *)comment commentUrl:(NSString *)commentUrl;
 
 @end

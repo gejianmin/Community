@@ -42,6 +42,7 @@
 #define inter_activeDetail          @"posts/read"//获取帖子详情
 #define inter_getComment            @"posts/getComment"//获取帖子的评论
 #define inter_replayComment         @"posts/replayComment"//回复评论
+#define inter_commentPost           @"posts/commentPost"//第一级评论接口
 
 #define inter_postList                @"posts/getPosts"//互动帖子列表
 #define inter_NearPostList                @"posts/getPostsByKm"//互动附近帖子列表
