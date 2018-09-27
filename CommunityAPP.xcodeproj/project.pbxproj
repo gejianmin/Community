@@ -2656,6 +2656,7 @@
 			baseConfigurationReference = 7C434F2E18A2A042FD3D6954 /* Pods-CommunityAPP.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Q523R4V974;
@@ -2698,6 +2699,7 @@
 			baseConfigurationReference = 99D2F012F0DC9278E2DBAD56 /* Pods-CommunityAPP.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: BO Lyu (TLYB38475N)";
 				CODE_SIGN_STYLE = Automatic;

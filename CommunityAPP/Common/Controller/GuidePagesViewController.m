@@ -37,14 +37,15 @@
             // 必须设置用户交互 否则按键无法操作
             imageView.userInteractionEnabled = YES;
             UIButton *button = [UIButton buttonWithType:UIButtonTypeSystem];
-//            button.frame = CGRectMake(WIDTH / 3, HEIGHT * 5 / 6, WIDTH / 3, HEIGHT / 16);
+            button.frame = CGRectMake(WIDTH / 3, HEIGHT * 4 / 6, WIDTH / 3, HEIGHT / 16);
+            [button setBackgroundImage:[UIImage imageNamed:@"w_bt"] forState:UIControlStateNormal];
 //            [button setTitle:@"点击进入" forState:UIControlStateNormal];
 //            [button setTitleColor:[UIColor clearColor] forState:UIControlStateNormal];
 //            button.layer.borderWidth = 2;
 //            button.layer.cornerRadius = 5;
 //            button.clipsToBounds = YES;
 //            button.layer.borderColor = [UIColor whiteColor].CGColor;
-            button.frame = Frame(0, 0, HH_SCREEN_W, HH_SCREEN_H);
+//            button.frame = Frame(0, 0, HH_SCREEN_W, HH_SCREEN_H);
             [button addTarget:self action:@selector(go:) forControlEvents:UIControlEventTouchUpInside];
             [imageView addSubview:button];
         }

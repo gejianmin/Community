@@ -40,8 +40,9 @@
     NSArray *textArr = @[@"商品条形码",@"二维码",@"Logo图片",@"图像"];
     
     for (int i = 0; i < 4; i++) {
-        UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
-        btn.frame = CGRectMake( ((SCREEN_WIDTH - 4*40)/5) * (i+1) + i * 40, 35, 50, 50);
+        
+        HHButton *btn = [[HHButton alloc]initWithStyle:HHButtonSubviewLayoutStyleVertical];
+        btn.frame = CGRectMake( ((SCREEN_WIDTH - 4*40)/5) * (i+1) + i * 40, 35, 60, 60);
         btn.tag = 100 + i;
         [btn setImage:[UIImage imageNamed:[NSString stringWithFormat:@"qrcode%d",i]] forState:UIControlStateNormal];
         [btn setTitle:textArr[i] forState:UIControlStateNormal];
@@ -54,6 +55,15 @@
 }
 
 - (void)btnItemSelect:(UIButton*)sender {
+    
+    for (int i = 0; i < 4; i++) {
+        UIButton *btn = (UIButton *)[[sender superview]viewWithTag:100 + i];
+        [btn setSelected:NO];
+        
+    }
+    
+    UIButton *button = (UIButton *)sender;
+    [button setSelected:YES];
     
     if (sender.tag == 103) {/** 图像*/
         [self openLibary];
