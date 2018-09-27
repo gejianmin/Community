@@ -119,6 +119,7 @@
 }
 // 图片点击事件
 - (void)imageViewTapClick:(UIGestureRecognizer *)tap {
+    
     NSInteger index  =  tap.view.tag - 10;
     self.tapBlock(index,self.photos);
     
@@ -167,6 +168,9 @@
 //        _secondImgView.hidden = YES;
 //        _thirdImgView.hidden = YES;
 //    }
+    // 清除存的图片
+    [self.photos removeAllObjects];
+    
     if (model.images.count == 0) {
         _firstImgView.hidden = YES;
         _secondImgView.hidden = YES;

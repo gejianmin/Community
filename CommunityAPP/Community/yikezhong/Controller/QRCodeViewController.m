@@ -27,10 +27,39 @@
 }
 - (void)setupViews{
     self.view.backgroundColor = [UIColor blackColor];
-    UIBarButtonItem *libaryItem = [[UIBarButtonItem alloc]initWithTitle:@"相册" style:UIBarButtonItemStylePlain target:self action:@selector(openLibary)];
-    self.navigationItem.rightBarButtonItem = libaryItem;
+//    UIBarButtonItem *libaryItem = [[UIBarButtonItem alloc]initWithTitle:@"相册" style:UIBarButtonItemStylePlain target:self action:@selector(openLibary)];
+//    self.navigationItem.rightBarButtonItem = libaryItem;
     [self.view addSubview:self.scanView];
+    
+    // 选项按钮
+    [self selectItem];
 }
+
+- (void)selectItem {
+    
+    NSArray *textArr = @[@"商品条形码",@"二维码",@"Logo图片",@"图像"];
+    
+    for (int i = 0; i < 4; i++) {
+        UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
+        btn.frame = CGRectMake( ((SCREEN_WIDTH - 4*40)/5) * (i+1) + i * 40, 35, 50, 50);
+        btn.tag = 100 + i;
+        [btn setImage:[UIImage imageNamed:[NSString stringWithFormat:@"qrcode%d",i]] forState:UIControlStateNormal];
+        [btn setTitle:textArr[i] forState:UIControlStateNormal];
+        [btn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+        [btn setTitleColor:[UIColor colorWithHexStr:@"FF1493"] forState:UIControlStateSelected];
+        [btn addTarget:self action:@selector(btnItemSelect:) forControlEvents:UIControlEventTouchUpInside];
+        [self.view addSubview:btn];
+    }
+    
+}
+
+- (void)btnItemSelect:(UIButton*)sender {
+    
+    if (sender.tag == 103) {/** 图像*/
+        [self openLibary];
+    }
+}
+
 - (void)openLibary{
     if (![self isLibaryAuthStatusCorrect]) {
         [self showAlert:@"需要相册权限" action:nil];
