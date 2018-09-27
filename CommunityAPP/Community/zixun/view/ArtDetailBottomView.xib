@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
-        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -126,27 +125,26 @@
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
-                <constraint firstItem="zDg-yS-UJa" firstAttribute="bottom" secondItem="SQn-02-reI" secondAttribute="bottom" constant="16" id="3es-yN-xcU"/>
-                <constraint firstItem="SQn-02-reI" firstAttribute="top" secondItem="zDg-yS-UJa" secondAttribute="top" constant="16" id="7eW-Jn-MfI"/>
-                <constraint firstItem="TCL-k0-rZ9" firstAttribute="top" secondItem="zDg-yS-UJa" secondAttribute="top" constant="16" id="7zE-M3-bKq"/>
-                <constraint firstItem="yFp-Pz-wRf" firstAttribute="top" secondItem="zDg-yS-UJa" secondAttribute="top" id="DQY-Bv-d0W"/>
-                <constraint firstItem="vB4-er-Ti0" firstAttribute="bottom" secondItem="zDg-yS-UJa" secondAttribute="bottom" id="Fnu-wY-80t"/>
+                <constraint firstAttribute="bottom" secondItem="SQn-02-reI" secondAttribute="bottom" constant="16" id="3es-yN-xcU"/>
+                <constraint firstItem="SQn-02-reI" firstAttribute="top" secondItem="Ajp-hJ-gkQ" secondAttribute="top" constant="16" id="7eW-Jn-MfI"/>
+                <constraint firstItem="TCL-k0-rZ9" firstAttribute="top" secondItem="Ajp-hJ-gkQ" secondAttribute="top" constant="16" id="7zE-M3-bKq"/>
+                <constraint firstItem="yFp-Pz-wRf" firstAttribute="top" secondItem="Ajp-hJ-gkQ" secondAttribute="top" id="DQY-Bv-d0W"/>
+                <constraint firstItem="vB4-er-Ti0" firstAttribute="bottom" secondItem="Ajp-hJ-gkQ" secondAttribute="bottom" id="Fnu-wY-80t"/>
                 <constraint firstItem="yFp-Pz-wRf" firstAttribute="leading" secondItem="SQn-02-reI" secondAttribute="trailing" constant="-2" id="Icd-45-5Pu"/>
                 <constraint firstItem="yFp-Pz-wRf" firstAttribute="width" secondItem="Ddk-xo-vLo" secondAttribute="width" id="KFJ-Dz-eOm"/>
-                <constraint firstItem="Ddk-xo-vLo" firstAttribute="leading" secondItem="zDg-yS-UJa" secondAttribute="leading" id="OSi-Ww-TlE"/>
-                <constraint firstItem="yFp-Pz-wRf" firstAttribute="bottom" secondItem="zDg-yS-UJa" secondAttribute="bottom" id="W0i-i3-xoA"/>
-                <constraint firstItem="yFp-Pz-wRf" firstAttribute="trailing" secondItem="zDg-yS-UJa" secondAttribute="trailing" id="YQA-xy-cUc"/>
-                <constraint firstItem="zDg-yS-UJa" firstAttribute="bottom" secondItem="TCL-k0-rZ9" secondAttribute="bottom" constant="16" id="bUc-Ht-0ax"/>
+                <constraint firstItem="Ddk-xo-vLo" firstAttribute="leading" secondItem="Ajp-hJ-gkQ" secondAttribute="leading" id="OSi-Ww-TlE"/>
+                <constraint firstItem="yFp-Pz-wRf" firstAttribute="bottom" secondItem="Ajp-hJ-gkQ" secondAttribute="bottom" id="W0i-i3-xoA"/>
+                <constraint firstItem="yFp-Pz-wRf" firstAttribute="trailing" secondItem="Ajp-hJ-gkQ" secondAttribute="trailing" id="YQA-xy-cUc"/>
+                <constraint firstAttribute="bottom" secondItem="TCL-k0-rZ9" secondAttribute="bottom" constant="16" id="bUc-Ht-0ax"/>
                 <constraint firstItem="vB4-er-Ti0" firstAttribute="leading" secondItem="TCL-k0-rZ9" secondAttribute="trailing" constant="-2" id="i4F-ZL-z3F"/>
-                <constraint firstItem="Ddk-xo-vLo" firstAttribute="top" secondItem="zDg-yS-UJa" secondAttribute="top" id="jvx-fz-OmG"/>
+                <constraint firstItem="Ddk-xo-vLo" firstAttribute="top" secondItem="Ajp-hJ-gkQ" secondAttribute="top" id="jvx-fz-OmG"/>
                 <constraint firstItem="TCL-k0-rZ9" firstAttribute="leading" secondItem="Ddk-xo-vLo" secondAttribute="trailing" id="nby-BH-U8j"/>
-                <constraint firstItem="Ddk-xo-vLo" firstAttribute="bottom" secondItem="zDg-yS-UJa" secondAttribute="bottom" id="uMd-uy-qI6"/>
+                <constraint firstItem="Ddk-xo-vLo" firstAttribute="bottom" secondItem="Ajp-hJ-gkQ" secondAttribute="bottom" id="uMd-uy-qI6"/>
                 <constraint firstItem="SQn-02-reI" firstAttribute="leading" secondItem="vB4-er-Ti0" secondAttribute="trailing" id="uag-GQ-LKU"/>
-                <constraint firstItem="vB4-er-Ti0" firstAttribute="top" secondItem="zDg-yS-UJa" secondAttribute="top" id="uxu-Yw-2XH"/>
+                <constraint firstItem="vB4-er-Ti0" firstAttribute="top" secondItem="Ajp-hJ-gkQ" secondAttribute="top" id="uxu-Yw-2XH"/>
                 <constraint firstItem="vB4-er-Ti0" firstAttribute="width" secondItem="Ddk-xo-vLo" secondAttribute="width" id="zdQ-Pq-z2y"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <viewLayoutGuide key="safeArea" id="zDg-yS-UJa"/>
             <connections>
                 <outlet property="browseImageV" destination="NUS-rI-vNO" id="B7Y-Lw-KBE"/>
                 <outlet property="browseNumL" destination="060-RX-Fth" id="cXl-Jp-0QP"/>
