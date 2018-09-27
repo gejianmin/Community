@@ -2168,8 +2168,8 @@
 				TargetAttributes = {
 					508E50EC1FD1475B00D600C5 = {
 						CreatedOnToolsVersion = 8.3.2;
-						DevelopmentTeam = Q523R4V974;
-						ProvisioningStyle = Automatic;
+						DevelopmentTeam = TLYB38475N;
+						ProvisioningStyle = Manual;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 1;
@@ -2660,6 +2660,9 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Q523R4V974;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = TLYB38475N;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2677,7 +2680,7 @@
 					"\"${PODS_ROOT}/Headers/Public/YYModel\"",
 				);
 				INFOPLIST_FILE = CommunityAPP/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2689,8 +2692,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.eguanjia.communityclient;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE = "57360243-811b-4cd5-87c6-0eb01743d8e6";
+				PROVISIONING_PROFILE_SPECIFIER = comm1;
 			};
 			name = Debug;
 		};
@@ -2702,8 +2705,8 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: BO Lyu (TLYB38475N)";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = Q523R4V974;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = TLYB38475N;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2721,7 +2724,7 @@
 					"\"${PODS_ROOT}/Headers/Public/YYModel\"",
 				);
 				INFOPLIST_FILE = CommunityAPP/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2733,8 +2736,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.eguanjia.communityclient;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE = "57360243-811b-4cd5-87c6-0eb01743d8e6";
+				PROVISIONING_PROFILE_SPECIFIER = comm1;
 			};
 			name = Release;
 		};
