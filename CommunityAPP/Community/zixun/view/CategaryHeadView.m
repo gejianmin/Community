@@ -11,6 +11,8 @@
 {
     UIButton *_tempButton;
 }
+
+@property(nonatomic, strong) UIView * itemView;/** 下标线*/
 @end
 @implementation CategaryHeadView
 
@@ -18,25 +20,27 @@
     
     self = [super initWithReuseIdentifier:reuseIdentifier];
     if (self) {
-        self.contentView.backgroundColor = [UIColor lightGrayColor];
     }
     return self;
 }
 
 - (void)setCategoryArray:(NSArray *)categoryArray{
     if (_categoryArray != categoryArray) {
-        
         [self removeAllSubviews];
+        UIView *view = [[UIView alloc]initWithFrame:self.bounds];
+        view.backgroundColor = [UIColor whiteColor];
+        [self addSubview:view];
+        
         
         for (int i = 0; i<categoryArray.count; i++) {
             Village_ArticleCateModel *model = categoryArray[i];
             
             UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
-            button.backgroundColor  = [UIColor whiteColor];
+//            button.backgroundColor  = [UIColor orangeColor];
             [button setTitle:model.title forState:UIControlStateNormal];
             [button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
             [button setTitleColor:[UIColor redColor] forState:UIControlStateSelected];
-            button.frame = CGRectMake(SCREEN_WIDTH/categoryArray.count *i, 10, SCREEN_WIDTH/categoryArray.count, 50);
+            button.frame = CGRectMake(SCREEN_WIDTH/categoryArray.count *i, 20, SCREEN_WIDTH/categoryArray.count, 50);
             [self addSubview:button];
             button.tag = 100 + i;
             [button addTarget:self action:@selector(selectCate:) forControlEvents:UIControlEventTouchUpInside];
@@ -44,7 +48,15 @@
             if (i==0) {
                 _tempButton = button;
                 button.selected = YES;
+                // 用动画搞出下划线跟随滑动效果
+                self.itemView = [[UIView alloc]initWithFrame:CGRectMake(_tempButton.left, _tempButton.top+_tempButton.height + 5, _tempButton.width, 2)];
+                self.itemView.backgroundColor = [UIColor redColor];
+                [self addSubview:_itemView];
             }
+            
+            
+            
+            
         }
         
     }
@@ -62,6 +74,13 @@
         _tempButton.selected = NO;
         sender.selected = YES;
         _tempButton = sender;
+        
+        // 移动下标
+        [UIView animateWithDuration:0.5 delay:0 usingSpringWithDamping:0.8 initialSpringVelocity:30 options:UIViewAnimationOptionCurveLinear animations:^{
+            self.itemView.centerX = _tempButton.centerX;
+        } completion:^(BOOL finished) {
+            
+        }];
     }
     
     if ([self.delagate respondsToSelector:@selector(clickInfoCategary:)]) {

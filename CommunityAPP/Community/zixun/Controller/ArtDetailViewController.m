@@ -18,6 +18,7 @@
 @property(nonatomic, strong) UILabel * titleL;//文章头
 @property(nonatomic, strong) UILabel * timeL;//创建时间
 @property(nonatomic, strong) ArtDetailBottomView * bottomV;
+@property(nonatomic, strong) InfoArt_DetailModel * artDetailModel;
 @end
 
 @implementation ArtDetailViewController
@@ -39,6 +40,7 @@
     [request setFinishedBlock:^(id object, id responseData) {
         
         InfoArt_DetailModel *model = object;
+        self.artDetailModel = object;
         tyself.headTitle = model.title;
         self.titleL.text = model.title;
         self.timeL.text = model.create_time;
@@ -60,7 +62,7 @@
     //标题头背景图
     [self.view addSubview:self.articleHeaderV];
     [self.articleHeaderV mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self.view);
+        make.top.equalTo(self.view).offset(10);
         make.left.equalTo(self.view.mas_left).offset(16);
         make.right.equalTo(self.view.mas_right).offset(-16);
         
@@ -68,7 +70,7 @@
     //标题
     self.titleL = [[UILabel alloc]init];
     _titleL.numberOfLines = 0;
-    _titleL.font = kFont(17);
+    _titleL.font = kFont(19);
     [self.articleHeaderV addSubview:_titleL];
     [self.titleL mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self.articleHeaderV.mas_top);
@@ -79,7 +81,7 @@
     //创建时间
     self.timeL = [[UILabel alloc]init];
     _timeL.textColor = kColorGray4;
-    _timeL.font = kFont(14);
+    _timeL.font = kFont(16);
     [self.articleHeaderV addSubview:_timeL];
     [self.timeL mas_makeConstraints:^(MASConstraintMaker *make) {
         make.right.equalTo(self.articleHeaderV.mas_right).offset(-15);
@@ -98,6 +100,12 @@
         make.height.equalTo(@50);
         
     }];
+    JTDWeakSelf
+    self.bottomV.shareBlock = ^{
+        
+        [WeakSelf share];
+        
+    };
     
     //视图webView
     self.webView = [UIWebView new];
@@ -121,8 +129,9 @@
 // 分享
 - (void)share {
     JTDShareContent * model = [[JTDShareContent alloc]init];
-    model.centent = @"赵万里";
-    model.name = @"万里无云";
+    model.centent = self.artDetailModel.desc;
+    model.name = self.artDetailModel.title;
+    model.shareURL = self.artDetailModel.shareurl;
     model.images = @"icon";
     [JTDShareVC shareToController:self shareModel:model shareType:PayStateShare];
     

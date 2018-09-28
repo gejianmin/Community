@@ -26,7 +26,7 @@
     if (adArray !=_adArray) {
         for (int i = 0; i<adArray.count; i++) {
             Village_ADModel *admodel = adArray[i];
-            InforADView *adView = [[InforADView alloc] initWithFrame:CGRectMake((SCREEN_WIDTH/2 + 2.5 )*(i%2), 82.5*(i/2), SCREEN_WIDTH/2 - 2.5, 77.5)];
+            InforADView *adView = [[InforADView alloc] initWithFrame:CGRectMake((SCREEN_WIDTH/2 + 1 )*(i%2), 82.5*(i/2), SCREEN_WIDTH/2 - 1, 81.5)];
             [self.contentView addSubview:adView];
             adView.tag = 100 +i;
             

@@ -24,14 +24,22 @@
     VC.model = [[JTDShareContent alloc]init];
     VC.model = model;
     VC.type = shareType;
-    VC.transitioningDelegate = VC.transtionDelegate;
-    VC.modalPresentationStyle = UIModalPresentationCustom;
-    [controller presentViewController:VC animated:YES completion:nil];
+    
+    VC.providesPresentationContextTransitionStyle = YES;
+    VC.view.backgroundColor = [[UIColor blackColor]colorWithAlphaComponent:0.4f];
+    VC.modalPresentationStyle = UIModalPresentationOverCurrentContext;
+    
+    [controller presentViewController:VC animated:NO completion:nil];
     
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.view.backgroundColor = [UIColor clearColor];
+//    self.view.backgroundColor = [[UIColor blackColor]colorWithAlphaComponent:0.4f];
+    
+//    UIView * bgAlphaView = [[UIView alloc] initWithFrame:self.view.frame];
+//    bgAlphaView.backgroundColor = [[UIColor blackColor]colorWithAlphaComponent:0.4f];
+//    [self.view addSubview:bgAlphaView];
+    
     [self setUpUI];
 }
 -(void)setUpUI{
@@ -53,7 +61,7 @@
         UIButton * btn = [UIButton buttonWithType:UIButtonTypeCustom];
 //        btn.backgroundColor = kColorRed;
         btn.titleLabel.font = [UIFont systemFontOfSize:14];
-        btn.frame = CGRectMake(spacing + (spacing + width)*i, CGRectGetMaxY(line.frame)+ 40, width, height);
+        btn.frame = CGRectMake(spacing + (spacing + width)*i, CGRectGetMaxY(line.frame)+ 20, width, height);
         btn.tag = 1000 + i;
         [btn setTitle:title[i] forState:UIControlStateNormal];
         [btn setTitleColor:kColorGray5 forState:UIControlStateNormal];
@@ -68,7 +76,7 @@
     [self.backView addSubview:self.closeBtn];
     [_closeBtn mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.right.equalTo(self.backView);
-        make.top.mas_equalTo(self.backView.mas_bottom).offset(-49);
+        make.bottom.mas_equalTo(self.backView.mas_bottom);
         make.height.equalTo(@49);
     }];
 }
@@ -80,7 +88,7 @@
 }
 -(UIView *)backView{
     if (!_backView) {
-        _backView = [[UIView alloc]initWithFrame:CGRectMake(0, HH_SCREEN_H-235-49, HH_SCREEN_W,235+49)];
+        _backView = [[UIView alloc]initWithFrame:CGRectMake(0, HH_SCREEN_H-235, HH_SCREEN_W,235)];
         _backView.backgroundColor = [UIColor whiteColor];
     }
     return _backView;
@@ -93,7 +101,7 @@
 }
 
 - (void)showPaySuccessWithResult:(StateEnum)result andController:(UIViewController *)controller{
-    
+
 //    self.payState = result;
     self.transitioningDelegate = self.transtionDelegate;
     self.modalPresentationStyle = UIModalPresentationCustom;
@@ -117,7 +125,7 @@
 }
 - (void)dissMiss:(NSString *)str{
     
-    [self dismissViewControllerAnimated:YES completion:^{}];
+    [self dismissViewControllerAnimated:NO completion:^{}];
 }
 
 

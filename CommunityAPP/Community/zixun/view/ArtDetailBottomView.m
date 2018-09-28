@@ -17,6 +17,11 @@
     
     return  [[mainBundle loadNibNamed:@"ArtDetailBottomView" owner:nil options:nil] firstObject];
 }
+- (IBAction)shareClick:(UIButton *)sender {
+    
+    self.shareBlock();
+    
+}
 
 - (void)setModel:(InfoArt_DetailModel *)model {
     

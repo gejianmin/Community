@@ -9,6 +9,7 @@
 #import "QuarterViewController.h"
 #import "WebViewController.h"
 #import "QRCodeViewController.h"
+#import "YKZSearchViewController.h"
 @interface QuarterViewController ()<UIGestureRecognizerDelegate,UITextFieldDelegate>
 
 @property (nonatomic, strong) UIActivityIndicatorView *indicatorView;
@@ -87,7 +88,8 @@
 
 - (BOOL)textFieldShouldBeginEditing:(UITextField *)textField {
     
-    NSLog(@"点击了搜索框");
+    YKZSearchViewController *ykzSearch = [[YKZSearchViewController alloc]init];
+    [self.navigationController pushViewController:ykzSearch animated:YES];
     return NO;
     
 }
@@ -126,15 +128,17 @@
         // 设置代理，如果不需要实现，可以不设置
         [_jsBridge setWebViewDelegate:self];
     [self registerJavaScriptHandler];
-    NSString * token = [[[HHClient sharedInstance]user] token];
-    NSString * vid = [[[HHClient sharedInstance]user] vid];
-    NSString * lat = [NSString stringWithFormat:@"%.6f",[[[HHClient sharedInstance]user] lat]];
-    NSString * lng = [NSString stringWithFormat:@"%.6f",[[[HHClient sharedInstance]user] lng]];
-    [self.webView evaluateJavaScript:[NSString stringWithFormat:@"localStorage.setItem('token','%@')", token] completionHandler:nil];
-    [self.webView evaluateJavaScript:[NSString stringWithFormat:@"localStorage.setItem('vid','%@')", vid] completionHandler:nil];
-    [self.webView evaluateJavaScript:[NSString stringWithFormat:@"localStorage.setItem('lat','%@')", lat] completionHandler:nil];
-    [self.webView evaluateJavaScript:[NSString stringWithFormat:@"localStorage.setItem('lng','%@')", lng] completionHandler:nil];
+//    NSString * token = [[[HHClient sharedInstance]user] token];
+//    NSString * vid = [[[HHClient sharedInstance]user] vid];
+//    NSString * lat = [NSString stringWithFormat:@"%.6f",[[[HHClient sharedInstance]user] lat]];
+//    NSString * lng = [NSString stringWithFormat:@"%.6f",[[[HHClient sharedInstance]user] lng]];
     [self.webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:Quarter_HTML5]]];
+//    [self.webView evaluateJavaScript:[NSString stringWithFormat:@"localStorage.setItem('token','%@')", token] completionHandler:nil];
+//    [self.webView evaluateJavaScript:[NSString stringWithFormat:@"localStorage.setItem('vid','%@')", vid] completionHandler:nil];
+//    [self.webView evaluateJavaScript:[NSString stringWithFormat:@"localStorage.setItem('lat','%@')", lat] completionHandler:nil];
+//    [self.webView evaluateJavaScript:[NSString stringWithFormat:@"localStorage.setItem('lng','%@')", lng] completionHandler:nil];
+//
+    
 }
 - (void)back{
     [self.navigationController popViewControllerAnimated:YES];
@@ -155,15 +159,23 @@
 {
     [self.indicatorView stopAnimating];
     [webView evaluateJavaScript:@"document.title" completionHandler:^(id _Nullable title, NSError * _Nullable error) {
-        if (self.customTitle) {
-            self.title=self.customTitle;
-        }else{
-            if (title) {
-                self.title=title;
-            }
-            
-        }
+//        if (self.customTitle) {
+//            self.title=self.customTitle;
+//        }else{
+//            if (title) {
+//                self.title=title;
+//            }
+//
+//        }
     }];
+    NSString * token = [[[HHClient sharedInstance]user] token];
+    NSString * vid = [[[HHClient sharedInstance]user] vid];
+    NSString * lat = [NSString stringWithFormat:@"%.6f",[[[HHClient sharedInstance]user] lat]];
+    NSString * lng = [NSString stringWithFormat:@"%.6f",[[[HHClient sharedInstance]user] lng]];
+    [self.webView evaluateJavaScript:[NSString stringWithFormat:@"localStorage.setItem('token','%@')", token] completionHandler:nil];
+    [self.webView evaluateJavaScript:[NSString stringWithFormat:@"localStorage.setItem('vid','%@')", vid] completionHandler:nil];
+    [self.webView evaluateJavaScript:[NSString stringWithFormat:@"localStorage.setItem('lat','%@')", lat] completionHandler:nil];
+    [self.webView evaluateJavaScript:[NSString stringWithFormat:@"localStorage.setItem('lng','%@')", lng] completionHandler:nil];
 }
 - (void)webView:(WKWebView *)webView didFailNavigation:(null_unspecified WKNavigation *)navigation withError:(NSError *)error
 {

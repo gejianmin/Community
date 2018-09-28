@@ -60,6 +60,7 @@
 		502473AA1FE261C5002EA673 /* LayerButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 502473A91FE261C5002EA673 /* LayerButton.m */; };
 		502473AD1FE26A47002EA673 /* InforADView.m in Sources */ = {isa = PBXBuildFile; fileRef = 502473AC1FE26A47002EA673 /* InforADView.m */; };
 		502473B01FE29D22002EA673 /* InfoCategaryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 502473AF1FE29D22002EA673 /* InfoCategaryCell.m */; };
+		5031D8C4215E213000453A33 /* YKZSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5031D8C3215E213000453A33 /* YKZSearchViewController.m */; };
 		50388DBF2057C761001AB86B /* SetUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 50388DBE2057C761001AB86B /* SetUpViewController.m */; };
 		50388DC22057D15D001AB86B /* SetUpTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 50388DC12057D15D001AB86B /* SetUpTableViewCell.m */; };
 		504BDF6B1FDA35B70028D59D /* RequestBaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 504BDF6A1FDA35B70028D59D /* RequestBaseModel.m */; };
@@ -392,6 +393,8 @@
 		502473AC1FE26A47002EA673 /* InforADView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InforADView.m; sourceTree = "<group>"; };
 		502473AE1FE29D22002EA673 /* InfoCategaryCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InfoCategaryCell.h; sourceTree = "<group>"; };
 		502473AF1FE29D22002EA673 /* InfoCategaryCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InfoCategaryCell.m; sourceTree = "<group>"; };
+		5031D8C2215E213000453A33 /* YKZSearchViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YKZSearchViewController.h; sourceTree = "<group>"; };
+		5031D8C3215E213000453A33 /* YKZSearchViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YKZSearchViewController.m; sourceTree = "<group>"; };
 		50388DBD2057C761001AB86B /* SetUpViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SetUpViewController.h; sourceTree = "<group>"; };
 		50388DBE2057C761001AB86B /* SetUpViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SetUpViewController.m; sourceTree = "<group>"; };
 		50388DC02057D15D001AB86B /* SetUpTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SetUpTableViewCell.h; sourceTree = "<group>"; };
@@ -1996,6 +1999,8 @@
 			children = (
 				50FC929C214652FD004A34FC /* QuarterViewController.h */,
 				50FC929D214652FD004A34FC /* QuarterViewController.m */,
+				5031D8C2215E213000453A33 /* YKZSearchViewController.h */,
+				5031D8C3215E213000453A33 /* YKZSearchViewController.m */,
 				5060336921522749006A1A83 /* QRCodeViewController.h */,
 				5060336A21522749006A1A83 /* QRCodeViewController.m */,
 			);
@@ -2291,6 +2296,7 @@
 				501F904E215366500083D8F8 /* UIButton+Animation.m in Sources */,
 				501F904A215366500083D8F8 /* MLPhotoPickerCollectionView.m in Sources */,
 				501F9056215366500083D8F8 /* MLPhotoPickerBrowserPhotoImageView.m in Sources */,
+				5031D8C4215E213000453A33 /* YKZSearchViewController.m in Sources */,
 				504BDF6F1FDA65A70028D59D /* RegisterModel.m in Sources */,
 				50BFFAE91FD52818005F35CA /* NSString+JKDictionaryValue.m in Sources */,
 				50D77AF91FE11CD3007052E7 /* InforVillage_ADRequest.m in Sources */,
@@ -2657,9 +2663,6 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = Q523R4V974;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = TLYB38475N;

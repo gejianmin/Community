@@ -49,7 +49,7 @@
             Village_AppButtonModel *model = infoArray[i];
             [button setTitle:model.title forState:UIControlStateNormal];
             [button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-            button.titleLabel.font = FONT(12);
+            button.titleLabel.font = FONT(13);
             button.titleLabel.textAlignment = NSTextAlignmentCenter;
             [button.imageView sd_setImageWithURL:[NSURL URLWithString:model.thumb] placeholderImage:nil completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
                 

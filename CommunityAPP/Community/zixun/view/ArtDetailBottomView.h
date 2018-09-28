@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 @class InfoArt_DetailModel;
+
+typedef void(^shareBtnClick)(void);
 @interface ArtDetailBottomView : UIView
 @property (weak, nonatomic) IBOutlet UILabel *fenxiangL;
 @property (weak, nonatomic) IBOutlet UILabel *browseNumL;
@@ -16,6 +18,7 @@
 @property (weak, nonatomic) IBOutlet UIImageView *browseImageV;
 
 @property(nonatomic, strong) InfoArt_DetailModel * model;
+@property(nonatomic, copy) shareBtnClick shareBlock;
 + (instancetype)bottomView;
 
 @end

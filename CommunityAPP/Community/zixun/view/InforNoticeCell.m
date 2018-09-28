@@ -20,7 +20,7 @@
         
         self.selectionStyle = UITableViewCellSelectionStyleNone;
 
-        self.tipLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 5, 60, 60)];
+        self.tipLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 5,50, 60)];
         self.tipLabel.textColor = [UIColor redColor];
         self.tipLabel.font = FONT(20);
         self.tipLabel.numberOfLines = 2;
@@ -31,7 +31,7 @@
         self.messageLabel.textColor = [UIColor blackColor];
         self.messageLabel.font = FONT(14);
         self.messageLabel.numberOfLines = 2;
-        self.messageLabel.lineBreakMode = NSLineBreakByCharWrapping | NSLineBreakByCharWrapping;
+        self.messageLabel.lineBreakMode = NSLineBreakByWordWrapping;
         [self.contentView addSubview:self.messageLabel];
 
     }
@@ -39,8 +39,13 @@
 }
 - (void)setModel:(InforVillage_NoticeModel *)model{
     _model = model;
-    self.tipLabel.text = model.notice_title;
-    self.messageLabel.text = model.notice_content;
+    if (model.notice_title.length != 0) {
+        NSMutableString *str1=[[NSMutableString alloc]initWithString:[NSString stringWithFormat:@"%@",model.notice_title]];//存在堆区，可变字符串
+        [str1 insertString:@"\n" atIndex:1];
+        self.tipLabel.text = str1;
+    }
+    
+    self.messageLabel.text = model.notice_content?:@"";
     
 }
 @end

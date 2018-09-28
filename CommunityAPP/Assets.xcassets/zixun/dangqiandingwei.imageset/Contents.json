@@ -2,11 +2,11 @@
   "images" : [
     {
       "idiom" : "universal",
+      "filename" : "dingwei_btn.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "dangqiandingwei.png",
       "scale" : "2x"
     },
     {
