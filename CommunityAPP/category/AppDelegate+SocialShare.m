@@ -10,8 +10,8 @@
 #import <UShareUI/UShareUI.h>
 #import <UMCommon/UMCommon.h>
 
-#define QQAPP_ID @"1106389887"
-#define QQAPP_KEY @"wVcD6m1sbGzAqiuT"
+#define QQAPP_ID @"1105837654" //1106389887
+#define QQAPP_KEY @"x0IKth3BdVw9koNV"//wVcD6m1sbGzAqiuT
 #define WECHATAPP_ID @"wx0b0a05160fd4a3b0"
 #define WECHATAPP_KEY @"0d5cf11f99f5f0c0a564eab198f5a615"
 

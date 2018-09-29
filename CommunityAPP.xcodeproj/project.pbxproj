@@ -65,16 +65,10 @@
 		504BDF6B1FDA35B70028D59D /* RequestBaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 504BDF6A1FDA35B70028D59D /* RequestBaseModel.m */; };
 		504BDF6F1FDA65A70028D59D /* RegisterModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 504BDF6E1FDA65A70028D59D /* RegisterModel.m */; };
 		505FA85D1FEA038F0082AAB0 /* InterButton_categaryModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 505FA85C1FEA038F0082AAB0 /* InterButton_categaryModel.m */; };
-		505FA8601FEA04B50082AAB0 /* InterButtonCateController.m in Sources */ = {isa = PBXBuildFile; fileRef = 505FA85F1FEA04B50082AAB0 /* InterButtonCateController.m */; };
 		505FA8631FEA07F80082AAB0 /* Inter_categaryRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 505FA8621FEA07F80082AAB0 /* Inter_categaryRequest.m */; };
 		505FA8661FEA08080082AAB0 /* Inter_categaryResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 505FA8651FEA08080082AAB0 /* Inter_categaryResponse.m */; };
-		505FA8691FEA09540082AAB0 /* InterArtListTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 505FA8681FEA09540082AAB0 /* InterArtListTool.m */; };
 		5060336B21522749006A1A83 /* QRCodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5060336A21522749006A1A83 /* QRCodeViewController.m */; };
 		506033702152301C006A1A83 /* CDZQRScanView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5060336E2152301C006A1A83 /* CDZQRScanView.m */; };
-		5077BBE11FE922AA0047BE77 /* InterPostViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5077BBE01FE922AA0047BE77 /* InterPostViewController.m */; };
-		5077BBE41FE929660047BE77 /* PlaceholderTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5077BBE21FE929650047BE77 /* PlaceholderTextView.m */; };
-		5077BBE91FE92DB30047BE77 /* PostCircleAddPicImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5077BBE51FE92DB30047BE77 /* PostCircleAddPicImageView.m */; };
-		5077BBEA1FE92DB30047BE77 /* PostCircleAddPicView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5077BBE61FE92DB30047BE77 /* PostCircleAddPicView.m */; };
 		507940E91FE550D60093CDF9 /* InforVillage_ListRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 507940E81FE550D60093CDF9 /* InforVillage_ListRequest.m */; };
 		507940EC1FE550ED0093CDF9 /* InforVillage_ListResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 507940EB1FE550ED0093CDF9 /* InforVillage_ListResponse.m */; };
 		507940EF1FE551080093CDF9 /* InforVillage_ListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 507940EE1FE551080093CDF9 /* InforVillage_ListModel.m */; };
@@ -132,7 +126,6 @@
 		5091B5601FE78E6F003797EF /* InterCarouseRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 5091B55F1FE78E6F003797EF /* InterCarouseRequest.m */; };
 		5091B5631FE78E80003797EF /* InterCarouseResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 5091B5621FE78E80003797EF /* InterCarouseResponse.m */; };
 		5091B5661FE78E98003797EF /* InterCarouseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5091B5651FE78E98003797EF /* InterCarouseModel.m */; };
-		5091B5691FE7973A003797EF /* InterListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5091B5681FE7973A003797EF /* InterListCell.m */; };
 		5091B56C1FE79CBE003797EF /* InterTopicListRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 5091B56B1FE79CBE003797EF /* InterTopicListRequest.m */; };
 		5091B56F1FE79CCC003797EF /* InterTopicListResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 5091B56E1FE79CCC003797EF /* InterTopicListResponse.m */; };
 		5091B5721FE79CF8003797EF /* InterTopicListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5091B5711FE79CF8003797EF /* InterTopicListModel.m */; };
@@ -141,8 +134,6 @@
 		5091B57B1FE7A12C003797EF /* InterPostListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5091B57A1FE7A12C003797EF /* InterPostListModel.m */; };
 		5091B57E1FE7A462003797EF /* InterNearPostRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 5091B57D1FE7A462003797EF /* InterNearPostRequest.m */; };
 		5091B5811FE7A46E003797EF /* InterNearPostResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 5091B5801FE7A46E003797EF /* InterNearPostResponse.m */; };
-		5091B5841FE7D773003797EF /* InterCateCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5091B5831FE7D773003797EF /* InterCateCell.m */; };
-		5091B5871FE7DCB8003797EF /* ListTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5091B5861FE7DCB8003797EF /* ListTableView.m */; };
 		50BFFA431FD51FD9005F35CA /* BaseRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 50BFFA2E1FD51FD9005F35CA /* BaseRequest.m */; };
 		50BFFA441FD51FD9005F35CA /* BaseResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = 50BFFA301FD51FD9005F35CA /* BaseResponse.m */; };
 		50BFFA491FD51FD9005F35CA /* HTTPS证书.cer in Resources */ = {isa = PBXBuildFile; fileRef = 50BFFA3B1FD51FD9005F35CA /* HTTPS证书.cer */; };
@@ -193,7 +184,6 @@
 		50BFFB101FD5282D005F35CA /* NSString+YRSafeCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 50BFFB091FD5282D005F35CA /* NSString+YRSafeCategory.m */; };
 		50BFFB111FD5282D005F35CA /* UITableView+YRSafeCategory.m in Sources */ = {isa = PBXBuildFile; fileRef = 50BFFB0B1FD5282D005F35CA /* UITableView+YRSafeCategory.m */; };
 		50BFFB151FD528FB005F35CA /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 50BFFB141FD528FB005F35CA /* Reachability.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		50BFFB181FD52A78005F35CA /* InteractionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 50BFFB171FD52A78005F35CA /* InteractionViewController.m */; };
 		50C2F3FC21478F540048E5CB /* ArtDetailBottomView.m in Sources */ = {isa = PBXBuildFile; fileRef = 50C2F3FB21478F540048E5CB /* ArtDetailBottomView.m */; };
 		50C2F3FE21478F800048E5CB /* ArtDetailBottomView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 50C2F3FD21478F800048E5CB /* ArtDetailBottomView.xib */; };
 		50C2F4022147AF090048E5CB /* GuidePagesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 50C2F4002147AF090048E5CB /* GuidePagesViewController.m */; };
@@ -246,15 +236,8 @@
 		8614B7D520F4619F0086546E /* JYBLoading.m in Sources */ = {isa = PBXBuildFile; fileRef = 8614B7D420F4619F0086546E /* JYBLoading.m */; };
 		8614B7D820F461A40086546E /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 8614B7D620F461A40086546E /* MBProgressHUD.m */; };
 		8614B7DB20F463AB0086546E /* AppDelegateTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 8614B7DA20F463AB0086546E /* AppDelegateTool.m */; };
-		863A556520F369DF00629350 /* JYBMultiImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 863A556120F369DE00629350 /* JYBMultiImageView.m */; };
-		863A556620F369DF00629350 /* UIImageButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 863A556320F369DF00629350 /* UIImageButton.m */; };
-		86567D5A20EE250600106A6F /* IKHeightPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 86567D5820EE250500106A6F /* IKHeightPickerView.m */; };
-		86BDCBB420EA3B4B00613FD9 /* AViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 86BDCBB320EA3B4B00613FD9 /* AViewController.m */; };
 		86BDCBB720EA4E0400613FD9 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 86BDCBB520EA4E0300613FD9 /* ViewController.m */; };
 		86E907CE20EB229E00208132 /* NavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 86E907CD20EB229E00208132 /* NavigationViewController.m */; };
-		86E907D120EB50E000208132 /* InterPostViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 86E907D020EB50E000208132 /* InterPostViewDataSource.m */; };
-		86E907D420EB55C100208132 /* InterPostDescCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 86E907D320EB55C100208132 /* InterPostDescCell.m */; };
-		86E907D720EB58F100208132 /* InterPostInfoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 86E907D620EB58F100208132 /* InterPostInfoCell.m */; };
 		F22428E12142651F0035D0F0 /* UIView+Shadow.m in Sources */ = {isa = PBXBuildFile; fileRef = F22428DB2142651E0035D0F0 /* UIView+Shadow.m */; };
 		F22428E22142651F0035D0F0 /* HHValidateButton.m in Sources */ = {isa = PBXBuildFile; fileRef = F22428DC2142651E0035D0F0 /* HHValidateButton.m */; };
 		F22428E32142651F0035D0F0 /* UIButton+LXMImagePosition.m in Sources */ = {isa = PBXBuildFile; fileRef = F22428DD2142651E0035D0F0 /* UIButton+LXMImagePosition.m */; };
@@ -272,6 +255,39 @@
 		F224290E2143BCC20035D0F0 /* JTDShareVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F22429092143BCC20035D0F0 /* JTDShareVC.m */; };
 		F224290F2143BCC20035D0F0 /* JTDSocialShare.m in Sources */ = {isa = PBXBuildFile; fileRef = F224290A2143BCC20035D0F0 /* JTDSocialShare.m */; };
 		F22429102143BCC20035D0F0 /* PresentTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = F224290B2143BCC20035D0F0 /* PresentTransition.m */; };
+		F2376B70215E0522004E7759 /* GSAPublishModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F2376B6F215E0522004E7759 /* GSAPublishModel.m */; };
+		F2376BAD215E0686004E7759 /* MyCommunityVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F2376B71215E0678004E7759 /* MyCommunityVC.m */; };
+		F2376BAE215E0686004E7759 /* InterListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F2376B72215E0678004E7759 /* InterListCell.m */; };
+		F2376BAF215E0686004E7759 /* PlaceholderTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = F2376B73215E0678004E7759 /* PlaceholderTextView.m */; };
+		F2376BB1215E0686004E7759 /* inter_commentHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = F2376B79215E0679004E7759 /* inter_commentHeaderView.m */; };
+		F2376BB3215E0686004E7759 /* InteractionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F2376B7D215E067A004E7759 /* InteractionViewController.m */; };
+		F2376BB4215E0686004E7759 /* JTDCommentView.m in Sources */ = {isa = PBXBuildFile; fileRef = F2376B7E215E067A004E7759 /* JTDCommentView.m */; };
+		F2376BB5215E0686004E7759 /* InterButtonCateController.m in Sources */ = {isa = PBXBuildFile; fileRef = F2376B80215E067A004E7759 /* InterButtonCateController.m */; };
+		F2376BB6215E0686004E7759 /* PostCircleAddPicView.m in Sources */ = {isa = PBXBuildFile; fileRef = F2376B81215E067B004E7759 /* PostCircleAddPicView.m */; };
+		F2376BB7215E0686004E7759 /* UIImageButton.m in Sources */ = {isa = PBXBuildFile; fileRef = F2376B82215E067B004E7759 /* UIImageButton.m */; };
+		F2376BB8215E0686004E7759 /* PubMyCommunityVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F2376B86215E067C004E7759 /* PubMyCommunityVC.m */; };
+		F2376BB9215E0686004E7759 /* AViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F2376B87215E067C004E7759 /* AViewController.m */; };
+		F2376BBA215E0686004E7759 /* IKHeightPickerView.m in Sources */ = {isa = PBXBuildFile; fileRef = F2376B8A215E067D004E7759 /* IKHeightPickerView.m */; };
+		F2376BBB215E0686004E7759 /* InterButtonCateHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = F2376B8C215E067E004E7759 /* InterButtonCateHeaderView.m */; };
+		F2376BBC215E0686004E7759 /* InterArtListTool.m in Sources */ = {isa = PBXBuildFile; fileRef = F2376B8E215E067E004E7759 /* InterArtListTool.m */; };
+		F2376BBD215E0686004E7759 /* ListTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = F2376B8F215E067E004E7759 /* ListTableView.m */; };
+		F2376BBE215E0686004E7759 /* InterPostViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = F2376B90215E067E004E7759 /* InterPostViewDataSource.m */; };
+		F2376BBF215E0686004E7759 /* CheckInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F2376B91215E067F004E7759 /* CheckInViewController.m */; };
+		F2376BC0215E0686004E7759 /* InterCateView.m in Sources */ = {isa = PBXBuildFile; fileRef = F2376B92215E067F004E7759 /* InterCateView.m */; };
+		F2376BC1215E0686004E7759 /* InterPostViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F2376B93215E067F004E7759 /* InterPostViewController.m */; };
+		F2376BC4215E0686004E7759 /* PostCircleAddPicImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = F2376B9A215E0681004E7759 /* PostCircleAddPicImageView.m */; };
+		F2376BC5215E0686004E7759 /* JYBMultiImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = F2376B9D215E0682004E7759 /* JYBMultiImageView.m */; };
+		F2376BC6215E0686004E7759 /* inter_commentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F2376B9E215E0682004E7759 /* inter_commentCell.m */; };
+		F2376BC7215E0686004E7759 /* InteractionAppButtonCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F2376BA1215E0683004E7759 /* InteractionAppButtonCell.m */; };
+		F2376BC8215E0686004E7759 /* InterCateCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F2376BA3215E0683004E7759 /* InterCateCell.m */; };
+		F2376BC9215E0686004E7759 /* InterPostInfoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F2376BA4215E0684004E7759 /* InterPostInfoCell.m */; };
+		F2376BCA215E0686004E7759 /* InteractionDetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F2376BA9215E0685004E7759 /* InteractionDetailVC.m */; };
+		F2376BCB215E0686004E7759 /* InterPostDescCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F2376BAA215E0685004E7759 /* InterPostDescCell.m */; };
+		F2376BCE215E07E3004E7759 /* GSAPublishCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F2376BCD215E07E3004E7759 /* GSAPublishCell.m */; };
+		F2376BD1215E2986004E7759 /* SelectMyCommunityVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F2376BD0215E2986004E7759 /* SelectMyCommunityVC.m */; };
+		F2376BD4215E2C52004E7759 /* OASearchView.m in Sources */ = {isa = PBXBuildFile; fileRef = F2376BD3215E2C52004E7759 /* OASearchView.m */; };
+		F2376BD7215E2C80004E7759 /* pinyin.m in Sources */ = {isa = PBXBuildFile; fileRef = F2376BD5215E2C80004E7759 /* pinyin.m */; };
+		F2376BDA215E2ECB004E7759 /* SelectMyCommunityCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F2376BD9215E2ECB004E7759 /* SelectMyCommunityCell.m */; };
 		F24C5CEE21474F32003B5A87 /* HHClient.m in Sources */ = {isa = PBXBuildFile; fileRef = F24C5CED21474F32003B5A87 /* HHClient.m */; };
 		F24C5CF42147BA8E003B5A87 /* SetUpHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = F24C5CF32147BA8E003B5A87 /* SetUpHeaderView.m */; };
 		F24C5CF921490473003B5A87 /* PublicCircleController.m in Sources */ = {isa = PBXBuildFile; fileRef = F24C5CF821490473003B5A87 /* PublicCircleController.m */; };
@@ -280,22 +296,15 @@
 		F24C5D0521491184003B5A87 /* publicCircleList_Request.m in Sources */ = {isa = PBXBuildFile; fileRef = F24C5D0421491184003B5A87 /* publicCircleList_Request.m */; };
 		F24C5D082149129A003B5A87 /* publicCircleList_Response.m in Sources */ = {isa = PBXBuildFile; fileRef = F24C5D072149129A003B5A87 /* publicCircleList_Response.m */; };
 		F24C5D0E214914E7003B5A87 /* InForPublicCirCleList_Model.m in Sources */ = {isa = PBXBuildFile; fileRef = F24C5D0D214914E7003B5A87 /* InForPublicCirCleList_Model.m */; };
-		F2A44D37215343B1008F8549 /* JTDCommentView.m in Sources */ = {isa = PBXBuildFile; fileRef = F2A44D36215343B0008F8549 /* JTDCommentView.m */; };
 		F2A44D3A215379F6008F8549 /* MyHarvestAddressVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F2A44D39215379F6008F8549 /* MyHarvestAddressVC.m */; };
 		F2A44D3D21537E11008F8549 /* MyHarvestAddressCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F2A44D3C21537E11008F8549 /* MyHarvestAddressCell.m */; };
 		F2ADAFA0214252C900837A98 /* HHKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F2ADAF9F214252C900837A98 /* HHKit.framework */; };
-		F2BBFFC2214B617200C81E4F /* InterCateView.m in Sources */ = {isa = PBXBuildFile; fileRef = F2BBFFC1214B617200C81E4F /* InterCateView.m */; };
-		F2BBFFC5214B91CD00C81E4F /* InteractionAppButtonCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F2BBFFC4214B91CD00C81E4F /* InteractionAppButtonCell.m */; };
-		F2BBFFC8214BBC9500C81E4F /* InterButtonCateHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = F2BBFFC7214BBC9500C81E4F /* InterButtonCateHeaderView.m */; };
-		F2BBFFCB214F9B5800C81E4F /* InteractionDetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F2BBFFCA214F9B5800C81E4F /* InteractionDetailVC.m */; };
 		F2BBFFCE214FB38400C81E4F /* interactionDetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F2BBFFCD214FB38400C81E4F /* interactionDetailModel.m */; };
 		F2BBFFD1214FB55E00C81E4F /* interactionDetailRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = F2BBFFD0214FB55E00C81E4F /* interactionDetailRequest.m */; };
 		F2BBFFD4214FB59800C81E4F /* interactionDetailResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = F2BBFFD3214FB59800C81E4F /* interactionDetailResponse.m */; };
 		F2BBFFD72150883300C81E4F /* inter_commentListReqest.m in Sources */ = {isa = PBXBuildFile; fileRef = F2BBFFD62150883300C81E4F /* inter_commentListReqest.m */; };
 		F2BBFFDA21508AED00C81E4F /* inter_commentResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = F2BBFFD921508AED00C81E4F /* inter_commentResponse.m */; };
 		F2BBFFDD21508D5300C81E4F /* inter_commentModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F2BBFFDC21508D5300C81E4F /* inter_commentModel.m */; };
-		F2BBFFE02150A05B00C81E4F /* inter_commentHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = F2BBFFDF2150A05B00C81E4F /* inter_commentHeaderView.m */; };
-		F2BBFFE32150A1F500C81E4F /* inter_commentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F2BBFFE22150A1F500C81E4F /* inter_commentCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -402,26 +411,14 @@
 		504BDF6E1FDA65A70028D59D /* RegisterModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterModel.m; sourceTree = "<group>"; };
 		505FA85B1FEA038F0082AAB0 /* InterButton_categaryModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InterButton_categaryModel.h; sourceTree = "<group>"; };
 		505FA85C1FEA038F0082AAB0 /* InterButton_categaryModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InterButton_categaryModel.m; sourceTree = "<group>"; };
-		505FA85E1FEA04B50082AAB0 /* InterButtonCateController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InterButtonCateController.h; sourceTree = "<group>"; };
-		505FA85F1FEA04B50082AAB0 /* InterButtonCateController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InterButtonCateController.m; sourceTree = "<group>"; };
 		505FA8611FEA07F80082AAB0 /* Inter_categaryRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Inter_categaryRequest.h; sourceTree = "<group>"; };
 		505FA8621FEA07F80082AAB0 /* Inter_categaryRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Inter_categaryRequest.m; sourceTree = "<group>"; };
 		505FA8641FEA08080082AAB0 /* Inter_categaryResponse.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Inter_categaryResponse.h; sourceTree = "<group>"; };
 		505FA8651FEA08080082AAB0 /* Inter_categaryResponse.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Inter_categaryResponse.m; sourceTree = "<group>"; };
-		505FA8671FEA09540082AAB0 /* InterArtListTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InterArtListTool.h; sourceTree = "<group>"; };
-		505FA8681FEA09540082AAB0 /* InterArtListTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InterArtListTool.m; sourceTree = "<group>"; };
 		5060336921522749006A1A83 /* QRCodeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QRCodeViewController.h; sourceTree = "<group>"; };
 		5060336A21522749006A1A83 /* QRCodeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QRCodeViewController.m; sourceTree = "<group>"; };
 		5060336E2152301C006A1A83 /* CDZQRScanView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDZQRScanView.m; sourceTree = "<group>"; };
 		5060336F2152301C006A1A83 /* CDZQRScanView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDZQRScanView.h; sourceTree = "<group>"; };
-		5077BBDF1FE922AA0047BE77 /* InterPostViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InterPostViewController.h; sourceTree = "<group>"; };
-		5077BBE01FE922AA0047BE77 /* InterPostViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InterPostViewController.m; sourceTree = "<group>"; };
-		5077BBE21FE929650047BE77 /* PlaceholderTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlaceholderTextView.m; sourceTree = "<group>"; };
-		5077BBE31FE929650047BE77 /* PlaceholderTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlaceholderTextView.h; sourceTree = "<group>"; };
-		5077BBE51FE92DB30047BE77 /* PostCircleAddPicImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PostCircleAddPicImageView.m; sourceTree = "<group>"; };
-		5077BBE61FE92DB30047BE77 /* PostCircleAddPicView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PostCircleAddPicView.m; sourceTree = "<group>"; };
-		5077BBE71FE92DB30047BE77 /* PostCircleAddPicImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PostCircleAddPicImageView.h; sourceTree = "<group>"; };
-		5077BBE81FE92DB30047BE77 /* PostCircleAddPicView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PostCircleAddPicView.h; sourceTree = "<group>"; };
 		507940E71FE550D60093CDF9 /* InforVillage_ListRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InforVillage_ListRequest.h; sourceTree = "<group>"; };
 		507940E81FE550D60093CDF9 /* InforVillage_ListRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InforVillage_ListRequest.m; sourceTree = "<group>"; };
 		507940EA1FE550ED0093CDF9 /* InforVillage_ListResponse.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InforVillage_ListResponse.h; sourceTree = "<group>"; };
@@ -535,8 +532,6 @@
 		5091B5621FE78E80003797EF /* InterCarouseResponse.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InterCarouseResponse.m; sourceTree = "<group>"; };
 		5091B5641FE78E98003797EF /* InterCarouseModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InterCarouseModel.h; sourceTree = "<group>"; };
 		5091B5651FE78E98003797EF /* InterCarouseModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InterCarouseModel.m; sourceTree = "<group>"; };
-		5091B5671FE7973A003797EF /* InterListCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InterListCell.h; sourceTree = "<group>"; };
-		5091B5681FE7973A003797EF /* InterListCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InterListCell.m; sourceTree = "<group>"; };
 		5091B56A1FE79CBE003797EF /* InterTopicListRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InterTopicListRequest.h; sourceTree = "<group>"; };
 		5091B56B1FE79CBE003797EF /* InterTopicListRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InterTopicListRequest.m; sourceTree = "<group>"; };
 		5091B56D1FE79CCC003797EF /* InterTopicListResponse.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InterTopicListResponse.h; sourceTree = "<group>"; };
@@ -553,10 +548,6 @@
 		5091B57D1FE7A462003797EF /* InterNearPostRequest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InterNearPostRequest.m; sourceTree = "<group>"; };
 		5091B57F1FE7A46E003797EF /* InterNearPostResponse.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InterNearPostResponse.h; sourceTree = "<group>"; };
 		5091B5801FE7A46E003797EF /* InterNearPostResponse.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InterNearPostResponse.m; sourceTree = "<group>"; };
-		5091B5821FE7D773003797EF /* InterCateCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InterCateCell.h; sourceTree = "<group>"; };
-		5091B5831FE7D773003797EF /* InterCateCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InterCateCell.m; sourceTree = "<group>"; };
-		5091B5851FE7DCB8003797EF /* ListTableView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ListTableView.h; sourceTree = "<group>"; };
-		5091B5861FE7DCB8003797EF /* ListTableView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ListTableView.m; sourceTree = "<group>"; };
 		50BFF9AF1FD4EC35005F35CA /* Community.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Community.pch; sourceTree = "<group>"; };
 		50BFFA2D1FD51FD9005F35CA /* BaseRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseRequest.h; sourceTree = "<group>"; };
 		50BFFA2E1FD51FD9005F35CA /* BaseRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseRequest.m; sourceTree = "<group>"; };
@@ -659,8 +650,6 @@
 		50BFFB0C1FD5282D005F35CA /* YRClassSafeCategory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YRClassSafeCategory.h; sourceTree = "<group>"; };
 		50BFFB131FD528FB005F35CA /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		50BFFB141FD528FB005F35CA /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
-		50BFFB161FD52A78005F35CA /* InteractionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InteractionViewController.h; sourceTree = "<group>"; };
-		50BFFB171FD52A78005F35CA /* InteractionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InteractionViewController.m; sourceTree = "<group>"; };
 		50C2F3FA21478F540048E5CB /* ArtDetailBottomView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ArtDetailBottomView.h; sourceTree = "<group>"; };
 		50C2F3FB21478F540048E5CB /* ArtDetailBottomView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ArtDetailBottomView.m; sourceTree = "<group>"; };
 		50C2F3FD21478F800048E5CB /* ArtDetailBottomView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ArtDetailBottomView.xib; sourceTree = "<group>"; };
@@ -761,24 +750,10 @@
 		8614B7D720F461A40086546E /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
 		8614B7D920F463AB0086546E /* AppDelegateTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegateTool.h; sourceTree = "<group>"; };
 		8614B7DA20F463AB0086546E /* AppDelegateTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegateTool.m; sourceTree = "<group>"; };
-		863A556120F369DE00629350 /* JYBMultiImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JYBMultiImageView.m; sourceTree = "<group>"; };
-		863A556220F369DF00629350 /* JYBMultiImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JYBMultiImageView.h; sourceTree = "<group>"; };
-		863A556320F369DF00629350 /* UIImageButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIImageButton.m; sourceTree = "<group>"; };
-		863A556420F369DF00629350 /* UIImageButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIImageButton.h; sourceTree = "<group>"; };
-		86567D5820EE250500106A6F /* IKHeightPickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IKHeightPickerView.m; sourceTree = "<group>"; };
-		86567D5920EE250500106A6F /* IKHeightPickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IKHeightPickerView.h; sourceTree = "<group>"; };
-		86BDCBB220EA3B4B00613FD9 /* AViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AViewController.h; sourceTree = "<group>"; };
-		86BDCBB320EA3B4B00613FD9 /* AViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AViewController.m; sourceTree = "<group>"; };
 		86BDCBB520EA4E0300613FD9 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		86BDCBB620EA4E0400613FD9 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		86E907CC20EB229E00208132 /* NavigationViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NavigationViewController.h; sourceTree = "<group>"; };
 		86E907CD20EB229E00208132 /* NavigationViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NavigationViewController.m; sourceTree = "<group>"; };
-		86E907CF20EB50E000208132 /* InterPostViewDataSource.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InterPostViewDataSource.h; sourceTree = "<group>"; };
-		86E907D020EB50E000208132 /* InterPostViewDataSource.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InterPostViewDataSource.m; sourceTree = "<group>"; };
-		86E907D220EB55C100208132 /* InterPostDescCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InterPostDescCell.h; sourceTree = "<group>"; };
-		86E907D320EB55C100208132 /* InterPostDescCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InterPostDescCell.m; sourceTree = "<group>"; };
-		86E907D520EB58F100208132 /* InterPostInfoCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InterPostInfoCell.h; sourceTree = "<group>"; };
-		86E907D620EB58F100208132 /* InterPostInfoCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InterPostInfoCell.m; sourceTree = "<group>"; };
 		99D2F012F0DC9278E2DBAD56 /* Pods-CommunityAPP.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CommunityAPP.release.xcconfig"; path = "Pods/Target Support Files/Pods-CommunityAPP/Pods-CommunityAPP.release.xcconfig"; sourceTree = "<group>"; };
 		E933CC2BF03537A660781A56 /* libPods-CommunityAPP.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CommunityAPP.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F22428DA214260920035D0F0 /* GSAColorConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GSAColorConfig.h; sourceTree = "<group>"; };
@@ -818,6 +793,72 @@
 		F224290A2143BCC20035D0F0 /* JTDSocialShare.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JTDSocialShare.m; sourceTree = "<group>"; };
 		F224290B2143BCC20035D0F0 /* PresentTransition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PresentTransition.m; sourceTree = "<group>"; };
 		F224290C2143BCC20035D0F0 /* CustomPresentation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomPresentation.h; sourceTree = "<group>"; };
+		F2376B6E215E0522004E7759 /* GSAPublishModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GSAPublishModel.h; sourceTree = "<group>"; };
+		F2376B6F215E0522004E7759 /* GSAPublishModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GSAPublishModel.m; sourceTree = "<group>"; };
+		F2376B71215E0678004E7759 /* MyCommunityVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyCommunityVC.m; sourceTree = "<group>"; };
+		F2376B72215E0678004E7759 /* InterListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InterListCell.m; sourceTree = "<group>"; };
+		F2376B73215E0678004E7759 /* PlaceholderTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlaceholderTextView.m; sourceTree = "<group>"; };
+		F2376B75215E0678004E7759 /* InterArtListTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InterArtListTool.h; sourceTree = "<group>"; };
+		F2376B76215E0679004E7759 /* MyCommunityVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyCommunityVC.h; sourceTree = "<group>"; };
+		F2376B77215E0679004E7759 /* UIImageButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIImageButton.h; sourceTree = "<group>"; };
+		F2376B79215E0679004E7759 /* inter_commentHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = inter_commentHeaderView.m; sourceTree = "<group>"; };
+		F2376B7A215E0679004E7759 /* InteractionDetailVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InteractionDetailVC.h; sourceTree = "<group>"; };
+		F2376B7B215E0679004E7759 /* CheckInViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CheckInViewController.h; sourceTree = "<group>"; };
+		F2376B7D215E067A004E7759 /* InteractionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InteractionViewController.m; sourceTree = "<group>"; };
+		F2376B7E215E067A004E7759 /* JTDCommentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JTDCommentView.m; sourceTree = "<group>"; };
+		F2376B7F215E067A004E7759 /* InterListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InterListCell.h; sourceTree = "<group>"; };
+		F2376B80215E067A004E7759 /* InterButtonCateController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InterButtonCateController.m; sourceTree = "<group>"; };
+		F2376B81215E067B004E7759 /* PostCircleAddPicView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PostCircleAddPicView.m; sourceTree = "<group>"; };
+		F2376B82215E067B004E7759 /* UIImageButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIImageButton.m; sourceTree = "<group>"; };
+		F2376B83215E067B004E7759 /* InterButtonCateController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InterButtonCateController.h; sourceTree = "<group>"; };
+		F2376B84215E067C004E7759 /* InterPostDescCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InterPostDescCell.h; sourceTree = "<group>"; };
+		F2376B85215E067C004E7759 /* JYBMultiImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JYBMultiImageView.h; sourceTree = "<group>"; };
+		F2376B86215E067C004E7759 /* PubMyCommunityVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PubMyCommunityVC.m; sourceTree = "<group>"; };
+		F2376B87215E067C004E7759 /* AViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AViewController.m; sourceTree = "<group>"; };
+		F2376B88215E067D004E7759 /* PubMyCommunityVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PubMyCommunityVC.h; sourceTree = "<group>"; };
+		F2376B89215E067D004E7759 /* ListTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListTableView.h; sourceTree = "<group>"; };
+		F2376B8A215E067D004E7759 /* IKHeightPickerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IKHeightPickerView.m; sourceTree = "<group>"; };
+		F2376B8B215E067D004E7759 /* JTDCommentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JTDCommentView.h; sourceTree = "<group>"; };
+		F2376B8C215E067E004E7759 /* InterButtonCateHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InterButtonCateHeaderView.m; sourceTree = "<group>"; };
+		F2376B8D215E067E004E7759 /* inter_commentCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = inter_commentCell.h; sourceTree = "<group>"; };
+		F2376B8E215E067E004E7759 /* InterArtListTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InterArtListTool.m; sourceTree = "<group>"; };
+		F2376B8F215E067E004E7759 /* ListTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListTableView.m; sourceTree = "<group>"; };
+		F2376B90215E067E004E7759 /* InterPostViewDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InterPostViewDataSource.m; sourceTree = "<group>"; };
+		F2376B91215E067F004E7759 /* CheckInViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CheckInViewController.m; sourceTree = "<group>"; };
+		F2376B92215E067F004E7759 /* InterCateView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InterCateView.m; sourceTree = "<group>"; };
+		F2376B93215E067F004E7759 /* InterPostViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InterPostViewController.m; sourceTree = "<group>"; };
+		F2376B94215E0680004E7759 /* PostCircleAddPicImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PostCircleAddPicImageView.h; sourceTree = "<group>"; };
+		F2376B98215E0681004E7759 /* InteractionAppButtonCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InteractionAppButtonCell.h; sourceTree = "<group>"; };
+		F2376B99215E0681004E7759 /* InterPostViewDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InterPostViewDataSource.h; sourceTree = "<group>"; };
+		F2376B9A215E0681004E7759 /* PostCircleAddPicImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PostCircleAddPicImageView.m; sourceTree = "<group>"; };
+		F2376B9B215E0681004E7759 /* InterCateView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InterCateView.h; sourceTree = "<group>"; };
+		F2376B9C215E0682004E7759 /* InterButtonCateHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InterButtonCateHeaderView.h; sourceTree = "<group>"; };
+		F2376B9D215E0682004E7759 /* JYBMultiImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JYBMultiImageView.m; sourceTree = "<group>"; };
+		F2376B9E215E0682004E7759 /* inter_commentCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = inter_commentCell.m; sourceTree = "<group>"; };
+		F2376B9F215E0682004E7759 /* PlaceholderTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlaceholderTextView.h; sourceTree = "<group>"; };
+		F2376BA0215E0683004E7759 /* AViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AViewController.h; sourceTree = "<group>"; };
+		F2376BA1215E0683004E7759 /* InteractionAppButtonCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InteractionAppButtonCell.m; sourceTree = "<group>"; };
+		F2376BA2215E0683004E7759 /* InterPostInfoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InterPostInfoCell.h; sourceTree = "<group>"; };
+		F2376BA3215E0683004E7759 /* InterCateCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InterCateCell.m; sourceTree = "<group>"; };
+		F2376BA4215E0684004E7759 /* InterPostInfoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InterPostInfoCell.m; sourceTree = "<group>"; };
+		F2376BA5215E0684004E7759 /* InteractionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InteractionViewController.h; sourceTree = "<group>"; };
+		F2376BA6215E0684004E7759 /* PostCircleAddPicView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PostCircleAddPicView.h; sourceTree = "<group>"; };
+		F2376BA7215E0685004E7759 /* InterPostViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InterPostViewController.h; sourceTree = "<group>"; };
+		F2376BA8215E0685004E7759 /* IKHeightPickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IKHeightPickerView.h; sourceTree = "<group>"; };
+		F2376BA9215E0685004E7759 /* InteractionDetailVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InteractionDetailVC.m; sourceTree = "<group>"; };
+		F2376BAA215E0685004E7759 /* InterPostDescCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InterPostDescCell.m; sourceTree = "<group>"; };
+		F2376BAB215E0686004E7759 /* InterCateCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InterCateCell.h; sourceTree = "<group>"; };
+		F2376BAC215E0686004E7759 /* inter_commentHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = inter_commentHeaderView.h; sourceTree = "<group>"; };
+		F2376BCC215E07E3004E7759 /* GSAPublishCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GSAPublishCell.h; sourceTree = "<group>"; };
+		F2376BCD215E07E3004E7759 /* GSAPublishCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GSAPublishCell.m; sourceTree = "<group>"; };
+		F2376BCF215E2986004E7759 /* SelectMyCommunityVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SelectMyCommunityVC.h; sourceTree = "<group>"; };
+		F2376BD0215E2986004E7759 /* SelectMyCommunityVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SelectMyCommunityVC.m; sourceTree = "<group>"; };
+		F2376BD2215E2C52004E7759 /* OASearchView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OASearchView.h; sourceTree = "<group>"; };
+		F2376BD3215E2C52004E7759 /* OASearchView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OASearchView.m; sourceTree = "<group>"; };
+		F2376BD5215E2C80004E7759 /* pinyin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = pinyin.m; sourceTree = "<group>"; };
+		F2376BD6215E2C80004E7759 /* pinyin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = pinyin.h; sourceTree = "<group>"; };
+		F2376BD8215E2ECB004E7759 /* SelectMyCommunityCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SelectMyCommunityCell.h; sourceTree = "<group>"; };
+		F2376BD9215E2ECB004E7759 /* SelectMyCommunityCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SelectMyCommunityCell.m; sourceTree = "<group>"; };
 		F24C5CEC21474F32003B5A87 /* HHClient.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HHClient.h; sourceTree = "<group>"; };
 		F24C5CED21474F32003B5A87 /* HHClient.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HHClient.m; sourceTree = "<group>"; };
 		F24C5CF22147BA8E003B5A87 /* SetUpHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SetUpHeaderView.h; sourceTree = "<group>"; };
@@ -835,21 +876,11 @@
 		F24C5D072149129A003B5A87 /* publicCircleList_Response.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = publicCircleList_Response.m; sourceTree = "<group>"; };
 		F24C5D0C214914E7003B5A87 /* InForPublicCirCleList_Model.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InForPublicCirCleList_Model.h; sourceTree = "<group>"; };
 		F24C5D0D214914E7003B5A87 /* InForPublicCirCleList_Model.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InForPublicCirCleList_Model.m; sourceTree = "<group>"; };
-		F2A44D35215343B0008F8549 /* JTDCommentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JTDCommentView.h; sourceTree = "<group>"; };
-		F2A44D36215343B0008F8549 /* JTDCommentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JTDCommentView.m; sourceTree = "<group>"; };
 		F2A44D38215379F6008F8549 /* MyHarvestAddressVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyHarvestAddressVC.h; sourceTree = "<group>"; };
 		F2A44D39215379F6008F8549 /* MyHarvestAddressVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyHarvestAddressVC.m; sourceTree = "<group>"; };
 		F2A44D3B21537E11008F8549 /* MyHarvestAddressCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyHarvestAddressCell.h; sourceTree = "<group>"; };
 		F2A44D3C21537E11008F8549 /* MyHarvestAddressCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyHarvestAddressCell.m; sourceTree = "<group>"; };
 		F2ADAF9F214252C900837A98 /* HHKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = HHKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		F2BBFFC0214B617200C81E4F /* InterCateView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InterCateView.h; sourceTree = "<group>"; };
-		F2BBFFC1214B617200C81E4F /* InterCateView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InterCateView.m; sourceTree = "<group>"; };
-		F2BBFFC3214B91CD00C81E4F /* InteractionAppButtonCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InteractionAppButtonCell.h; sourceTree = "<group>"; };
-		F2BBFFC4214B91CD00C81E4F /* InteractionAppButtonCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InteractionAppButtonCell.m; sourceTree = "<group>"; };
-		F2BBFFC6214BBC9500C81E4F /* InterButtonCateHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InterButtonCateHeaderView.h; sourceTree = "<group>"; };
-		F2BBFFC7214BBC9500C81E4F /* InterButtonCateHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InterButtonCateHeaderView.m; sourceTree = "<group>"; };
-		F2BBFFC9214F9B5800C81E4F /* InteractionDetailVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InteractionDetailVC.h; sourceTree = "<group>"; };
-		F2BBFFCA214F9B5800C81E4F /* InteractionDetailVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InteractionDetailVC.m; sourceTree = "<group>"; };
 		F2BBFFCC214FB38400C81E4F /* interactionDetailModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = interactionDetailModel.h; sourceTree = "<group>"; };
 		F2BBFFCD214FB38400C81E4F /* interactionDetailModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = interactionDetailModel.m; sourceTree = "<group>"; };
 		F2BBFFCF214FB55E00C81E4F /* interactionDetailRequest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = interactionDetailRequest.h; sourceTree = "<group>"; };
@@ -862,10 +893,6 @@
 		F2BBFFD921508AED00C81E4F /* inter_commentResponse.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = inter_commentResponse.m; sourceTree = "<group>"; };
 		F2BBFFDB21508D5300C81E4F /* inter_commentModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = inter_commentModel.h; sourceTree = "<group>"; };
 		F2BBFFDC21508D5300C81E4F /* inter_commentModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = inter_commentModel.m; sourceTree = "<group>"; };
-		F2BBFFDE2150A05B00C81E4F /* inter_commentHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = inter_commentHeaderView.h; sourceTree = "<group>"; };
-		F2BBFFDF2150A05B00C81E4F /* inter_commentHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = inter_commentHeaderView.m; sourceTree = "<group>"; };
-		F2BBFFE12150A1F500C81E4F /* inter_commentCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = inter_commentCell.h; sourceTree = "<group>"; };
-		F2BBFFE22150A1F500C81E4F /* inter_commentCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = inter_commentCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1446,25 +1473,14 @@
 		50BFFA5A1FD52391005F35CA /* Community */ = {
 			isa = PBXGroup;
 			children = (
+				F2376B6A215E04FA004E7759 /* hudong */,
 				5005613B1FDE67E600B06F5F /* yindao */,
-				50BFFA5B1FD523DB005F35CA /* hudong */,
 				50BFFA5C1FD523DB005F35CA /* mine */,
 				50BFFA5D1FD523DB005F35CA /* public */,
 				50BFFA5E1FD523DB005F35CA /* yikezhong */,
 				50BFFA5F1FD523DB005F35CA /* zixun */,
 			);
 			path = Community;
-			sourceTree = "<group>";
-		};
-		50BFFA5B1FD523DB005F35CA /* hudong */ = {
-			isa = PBXGroup;
-			children = (
-				50BFFA601FD5240E005F35CA /* Controller */,
-				50BFFA611FD5240E005F35CA /* model */,
-				50BFFA621FD5240E005F35CA /* view */,
-				50BFFA631FD5240E005F35CA /* viewModel */,
-			);
-			path = hudong;
 			sourceTree = "<group>";
 		};
 		50BFFA5C1FD523DB005F35CA /* mine */ = {
@@ -1506,82 +1522,6 @@
 				50BFFA731FD5243E005F35CA /* viewModel */,
 			);
 			path = zixun;
-			sourceTree = "<group>";
-		};
-		50BFFA601FD5240E005F35CA /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				50BFFB161FD52A78005F35CA /* InteractionViewController.h */,
-				50BFFB171FD52A78005F35CA /* InteractionViewController.m */,
-				F2BBFFC9214F9B5800C81E4F /* InteractionDetailVC.h */,
-				F2BBFFCA214F9B5800C81E4F /* InteractionDetailVC.m */,
-				5077BBDF1FE922AA0047BE77 /* InterPostViewController.h */,
-				5077BBE01FE922AA0047BE77 /* InterPostViewController.m */,
-				505FA85E1FEA04B50082AAB0 /* InterButtonCateController.h */,
-				505FA85F1FEA04B50082AAB0 /* InterButtonCateController.m */,
-				86BDCBB220EA3B4B00613FD9 /* AViewController.h */,
-				86BDCBB320EA3B4B00613FD9 /* AViewController.m */,
-			);
-			path = Controller;
-			sourceTree = "<group>";
-		};
-		50BFFA611FD5240E005F35CA /* model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = model;
-			sourceTree = "<group>";
-		};
-		50BFFA621FD5240E005F35CA /* view */ = {
-			isa = PBXGroup;
-			children = (
-				F2A44D35215343B0008F8549 /* JTDCommentView.h */,
-				F2A44D36215343B0008F8549 /* JTDCommentView.m */,
-				863A556220F369DF00629350 /* JYBMultiImageView.h */,
-				863A556120F369DE00629350 /* JYBMultiImageView.m */,
-				863A556420F369DF00629350 /* UIImageButton.h */,
-				863A556320F369DF00629350 /* UIImageButton.m */,
-				86567D5920EE250500106A6F /* IKHeightPickerView.h */,
-				86567D5820EE250500106A6F /* IKHeightPickerView.m */,
-				5077BBE71FE92DB30047BE77 /* PostCircleAddPicImageView.h */,
-				5077BBE51FE92DB30047BE77 /* PostCircleAddPicImageView.m */,
-				5077BBE81FE92DB30047BE77 /* PostCircleAddPicView.h */,
-				5077BBE61FE92DB30047BE77 /* PostCircleAddPicView.m */,
-				5077BBE31FE929650047BE77 /* PlaceholderTextView.h */,
-				5077BBE21FE929650047BE77 /* PlaceholderTextView.m */,
-				5091B5671FE7973A003797EF /* InterListCell.h */,
-				5091B5681FE7973A003797EF /* InterListCell.m */,
-				5091B5821FE7D773003797EF /* InterCateCell.h */,
-				5091B5831FE7D773003797EF /* InterCateCell.m */,
-				F2BBFFC0214B617200C81E4F /* InterCateView.h */,
-				F2BBFFC1214B617200C81E4F /* InterCateView.m */,
-				5091B5851FE7DCB8003797EF /* ListTableView.h */,
-				5091B5861FE7DCB8003797EF /* ListTableView.m */,
-				86E907D220EB55C100208132 /* InterPostDescCell.h */,
-				86E907D320EB55C100208132 /* InterPostDescCell.m */,
-				86E907D520EB58F100208132 /* InterPostInfoCell.h */,
-				86E907D620EB58F100208132 /* InterPostInfoCell.m */,
-				F2BBFFC3214B91CD00C81E4F /* InteractionAppButtonCell.h */,
-				F2BBFFC4214B91CD00C81E4F /* InteractionAppButtonCell.m */,
-				F2BBFFC6214BBC9500C81E4F /* InterButtonCateHeaderView.h */,
-				F2BBFFC7214BBC9500C81E4F /* InterButtonCateHeaderView.m */,
-				F2BBFFDE2150A05B00C81E4F /* inter_commentHeaderView.h */,
-				F2BBFFDF2150A05B00C81E4F /* inter_commentHeaderView.m */,
-				F2BBFFE12150A1F500C81E4F /* inter_commentCell.h */,
-				F2BBFFE22150A1F500C81E4F /* inter_commentCell.m */,
-			);
-			path = view;
-			sourceTree = "<group>";
-		};
-		50BFFA631FD5240E005F35CA /* viewModel */ = {
-			isa = PBXGroup;
-			children = (
-				505FA8671FEA09540082AAB0 /* InterArtListTool.h */,
-				505FA8681FEA09540082AAB0 /* InterArtListTool.m */,
-				86E907CF20EB50E000208132 /* InterPostViewDataSource.h */,
-				86E907D020EB50E000208132 /* InterPostViewDataSource.m */,
-			);
-			path = viewModel;
 			sourceTree = "<group>";
 		};
 		50BFFA641FD5241B005F35CA /* Controller */ = {
@@ -2095,6 +2035,103 @@
 			path = JTDSocialShare;
 			sourceTree = "<group>";
 		};
+		F2376B6A215E04FA004E7759 /* hudong */ = {
+			isa = PBXGroup;
+			children = (
+				F2376B6C215E04FA004E7759 /* Controller */,
+				F2376B6B215E04FA004E7759 /* viewModel */,
+				F2376B6D215E04FA004E7759 /* view */,
+			);
+			path = hudong;
+			sourceTree = "<group>";
+		};
+		F2376B6B215E04FA004E7759 /* viewModel */ = {
+			isa = PBXGroup;
+			children = (
+				F2376B75215E0678004E7759 /* InterArtListTool.h */,
+				F2376B8E215E067E004E7759 /* InterArtListTool.m */,
+				F2376B99215E0681004E7759 /* InterPostViewDataSource.h */,
+				F2376B90215E067E004E7759 /* InterPostViewDataSource.m */,
+				F2376B6E215E0522004E7759 /* GSAPublishModel.h */,
+				F2376B6F215E0522004E7759 /* GSAPublishModel.m */,
+			);
+			path = viewModel;
+			sourceTree = "<group>";
+		};
+		F2376B6C215E04FA004E7759 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				F2376BA0215E0683004E7759 /* AViewController.h */,
+				F2376B87215E067C004E7759 /* AViewController.m */,
+				F2376B7B215E0679004E7759 /* CheckInViewController.h */,
+				F2376B91215E067F004E7759 /* CheckInViewController.m */,
+				F2376B7A215E0679004E7759 /* InteractionDetailVC.h */,
+				F2376BA9215E0685004E7759 /* InteractionDetailVC.m */,
+				F2376BA5215E0684004E7759 /* InteractionViewController.h */,
+				F2376B7D215E067A004E7759 /* InteractionViewController.m */,
+				F2376B83215E067B004E7759 /* InterButtonCateController.h */,
+				F2376B80215E067A004E7759 /* InterButtonCateController.m */,
+				F2376B9C215E0682004E7759 /* InterButtonCateHeaderView.h */,
+				F2376B8C215E067E004E7759 /* InterButtonCateHeaderView.m */,
+				F2376BA7215E0685004E7759 /* InterPostViewController.h */,
+				F2376B93215E067F004E7759 /* InterPostViewController.m */,
+				F2376B76215E0679004E7759 /* MyCommunityVC.h */,
+				F2376B71215E0678004E7759 /* MyCommunityVC.m */,
+				F2376B88215E067D004E7759 /* PubMyCommunityVC.h */,
+				F2376B86215E067C004E7759 /* PubMyCommunityVC.m */,
+				F2376BCF215E2986004E7759 /* SelectMyCommunityVC.h */,
+				F2376BD0215E2986004E7759 /* SelectMyCommunityVC.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		F2376B6D215E04FA004E7759 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				F2376BD6215E2C80004E7759 /* pinyin.h */,
+				F2376BD5215E2C80004E7759 /* pinyin.m */,
+				F2376BD2215E2C52004E7759 /* OASearchView.h */,
+				F2376BD3215E2C52004E7759 /* OASearchView.m */,
+				F2376BCC215E07E3004E7759 /* GSAPublishCell.h */,
+				F2376BCD215E07E3004E7759 /* GSAPublishCell.m */,
+				F2376BA8215E0685004E7759 /* IKHeightPickerView.h */,
+				F2376B8A215E067D004E7759 /* IKHeightPickerView.m */,
+				F2376B8D215E067E004E7759 /* inter_commentCell.h */,
+				F2376B9E215E0682004E7759 /* inter_commentCell.m */,
+				F2376BAC215E0686004E7759 /* inter_commentHeaderView.h */,
+				F2376B79215E0679004E7759 /* inter_commentHeaderView.m */,
+				F2376B98215E0681004E7759 /* InteractionAppButtonCell.h */,
+				F2376BA1215E0683004E7759 /* InteractionAppButtonCell.m */,
+				F2376BAB215E0686004E7759 /* InterCateCell.h */,
+				F2376BA3215E0683004E7759 /* InterCateCell.m */,
+				F2376B9B215E0681004E7759 /* InterCateView.h */,
+				F2376B92215E067F004E7759 /* InterCateView.m */,
+				F2376B7F215E067A004E7759 /* InterListCell.h */,
+				F2376B72215E0678004E7759 /* InterListCell.m */,
+				F2376B84215E067C004E7759 /* InterPostDescCell.h */,
+				F2376BAA215E0685004E7759 /* InterPostDescCell.m */,
+				F2376BA2215E0683004E7759 /* InterPostInfoCell.h */,
+				F2376BA4215E0684004E7759 /* InterPostInfoCell.m */,
+				F2376B8B215E067D004E7759 /* JTDCommentView.h */,
+				F2376B7E215E067A004E7759 /* JTDCommentView.m */,
+				F2376B85215E067C004E7759 /* JYBMultiImageView.h */,
+				F2376B9D215E0682004E7759 /* JYBMultiImageView.m */,
+				F2376B89215E067D004E7759 /* ListTableView.h */,
+				F2376B8F215E067E004E7759 /* ListTableView.m */,
+				F2376B9F215E0682004E7759 /* PlaceholderTextView.h */,
+				F2376B73215E0678004E7759 /* PlaceholderTextView.m */,
+				F2376B94215E0680004E7759 /* PostCircleAddPicImageView.h */,
+				F2376B9A215E0681004E7759 /* PostCircleAddPicImageView.m */,
+				F2376BA6215E0684004E7759 /* PostCircleAddPicView.h */,
+				F2376B81215E067B004E7759 /* PostCircleAddPicView.m */,
+				F2376B77215E0679004E7759 /* UIImageButton.h */,
+				F2376B82215E067B004E7759 /* UIImageButton.m */,
+				F2376BD8215E2ECB004E7759 /* SelectMyCommunityCell.h */,
+				F2376BD9215E2ECB004E7759 /* SelectMyCommunityCell.m */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
 		F24C5CF621490473003B5A87 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
@@ -2169,7 +2206,7 @@
 					508E50EC1FD1475B00D600C5 = {
 						CreatedOnToolsVersion = 8.3.2;
 						DevelopmentTeam = TLYB38475N;
-						ProvisioningStyle = Manual;
+						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 1;
@@ -2278,14 +2315,14 @@
 				8614B7BD20F4617D0086546E /* ELCImagePickerController.m in Sources */,
 				50BFFAE81FD52818005F35CA /* NSString+JKContains.m in Sources */,
 				50D77ADB1FE10A20007052E7 /* InforVillage_AppButtonModel.m in Sources */,
+				F2376BD1215E2986004E7759 /* SelectMyCommunityVC.m in Sources */,
 				5079413F1FE56D710093CDF9 /* WebViewController.m in Sources */,
-				F2BBFFC8214BBC9500C81E4F /* InterButtonCateHeaderView.m in Sources */,
 				50DCAE5D2051332D00FE4370 /* NoticeTableViewCell.m in Sources */,
 				8614B7D820F461A40086546E /* MBProgressHUD.m in Sources */,
-				86E907D720EB58F100208132 /* InterPostInfoCell.m in Sources */,
 				5091B5721FE79CF8003797EF /* InterTopicListModel.m in Sources */,
 				504BDF6B1FDA35B70028D59D /* RequestBaseModel.m in Sources */,
 				5091B5811FE7A46E003797EF /* InterNearPostResponse.m in Sources */,
+				F2376B70215E0522004E7759 /* GSAPublishModel.m in Sources */,
 				5015EE721FD91AF400D1637B /* RegisterRequest.m in Sources */,
 				502473AD1FE26A47002EA673 /* InforADView.m in Sources */,
 				501F904E215366500083D8F8 /* UIButton+Animation.m in Sources */,
@@ -2296,14 +2333,16 @@
 				50D77AF91FE11CD3007052E7 /* InforVillage_ADRequest.m in Sources */,
 				50BFFAE31FD52818005F35CA /* NSData+JKGzip.m in Sources */,
 				507941531FE647E00093CDF9 /* SGPageContentScrollView.m in Sources */,
+				F2376BBB215E0686004E7759 /* InterButtonCateHeaderView.m in Sources */,
+				F2376BC4215E0686004E7759 /* PostCircleAddPicImageView.m in Sources */,
 				501F9050215366500083D8F8 /* MLImagePickerViewController+MenuTableViewDataSource.m in Sources */,
 				50D77AEA1FE111FD007052E7 /* InforVillage_NoticeResponse.m in Sources */,
 				50BFFA4B1FD51FD9005F35CA /* NetWorkTool.m in Sources */,
 				507940E91FE550D60093CDF9 /* InforVillage_ListRequest.m in Sources */,
 				507941251FE563100093CDF9 /* MJRefreshAutoNormalFooter.m in Sources */,
-				86BDCBB420EA3B4B00613FD9 /* AViewController.m in Sources */,
 				501F9055215366500083D8F8 /* MLPhotoBrowserViewController.m in Sources */,
 				507941681FE6779B0093CDF9 /* InfoArt_DetailModel.m in Sources */,
+				F2376BB6215E0686004E7759 /* PostCircleAddPicView.m in Sources */,
 				50BFFAFB1FD52818005F35CA /* UIColor+Hex.m in Sources */,
 				50D77B0E1FE148C9007052E7 /* InforNoticeCell.m in Sources */,
 				50BFFAF71FD52818005F35CA /* NSString+JKURLEncode.m in Sources */,
@@ -2312,9 +2351,10 @@
 				507FCB40214A0AB8000A0C9A /* InfoArt_SearchResponse.m in Sources */,
 				50BFFAEB1FD52818005F35CA /* NSString+JKEncrypt.m in Sources */,
 				506033702152301C006A1A83 /* CDZQRScanView.m in Sources */,
+				F2376BBC215E0686004E7759 /* InterArtListTool.m in Sources */,
 				F24C5CF921490473003B5A87 /* PublicCircleController.m in Sources */,
-				86E907D420EB55C100208132 /* InterPostDescCell.m in Sources */,
 				50BFFAEE1FD52818005F35CA /* NSString+JKMatcher.m in Sources */,
+				F2376BCA215E0686004E7759 /* InteractionDetailVC.m in Sources */,
 				8614B7CE20F4618F0086546E /* UIView+Ext.m in Sources */,
 				507941281FE563100093CDF9 /* MJRefreshBackNormalFooter.m in Sources */,
 				86BDCBB720EA4E0400613FD9 /* ViewController.m in Sources */,
@@ -2325,62 +2365,66 @@
 				50C2F4022147AF090048E5CB /* GuidePagesViewController.m in Sources */,
 				50BFFAF01FD52818005F35CA /* NSString+JKNormalRegex.m in Sources */,
 				5091B5601FE78E6F003797EF /* InterCarouseRequest.m in Sources */,
-				F2A44D37215343B1008F8549 /* JTDCommentView.m in Sources */,
-				505FA8691FEA09540082AAB0 /* InterArtListTool.m in Sources */,
 				50BFFAFC1FD52818005F35CA /* UIImage+Helper.m in Sources */,
 				F22428F521436CFD0035D0F0 /* CustomBtn.m in Sources */,
 				50BFFAF91FD52818005F35CA /* NSString+JKXMLDictionary.m in Sources */,
 				501F9064215366500083D8F8 /* DACircularProgressView.m in Sources */,
 				501F9062215366500083D8F8 /* BrowserViewController.m in Sources */,
 				50D77AE71FE111EC007052E7 /* InforVillage_NoticeRequest.m in Sources */,
+				F2376BC6215E0686004E7759 /* inter_commentCell.m in Sources */,
 				50BFFAE21FD52818005F35CA /* NSData+JKEncrypt.m in Sources */,
 				507FCB43214A44DF000A0C9A /* InfoArt_ShareAddRequest.m in Sources */,
 				50D77AF01FE116E8007052E7 /* InforVillage_ArticleCateRequest.m in Sources */,
+				F2376BCB215E0686004E7759 /* InterPostDescCell.m in Sources */,
 				50BFFA591FD52348005F35CA /* TabBarViewController.m in Sources */,
 				507941311FE563100093CDF9 /* UIScrollView+MJRefresh.m in Sources */,
+				F2376BB3215E0686004E7759 /* InteractionViewController.m in Sources */,
 				507FCB46214A4B9C000A0C9A /* InfoArt_ShareAddOnceResponse.m in Sources */,
 				507941651FE677860093CDF9 /* InfoArt_DetailResponse.m in Sources */,
 				502473B01FE29D22002EA673 /* InfoCategaryCell.m in Sources */,
-				5077BBE91FE92DB30047BE77 /* PostCircleAddPicImageView.m in Sources */,
 				50D77AD71FE1095F007052E7 /* InforVillage_AppButtonResponse.m in Sources */,
 				50BFFAFA1FD52818005F35CA /* NSString+Helper.m in Sources */,
 				50BFFB001FD52818005F35CA /* UIView+Helper.m in Sources */,
 				5005613E1FDE680300B06F5F /* NearCommunityController.mm in Sources */,
 				507940EC1FE550ED0093CDF9 /* InforVillage_ListResponse.m in Sources */,
 				F2BBFFCE214FB38400C81E4F /* interactionDetailModel.m in Sources */,
-				F2BBFFC5214B91CD00C81E4F /* InteractionAppButtonCell.m in Sources */,
 				50FC929E214652FD004A34FC /* QuarterViewController.m in Sources */,
 				50D77AE11FE10F9A007052E7 /* InforVillage_CarouselResponse.m in Sources */,
 				501F905D215366500083D8F8 /* MLPhotoAsset.m in Sources */,
 				5079412E1FE563100093CDF9 /* MJRefreshConst.m in Sources */,
 				50BFFAEF1FD52818005F35CA /* NSString+JKMIME.m in Sources */,
+				F2376BAF215E0686004E7759 /* PlaceholderTextView.m in Sources */,
 				50BFFAFF1FD52818005F35CA /* UIView+Common.m in Sources */,
 				F22428F621436CFD0035D0F0 /* HHTextField.m in Sources */,
 				501F9057215366500083D8F8 /* MLPhotoPickerBrowserPhotoScrollView.m in Sources */,
 				5015EE7B1FD9657C00D1637B /* RSAEncryptor.m in Sources */,
 				50C2F3FC21478F540048E5CB /* ArtDetailBottomView.m in Sources */,
+				F2376BB8215E0686004E7759 /* PubMyCommunityVC.m in Sources */,
 				5005614D1FDE764100B06F5F /* NearCommunityModel.m in Sources */,
 				5079412F1FE563100093CDF9 /* NSBundle+MJRefresh.m in Sources */,
 				50D77ADE1FE10F69007052E7 /* InforVillage_CarouselRequest.m in Sources */,
+				F2376BDA215E2ECB004E7759 /* SelectMyCommunityCell.m in Sources */,
 				F24C5D0121490A5E003B5A87 /* PublicCircleModel.m in Sources */,
 				501F904F215366500083D8F8 /* MLImagePickerCollectionViewCell.m in Sources */,
 				507940EF1FE551080093CDF9 /* InforVillage_ListModel.m in Sources */,
+				F2376BC9215E0686004E7759 /* InterPostInfoCell.m in Sources */,
 				5091B5751FE7A10E003797EF /* InterPostListRequest.m in Sources */,
 				50BFFAE61FD52818005F35CA /* NSData+JKzlib.m in Sources */,
 				501F9053215366500083D8F8 /* MLPhotoPickerData.m in Sources */,
+				F2376BCE215E07E3004E7759 /* GSAPublishCell.m in Sources */,
 				501F9058215366500083D8F8 /* MLPhotoPickerBrowserPhotoView.m in Sources */,
-				F2BBFFE32150A1F500C81E4F /* inter_commentCell.m in Sources */,
 				50D77B1A1FE15061007052E7 /* PageControl.m in Sources */,
 				50BFFAF31FD52818005F35CA /* NSString+JKScore.m in Sources */,
+				F2376BB1215E0686004E7759 /* inter_commentHeaderView.m in Sources */,
 				50BFFAE51FD52818005F35CA /* NSData+JKPCM.m in Sources */,
 				500561261FDC27BC00B06F5F /* LoginViewController.m in Sources */,
-				50BFFB181FD52A78005F35CA /* InteractionViewController.m in Sources */,
+				F2376BC5215E0686004E7759 /* JYBMultiImageView.m in Sources */,
 				F24C5CFE21490A41003B5A87 /* PublicCircleCell.m in Sources */,
-				F2BBFFE02150A05B00C81E4F /* inter_commentHeaderView.m in Sources */,
 				F2BBFFD72150883300C81E4F /* inter_commentListReqest.m in Sources */,
 				50BFFAE41FD52818005F35CA /* NSData+JKHash.m in Sources */,
 				F24C5D0E214914E7003B5A87 /* InForPublicCirCleList_Model.m in Sources */,
 				50DCAE5720510F0C00FE4370 /* MessageCenterController.m in Sources */,
+				F2376BBF215E0686004E7759 /* CheckInViewController.m in Sources */,
 				F24C5CF42147BA8E003B5A87 /* SetUpHeaderView.m in Sources */,
 				500561291FDC27FC00B06F5F /* LoginView.m in Sources */,
 				5011A139204D2EF4009AA7C3 /* PostActivityListController.m in Sources */,
@@ -2394,7 +2438,6 @@
 				5091B5631FE78E80003797EF /* InterCarouseResponse.m in Sources */,
 				50D77B141FE148FA007052E7 /* InforArticleCell.m in Sources */,
 				501F9052215366500083D8F8 /* MLPhotoPickerAssetsManager.m in Sources */,
-				863A556620F369DF00629350 /* UIImageButton.m in Sources */,
 				50BFFA931FD52728005F35CA /* BlowClickButton.m in Sources */,
 				50D77B051FE1415E007052E7 /* BaseTableViewCell.m in Sources */,
 				505FA85D1FEA038F0082AAB0 /* InterButton_categaryModel.m in Sources */,
@@ -2409,28 +2452,26 @@
 				507941551FE647E00093CDF9 /* SGPageTitleView.m in Sources */,
 				501F9054215366500083D8F8 /* MLPhoto.m in Sources */,
 				507941271FE563100093CDF9 /* MJRefreshBackGifFooter.m in Sources */,
-				5091B5871FE7DCB8003797EF /* ListTableView.m in Sources */,
 				8614B7C320F4617D0086546E /* ELCAssetCollectionCell.m in Sources */,
 				5091B5781FE7A11C003797EF /* InterPostListResponse.m in Sources */,
 				8614B7C520F4617D0086546E /* ELCAsset.m in Sources */,
+				F2376BB7215E0686004E7759 /* UIImageButton.m in Sources */,
 				50BFFB0D1FD5282D005F35CA /* NSArray+YRSafeCategory.m in Sources */,
 				507941231FE563100093CDF9 /* MJRefreshHeader.m in Sources */,
 				5079415F1FE6534D0093CDF9 /* InfoArt_categaryModel.m in Sources */,
 				50388DC22057D15D001AB86B /* SetUpTableViewCell.m in Sources */,
 				50BFFB151FD528FB005F35CA /* Reachability.m in Sources */,
-				86E907D120EB50E000208132 /* InterPostViewDataSource.m in Sources */,
 				507941241FE563100093CDF9 /* MJRefreshAutoGifFooter.m in Sources */,
 				F22428E22142651F0035D0F0 /* HHValidateButton.m in Sources */,
 				8614B7D220F461990086546E /* JYBLoadingIndicator.m in Sources */,
-				F2BBFFCB214F9B5800C81E4F /* InteractionDetailVC.m in Sources */,
 				50BFFAF11FD52818005F35CA /* NSString+JKPinyin.m in Sources */,
+				F2376BB5215E0686004E7759 /* InterButtonCateController.m in Sources */,
 				50BFFA4A1FD51FD9005F35CA /* NetWorkConfig.m in Sources */,
 				5091B57B1FE7A12C003797EF /* InterPostListModel.m in Sources */,
-				863A556520F369DF00629350 /* JYBMultiImageView.m in Sources */,
 				501F905B215366500083D8F8 /* MLPhotoRect.m in Sources */,
 				50D77B171FE1503D007052E7 /* FocusScrollView.m in Sources */,
 				F22428E12142651F0035D0F0 /* UIView+Shadow.m in Sources */,
-				5091B5841FE7D773003797EF /* InterCateCell.m in Sources */,
+				F2376BD4215E2C52004E7759 /* OASearchView.m in Sources */,
 				F22429102143BCC20035D0F0 /* PresentTransition.m in Sources */,
 				50BFFADF1FD52818005F35CA /* NSData+JKAPNSToken.m in Sources */,
 				507941421FE647330093CDF9 /* InforButtonCateController.m in Sources */,
@@ -2439,6 +2480,8 @@
 				F22428E32142651F0035D0F0 /* UIButton+LXMImagePosition.m in Sources */,
 				5079416B1FE681290093CDF9 /* InfoArtListTool.m in Sources */,
 				500561461FDE75D400B06F5F /* NearCommunityRequest.m in Sources */,
+				F2376BD7215E2C80004E7759 /* pinyin.m in Sources */,
+				F2376BBA215E0686004E7759 /* IKHeightPickerView.m in Sources */,
 				50BFFB0F1FD5282D005F35CA /* NSNumber+YRSafeCategory.m in Sources */,
 				507941561FE647E00093CDF9 /* SGPageTitleViewConfigure.m in Sources */,
 				50D77AF31FE11705007052E7 /* InforVillage_ArticleCateResponse.m in Sources */,
@@ -2455,13 +2498,10 @@
 				507941291FE563100093CDF9 /* MJRefreshBackStateFooter.m in Sources */,
 				8614B7C420F4617D0086546E /* ELCAssetCollectionPicker.m in Sources */,
 				5091B57E1FE7A462003797EF /* InterNearPostRequest.m in Sources */,
-				505FA8601FEA04B50082AAB0 /* InterButtonCateController.m in Sources */,
+				F2376BBE215E0686004E7759 /* InterPostViewDataSource.m in Sources */,
 				50BFFAE01FD52818005F35CA /* NSData+JKBase64.m in Sources */,
 				507941211FE563100093CDF9 /* MJRefreshComponent.m in Sources */,
-				5077BBE11FE922AA0047BE77 /* InterPostViewController.m in Sources */,
-				F2BBFFC2214B617200C81E4F /* InterCateView.m in Sources */,
 				501F9060215366500083D8F8 /* MLImagePickerHUD.m in Sources */,
-				5091B5691FE7973A003797EF /* InterListCell.m in Sources */,
 				507FCB3D214A0A98000A0C9A /* InfoArt_SearchRequest.m in Sources */,
 				50BFFAEA1FD52818005F35CA /* NSString+JKEmoji.m in Sources */,
 				507941321FE563100093CDF9 /* UIView+MJExtension.m in Sources */,
@@ -2470,29 +2510,34 @@
 				507941391FE563430093CDF9 /* HeaderRefreshView.m in Sources */,
 				50BFFAE11FD52818005F35CA /* NSData+JKDataCache.m in Sources */,
 				507941591FE6520B0093CDF9 /* InfoArt_categaryRequest.m in Sources */,
+				F2376BAD215E0686004E7759 /* MyCommunityVC.m in Sources */,
+				F2376BC0215E0686004E7759 /* InterCateView.m in Sources */,
 				500561201FDBF32A00B06F5F /* LoginResponse.m in Sources */,
 				507941621FE677760093CDF9 /* InfoArt_DetailRequest.m in Sources */,
-				86567D5A20EE250600106A6F /* IKHeightPickerView.m in Sources */,
 				5079411F1FE563100093CDF9 /* MJRefreshAutoFooter.m in Sources */,
+				F2376BC1215E0686004E7759 /* InterPostViewController.m in Sources */,
 				50BFFA431FD51FD9005F35CA /* BaseRequest.m in Sources */,
 				F24C5CEE21474F32003B5A87 /* HHClient.m in Sources */,
 				8614B7C920F461840086546E /* JYBBaseViewController.m in Sources */,
 				50BFFAF61FD52818005F35CA /* NSString+JKTrims.m in Sources */,
 				F224290F2143BCC20035D0F0 /* JTDSocialShare.m in Sources */,
+				F2376BAE215E0686004E7759 /* InterListCell.m in Sources */,
 				507E40A82148F8CA00BACFDB /* CategaryHeadView.m in Sources */,
+				F2376BB4215E0686004E7759 /* JTDCommentView.m in Sources */,
 				8614B7DB20F463AB0086546E /* AppDelegateTool.m in Sources */,
+				F2376BBD215E0686004E7759 /* ListTableView.m in Sources */,
 				501F905F215366500083D8F8 /* MLPhotoKitData.m in Sources */,
 				50BFFA771FD52504005F35CA /* BaseViewController.m in Sources */,
 				50D77B081FE148A2007052E7 /* InforAppButtonCell.m in Sources */,
 				F224290E2143BCC20035D0F0 /* JTDShareVC.m in Sources */,
 				86E907CE20EB229E00208132 /* NavigationViewController.m in Sources */,
 				F22428FF2143A69F0035D0F0 /* UIViewController+OA_HUD.m in Sources */,
+				F2376BB9215E0686004E7759 /* AViewController.m in Sources */,
 				5091B56C1FE79CBE003797EF /* InterTopicListRequest.m in Sources */,
 				F22428E8214274A20035D0F0 /* RegisterVC.m in Sources */,
 				507941521FE647E00093CDF9 /* UIView+SGFrame.m in Sources */,
 				F22428F721436CFD0035D0F0 /* CustomLab.m in Sources */,
 				F24C5D0521491184003B5A87 /* publicCircleList_Request.m in Sources */,
-				5077BBEA1FE92DB30047BE77 /* PostCircleAddPicView.m in Sources */,
 				501F904C215366500083D8F8 /* MLImagePickerMenuTableViewCell.m in Sources */,
 				50D77AF61FE11715007052E7 /* InforVillage_ArticleCateModel.m in Sources */,
 				50D77AD41FE10949007052E7 /* InforVillage_AppButtonRequest.m in Sources */,
@@ -2513,16 +2558,17 @@
 				50BFFB111FD5282D005F35CA /* UITableView+YRSafeCategory.m in Sources */,
 				50D77AD01FE0CA91007052E7 /* UserObjModel.m in Sources */,
 				8614B7D520F4619F0086546E /* JYBLoading.m in Sources */,
-				5077BBE41FE929660047BE77 /* PlaceholderTextView.m in Sources */,
 				50388DBF2057C761001AB86B /* SetUpViewController.m in Sources */,
 				501F9051215366500083D8F8 /* MLImagePickerViewController.m in Sources */,
 				8614B7CF20F4618F0086546E /* UIImage+Color.m in Sources */,
 				501F905C215366500083D8F8 /* MLPhotoPickerManager.m in Sources */,
+				F2376BC8215E0686004E7759 /* InterCateCell.m in Sources */,
 				5079412A1FE563100093CDF9 /* MJRefreshGifHeader.m in Sources */,
 				50D77AED1FE11211007052E7 /* InforVillage_NoticeModel.m in Sources */,
 				5079413C1FE564BC0093CDF9 /* KOPageManager.m in Sources */,
 				507941201FE563100093CDF9 /* MJRefreshBackFooter.m in Sources */,
 				501F905A215366500083D8F8 /* MLPhotoBrowserCollectionCell.m in Sources */,
+				F2376BC7215E0686004E7759 /* InteractionAppButtonCell.m in Sources */,
 				F22429002143A69F0035D0F0 /* UIViewController+OA_Nav.m in Sources */,
 				50BFFB0E1FD5282D005F35CA /* NSDictionary+YRSafeCategory.m in Sources */,
 				5091B5661FE78E98003797EF /* InterCarouseModel.m in Sources */,
@@ -2656,8 +2702,8 @@
 			baseConfigurationReference = 7C434F2E18A2A042FD3D6954 /* Pods-CommunityAPP.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = TLYB38475N;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -2688,8 +2734,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.eguanjia.communityclient;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "57360243-811b-4cd5-87c6-0eb01743d8e6";
-				PROVISIONING_PROFILE_SPECIFIER = comm1;
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Debug;
 		};
@@ -2700,7 +2746,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: BO Lyu (TLYB38475N)";
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = TLYB38475N;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -2731,8 +2777,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.eguanjia.communityclient;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "57360243-811b-4cd5-87c6-0eb01743d8e6";
-				PROVISIONING_PROFILE_SPECIFIER = comm1;
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Release;
 		};

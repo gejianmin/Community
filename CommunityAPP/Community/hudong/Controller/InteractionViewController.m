@@ -32,7 +32,9 @@
 #import "InterCateView.h"
 #import "ListTableView.h"
 #import "InteractionDetailVC.h"
-
+#import "CheckInViewController.h"
+#import "LoginViewController.h"
+#import "MyCommunityVC.h"
 typedef NS_ENUM(NSInteger,RefreshState) {
     RefreshState_Unknow,
     RefreshState_Refrsh,
@@ -52,7 +54,7 @@ typedef NS_ENUM(NSInteger,RefreshState) {
 @property (nonatomic, strong) ListTableView *listTabView;
 @property(nonatomic,strong) InterCateView  * interCateView;
 @property (nonatomic, strong) UIView * currentTopicBtn;
-@property (nonatomic, strong) UIButton *fabuButton;
+@property (nonatomic, strong) CustomBtn *fabuButton;
 
 @property (nonatomic, copy) NSString *leftTitle;
 @property (nonatomic, copy) NSString *rightTitle;
@@ -79,16 +81,15 @@ typedef NS_ENUM(NSInteger,RefreshState) {
     _status =RefreshState_Refrsh;
     
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-    
-    self.fabuButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    [self.fabuButton setImage:[UIImage imageNamed:@"fabu"] forState:UIControlStateNormal];
+    self.fabuButton = [[CustomBtn alloc]initWithFrame:CGRectZero Tag:0 Title:@"" backgroundColor:kColorClear TitleTextColor:nil Font:0 Image:ImageNamed(@"fabu")];
+    [self.fabuButton makeCornerWithCornerRadius:32.5 borderWidth:0 borderColor:nil];
+
     [self.view addSubview:self.fabuButton];
     [self.fabuButton addTarget:self action:@selector(fabu:) forControlEvents:UIControlEventTouchUpInside];
-    
     [self.fabuButton mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.size.mas_equalTo(CGSizeMake(60, 60));
-        make.right.mas_equalTo(-20);
-        make.bottom.mas_equalTo(-50);
+        make.width.height.equalTo(@65);
+        make.right.equalTo(self.view.mas_right).offset(-24);
+        make.bottom.equalTo(self.view.mas_bottom).offset(-45);
     }];
     
     [self addRefreshHeaderView];
@@ -515,6 +516,27 @@ typedef NS_ENUM(NSInteger,RefreshState) {
     [self.tableView reloadData];
     
 }
+-(void)loginEvent{
+    [[HHAlertView alloc]initWithTitle:@"提示" message:@"这位居民您还未登录，是否先登录呢？" showTarget:self handle:^(NSInteger index) {
+        switch (index) {
+            case 0:
+                HHLog(@"取消");
+                break;
+            case 1:HHLog(@"确定");
+            {
+                [LoginViewController showControllerWithSuccess:^{
+                    //                    [self loginState];
+                } cancel:^{
+                    
+                }];
+            }
+                break;
+                
+            default:
+                break;
+        }
+    } cancle:@"继续浏览" others:@"去登录吧", nil];
+}
 #pragma mark -- InforAppButtonCellDelegate  按钮代理
 - (void)clickInfoAppButton:(NSInteger)index{
     
@@ -535,10 +557,35 @@ typedef NS_ENUM(NSInteger,RefreshState) {
     
 }
 - (void)fabu:(UIButton *)sender{
-    InterPostViewController *vc = [[InterPostViewController alloc] init];
-    vc.topicListArray = self.topicListArray;
-    vc.hidesBottomBarWhenPushed = YES;
-    [self.navigationController pushViewController:vc animated:YES];
+    [CheckInViewController presentControllerWith:self callBack:^(NSInteger btnTag) {
+        if (btnTag == hudongType) {
+            [self enterCommunity];
+        }else{//交易
+                InterPostViewController *vc = [[InterPostViewController alloc] init];
+                vc.topicListArray = self.topicListArray;
+                vc.hidesBottomBarWhenPushed = YES;
+                [self.navigationController pushViewController:vc animated:YES];
+        }
+    }];
+}
+-(void)enterCommunity{
+    [[HHAlertView alloc]initWithTitle:@"提示" message:@"这位居民您还未入驻小区，是否先去入驻小区呢？" showTarget:self handle:^(NSInteger index) {
+        switch (index) {
+            case 0:
+                HHLog(@"取消");
+                break;
+            case 1:HHLog(@"确定");
+            {
+                MyCommunityVC * VC = [[MyCommunityVC alloc]init];
+                VC.hidesBottomBarWhenPushed = YES;
+                [self.navigationController pushViewController:VC animated:YES];
+            }
+                break;
+                
+            default:
+                break;
+        }
+    } cancle:@"继续浏览" others:@"去入驻吧", nil];
 }
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
