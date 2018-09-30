@@ -10,7 +10,7 @@
 #import "OASearchView.h"
 #import "SelectMyCommunityCell.h"
 #import "NearCommunityRequest.h"
-#import "NearCommunityModel.h"
+
 @interface SelectMyCommunityVC ()<UITableViewDelegate,UITableViewDataSource,OASearchViewDelegate>
 
 @property(nonatomic,strong)UITableView * oa_tableView;
@@ -26,6 +26,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.title = @"我的小区";
     self.dataArr = [[NSMutableArray alloc]init];
     [self.view addSubview:self.oa_tableView];
     [self setNearVillageRequestWith:39.003332 log:166.9876];
@@ -35,7 +36,7 @@
         _oa_tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, HH_SCREEN_W, HH_SCREEN_H-29) style:UITableViewStylePlain];
         _oa_tableView.delegate = self;
         _oa_tableView.dataSource = self;
-        _oa_tableView.backgroundColor=[UIColor clearColor];
+        _oa_tableView.backgroundColor=kColorGray9;
  
         [_oa_tableView setTableHeaderView:[self tableViewHeaderView]];
         [_oa_tableView registerClass:[SelectMyCommunityCell class] forCellReuseIdentifier:NSStringFromClass([SelectMyCommunityCell class])];
@@ -63,6 +64,7 @@
 }
 -(UIView *)tableViewHeaderView{
     OASearchView * headerview = [[OASearchView alloc] initWithFrame:Frame(0, 0, HH_SCREEN_W, [OASearchView height]) placeholder:@"请输入小区名称" withDelegate:self];
+    [headerview setBackgroundColor:kColorWhite];
     return headerview;
 }
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
@@ -115,22 +117,24 @@
     
     return cell;
 }
-//- (void)tableView:(UITableView*)tableView didSelectRowAtIndexPath:(NSIndexPath*)indexPath
-//{
-//
-//}
+- (void)tableView:(UITableView*)tableView didSelectRowAtIndexPath:(NSIndexPath*)indexPath
+{
+    CommunityModel * model = self.dataArr[indexPath.row];
+    if (self.callBack) {
+        self.callBack(model);
+    }
+    [self.navigationController popViewControllerAnimated:YES];
+
+}
++(void)pushToSelectViewController:(UIViewController *)superController callBack:(callBack )callBack{
+    SelectMyCommunityVC * VC = [[SelectMyCommunityVC alloc]init];
+    VC.callBack = callBack;
+    [superController.navigationController pushViewController:VC animated:YES];
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

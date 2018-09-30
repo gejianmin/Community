@@ -48,10 +48,10 @@
     _tipLabel.text = @"当前社区没有开通，请选择附近的社区查看";
     
     self.community_firstButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    self.community_firstButton.frame = CGRectMake(0, _tipLabel.bottom + 80, 200, 70);
+    self.community_firstButton.frame = CGRectMake(0, _tipLabel.bottom + 30, 220, 40);
     _community_firstButton.centerX = self.view.width/2;
-    _community_firstButton.layer.cornerRadius = 10.f;
-    _community_firstButton.layer.masksToBounds = YES;
+//    _community_firstButton.layer.cornerRadius = 10.f;
+//    _community_firstButton.layer.masksToBounds = YES;
     self.community_firstButton.backgroundColor = [UIColor redColor];
     [self.community_firstButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     [self.view addSubview:self.community_firstButton];
@@ -59,10 +59,10 @@
     _community_firstButton.titleLabel.font =FONT(16);
     
     self.community_secondButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    self.community_secondButton.frame = CGRectMake(0, _community_firstButton.bottom + 50, 200, 70);
+    self.community_secondButton.frame = CGRectMake(0, _community_firstButton.bottom + 30, 220, 40);
     _community_secondButton.centerX = self.view.width/2;
-    _community_secondButton.layer.cornerRadius = 10.f;
-    _community_secondButton.layer.masksToBounds = YES;
+//    _community_secondButton.layer.cornerRadius = 10.f;
+//    _community_secondButton.layer.masksToBounds = YES;
     self.community_secondButton.backgroundColor = [UIColor redColor];
     [self.community_secondButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     [self.view addSubview:self.community_secondButton];
@@ -70,10 +70,10 @@
     _community_secondButton.titleLabel.font =FONT(16);
 
     self.community_thirdButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    self.community_thirdButton.frame = CGRectMake(0, _community_secondButton.bottom + 50, 200, 70);
+    self.community_thirdButton.frame = CGRectMake(0, _community_secondButton.bottom + 30, 220, 40);
     _community_thirdButton.centerX = self.view.width/2;
-    _community_thirdButton.layer.cornerRadius = 10.f;
-    _community_thirdButton.layer.masksToBounds = YES;
+//    _community_thirdButton.layer.cornerRadius = 10.f;
+//    _community_thirdButton.layer.masksToBounds = YES;
     self.community_thirdButton.backgroundColor = [UIColor redColor];
     [self.community_thirdButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     [self.view addSubview:self.community_thirdButton];

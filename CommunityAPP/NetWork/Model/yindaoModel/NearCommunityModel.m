@@ -64,3 +64,25 @@ free(properties);
              };
 }
 @end
+///////////////////////////////
+@implementation GetCommunityArrModel
+
++(NSDictionary *)modelCustomPropertyMapper
+{
+    return @{
+             @"getCommunityArray":@"data",
+             };
+}
++ (NSDictionary *)modelContainerPropertyGenericClass {
+    return @{@"getCommunityArray" : [GetCommunityModel class]};
+}
+@end
+@implementation GetCommunityModel
++(NSDictionary *)modelCustomPropertyMapper
+{
+    return @{
+             @"org_name":@"village_info.org_name",
+             @"vid":@"village_info.vid",
+             };
+}
+@end

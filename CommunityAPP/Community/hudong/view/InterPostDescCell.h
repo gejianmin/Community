@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "PlaceholderTextView.h"
 
 @protocol InterPostDescCellDelagate <NSObject>
 
@@ -21,4 +22,6 @@
 
 @property (nonatomic,weak) id<InterPostDescCellDelagate>delegate;
 @property (nonatomic, strong) NSMutableArray *picArray;
+@property (nonatomic,strong) PlaceholderTextView *messageView;
+
 @end

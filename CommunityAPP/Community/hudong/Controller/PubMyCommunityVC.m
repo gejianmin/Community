@@ -10,6 +10,7 @@
 #import "GSAPublishCell.h"
 #import "GSAPublishModel.h"
 #import "SelectMyCommunityVC.h"
+#import "NearCommunityRequest.h"
 @interface PubMyCommunityVC ()<UITableViewDelegate,UITableViewDataSource,GSAPublishButtonDelegate>
 
 @property (nonatomic, strong) NSMutableArray  *dataSourceItemsArray;
@@ -23,19 +24,20 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"申请入住小区";
-    [self addRightBarItemWithTitle:@"发布" tintColor:kColorWhite backgroudColor:kColorMainBlue target:self action:@selector(publishEvent)];
+    [self addRightBarItemWithTitle:@"申请" tintColor:kColorBlack backgroudColor:kColorGray9 target:self action:@selector(publishEvent)];
     [self.view addSubview:self.ps_tableView];
     [self reloadArrayData];
 }
 
 -(void)reloadArrayData{
+    
     self.dataSourceArray = [NSMutableArray arrayWithArray:@[
                                                             [[GSAPublishModel alloc] initWithTitle:@"小区名" detailTitle:@"请选择小区" reuseIdentifier:kImageCellReuseIdentifier buttonTitle:@"" isHeidenMark:0 selectorStatu:selectorSelectStatu content:@"" contentID:@"" titleName:@"" selecStyle:selectDateStyle],
-                                                            [[GSAPublishModel alloc] initWithTitle:@"楼栋号" detailTitle:@"请输入楼栋号（如A10或10）" reuseIdentifier:kNormalCellReuseIdentifier buttonTitle:@"" isHeidenMark:0 selectorStatu:selectorInputStatu content:@"" contentID:@"" titleName:@"" selecStyle:selectDateStyle],
-                                                            [[GSAPublishModel alloc] initWithTitle:@"单元号" detailTitle:@"请输入单元号（无单元号 输入0）" reuseIdentifier:kNormalCellReuseIdentifier buttonTitle:@"" isHeidenMark:0 selectorStatu:selectorInputStatu content:@"" contentID:@"" titleName:@"" selecStyle:selectToPlaceStyle],
-                                                            [[GSAPublishModel alloc] initWithTitle:@"门牌号" detailTitle:@"请输入门牌号（如102）" reuseIdentifier:kNormalCellReuseIdentifier buttonTitle:@"" isHeidenMark:0 selectorStatu:selectorInputStatu content:@"" contentID:@"" titleName:@"" selecStyle:selectInterestStyle],
-                                                            [[GSAPublishModel alloc] initWithTitle:@"联系人" detailTitle:@"" reuseIdentifier:kButtonCellReuseIdentifier buttonTitle:@"" isHeidenMark:0 selectorStatu:segmentShowCustomStyle content:[[[HHClient sharedInstance]user]mobile] contentID:@"" titleName:@"" selecStyle:selectThemeStyle],
-                                                            [[GSAPublishModel alloc] initWithTitle:@"手机号" detailTitle:@"" reuseIdentifier:kButtonCellReuseIdentifier buttonTitle:@"" isHeidenMark:1 selectorStatu:segmentShowCustomStyle content:[[[HHClient sharedInstance]user]mobile] contentID:@"" titleName:@"" selecStyle:0],
+                                                            [[GSAPublishModel alloc] initWithTitle:@"楼栋号" detailTitle:@"请输入楼栋号（如A10或10）" reuseIdentifier:kNormalCellReuseIdentifier buttonTitle:@"" isHeidenMark:0 selectorStatu:selectorInputStatu content:@"" contentID:@"" titleName:@"building" selecStyle:selectDateStyle],
+                                                            [[GSAPublishModel alloc] initWithTitle:@"单元号" detailTitle:@"请输入单元号（无单元号 输入0）" reuseIdentifier:kNormalCellReuseIdentifier buttonTitle:@"" isHeidenMark:0 selectorStatu:selectorInputStatu content:@"" contentID:@"" titleName:@"entrance" selecStyle:selectToPlaceStyle],
+                                                            [[GSAPublishModel alloc] initWithTitle:@"门牌号" detailTitle:@"请输入门牌号（如102）" reuseIdentifier:kNormalCellReuseIdentifier buttonTitle:@"" isHeidenMark:0 selectorStatu:selectorInputStatu content:@"" contentID:@"" titleName:@"house_number" selecStyle:selectInterestStyle],
+                                                            [[GSAPublishModel alloc] initWithTitle:@"联系人" detailTitle:@"" reuseIdentifier:kButtonCellReuseIdentifier buttonTitle:@"" isHeidenMark:0 selectorStatu:segmentShowCustomStyle content:[[[HHClient sharedInstance]user]mobile] contentID:[[[HHClient sharedInstance]user]mobile] titleName:@"contact" selecStyle:selectThemeStyle],
+                                                            [[GSAPublishModel alloc] initWithTitle:@"手机号" detailTitle:@"" reuseIdentifier:kButtonCellReuseIdentifier buttonTitle:@"" isHeidenMark:1 selectorStatu:segmentShowCustomStyle content:[[[HHClient sharedInstance]user]mobile] contentID:[[[HHClient sharedInstance]user]mobile] titleName:@"mobile" selecStyle:0],
                                                             ]];
     
 }
@@ -45,7 +47,7 @@
         _ps_tableView.delegate = self;
         _ps_tableView.dataSource = self;
         _ps_tableView.tag = 2;
-        [_ps_tableView setBackgroundColor:[UIColor clearColor]];
+        [_ps_tableView setBackgroundColor:kColorGray9];
         [_ps_tableView registerClass:[GSAPublishCell class] forCellReuseIdentifier:NSStringFromClass([GSAPublishCell class])];
     }
     return _ps_tableView;
@@ -75,11 +77,10 @@
 //}
 #pragma mark-真实高度
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-//    return UITableViewAutomaticDimension;
+    //    return UITableViewAutomaticDimension;
     return 55.0;
-
+    
 }
-
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
     GSAPublishModel * model = self.dataSourceArray[indexPath.row];
@@ -94,56 +95,15 @@
     }];
     return cell;
 }
-
-#pragma mark--描述约行事件代理
--(void)GSAPublishAgreeActionButton:(CustomBtn *)sender indexPath:(NSIndexPath *)currentIndexPath{
-    NSString* titleString = nil;
-    if ([sender.titleLabel.text isEqualToString:@"点击编辑约行描述"]) {
-        titleString = @"编辑约行描述";
-    }else{//点击编辑轨迹描述
-        titleString = @"编辑轨迹描述";
-    }
-//    [GSAHomeAgreeActionDescribeViewController pushFromViewController:self andContent:[self getContentWithIndexPath:currentIndexPath] andTitle:titleString  callback:^(NSString *content) {
-//        [self reloadDataWithContent:content andContentID:content indexPath:currentIndexPath];
-//    }];
-}
-#pragma mark--描述事件代理
--(void)GSAPublishButton:(CustomBtn *)sender indexPath:(NSIndexPath *)currentIndexPath{
-    //    GSAWeakSelf
-    //    [GSARichTextEditViewController pushFromViewController:self andContent:[self getContentWithIndexPath:currentIndexPath] callback:^(NSString *content) {
-    //        [self reloadDataWithContent:content andContentID:content indexPath:currentIndexPath];
-    //    }];
-//    [GSARichTextEditViewController pushFromModelViewController:self andContent:[self getContentWithIndexPath:currentIndexPath] callback:^(NSString *content, NSString *ID) {
-//        [self reloadDataWithContent:content andContentID:ID indexPath:currentIndexPath];
-//    }];
-}
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     GSAPublishModel * model = self.dataSourceArray[indexPath.row];
-//    JTDWeakSelf
+    JTDWeakSelf
     if (model.selecStyle == selectDateStyle ) {
-        [self reloadDataWithContent:@"某小区" andContentID:@"mouxiaoq" indexPath:indexPath];
-        SelectMyCommunityVC * VC = [[SelectMyCommunityVC alloc]init];
-        [self.navigationController pushViewController:VC animated:YES];
-//        HHDatePickerController *date=[[HHDatePickerController alloc] init];
-//        date.datePickerStyle=HHDatePickerStyleNormal;
-//        date.datePickerMode=UIDatePickerModeDate;
-//        date.didSelectDateBlock=^(HHDate *date){
-//            NSDateFormatter *dfmt=[[NSDateFormatter alloc]init];
-//            [dfmt setDateFormat:@"yyyy-MM-dd hh:mm:ss"];
-//            NSString * dateTime =[[[dfmt stringFromDate:date.date] copy]substringToIndex:10];//11
-//            [self reloadDataWithContent:dateTime andContentID:dateTime indexPath:indexPath];
-//        };
-//        [date showInViewController:self];
+        [SelectMyCommunityVC pushToSelectViewController:self callBack:^(CommunityModel *model) {
+            [WeakSelf reloadDataWithContent:model.org_name andContentID:model.vid indexPath:indexPath];
+        }];
     }
 }
-//将UIColor转换成16进制字符串 转换出来的字符串不带＃号
--(NSString*)toStrByUIColor:(UIColor*)color{
-    CGFloat r, g, b, a;
-    [color getRed:&r green:&g blue:&b alpha:&a];
-    int rgb = (int) (r * 255.0f)<<16 | (int) (g * 255.0f)<<8 | (int) (b * 255.0f)<<0;
-    return [NSString stringWithFormat:@"%06x", rgb];
-}
-#pragma mark -- cell赋值操作
 - (void)reloadDataWithContent:(NSString * )content andContentID:(NSString *)contentID indexPath:(NSIndexPath *)indexPath {
     GSAPublishModel * model = _dataSourceArray[indexPath.row];
     model.content = content;
@@ -153,27 +113,51 @@
         [self.ps_tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationNone];
     }
 }
-#pragma mark--发布
+#pragma mark--申请
 -(void)publishEvent{
+    NSMutableDictionary * dict = [NSMutableDictionary dictionary];
+    NSMutableArray * array = [[NSMutableArray alloc]init];
     for (int i = 0; i < self.dataSourceArray.count; i++) {
         GSAPublishModel * model = self.dataSourceArray[i];
-        HHLog(@"数据%@",model.content);
         if ([NSObject isBlankString:model.content]) {
             [self showToastHUD:[NSString stringWithFormat:@"%@",model.detailTitle]];
             return;
         }
+        [array addObject:model.content];
+        if (![model.content isEqualToString:model.contentID]) {
+            [dict setObject:model.contentID forKey:@"vid"];
+        }else{
+            [dict setObject:model.content forKey:model.titleName];
+        }
     }
+    [dict setObject:[[[HHClient sharedInstance]user]uid] forKey:@"uid"];
+    [dict setObject:@"100" forKey:@"floor_space"];
+    [dict setObject:@"1" forKey:@"have_parking"];
+    [dict setObject:@"521S2" forKey:@"parking_number"];
+    [dict setObject:@"12433" forKey:@"plate_number"];
+    
+    PubCommunityRequest *request = [[PubCommunityRequest alloc] init];
+    [request enterCommunityWithInfo:dict];
+    [request setFinishedBlock:^(id object, id responseData) {
+        if (responseData) {
+            if ([responseData[@"status"] isEqualToString:successCode]) {
+                [self showToastHUD:@"申请成功" complete:^{
+                    [self.navigationController popViewControllerAnimated:YES];
+                }];
+            }
+        }
+        
+        
+    } failedBlock:^(NSInteger error, id responseData) {
+        NSLog(@"%ld",error);
+    }];
+    
     
 }
-//- (NSString *)getContentWithIndexPath:(NSIndexPath *)indexPath {
-//    GSAPublishModel * model = _dataSourceArray[indexPath.row];
-//    return  model.content;
-//}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
 }
-
-
 
 @end

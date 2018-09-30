@@ -7,15 +7,21 @@
 //
 
 #import "BaseTableViewController.h"
+#import "InterPostViewDataSource.h"
 
-typedef NS_ENUM(NSInteger,PostType) {
-    PostType_LinLiQuan,
-    PostType_ErShou
-};
+//typedef NS_ENUM(NSInteger,PostType) {
+//    PostType_LinLiQuan,
+//    PostType_ErShou
+//};
 
 @interface InterPostViewController : BaseTableViewController
 
-- (instancetype)initWithInterPostWith:(PostType)type;
+//- (instancetype)initWithInterPostWith:(PostType)type;
 
 @property (nonatomic,copy) NSArray *topicListArray;
+
+@property(nonatomic,assign)PostType  type;
+
++ (void)pushController:(UIViewController *)superController topicListArray:(NSArray *)topicListArray postType:(PostType )type;
+
 @end

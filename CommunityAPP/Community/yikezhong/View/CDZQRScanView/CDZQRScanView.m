@@ -149,6 +149,8 @@ static NSString *const scanLineAnimationName = @"scanLineAnimation";
 - (void)setupViews{
     [self addSubview:self.middleView];
     [self.middleView addSubview:self.scanLine];
+    // 加一条提示
+    [self addTintTitle];
     [self addSubview:self.maskView];
     if (self.isShowCornerLine) {
         [self addCornerLines];
@@ -158,6 +160,18 @@ static NSString *const scanLineAnimationName = @"scanLineAnimation";
     }
 }
 
+- (void)addTintTitle {
+    UILabel *tintL = [[UILabel alloc]init];
+    tintL.text = @"请将扫描框对准条形码或二维码，以便扫描";
+    tintL.font = kFont(12);
+    [self addSubview:tintL];
+    
+    [tintL mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(self.middleView.mas_bottom).offset(10);
+        make.centerX.equalTo(self.mas_centerX);
+    }];
+    
+}
 
 - (BOOL)isCameraAvailable{
     return [UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera];

@@ -24,7 +24,7 @@
 @implementation AppDelegate
     
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    
+    [NSThread sleepForTimeInterval:2];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(selectMainWindow:) name:SelectMainWindow object:nil];
     
     if (@available(iOS 11.0, *)){

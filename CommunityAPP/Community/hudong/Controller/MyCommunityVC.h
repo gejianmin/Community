@@ -7,7 +7,16 @@
 //
 
 #import "BaseViewController.h"
+#import "NearCommunityModel.h"
+
+
+typedef void(^MyCommunityCallBack)(GetCommunityModel * model);
 
 @interface MyCommunityVC : BaseViewController
+
+
+@property(nonatomic,strong) MyCommunityCallBack  callBack;
+
++(void)pushToMyCommunityViewController:(UIViewController *)superController callBack:(MyCommunityCallBack )callBack;
 
 @end

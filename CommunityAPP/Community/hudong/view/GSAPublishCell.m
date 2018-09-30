@@ -68,9 +68,6 @@
 -(void)setModel:(GSAPublishModel *)model{
     _model = model;
     self.title_lbl.text = model.title;
-//    if ([model.title isEqualToString:@"攻略封面图"]) {
-//        self.title_lbl.textColor = kColorGray11;
-//    }
     self.textfield.placeholder = model.detailTitle;
     self.pull_ima.hidden = model.isHeidenMark;
     if(model.selectorStatu == segmentShowCustomStyle || model.selectorStatu == selectorSelectStatu){

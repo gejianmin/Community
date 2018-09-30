@@ -146,7 +146,7 @@
 
 - (void)createAreaSelector {
     
-    self.areaSelecotorV = [[AreaSelectorView alloc]initWithFrame:CGRectMake(0, 40,220, 30)];
+    self.areaSelecotorV = [[AreaSelectorView alloc]initWithFrame:CGRectMake(0,30,210,30)];
     self.areaSelecotorV.clickBlock = ^{
        
         [HHClient sharedInstance].user.org_id = nil;
@@ -161,7 +161,7 @@
     
     UIButton *searchBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     searchBtn.backgroundColor = [[UIColor grayColor] colorWithAlphaComponent:0.5f];
-    searchBtn.frame = CGRectMake(self.view.frame.size.width - 50, 40, 30, 30);
+    searchBtn.frame = CGRectMake(self.view.frame.size.width - 50, 30, 30, 30);
     searchBtn.layer.masksToBounds = YES;
     searchBtn.layer.cornerRadius = 15;
     [searchBtn setImage:[UIImage imageNamed:@"search"] forState:UIControlStateNormal];
@@ -276,6 +276,8 @@
 }
 //分类请求
 - (void)requestDataList{
+    
+    [SVProgressHUD showWithStatus:@"正在加载"];
     __weak typeof(self) tyself = self;
     
     Village_ArticleCateModel *model = self.listArray[_currenIndex];
@@ -311,11 +313,13 @@
                 tyself.firstIndex ++;
             }
         }
+        [SVProgressHUD dismiss];
         [tyself.tableView reloadData];
         [tyself.tableView.mj_footer endRefreshing];
         [tyself.tableView.mj_header endRefreshing];
 
     } failedBlock:^(NSInteger error, id responseData) {
+        [SVProgressHUD dismiss];
         [tyself.tableView.mj_footer endRefreshing];
         [tyself.tableView.mj_header endRefreshing];
     }];
@@ -393,7 +397,7 @@
         CategaryHeadView *headerView = [tableView dequeueReusableHeaderFooterViewWithIdentifier:headerViewId];
         if (!headerView) {
             headerView = [[CategaryHeadView alloc]initWithReuseIdentifier:headerViewId];
-
+            headerView.contentView.backgroundColor = [UIColor whiteColor];
         }
         headerView.delagate = self;
         headerView.categoryArray = self.listArray;
@@ -411,7 +415,7 @@
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
     if (section == 4 ) {
-        return 60.0f;
+        return 80.0f;
     }else{
         return 0;
     }
@@ -482,13 +486,13 @@
             return 0;
             break;
         case 1:
-            return 5;
+            return 2;
             break;
         case 2:
-            return 5;
+            return 2;
             break;
         case 3:
-            return 10;
+            return 2;
             break;
 //        case 4:
 //            return 10;

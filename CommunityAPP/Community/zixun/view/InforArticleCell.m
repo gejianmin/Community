@@ -28,6 +28,7 @@
         [self.contentView addSubview:self.contentLabel];
         
         self.fromLabel = [[UILabel alloc] init];
+        self.fromLabel.text = @"社区新闻";
         self.fromLabel.textColor = RGB(150, 150, 150);
         self.fromLabel.font = FONT(13);
         [self.contentView addSubview:self.fromLabel];
@@ -72,13 +73,11 @@
     
     __weak typeof(self) tyself = self;
     NSString *imgUrl = [NSString stringWithFormat:@"%@/%@",model.path,model.filename];
-    [self.imgView sd_setImageWithURL:[NSURL URLWithString:imgUrl] placeholderImage:nil completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
+    [self.imgView sd_setImageWithURL:[NSURL URLWithString:imgUrl] placeholderImage:[UIImage imageNamed:@"moren"] completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType, NSURL *imageURL) {
 
     }];
     self.contentLabel.text = model.title;
-    
-   CGSize size =  [self.contentLabel sizeForString:@"1\n1" font:self.contentLabel.font constrainedToSize:CGSizeMake(SCREEN_WIDTH, MAXFLOAT)];
-    
+    CGSize size =  [self.contentLabel sizeForString:@"1\n1" font:self.contentLabel.font constrainedToSize:CGSizeMake(SCREEN_WIDTH, MAXFLOAT)];
     CGSize currentSize =  [self.contentLabel sizeForString:model.title font:self.contentLabel.font constrainedToSize:CGSizeMake(SCREEN_WIDTH - 140, MAXFLOAT)];
     
     if (currentSize.height>=size.height) {
@@ -106,7 +105,7 @@
     self.imgView.left = 10;
     self.imgView.top = 15;
     self.imgView.height = self.height - 30;
-    self.imgView.width = 120;
+    self.imgView.width = 110;
     
     self.contentLabel.left = self.imgView.right + 10;
     self.contentLabel.top = self.imgView.top;

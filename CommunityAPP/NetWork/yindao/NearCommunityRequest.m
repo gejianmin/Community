@@ -33,3 +33,77 @@
 ResponserParserGenerate(NearCommunityResponse);
 
 @end
+
+
+@implementation PubCommunityRequest
+
+- (instancetype)init{
+    if (self = [super init]) {
+        
+        self.httpMethod = @"POST";
+    }
+    return self;
+}
+- (void)enterCommunityWithInfo:(NSDictionary *)dictionary{
+    
+
+    self.parameters = dictionary;//post参数
+    
+    self.headerFields = [NSMutableDictionary dictionary];
+    [self.headerFields setObject:@"yezhu" forKey:@"identity"];
+    [self.headerFields setObject:[[[HHClient sharedInstance]user]token] forKey:@"authorization"];
+
+    
+    self.urlPathString = [NSString stringWithFormat:@"%@%@",self.hostString,inter_createCommunity];
+}
+ResponserParserGenerate(PubCommunityResponse);
+
+@end
+@implementation GetCommunityRequest
+
+- (instancetype)init{
+    if (self = [super init]) {
+        
+        self.httpMethod = @"GET";
+    }
+    return self;
+}
+- (void)getCommunityListWithId:(NSString *)uid{
+    
+    self.headerFields = [NSMutableDictionary dictionary];
+    [self.headerFields setObject:@"yezhu" forKey:@"identity"];
+    [self.headerFields setObject:[[[HHClient sharedInstance]user]token] forKey:@"authorization"];    
+    self.urlPathString = [NSString stringWithFormat:@"%@%@/%@",self.hostString,inter_getYezhuByMember,uid];
+}
+ResponserParserGenerate(GetCommunityResponse);
+
+@end
+
+@implementation PublicCommunityRequest
+
+- (instancetype)init{
+    if (self = [super init]) {
+        
+        self.httpMethod = @"POST";
+    }
+    return self;
+}
+- (void)publicCommunityWithInfo:(NSDictionary *)dictionary{
+    
+    self.parameters = dictionary;//post参数
+    
+    self.headerFields = [NSMutableDictionary dictionary];
+    [self.headerFields setObject:@"yezhu" forKey:@"identity"];
+    [self.headerFields setObject:[[[HHClient sharedInstance]user]token] forKey:@"authorization"];
+    
+    
+    self.urlPathString = [NSString stringWithFormat:@"%@%@",self.hostString,inter_publicCommunity];
+}
+ResponserParserGenerate(PublicCommunityResponse);
+
+@end
+
+
+
+
+

@@ -81,17 +81,11 @@ typedef NS_ENUM(NSInteger,RefreshState) {
     _status =RefreshState_Refrsh;
     
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-    self.fabuButton = [[CustomBtn alloc]initWithFrame:CGRectZero Tag:0 Title:@"" backgroundColor:kColorClear TitleTextColor:nil Font:0 Image:ImageNamed(@"fabu")];
-    [self.fabuButton makeCornerWithCornerRadius:32.5 borderWidth:0 borderColor:nil];
-
+    self.fabuButton = [[CustomBtn alloc]initWithFrame:Frame(HH_SCREEN_W-24-65, HH_SCREEN_H-45-65-GSA_TabbarHeight-GSANavHeight, 65, 65) Tag:0 Title:@"" backgroundColor:kColorClear TitleTextColor:nil Font:0 Image:nil];
     [self.view addSubview:self.fabuButton];
+    [self.fabuButton setImage:ImageNamed(@"fabu") forState:UIControlStateNormal];
     [self.fabuButton addTarget:self action:@selector(fabu:) forControlEvents:UIControlEventTouchUpInside];
-    [self.fabuButton mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.width.height.equalTo(@65);
-        make.right.equalTo(self.view.mas_right).offset(-24);
-        make.bottom.equalTo(self.view.mas_bottom).offset(-45);
-    }];
-    
+//    [self.fabuButton makeCornerWithCornerRadius:32.5 borderWidth:0 borderColor:nil];
     [self addRefreshHeaderView];
     [self addRefreshFooterView];
     
@@ -559,12 +553,16 @@ typedef NS_ENUM(NSInteger,RefreshState) {
 - (void)fabu:(UIButton *)sender{
     [CheckInViewController presentControllerWith:self callBack:^(NSInteger btnTag) {
         if (btnTag == hudongType) {
-            [self enterCommunity];
+//            [self enterCommunity];
+            [InterPostViewController pushController:self topicListArray:self.topicListArray postType:PostType_LinLiQuan];
+
         }else{//交易
-                InterPostViewController *vc = [[InterPostViewController alloc] init];
-                vc.topicListArray = self.topicListArray;
-                vc.hidesBottomBarWhenPushed = YES;
-                [self.navigationController pushViewController:vc animated:YES];
+//                InterPostViewController *vc = [[InterPostViewController alloc] init];
+//                vc.topicListArray = self.topicListArray;
+//
+//                vc.hidesBottomBarWhenPushed = YES;
+//                [self.navigationController pushViewController:vc animated:YES];
+            [InterPostViewController pushController:self topicListArray:self.topicListArray postType:PostType_ErShou];
         }
     }];
 }

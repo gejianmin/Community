@@ -20,70 +20,62 @@
 
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier{
     if (self = [super initWithStyle:style reuseIdentifier:reuseIdentifier]) {
-        [self setUpUI];
+//        [self setUpUI];
     }
     return self;
+}
+- (instancetype)initWithReuseIdentifier:(NSString *)reuseIdentifier indexPath:(NSIndexPath *)indexPath{
+    if (self=[super initWithStyle:UITableViewCellStyleDefault reuseIdentifier:reuseIdentifier]) {
+        
+        self.selectionStyle = UITableViewCellSelectionStyleNone;
+        [self setUpUI];
+
+    }
+    return self;
+    
 }
 
 - (void)setUpUI{
     [self.contentView addSubview:self.backView];
     [self.contentView addSubview:self.titleLabel];
     [self.contentView addSubview:self.tipField];
+    
+    if (self.reuseIdentifier == kInputCellReuseIdentifier) {
+        self.titleLabel.text = @"价格";
+        self.tipField.placeholder = @"￥0.00";
+        self.tipField.keyboardType = UIKeyboardTypeNumberPad;
+        self.tipField.userInteractionEnabled = YES;
+    }else if (self.reuseIdentifier == kSelectCellReuseIdentifier){
+        self.accessoryType=UITableViewCellAccessoryDisclosureIndicator;
+        self.titleLabel.text = @"邻里分类";
+        if (_topicText) {
+            _tipField.placeholder = _topicText;
+        }else{
+            _tipField.placeholder = @"请选择";
+            
+        }
+        _tipField.textAlignment = NSTextAlignmentRight;
+        _tipField.userInteractionEnabled = NO;
+    }
 }
 
 - (void)layoutSubviews{
     [super layoutSubviews];
     self.titleLabel.frame =  CGRectMake(12, 8 ,self.titleLabel.width, 20);
     self.titleLabel.centerY = self.height/2;
-    self.tipField.frame = CGRectMake(120, 0, 200, 20);
+    self.tipField.frame = CGRectMake(120, 0, HH_SCREEN_W-120-30, 20);
     self.tipField.centerY = self.height/2;
 }
-
-- (void)setIndexPath:(NSIndexPath *)indexPath {
-    _indexPath = indexPath;
-    _tipField.keyboardType = UIKeyboardTypeDefault;
-    switch (indexPath.row) {
-        case 1:
-        {
-            self.titleLabel.text = @"价格";
-            _tipField.placeholder = @"￥0.00";
-            _tipField.keyboardType = UIKeyboardTypeNumberPad;
-            _tipField.userInteractionEnabled = YES;
-        }
-            break;
-        case 2:
-        {
-            self.titleLabel.text = @"联系人";
-            _tipField.placeholder = @"填写联系人";
-            _tipField.userInteractionEnabled = YES;
-        }
-            break;
-        case 3:
-        {
-            self.titleLabel.text = @"联系方式";
-            _tipField.keyboardType = UIKeyboardTypeNumberPad;
-            _tipField.placeholder = @"填写联系方式可以方便转让";
-            _tipField.userInteractionEnabled = YES;
-        }
-            break;
-        case 4:
-        {
-            self.titleLabel.text = @"帖子分类";
-            if (_topicText) {
-                _tipField.placeholder = _topicText;
-            }else{
-                _tipField.placeholder = @"请选择帖子分类";
-            }
-            _tipField.userInteractionEnabled = NO;
-        }
-            break;
-        default:
-            break;
-    }
+-(void)setModel:(GSAPublishModel *)model{
+    _model = model;
     CGSize size = [self.titleLabel sizeForString:self.titleLabel.text font:self.titleLabel.font constrainedToSize:CGSizeMake(MAXFLOAT, 20)];
     self.titleLabel.width = size.width + 16;
 }
-
+-(void)reloadDataWithModel:(GSAPublishModel *)model indexPath:(NSIndexPath *)indexPath callBack:(cellCallBack )callback{
+    _callBack = callback;
+    _currentIndexPath = indexPath;
+    [_tipField setText:model.content];
+}
 - (UILabel *)titleLabel{
     if (!_titleLabel) {
         _titleLabel = [[UILabel alloc] init];
@@ -106,6 +98,8 @@
         _tipField.borderStyle = UITextBorderStyleNone;//边框样式
         _tipField.textAlignment = NSTextAlignmentLeft; //居中
         _tipField.contentVerticalAlignment = UIControlContentVerticalAlignmentCenter;//垂直居中
+        [_tipField addTarget:self action:@selector(edit:) forControlEvents:UIControlEventAllEditingEvents];
+
     }
     return _tipField;
 }
@@ -114,9 +108,12 @@
     [textField resignFirstResponder];
     return YES;
 }
-- (void)textFieldDidEndEditing:(UITextField *)textField{
-    if ([self.delegate respondsToSelector:@selector(endEditPostInfo:indexPath:)]) {
-        [self.delegate endEditPostInfo:textField.text indexPath:self.indexPath];
+- (void)edit:(UITextField *)textField{
+//    if ([self.delegate respondsToSelector:@selector(endEditPostInfo:indexPath:)]) {
+//        [self.delegate endEditPostInfo:textField.text indexPath:self.indexPath];
+//    }
+    if (self.callBack) {
+        self.callBack(textField.text,_currentIndexPath);
     }
 }
 - (UIView *)hitTest:(CGPoint)point withEvent:(UIEvent *)event {
