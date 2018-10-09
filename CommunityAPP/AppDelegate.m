@@ -39,10 +39,10 @@
     BOOL isFirstLoginAPP = [userDef objectForKey:@"notFirst"];
     if (!isFirstLoginAPP) {
         [self goToGuidePage];
-    }else if (kStringIsEmpty([[HHClient sharedInstance] user].org_id)){/**未选择社区*/
+    }else if (kStringIsEmpty([[HHComlient sharedInstance] user].org_id)){/**未选择社区*/
         [self goToNearCommunity];
-    }else if (!kStringIsEmpty([[HHClient sharedInstance] user].org_id)) {/**已选择社区*/
-        NSLog(@"%@",[[HHClient sharedInstance] user].org_id);
+    }else if (!kStringIsEmpty([[HHComlient sharedInstance] user].org_id)) {/**已选择社区*/
+        NSLog(@"%@",[[HHComlient sharedInstance] user].org_id);
         [self gotoMainWindow];
     }else{
         

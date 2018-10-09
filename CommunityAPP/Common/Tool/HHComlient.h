@@ -1,5 +1,5 @@
 //
-//  HHClient.h
+//  HHComlient.h
 //  CommunityAPP
 //
 //  Created by gejianmin on 2018/9/11.
@@ -10,7 +10,7 @@
 
 @class UserObjModel;
 
-@interface HHClient : NSObject
+@interface HHComlient : NSObject
     
 + (instancetype)sharedInstance;
     

@@ -19,6 +19,8 @@
 #import <SVProgressHUD.h>
 #import <Masonry.h>
 #import <HHKit/HHKit.h>
+#import <HHNetworking/HHNetworking.h>
+#import <HHSecurityNetwork/HHSecurityNetwork.h>
 #import <YYModel/YYModel.h>
 
 #import "GSAColorConfig.h"
@@ -29,10 +31,11 @@
 #import "HHTextField.h"
 #import "CustomBtn.h"
 #import "CustomLab.h"
-#import "HHClient.h"
+#import "HHComlient.h"
 #import "UserObjModel.h"
 #import "JTDShareVC.h""
 #import "MacroNetwork.h"
+#import "PPNetworkHelper.h"
 //#import "UINavigationController+FDFullscreenPopGesture.h"
 
 #define SCREEN_WIDTH                    CGRectGetWidth([[UIScreen mainScreen] bounds])

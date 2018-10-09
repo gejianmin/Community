@@ -177,7 +177,7 @@
             break;
             case 1:HHLog(@"确定");
             {
-                [[HHClient sharedInstance]clearMemory];
+                [[HHComlient sharedInstance]clearMemory];
                 [self.navigationController popViewControllerAnimated:YES];
                 if(self.logOutcallBack){
                     self.logOutcallBack();

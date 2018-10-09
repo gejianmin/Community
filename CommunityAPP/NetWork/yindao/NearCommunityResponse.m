@@ -17,3 +17,30 @@
     [self showFinishedResultDataInMainThreadToUI:model];
 }
 @end
+@implementation PubCommunityResponse
+
+- (void)parseBackData{
+    NSDictionary *jsonObject=self.responseData;
+    NearCommunityModel *model =  [NearCommunityModel yy_modelWithJSON:jsonObject];
+    [self showFinishedResultDataInMainThreadToUI:model];
+}
+@end
+
+@implementation GetCommunityResponse
+
+- (void)parseBackData{
+    NSDictionary *jsonObject=self.responseData;
+    GetCommunityArrModel *model =  [GetCommunityArrModel yy_modelWithJSON:jsonObject];
+    [self showFinishedResultDataInMainThreadToUI:model];
+}
+@end
+@implementation PublicCommunityResponse : BaseResponse
+
+- (void)parseBackData{
+    NSDictionary *jsonObject=self.responseData;
+    NearCommunityModel *model =  [NearCommunityModel yy_modelWithJSON:jsonObject];
+    [self showFinishedResultDataInMainThreadToUI:model];
+    
+}
+
+@end

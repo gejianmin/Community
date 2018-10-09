@@ -11,3 +11,13 @@
 @interface NearCommunityResponse : BaseResponse
 
 @end
+
+@interface PubCommunityResponse : BaseResponse
+
+@end
+@interface GetCommunityResponse : BaseResponse
+
+@end
+@interface PublicCommunityResponse : BaseResponse
+
+@end

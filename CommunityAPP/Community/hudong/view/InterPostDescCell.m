@@ -7,17 +7,13 @@
 //
 
 #import "InterPostDescCell.h"
-#import "PlaceholderTextView.h"
 #import "JYBMultiImageView.h"
 
 @interface InterPostDescCell ()<UITextViewDelegate,UITextFieldDelegate,JYBMultiImageViewDelegate>
 
 @property (nonatomic,strong) UITextField *titleField;
-@property (nonatomic,strong) PlaceholderTextView *messageView;
 @property (nonatomic,strong) JYBMultiImageView *postCircleAddPicView;
-
 @property (nonatomic,strong) UIButton *addPicButton;
-@property (nonatomic,strong) UIView *backView;
 
 @end
 
@@ -31,35 +27,36 @@
 }
 
 - (void)setUpUI{
-    [self.contentView addSubview:self.backView];
-    [self.backView addSubview:self.titleField];
-    [self.backView addSubview:self.messageView];
-    [self.backView addSubview:self.addPicButton];
-    [self.backView addSubview:self.postCircleAddPicView];
+        [self.contentView addSubview:self.titleField];
+        [self.contentView addSubview:self.messageView];
+        [self.contentView addSubview:self.addPicButton];
+        [self.contentView addSubview:self.postCircleAddPicView];
+    [self.titleField mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(self.contentView.mas_top).offset(15);
+        make.left.equalTo(self.contentView.mas_left).offset(15);
+        make.right.equalTo(self.contentView.mas_right).offset(-15);
+        make.width.equalTo(@(self.contentView.width));
+        make.height.equalTo(@(50));
+    }];
+    [self.messageView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(self.titleField.mas_bottom).offset(1);
+        make.left.equalTo(self.contentView.mas_left).offset(15);
+        make.right.equalTo(self.contentView.mas_right).offset(-15);
+        make.width.equalTo(@(self.contentView.width));
+        make.height.equalTo(@(80));
+    }];
 }
-
-- (void)layoutSubviews{
-    
-    self.backView.frame = CGRectMake(12, 12, SCREEN_WIDTH - 24, self.height - 24);
-    self.titleField.frame = CGRectMake(0, 0, self.backView.width, 50);
-    self.messageView.frame = CGRectMake(0, 51, self.backView.width, 80);
-    self.postCircleAddPicView.top = self.messageView.bottom + 5;
-}
-
 - (void)setPicArray:(NSMutableArray *)picArray{
     _picArray = picArray;
     _postCircleAddPicView.images_MARR = picArray;
+    [self.postCircleAddPicView mas_remakeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(self.messageView.mas_bottom).offset(5);
+        make.left.equalTo(self.contentView.mas_left).offset(15);
+        make.right.equalTo(self.contentView.mas_right).offset(-15);
+        make.height.equalTo(@(90 + 90 * (self.picArray.count/4)));
+        make.bottom.equalTo(self.contentView.mas_bottom).offset(0);
+    }];
 }
-
-- (UIView *)backView{
-    if (!_backView) {
-        _backView = [[UIView alloc] init];
-        _backView.width = SCREEN_WIDTH - 24;
-        _backView.backgroundColor = [UIColor whiteColor];
-    }
-    return _backView;
-}
-
 /*
  UITextBorderStyleNone,//无样式边框
  UITextBorderStyleLine,//直线
@@ -79,6 +76,8 @@
         _titleField.textAlignment = NSTextAlignmentLeft; //居中
         _titleField.contentVerticalAlignment = UIControlContentVerticalAlignmentCenter;//垂直居中
         _titleField.keyboardType = UIKeyboardTypeDefault;
+        [_titleField addTarget:self action:@selector(edit:) forControlEvents:UIControlEventAllEditingEvents];
+
         
     }
     return _titleField;
@@ -102,13 +101,15 @@
         _messageView.textColor = [UIColor colorWithHexStr:@"999999"];
         _messageView.placeholderColor = [UIColor hexStringToColor:@"999999" alpha:1.0];
         _messageView.placeholder = @"有什么新鲜事跟邻居说道说道";
-        _messageView.placeholder = @"描述您的宝贝";
+        
+
+//        _messageView.placeholder = @"描述您的宝贝";
     }
     return _messageView;
 }
 - (JYBMultiImageView *)postCircleAddPicView{
     if (!_postCircleAddPicView) {
-        _postCircleAddPicView = [[JYBMultiImageView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH - 24, 100)];
+        _postCircleAddPicView = [[JYBMultiImageView alloc] init];//
         _postCircleAddPicView.delegate = self;
     }
     return _postCircleAddPicView;
@@ -117,27 +118,24 @@
 //控制输入文字的长度和内容
 - (BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text{
     
+    
     if ([text isEqualToString:@"\n"]) {
         //禁止输入换行
         [textView resignFirstResponder];
-        
         return NO;
     }
     return YES;
 }
-
-- (void)textViewDidEndEditing:(UITextView *)textView{
-    if ([self.delegate respondsToSelector:@selector(endEditPostMessage:)]) {
-        [self.delegate endEditPostMessage:textView.text];
-    }
-}
-
-- (void)textFieldDidEndEditing:(UITextField *)textField{
+- (void)edit:(UITextField *)textField{
     if ([self.delegate respondsToSelector:@selector(endEditPostTitle:)]) {
         [self.delegate endEditPostTitle:textField.text];
     }
 }
-
+- (void)textViewDidChange:(UITextView *)textView{
+    if ([self.delegate respondsToSelector:@selector(endEditPostMessage:)]) {
+        [self.delegate endEditPostMessage:textView.text];
+    }
+}
 - (void)addButtonDidTap{
     if ([self.delegate respondsToSelector:@selector(addButtonDidTap:)]) {
         [self.delegate addButtonDidTap:_postCircleAddPicView.images_MARR.count];

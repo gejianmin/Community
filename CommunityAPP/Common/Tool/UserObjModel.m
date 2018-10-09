@@ -43,15 +43,15 @@ static UserObjModel *userObj = nil;
 }
 -(void)setOrg_id:(NSString *)org_id{
     _org_id = org_id;
-   [[HHClient sharedInstance] setUser:self];
+   [[HHComlient sharedInstance] setUser:self];
 }
 -(void)setVid:(NSString *)vid{
     _vid = vid;
-    [[HHClient sharedInstance] setUser:self];
+    [[HHComlient sharedInstance] setUser:self];
 }
 - (void)setOrg_name:(NSString *)org_name{
     _org_name = org_name;
-    [[HHClient sharedInstance] setUser:self];
+    [[HHComlient sharedInstance] setUser:self];
 }
 + (instancetype)shareIntance{
     static dispatch_once_t onceToken;

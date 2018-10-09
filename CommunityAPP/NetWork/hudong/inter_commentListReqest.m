@@ -43,7 +43,7 @@ ResponserParserGenerate(inter_commentResponse);
     
     self.headerFields = [NSMutableDictionary dictionary];
     [self.headerFields setObject:@"yezhu" forKey:@"identity"];
-    [self.headerFields setObject:[[[HHClient sharedInstance]user]token] forKey:@"authorization"];
+    [self.headerFields setObject:[[[HHComlient sharedInstance]user]token] forKey:@"authorization"];
 
         NSMutableDictionary *paramDic = [[NSMutableDictionary alloc] init];
         [paramDic setValue:comment forKey:@"comment"];

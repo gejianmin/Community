@@ -8,14 +8,16 @@
 
 #import <UIKit/UIKit.h>
 
-typedef void(^WYHeightPickerViewBlock)(NSString *selectedProfession);
+#import "InterTopicListModel.h"
+
+typedef void(^WYHeightPickerViewBlock)(TopicListModel * model);
 
 @interface IKHeightPickerView : UIView
 
 @property (strong, nonatomic) WYHeightPickerViewBlock confirmBlock;
 
-
 - (void)initialRowTitle:(NSString *)title dataSource:(NSArray *)dataSource;
+
 
 - (void)positionPickerRow;
 

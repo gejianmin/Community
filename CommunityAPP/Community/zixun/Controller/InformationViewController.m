@@ -149,7 +149,7 @@
     self.areaSelecotorV = [[AreaSelectorView alloc]initWithFrame:CGRectMake(0,30,210,30)];
     self.areaSelecotorV.clickBlock = ^{
        
-        [HHClient sharedInstance].user.org_id = nil;
+        [HHComlient sharedInstance].user.org_id = nil;
         [[NSNotificationCenter defaultCenter] postNotificationName:SelectMainWindow object:nil];
         
     };
@@ -197,7 +197,7 @@
     __weak typeof(self) tyself = self;
     InforVillage_AppButtonRequest *request = [[InforVillage_AppButtonRequest alloc] init];
     
-    NSString *ord_ID = [[HHClient sharedInstance] user].vid;
+    NSString *ord_ID = [[HHComlient sharedInstance] user].vid;
     [request InforVillage_AppButtonRequestWithID:ord_ID];
     [request setFinishedBlock:^(id object, id responseData) {
         
@@ -214,7 +214,7 @@
     __weak typeof(self) tyself = self;
     InforVillage_CarouselRequest *request = [[InforVillage_CarouselRequest alloc] init];
     
-    NSString *ord_ID = [[HHClient sharedInstance] user].vid;
+    NSString *ord_ID = [[HHComlient sharedInstance] user].vid;
     [request InforVillage_CarouselRequestWithID:ord_ID];
     [request setFinishedBlock:^(id object, id responseData) {
         
@@ -244,7 +244,7 @@
 - (void)articleCateRequest{
     __weak typeof(self) tyself = self;
     InforVillage_ArticleCateRequest *request = [[InforVillage_ArticleCateRequest alloc] init];
-    NSString *ord_ID = [[HHClient sharedInstance] user].vid;
+    NSString *ord_ID = [[HHComlient sharedInstance] user].vid;
     [request InforVillage_ArticleCateRequestWithID:ord_ID];
     [request setFinishedBlock:^(id object, id responseData) {
         
@@ -262,7 +262,7 @@
 - (void)ADRequest{
     __weak typeof(self) tyself = self;
     InforVillage_ADRequest *request = [[InforVillage_ADRequest alloc] init];
-    NSString *ord_ID = [[HHClient sharedInstance] user].vid;
+    NSString *ord_ID = [[HHComlient sharedInstance] user].vid;
     [request InforVillage_ADRequestWithID:ord_ID];
     [request setFinishedBlock:^(id object, id responseData) {
         
@@ -286,7 +286,7 @@
     __block NSInteger current_index = _currenIndex;//原子操作，防止切换分类按钮时，index被重置
     
     InforVillage_ListRequest *request = [[InforVillage_ListRequest alloc] init];
-    NSString *ord_ID = [[HHClient sharedInstance] user].vid;
+    NSString *ord_ID = [[HHComlient sharedInstance] user].vid;
     [request InforVillage_ListRequestWithCat_id:cat_id vid:ord_ID page:index];
     [request setFinishedBlock:^(id object, id responseData) {
         

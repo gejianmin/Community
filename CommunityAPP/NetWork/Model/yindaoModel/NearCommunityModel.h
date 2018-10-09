@@ -22,3 +22,21 @@
 @property (nonatomic, copy) NSArray <CommunityModel *> *communityArray;
 
 @end
+///////////////////////////////////////
+@interface GetCommunityModel : NSObject
+
+@property (nonatomic, copy) NSString *vid;
+@property (nonatomic, copy) NSString *org_name;
+@property (nonatomic, copy) NSString *building;/** 楼号(String)*/
+@property (nonatomic, copy) NSString *entrance;//单元号(String)
+@property (nonatomic, copy) NSString *house_number;//门牌号
+
+@end
+
+@interface GetCommunityArrModel : RequestBaseModel
+
+@property (nonatomic, copy) NSArray <GetCommunityModel *> *getCommunityArray;
+
+@end
+
+

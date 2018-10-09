@@ -2,6 +2,12 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:HHNetworking/HHNetworking.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:HHSecurityNetwork/HHSecurityNetwork.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:HHKit/HHKit.xcodeproj">
    </FileRef>
    <FileRef

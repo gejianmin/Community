@@ -8,6 +8,7 @@ inhibit_all_warnings!
 pod 'AFNetworking', '~> 3.0'
 pod 'SDWebImage', '~> 3.7.2'
 pod 'SVProgressHUD'
+pod 'PPNetworkHelper'
 pod 'YYModel'
 pod 'PureLayout'
 pod 'Masonry'
@@ -29,5 +30,28 @@ target 'HHKit' do
     project 'HHKit/HHKit.xcodeproj'
     
     pod 'MBProgressHUD', '~> 0.9.2'
+    
+end
+target 'HHNetworking' do
+    
+    platform :ios, '8.0'
+    inhibit_all_warnings!
+    project 'HHNetworking/HHNetworking.xcodeproj'
+    
+    pod 'GTMBase64', '~> 1.0.0'
+    #网络框架
+    pod 'AFNetworking', '~>3.0.4'
+    pod 'MJExtension', '~> 3.0.3'
+    
+end
+
+target 'HHSecurityNetwork' do
+    
+    platform :ios, '8.0'
+    inhibit_all_warnings!
+    project 'HHSecurityNetwork/HHSecurityNetwork.xcodeproj'
+    
+    #网络框架
+    pod 'AFNetworking', '~>3.0.4'
     
 end

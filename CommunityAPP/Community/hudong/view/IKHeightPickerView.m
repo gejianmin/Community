@@ -18,6 +18,7 @@
 @property (strong, nonatomic) UILabel *titleLabel;
 
 @property (strong, nonatomic) NSString *initialTile;
+@property(nonatomic,strong) TopicListModel  * model;
 @property (strong, nonatomic) NSArray *dataSourceArray;
 @end
 
@@ -83,7 +84,7 @@
 - (void)confirmButtonAction:(UIButton *)button {
     
     if (self.confirmBlock) {
-        self.confirmBlock(self.initialTile);
+        self.confirmBlock(self.model);
     }
     
     self.bottomView.frame = CGRectMake(0, self.height - 216 - 44, self.width, 216 + 44);
@@ -116,14 +117,15 @@
 
 // 显示什么
 - (NSString*)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component{
-    
-    return self.dataSourceArray[row];
+    TopicListModel * model = self.dataSourceArray[row];
+    return model.topic_name;
 }
 
 // 选中时
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
-    
-    self.initialTile = self.dataSourceArray[row];
+    TopicListModel * model = self.dataSourceArray[row];
+    self.initialTile = model.topic_name;
+    self.model = model;
 }
 
 
@@ -208,8 +210,8 @@
 - (void)positionPickerRow{
     BOOL isContains = NO;
     for (int i = 0; i<self.dataSourceArray.count; i++) {
-        NSString *title = self.dataSourceArray[i];
-        if ([title isEqualToString:self.initialTile]) {
+        TopicListModel * model = self.dataSourceArray[i];
+        if ([model.topic_name isEqualToString:self.initialTile]) {
             [UIView animateWithDuration:0.25 animations:^{
                 
             } completion:^(BOOL finished) {
@@ -220,7 +222,8 @@
         }
     }
     if (!isContains && self.dataSourceArray.count>0) {
-        self.initialTile = self.dataSourceArray[0];
+        TopicListModel * model = self.dataSourceArray[0];
+        self.initialTile = model.topic_name;
     }
 }
 

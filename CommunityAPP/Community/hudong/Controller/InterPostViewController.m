@@ -7,44 +7,99 @@
 //
 
 #import "InterPostViewController.h"
-#import "InterPostViewDataSource.h"
+#import "NearCommunityRequest.h"
+#import "GSAPublishModel.h"
+#import "ELCImagePickerController.h"
 
 @interface InterPostViewController ()
 
-@property (nonatomic, assign) PostType type;
+//@property (nonatomic, assign) PostType type;
 @property (nonatomic, strong) InterPostViewDataSource *dataSource;
 @property (nonatomic, strong) NSMutableArray *selectedPicsArr;
 @end
 
 @implementation InterPostViewController
 
-- (instancetype)initWithInterPostWith:(PostType)type{
-    if (self = [super init]) {
-        _type = type;
-    }
-    return self;
++ (void)pushController:(UIViewController *)superController topicListArray:(NSArray *)topicListArray postType:(PostType )type topicId:(NSString* )topicId{
+    InterPostViewController * VC = [[InterPostViewController alloc]init];
+    VC.topicListArray = topicListArray;
+    VC.type = type;
+    VC.topicId = topicId;
+    VC.hidesBottomBarWhenPushed = YES;
+    [superController.navigationController pushViewController:VC animated:YES];
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.tableView.backgroundColor = RGB(249, 249, 249);
-    
-    [self setLeftItemWithImageTarget:self];
-    [self setRightItemWithTitle:@"发布" Target:self];
-    
+    self.tableView.backgroundColor = kColorGray9;
+    [self addRightBarItemWithTitle:@"发布" tintColor:kColorBlack target:self action:@selector(fabu)];
     if (_type == PostType_ErShou) {
         self.title = @"发布二手";
     }else{
         self.title = @"发布邻里圈";
     }
     self.tableView.frame = self.view.bounds;
-    self.dataSource = [[InterPostViewDataSource alloc] init];
-    _dataSource.topicListArray = self.topicListArray;
-    [_dataSource registerTableViewCell:self.tableView];
-    
-    if (_type == PostType_LinLiQuan) {
-
-    }
+    self.dataSource = [[InterPostViewDataSource alloc] initWithType:self.type];
+    self.dataSource.topicListArray = self.topicListArray;
+    [self.dataSource registerTableViewCell:self.tableView];
 }
+#pragma mark--申请
+-(void)fabu{
+    NSMutableDictionary * dict = self.dataSource.dataSourceDictionary;
+    if ([NSObject isBlankString:[dict objectForKey:@"p_title"]]) {
+        [self showToastHUD:@"请输入标题"];
+        return;
+    }
+    if ([NSObject isBlankString:[dict objectForKey:@"p_content"]]) {
+        [self showToastHUD:@"请描述详情"];
+        return;
+    }
+    if ([NSObject isBlankString:[dict objectForKey:@"photos"]]) {
+        [self showToastHUD:@"请上传图片"];
+        return;
+    }
+    for (int i = 0; i < self.dataSource.dataSourceArray.count; i++) {
+        GSAPublishModel * model = self.dataSource.dataSourceArray[i];
+        if ([model.titleName isEqualToString:@"price"]) {
+            if ([NSObject isBlankString:model.content]) {
+                [self showToastHUD:@"请输入价格"];
+                return;
+            }
+        }
+        if ([NSObject isBlankString:model.content]) {
+            [self showToastHUD:[NSString stringWithFormat:@"%@",model.detailTitle]];
+            return;
+        }
+        if (![model.content isEqualToString:model.contentID]) {
+            [dict setObject:model.contentID forKey:@"topic_id"];
+        }else{
+            [dict setObject:model.content forKey:model.titleName];
+            if (_type == PostType_ErShou) {
+                [dict setObject:self.topicId forKey:@"topic_id"];
+            }
+        }
+    }
+    
+    [dict setObject:@"39.23323" forKey:@"lat"];
+    [dict setObject:@"166.312321" forKey:@"lng"];
+    [dict setObject:@"北京市" forKey:@"address"];
+    
+    PublicCommunityRequest *request = [[PublicCommunityRequest alloc] init];
+    [request publicCommunityWithInfo:dict];
+    [request setFinishedBlock:^(id object, id responseData) {
+        if (responseData) {
+            if ([responseData[@"status"] isEqualToString:successCode]) {
+                [self showToastHUD:@"申请成功" complete:^{
+                    [self.navigationController popViewControllerAnimated:YES];
+                }];
+            }else{
+                [self showToastHUD:responseData[@"error"][@"message"] complete:nil];
+            }
+        }
+    } failedBlock:^(NSInteger error, id responseData) {
+        NSLog(@"%ld",error);
+    }];
+}
+
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
 }

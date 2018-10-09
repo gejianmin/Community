@@ -20,13 +20,13 @@
 
 }
 - (void)setUserObj:(LoginModel *)model{
-    [[HHClient sharedInstance] user].mobile = model.mobile;
-    [[HHClient sharedInstance] user].uid = model.uid;
-    [[HHClient sharedInstance] user].nickname = model.nickname;
-    [[HHClient sharedInstance] user].jifen = model.jifen;
-    [[HHClient sharedInstance] user].money = model.money;
-    [[HHClient sharedInstance] user].token = model.token;
-    [[HHClient sharedInstance] user].coin = model.coin;
-    [[HHClient sharedInstance] user].face = model.face;
+    [[HHComlient sharedInstance] user].mobile = model.mobile;
+    [[HHComlient sharedInstance] user].uid = model.uid;
+    [[HHComlient sharedInstance] user].nickname = model.nickname;
+    [[HHComlient sharedInstance] user].jifen = model.jifen;
+    [[HHComlient sharedInstance] user].money = model.money;
+    [[HHComlient sharedInstance] user].token = model.token;
+    [[HHComlient sharedInstance] user].coin = model.coin;
+    [[HHComlient sharedInstance] user].face = model.face;
 }
 @end

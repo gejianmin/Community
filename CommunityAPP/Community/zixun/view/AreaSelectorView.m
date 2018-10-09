@@ -72,7 +72,7 @@
     // 区域内容
     self.localNameL = [[UILabel alloc]init];
 //    self.localNameL.text = [UserObjModel shareIntance].org_name;
-    self.localNameL.text = [HHClient sharedInstance].user.org_name;
+    self.localNameL.text = [HHComlient sharedInstance].user.org_name;
     self.localNameL.font = FONT(14);
     self.localNameL.textColor = [[UIColor whiteColor] colorWithAlphaComponent:1.0];
     [self addSubview:_localNameL];

@@ -35,6 +35,11 @@
 #define infoArt_shareCountAdd       @"articles/addShareNum"//分享成功 + 1
 
 //互动
+/*!< 图片上传路径*/
+#define inter_path_postPicture      @"commpont/Pic/uploadPic"/*!< 图片上传路径*/
+#define inter_publicCommunity       @"posts/create"//发布
+#define inter_createCommunity       @"yezhus/create"//入住小区
+#define inter_getYezhuByMember      @"yezhus/getYezhuByMember"//获取入住小区列表
 #define inter_FourmBtn              @"appbtns/getFourmBtnByVillage" //互动按钮
 #define inter_Village_Carousel      @"advs/getV3cAdvByVillage"//互动轮播图
 #define inter_topics                @"topics"//互动话题头部信息

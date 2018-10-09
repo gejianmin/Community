@@ -94,15 +94,15 @@
     [self setCommunity:model];
 }
 - (void)setCommunity:(CommunityModel *)model{
-    if(![[HHClient sharedInstance] isLogin]){
+    if(![[HHComlient sharedInstance] isLogin]){
         UserObjModel *userModel = [[UserObjModel alloc]init];
         userModel.org_id = model.org_id;
         userModel.vid = model.vid;
         userModel.org_name = model.org_name;
     }else{
-        [[HHClient sharedInstance] user].org_id = model.org_id;
-        [[HHClient sharedInstance] user].vid = model.vid;
-        [[HHClient sharedInstance] user].org_name = model.org_name;
+        [[HHComlient sharedInstance] user].org_id = model.org_id;
+        [[HHComlient sharedInstance] user].vid = model.vid;
+        [[HHComlient sharedInstance] user].org_name = model.org_name;
     }
         
     
@@ -163,8 +163,8 @@
                 return;
             }
             CLLocationCoordinate2D  coordinate = location.location.coordinate;
-            [[HHClient sharedInstance] user].lat = coordinate.latitude;
-            [[HHClient sharedInstance] user].lng = coordinate.longitude;
+            [[HHComlient sharedInstance] user].lat = coordinate.latitude;
+            [[HHComlient sharedInstance] user].lng = coordinate.longitude;
             [self setNearVillageRequestWith:coordinate.latitude log:coordinate.longitude];
             _location = location;
             
