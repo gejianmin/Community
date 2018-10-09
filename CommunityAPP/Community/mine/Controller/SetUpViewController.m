@@ -9,6 +9,7 @@
 #import "SetUpViewController.h"
 #import "SetUpTableViewCell.h"
 #import "MyHarvestAddressVC.h"
+#import "SetUpInfomationViewController.h"
 @interface SetUpViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property (nonatomic,strong) UITableView *tableView;
 @property(nonatomic,strong) NSArray  * dataSourceArray;
@@ -32,19 +33,22 @@
 }
 -(void)setUpUI{
     self.title = @"设置";
+    CustomBtn * quitBtn = [[CustomBtn alloc]initWithFrame:CGRectMake(0, self.view.height - GSANavHeight -45, HH_SCREEN_W, 45) Tag:0 Title:@"退出登录" backgroundColor:kColorRed TitleTextColor:kColorWhite Font:17 Image:nil];
+    
+    [quitBtn addTarget:self action:@selector(quitEvent:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:quitBtn];
+    
     self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, self.view.width, self.view.height-GSANavHeight-45) style:UITableViewStyleGrouped];
     self.tableView.backgroundColor = kColorGray9;
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     [self.tableView registerClass:[SetUpTableViewCell class] forCellReuseIdentifier:NSStringFromClass([SetUpTableViewCell class])];
     [self.view addSubview:self.tableView];
-    CustomBtn * quitBtn = [[CustomBtn alloc]initWithFrame:CGRectZero Tag:0 Title:@"退出登录" backgroundColor:kColorRed TitleTextColor:kColorWhite Font:17 Image:nil];
-    [quitBtn addTarget:self action:@selector(quitEvent:) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:quitBtn];
-    [quitBtn mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.right.bottom.equalTo(self.view);
-        make.height.equalTo(@45);
-    }];
+    
+//    [quitBtn mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.left.right.bottom.equalTo(self.view);
+//        make.height.equalTo(@45);
+//    }];
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
     return 0.00001;
@@ -98,11 +102,49 @@
     return cell;
 }
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    if(indexPath.section == 0){
+    if(indexPath.section == 0){// 设置昵称
+        UIStoryboard *sb = [UIStoryboard storyboardWithName:@"SetUp" bundle:nil];
+        SetUpInfomationViewController *setinfoVC = [sb instantiateViewControllerWithIdentifier:@"setupinfomation"];
+        [self.navigationController pushViewController:setinfoVC animated:YES];
+        
     }else if(indexPath.section == 1){
         MyHarvestAddressVC * VC = [[MyHarvestAddressVC alloc]init];
         [self.navigationController pushViewController:VC animated:YES];
-    }else{
+    }else if(indexPath.section == 4){
+        if (indexPath.row == 0) {// 清除缓存
+            [SVProgressHUD showWithStatus:@"正在清除"];
+            [SVProgressHUD dismissWithDelay:1];
+        }
+        if (indexPath.row == 3) {// 联系客服
+            UIAlertController *al = [UIAlertController alertControllerWithTitle:@"联系客服"
+                                                                        message:@"010-62342201"
+                                                                 preferredStyle:UIAlertControllerStyleAlert];
+            UIAlertAction *cancel = [UIAlertAction actionWithTitle:@"取消"
+                                                           style:UIAlertActionStyleCancel
+                                                         handler:^(UIAlertAction * _Nonnull action) {
+                                                             
+                                                         }];
+            UIAlertAction *sure = [UIAlertAction actionWithTitle:@"确定"
+                                                           style:UIAlertActionStyleDefault
+                                                         handler:^(UIAlertAction * _Nonnull action) {
+                                                             [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"tel:010-62342201"]options:@{}
+                                                              
+                                                                                    completionHandler:^(BOOL success) {
+                                                                                        
+                                                                                        
+                                                                                    }];
+                                                             
+                                                
+                                                             
+                                                             
+                                                         }];
+            [al addAction:cancel];
+            [al addAction:sure];
+            
+            [self presentViewController:al animated:YES completion:nil];
+            
+            
+        }
     }
     
 }

@@ -8,6 +8,8 @@
 
 #import "MyHarvestAddressVC.h"
 #import "MyHarvestAddressCell.h"
+#import "AddAddressVC.h"
+
 @interface MyHarvestAddressVC ()<UITableViewDelegate,UITableViewDataSource>
 @property (nonatomic,strong) UITableView *tableView;
 @property(nonatomic,strong) NSArray  * dataSourceArray;
@@ -38,13 +40,15 @@
     [self.tableView registerClass:[MyHarvestAddressCell class] forCellReuseIdentifier:NSStringFromClass([MyHarvestAddressCell class])];
     [self.view addSubview:self.tableView];
     CustomBtn * quitBtn = [[CustomBtn alloc]initWithFrame:CGRectZero Tag:0 Title:@"添加新地址" backgroundColor:kColorRed TitleTextColor:kColorWhite Font:17 Image:nil];
-    [quitBtn addTarget:self action:@selector(quitEvent:) forControlEvents:UIControlEventTouchUpInside];
+    [quitBtn addTarget:self action:@selector(quit:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:quitBtn];
     [quitBtn mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.right.bottom.equalTo(self.view);
         make.height.equalTo(@45);
     }];
 }
+
+
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
     return 0.00001;
 }
@@ -99,30 +103,13 @@
     return 100;
     
 }
-#pragma mark--退出登录
--(void)quitEvent:(CustomBtn *)sender{
-    [[HHAlertView alloc]initWithTitle:@"退出登录" message:@"是否退出登录" showTarget:self handle:^(NSInteger index) {
-        switch (index) {
-            case 0:
-                HHLog(@"取消");
-                break;
-            case 1:HHLog(@"确定");
-            {
-                //                [[HHClient sharedInstance]clearMemory];
-                //                [self.navigationController popViewControllerAnimated:YES];
-                //                if(self.logOutcallBack){
-                //                    self.logOutcallBack();
-                //                }
-                
-            }
-                break;
-                
-            default:
-                break;
-        }
-    } cancle:@"取消" others:@"确定", nil];
+#pragma mark--添加新地址
+-(void)quit:(CustomBtn *)sender{
     
-    
+    UIStoryboard *sb = [UIStoryboard storyboardWithName:@"SetUp" bundle:nil];
+    AddAddressVC *addressVC = [sb instantiateViewControllerWithIdentifier:@"addaddressvc"];
+    [self.navigationController pushViewController:addressVC animated:YES];
+
 }
 
 - (void)didReceiveMemoryWarning {
