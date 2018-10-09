@@ -52,6 +52,7 @@
             make.top.equalTo(self.iconIma.mas_top).offset(0);
         }];
         [self.contentView addSubview:self.VIPLabel];
+        self.VIPLabel.text = [NSString stringWithFormat:@"会员名:%@",[HHClient sharedInstance].user.nickname];
         [self.VIPLabel mas_makeConstraints:^(MASConstraintMaker *make) {
             make.left.equalTo(self.iconIma.mas_right).offset(7);
             make.bottom.equalTo(self.iconIma.mas_bottom).offset(0);
