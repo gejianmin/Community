@@ -51,7 +51,7 @@ ResponserParserGenerate(NearCommunityResponse);
     
     self.headerFields = [NSMutableDictionary dictionary];
     [self.headerFields setObject:@"yezhu" forKey:@"identity"];
-    [self.headerFields setObject:[[[HHClient sharedInstance]user]token] forKey:@"authorization"];
+    [self.headerFields setObject:[[[HHComlient sharedInstance]user]token] forKey:@"authorization"];
 
     
     self.urlPathString = [NSString stringWithFormat:@"%@%@",self.hostString,inter_createCommunity];
@@ -72,7 +72,7 @@ ResponserParserGenerate(PubCommunityResponse);
     
     self.headerFields = [NSMutableDictionary dictionary];
     [self.headerFields setObject:@"yezhu" forKey:@"identity"];
-    [self.headerFields setObject:[[[HHClient sharedInstance]user]token] forKey:@"authorization"];    
+    [self.headerFields setObject:[[[HHComlient sharedInstance]user]token] forKey:@"authorization"];
     self.urlPathString = [NSString stringWithFormat:@"%@%@/%@",self.hostString,inter_getYezhuByMember,uid];
 }
 ResponserParserGenerate(GetCommunityResponse);
@@ -94,7 +94,7 @@ ResponserParserGenerate(GetCommunityResponse);
     
     self.headerFields = [NSMutableDictionary dictionary];
     [self.headerFields setObject:@"yezhu" forKey:@"identity"];
-    [self.headerFields setObject:[[[HHClient sharedInstance]user]token] forKey:@"authorization"];
+    [self.headerFields setObject:[[[HHComlient sharedInstance]user]token] forKey:@"authorization"];
     
     
     self.urlPathString = [NSString stringWithFormat:@"%@%@",self.hostString,inter_publicCommunity];

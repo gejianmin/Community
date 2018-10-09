@@ -49,7 +49,7 @@
     [self showHUDText:nil];
     __weak typeof(self) tyself = self;
     GetCommunityRequest *request = [[GetCommunityRequest alloc] init];
-    [request getCommunityListWithId:[[[HHClient sharedInstance]user]uid]];
+    [request getCommunityListWithId:[[[HHComlient sharedInstance]user]uid]];
     [request setFinishedBlock:^(id object, id responseData) {
         [self hideHUD];
         tyself.model = object;

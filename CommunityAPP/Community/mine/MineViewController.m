@@ -360,7 +360,7 @@
     }
 }
 - (void)setUp{
-    if(![[HHClient sharedInstance]isLogin]){
+    if(![[HHComlient sharedInstance]isLogin]){
         [self loginEvent];
     }else{
         self.loginBtn.enabled = YES;
@@ -378,11 +378,11 @@
     
 }
 -(void)loginState{
-    if(![[HHClient sharedInstance]isLogin]){
+    if(![[HHComlient sharedInstance]isLogin]){
         self.loginBtn.enabled = YES;
         [self.loginBtn setTitle:@"点击登录" forState:UIControlStateNormal];
     }else{
-        NSString * mobile = [NSString stringWithFormat:@"%@",[[HHClient sharedInstance] user].mobile];
+        NSString * mobile = [NSString stringWithFormat:@"%@",[[HHComlient sharedInstance] user].mobile];
         [self.loginBtn setTitle:mobile forState:UIControlStateNormal];
         self.loginBtn.enabled = NO;
     }

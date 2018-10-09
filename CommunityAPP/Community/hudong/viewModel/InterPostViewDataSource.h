@@ -24,7 +24,6 @@ typedef NS_ENUM(NSInteger,PostType) {
 - (instancetype)initWithType:(PostType )controllerType;
 
 
-
 @property (nonatomic, strong) NSMutableArray *dataSourceArray;
 @property (nonatomic, strong) NSMutableDictionary * dataSourceDictionary;
 

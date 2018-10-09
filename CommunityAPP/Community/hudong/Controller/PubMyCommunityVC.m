@@ -36,8 +36,8 @@
                                                             [[GSAPublishModel alloc] initWithTitle:@"楼栋号" detailTitle:@"请输入楼栋号（如A10或10）" reuseIdentifier:kNormalCellReuseIdentifier buttonTitle:@"" isHeidenMark:0 selectorStatu:selectorInputStatu content:@"" contentID:@"" titleName:@"building" selecStyle:selectDateStyle],
                                                             [[GSAPublishModel alloc] initWithTitle:@"单元号" detailTitle:@"请输入单元号（无单元号 输入0）" reuseIdentifier:kNormalCellReuseIdentifier buttonTitle:@"" isHeidenMark:0 selectorStatu:selectorInputStatu content:@"" contentID:@"" titleName:@"entrance" selecStyle:selectToPlaceStyle],
                                                             [[GSAPublishModel alloc] initWithTitle:@"门牌号" detailTitle:@"请输入门牌号（如102）" reuseIdentifier:kNormalCellReuseIdentifier buttonTitle:@"" isHeidenMark:0 selectorStatu:selectorInputStatu content:@"" contentID:@"" titleName:@"house_number" selecStyle:selectInterestStyle],
-                                                            [[GSAPublishModel alloc] initWithTitle:@"联系人" detailTitle:@"" reuseIdentifier:kButtonCellReuseIdentifier buttonTitle:@"" isHeidenMark:0 selectorStatu:segmentShowCustomStyle content:[[[HHClient sharedInstance]user]mobile] contentID:[[[HHClient sharedInstance]user]mobile] titleName:@"contact" selecStyle:selectThemeStyle],
-                                                            [[GSAPublishModel alloc] initWithTitle:@"手机号" detailTitle:@"" reuseIdentifier:kButtonCellReuseIdentifier buttonTitle:@"" isHeidenMark:1 selectorStatu:segmentShowCustomStyle content:[[[HHClient sharedInstance]user]mobile] contentID:[[[HHClient sharedInstance]user]mobile] titleName:@"mobile" selecStyle:0],
+                                                            [[GSAPublishModel alloc] initWithTitle:@"联系人" detailTitle:@"" reuseIdentifier:kButtonCellReuseIdentifier buttonTitle:@"" isHeidenMark:0 selectorStatu:segmentShowCustomStyle content:[[[HHComlient sharedInstance]user]mobile] contentID:[[[HHComlient sharedInstance]user]mobile] titleName:@"contact" selecStyle:selectThemeStyle],
+                                                            [[GSAPublishModel alloc] initWithTitle:@"手机号" detailTitle:@"" reuseIdentifier:kButtonCellReuseIdentifier buttonTitle:@"" isHeidenMark:1 selectorStatu:segmentShowCustomStyle content:[[[HHComlient sharedInstance]user]mobile] contentID:[[[HHComlient sharedInstance]user]mobile] titleName:@"mobile" selecStyle:0],
                                                             ]];
     
 }
@@ -130,7 +130,7 @@
             [dict setObject:model.content forKey:model.titleName];
         }
     }
-    [dict setObject:[[[HHClient sharedInstance]user]uid] forKey:@"uid"];
+    [dict setObject:[[[HHComlient sharedInstance]user]uid] forKey:@"uid"];
     [dict setObject:@"100" forKey:@"floor_space"];
     [dict setObject:@"1" forKey:@"have_parking"];
     [dict setObject:@"521S2" forKey:@"parking_number"];

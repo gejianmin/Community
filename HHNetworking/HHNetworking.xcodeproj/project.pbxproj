@@ -1,0 +1,739 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXAggregateTarget section */
+		637ABE2F1D2E0B4600C0D8BB /* HHNetworkScript */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 637ABE301D2E0B4600C0D8BB /* Build configuration list for PBXAggregateTarget "HHNetworkScript" */;
+			buildPhases = (
+				637ABE331D2E0B5400C0D8BB /* ShellScript */,
+			);
+			dependencies = (
+			);
+			name = HHNetworkScript;
+			productName = HHNetworkScript;
+		};
+/* End PBXAggregateTarget section */
+
+/* Begin PBXBuildFile section */
+		0D56967B1D4A33380070F9DF /* HHAPIConst.h in Headers */ = {isa = PBXBuildFile; fileRef = 0D56962B1D4A33380070F9DF /* HHAPIConst.h */; };
+		0D56967E1D4A33380070F9DF /* HHInterface.h in Headers */ = {isa = PBXBuildFile; fileRef = 0D56962F1D4A33380070F9DF /* HHInterface.h */; };
+		0D5696831D4A33380070F9DF /* HHBaseSession.h in Headers */ = {isa = PBXBuildFile; fileRef = 0D5696391D4A33380070F9DF /* HHBaseSession.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0D5696841D4A33380070F9DF /* HHBaseSession.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D56963A1D4A33380070F9DF /* HHBaseSession.m */; };
+		0D5696C41D4A38140070F9DF /* HHAuthSession.h in Headers */ = {isa = PBXBuildFile; fileRef = 0D5696C21D4A38140070F9DF /* HHAuthSession.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0D5696C51D4A38140070F9DF /* HHAuthSession.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D5696C31D4A38140070F9DF /* HHAuthSession.m */; };
+		3762CDB81F1C4B02005D2A5A /* CRMTececonfereceSession.h in Headers */ = {isa = PBXBuildFile; fileRef = 3762CDB61F1C4B02005D2A5A /* CRMTececonfereceSession.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3762CDB91F1C4B02005D2A5A /* CRMTececonfereceSession.m in Sources */ = {isa = PBXBuildFile; fileRef = 3762CDB71F1C4B02005D2A5A /* CRMTececonfereceSession.m */; };
+		37764BF61FA1F45A00107CF4 /* JTDWebURL.h in Headers */ = {isa = PBXBuildFile; fileRef = 37764BF41FA1F45A00107CF4 /* JTDWebURL.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		37764BF71FA1F45A00107CF4 /* JTDWebURL.m in Sources */ = {isa = PBXBuildFile; fileRef = 37764BF51FA1F45A00107CF4 /* JTDWebURL.m */; };
+		37764BFC1FA2CDE000107CF4 /* ICClientSession.h in Headers */ = {isa = PBXBuildFile; fileRef = 37764BFA1FA2CDE000107CF4 /* ICClientSession.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		37764BFD1FA2CDE000107CF4 /* ICClientSession.m in Sources */ = {isa = PBXBuildFile; fileRef = 37764BFB1FA2CDE000107CF4 /* ICClientSession.m */; };
+		37B604191FBD991B000879C8 /* ICUserCenterModel.h in Headers */ = {isa = PBXBuildFile; fileRef = 37B604171FBD9919000879C8 /* ICUserCenterModel.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		37B6041A1FBD991B000879C8 /* ICUserCenterModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 37B604181FBD9919000879C8 /* ICUserCenterModel.m */; };
+		37E3D47E1ED2CE9F00B89940 /* CRMHomeSession.h in Headers */ = {isa = PBXBuildFile; fileRef = 37E3D47C1ED2CE9F00B89940 /* CRMHomeSession.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		37E3D47F1ED2CE9F00B89940 /* CRMHomeSession.m in Sources */ = {isa = PBXBuildFile; fileRef = 37E3D47D1ED2CE9F00B89940 /* CRMHomeSession.m */; };
+		37E3D4801ED2D06500B89940 /* CRMHomeSession.m in Headers */ = {isa = PBXBuildFile; fileRef = 37E3D47D1ED2CE9F00B89940 /* CRMHomeSession.m */; };
+		37E3D4871ED30E8100B89940 /* HomeProject.h in Headers */ = {isa = PBXBuildFile; fileRef = 37E3D4851ED30E8100B89940 /* HomeProject.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		37E3D4881ED30E8100B89940 /* HomeProject.m in Sources */ = {isa = PBXBuildFile; fileRef = 37E3D4861ED30E8100B89940 /* HomeProject.m */; };
+		37E3D4B51ED91C1100B89940 /* CRMWorkSession.h in Headers */ = {isa = PBXBuildFile; fileRef = 37E3D4B31ED91C1100B89940 /* CRMWorkSession.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		37E3D4B61ED91C1100B89940 /* CRMWorkSession.m in Sources */ = {isa = PBXBuildFile; fileRef = 37E3D4B41ED91C1100B89940 /* CRMWorkSession.m */; };
+		37E3D4B91ED92FC200B89940 /* CRMWorkProject.h in Headers */ = {isa = PBXBuildFile; fileRef = 37E3D4B71ED92FC200B89940 /* CRMWorkProject.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		37E3D4BA1ED92FC200B89940 /* CRMWorkProject.m in Sources */ = {isa = PBXBuildFile; fileRef = 37E3D4B81ED92FC200B89940 /* CRMWorkProject.m */; };
+		3FDA6DBC2084891000E24778 /* libPods-HHNetworking.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FDA6DBB2084891000E24778 /* libPods-HHNetworking.a */; };
+		637ABE181D2E092500C0D8BB /* HHNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = 637ABE171D2E092500C0D8BB /* HHNetworking.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A13E29FC1ED67EFF00148FE5 /* CRMMineInfoSession.h in Headers */ = {isa = PBXBuildFile; fileRef = A13E29FA1ED67EFF00148FE5 /* CRMMineInfoSession.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A13E29FD1ED67EFF00148FE5 /* CRMMineInfoSession.m in Sources */ = {isa = PBXBuildFile; fileRef = A13E29FB1ED67EFF00148FE5 /* CRMMineInfoSession.m */; };
+		A141487720A454A200352E9B /* HHSecurityNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A141487620A454A200352E9B /* HHSecurityNetwork.framework */; };
+		ED0A123B1DEE97B000B2BDBB /* HHProjectSession.h in Headers */ = {isa = PBXBuildFile; fileRef = ED0A12391DEE97B000B2BDBB /* HHProjectSession.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		ED0A123C1DEE97B000B2BDBB /* HHProjectSession.m in Sources */ = {isa = PBXBuildFile; fileRef = ED0A123A1DEE97B000B2BDBB /* HHProjectSession.m */; };
+		ED1F31DF1DF55BC800B939B0 /* HHFileSession.h in Headers */ = {isa = PBXBuildFile; fileRef = ED1F31DD1DF55BC800B939B0 /* HHFileSession.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		ED1F31E01DF55BC800B939B0 /* HHFileSession.m in Sources */ = {isa = PBXBuildFile; fileRef = ED1F31DE1DF55BC800B939B0 /* HHFileSession.m */; };
+		ED214AC51DD19249001D4199 /* HHCalculateSession.h in Headers */ = {isa = PBXBuildFile; fileRef = ED214AC31DD19249001D4199 /* HHCalculateSession.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		ED214AC61DD19249001D4199 /* HHCalculateSession.m in Sources */ = {isa = PBXBuildFile; fileRef = ED214AC41DD19249001D4199 /* HHCalculateSession.m */; };
+		ED214ACB1DD1934D001D4199 /* HHCalculateResult.h in Headers */ = {isa = PBXBuildFile; fileRef = ED214AC71DD1934D001D4199 /* HHCalculateResult.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		ED214ACC1DD1934D001D4199 /* HHCalculateResult.m in Sources */ = {isa = PBXBuildFile; fileRef = ED214AC81DD1934D001D4199 /* HHCalculateResult.m */; };
+		ED214ACD1DD1934D001D4199 /* HHFinanceProduct.h in Headers */ = {isa = PBXBuildFile; fileRef = ED214AC91DD1934D001D4199 /* HHFinanceProduct.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		ED214ACE1DD1934D001D4199 /* HHFinanceProduct.m in Sources */ = {isa = PBXBuildFile; fileRef = ED214ACA1DD1934D001D4199 /* HHFinanceProduct.m */; };
+		ED4DDE711DD5B7CB00C1552E /* HHBusinessPresentModel.h in Headers */ = {isa = PBXBuildFile; fileRef = ED4DDE6F1DD5B7CB00C1552E /* HHBusinessPresentModel.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		ED4DDE721DD5B7CB00C1552E /* HHBusinessPresentModel.m in Sources */ = {isa = PBXBuildFile; fileRef = ED4DDE701DD5B7CB00C1552E /* HHBusinessPresentModel.m */; };
+		ED8BAB141DEEAEFB009CC662 /* HHProject.h in Headers */ = {isa = PBXBuildFile; fileRef = ED8BAB121DEEAEFB009CC662 /* HHProject.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		ED8BAB151DEEAEFB009CC662 /* HHProject.m in Sources */ = {isa = PBXBuildFile; fileRef = ED8BAB131DEEAEFB009CC662 /* HHProject.m */; };
+		ED8DB25A1DC1BD260037B5B8 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED8DB2591DC1BD260037B5B8 /* Security.framework */; };
+		EDBD2FF31DB9DA100063417E /* HHSessionManager.h in Headers */ = {isa = PBXBuildFile; fileRef = EDBD2FF11DB9DA100063417E /* HHSessionManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EDBD2FF41DB9DA100063417E /* HHSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = EDBD2FF21DB9DA100063417E /* HHSessionManager.m */; };
+		EDC0F4671DF811F300D1AB01 /* HHCustomerCellItem.h in Headers */ = {isa = PBXBuildFile; fileRef = EDC0F4651DF811F300D1AB01 /* HHCustomerCellItem.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EDC0F4681DF811F300D1AB01 /* HHCustomerCellItem.m in Sources */ = {isa = PBXBuildFile; fileRef = EDC0F4661DF811F300D1AB01 /* HHCustomerCellItem.m */; };
+		F22A8F13216B55EB007CB5F3 /* HHClient.m in Sources */ = {isa = PBXBuildFile; fileRef = F23A8C43216B26AA009549B1 /* HHClient.m */; };
+		F23A8C46216B26AA009549B1 /* HHClient.h in Headers */ = {isa = PBXBuildFile; fileRef = F23A8C44216B26AA009549B1 /* HHClient.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F2F457721DD17655000FCDE2 /* HHVehicleSession.h in Headers */ = {isa = PBXBuildFile; fileRef = F2F457701DD17655000FCDE2 /* HHVehicleSession.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F2F457731DD17655000FCDE2 /* HHVehicleSession.m in Sources */ = {isa = PBXBuildFile; fileRef = F2F457711DD17655000FCDE2 /* HHVehicleSession.m */; };
+		F2F457761DD17FF5000FCDE2 /* HHCar.h in Headers */ = {isa = PBXBuildFile; fileRef = F2F457741DD17FF5000FCDE2 /* HHCar.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F2F457771DD17FF5000FCDE2 /* HHCar.m in Sources */ = {isa = PBXBuildFile; fileRef = F2F457751DD17FF5000FCDE2 /* HHCar.m */; };
+		FA23BADC1DCC5977007B92DB /* HHUserInfo.h in Headers */ = {isa = PBXBuildFile; fileRef = FA23BADA1DCC5976007B92DB /* HHUserInfo.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FA23BADD1DCC5977007B92DB /* HHUserInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = FA23BADB1DCC5976007B92DB /* HHUserInfo.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		0D56962B1D4A33380070F9DF /* HHAPIConst.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HHAPIConst.h; sourceTree = "<group>"; };
+		0D56962F1D4A33380070F9DF /* HHInterface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HHInterface.h; sourceTree = "<group>"; };
+		0D5696391D4A33380070F9DF /* HHBaseSession.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HHBaseSession.h; sourceTree = "<group>"; };
+		0D56963A1D4A33380070F9DF /* HHBaseSession.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HHBaseSession.m; sourceTree = "<group>"; };
+		0D5696C11D4A376D0070F9DF /* HHPrivateHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HHPrivateHeader.h; sourceTree = "<group>"; };
+		0D5696C21D4A38140070F9DF /* HHAuthSession.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HHAuthSession.h; sourceTree = "<group>"; };
+		0D5696C31D4A38140070F9DF /* HHAuthSession.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HHAuthSession.m; sourceTree = "<group>"; };
+		373B84751F3C046A00F65132 /* MPServerConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MPServerConfig.h; sourceTree = "<group>"; };
+		3762CDB61F1C4B02005D2A5A /* CRMTececonfereceSession.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRMTececonfereceSession.h; sourceTree = "<group>"; };
+		3762CDB71F1C4B02005D2A5A /* CRMTececonfereceSession.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRMTececonfereceSession.m; sourceTree = "<group>"; };
+		37764BF41FA1F45A00107CF4 /* JTDWebURL.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JTDWebURL.h; sourceTree = "<group>"; };
+		37764BF51FA1F45A00107CF4 /* JTDWebURL.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JTDWebURL.m; sourceTree = "<group>"; };
+		37764BFA1FA2CDE000107CF4 /* ICClientSession.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ICClientSession.h; sourceTree = "<group>"; };
+		37764BFB1FA2CDE000107CF4 /* ICClientSession.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ICClientSession.m; sourceTree = "<group>"; };
+		37B604171FBD9919000879C8 /* ICUserCenterModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ICUserCenterModel.h; sourceTree = "<group>"; };
+		37B604181FBD9919000879C8 /* ICUserCenterModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ICUserCenterModel.m; sourceTree = "<group>"; };
+		37E3D47C1ED2CE9F00B89940 /* CRMHomeSession.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRMHomeSession.h; sourceTree = "<group>"; };
+		37E3D47D1ED2CE9F00B89940 /* CRMHomeSession.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRMHomeSession.m; sourceTree = "<group>"; };
+		37E3D4851ED30E8100B89940 /* HomeProject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeProject.h; sourceTree = "<group>"; };
+		37E3D4861ED30E8100B89940 /* HomeProject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeProject.m; sourceTree = "<group>"; };
+		37E3D4B31ED91C1100B89940 /* CRMWorkSession.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRMWorkSession.h; sourceTree = "<group>"; };
+		37E3D4B41ED91C1100B89940 /* CRMWorkSession.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRMWorkSession.m; sourceTree = "<group>"; };
+		37E3D4B71ED92FC200B89940 /* CRMWorkProject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRMWorkProject.h; sourceTree = "<group>"; };
+		37E3D4B81ED92FC200B89940 /* CRMWorkProject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRMWorkProject.m; sourceTree = "<group>"; };
+		3FDA6DBB2084891000E24778 /* libPods-HHNetworking.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = "libPods-HHNetworking.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		637ABE141D2E092500C0D8BB /* HHNetworking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = HHNetworking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		637ABE171D2E092500C0D8BB /* HHNetworking.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HHNetworking.h; sourceTree = "<group>"; };
+		637ABE191D2E092500C0D8BB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A13E29FA1ED67EFF00148FE5 /* CRMMineInfoSession.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRMMineInfoSession.h; sourceTree = "<group>"; };
+		A13E29FB1ED67EFF00148FE5 /* CRMMineInfoSession.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRMMineInfoSession.m; sourceTree = "<group>"; };
+		A141487620A454A200352E9B /* HHSecurityNetwork.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = HHSecurityNetwork.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C799F567FDB8696859A3202D /* Pods-HHNetworking.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HHNetworking.debug.xcconfig"; path = "../Pods/Target Support Files/Pods-HHNetworking/Pods-HHNetworking.debug.xcconfig"; sourceTree = "<group>"; };
+		D92096C19507E9FED831B77A /* Pods-HHNetworking.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HHNetworking.release.xcconfig"; path = "../Pods/Target Support Files/Pods-HHNetworking/Pods-HHNetworking.release.xcconfig"; sourceTree = "<group>"; };
+		ED0A12391DEE97B000B2BDBB /* HHProjectSession.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HHProjectSession.h; sourceTree = "<group>"; };
+		ED0A123A1DEE97B000B2BDBB /* HHProjectSession.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HHProjectSession.m; sourceTree = "<group>"; };
+		ED1F31DD1DF55BC800B939B0 /* HHFileSession.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HHFileSession.h; sourceTree = "<group>"; };
+		ED1F31DE1DF55BC800B939B0 /* HHFileSession.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HHFileSession.m; sourceTree = "<group>"; };
+		ED214AC31DD19249001D4199 /* HHCalculateSession.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HHCalculateSession.h; sourceTree = "<group>"; };
+		ED214AC41DD19249001D4199 /* HHCalculateSession.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HHCalculateSession.m; sourceTree = "<group>"; };
+		ED214AC71DD1934D001D4199 /* HHCalculateResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HHCalculateResult.h; sourceTree = "<group>"; };
+		ED214AC81DD1934D001D4199 /* HHCalculateResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HHCalculateResult.m; sourceTree = "<group>"; };
+		ED214AC91DD1934D001D4199 /* HHFinanceProduct.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HHFinanceProduct.h; sourceTree = "<group>"; };
+		ED214ACA1DD1934D001D4199 /* HHFinanceProduct.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HHFinanceProduct.m; sourceTree = "<group>"; };
+		ED4DDE6F1DD5B7CB00C1552E /* HHBusinessPresentModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HHBusinessPresentModel.h; sourceTree = "<group>"; };
+		ED4DDE701DD5B7CB00C1552E /* HHBusinessPresentModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HHBusinessPresentModel.m; sourceTree = "<group>"; };
+		ED8BAB121DEEAEFB009CC662 /* HHProject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HHProject.h; sourceTree = "<group>"; };
+		ED8BAB131DEEAEFB009CC662 /* HHProject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HHProject.m; sourceTree = "<group>"; };
+		ED8DB2591DC1BD260037B5B8 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		EDBD2FF11DB9DA100063417E /* HHSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HHSessionManager.h; sourceTree = "<group>"; };
+		EDBD2FF21DB9DA100063417E /* HHSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HHSessionManager.m; sourceTree = "<group>"; };
+		EDC0F4651DF811F300D1AB01 /* HHCustomerCellItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HHCustomerCellItem.h; sourceTree = "<group>"; };
+		EDC0F4661DF811F300D1AB01 /* HHCustomerCellItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HHCustomerCellItem.m; sourceTree = "<group>"; };
+		F23A8C43216B26AA009549B1 /* HHClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HHClient.m; sourceTree = "<group>"; };
+		F23A8C44216B26AA009549B1 /* HHClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HHClient.h; sourceTree = "<group>"; };
+		F2F457701DD17655000FCDE2 /* HHVehicleSession.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HHVehicleSession.h; sourceTree = "<group>"; };
+		F2F457711DD17655000FCDE2 /* HHVehicleSession.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HHVehicleSession.m; sourceTree = "<group>"; };
+		F2F457741DD17FF5000FCDE2 /* HHCar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HHCar.h; sourceTree = "<group>"; };
+		F2F457751DD17FF5000FCDE2 /* HHCar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HHCar.m; sourceTree = "<group>"; };
+		FA23BADA1DCC5976007B92DB /* HHUserInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HHUserInfo.h; sourceTree = "<group>"; };
+		FA23BADB1DCC5976007B92DB /* HHUserInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HHUserInfo.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		637ABE101D2E092500C0D8BB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A141487720A454A200352E9B /* HHSecurityNetwork.framework in Frameworks */,
+				3FDA6DBC2084891000E24778 /* libPods-HHNetworking.a in Frameworks */,
+				ED8DB25A1DC1BD260037B5B8 /* Security.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0D56962A1D4A33380070F9DF /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				0D56962B1D4A33380070F9DF /* HHAPIConst.h */,
+				373B84751F3C046A00F65132 /* MPServerConfig.h */,
+				37764BF41FA1F45A00107CF4 /* JTDWebURL.h */,
+				37764BF51FA1F45A00107CF4 /* JTDWebURL.m */,
+			);
+			path = Config;
+			sourceTree = "<group>";
+		};
+		0D56962E1D4A33380070F9DF /* Private */ = {
+			isa = PBXGroup;
+			children = (
+				0D56962F1D4A33380070F9DF /* HHInterface.h */,
+				0D5696C11D4A376D0070F9DF /* HHPrivateHeader.h */,
+			);
+			path = Private;
+			sourceTree = "<group>";
+		};
+		0D5696301D4A33380070F9DF /* Public */ = {
+			isa = PBXGroup;
+			children = (
+				0D5696311D4A33380070F9DF /* Model */,
+				0D5696371D4A33380070F9DF /* Session */,
+			);
+			path = Public;
+			sourceTree = "<group>";
+		};
+		0D5696311D4A33380070F9DF /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				37B604171FBD9919000879C8 /* ICUserCenterModel.h */,
+				37B604181FBD9919000879C8 /* ICUserCenterModel.m */,
+				37E3D4851ED30E8100B89940 /* HomeProject.h */,
+				37E3D4861ED30E8100B89940 /* HomeProject.m */,
+				37E3D4B71ED92FC200B89940 /* CRMWorkProject.h */,
+				37E3D4B81ED92FC200B89940 /* CRMWorkProject.m */,
+				F2F457741DD17FF5000FCDE2 /* HHCar.h */,
+				F2F457751DD17FF5000FCDE2 /* HHCar.m */,
+				ED4DDE6F1DD5B7CB00C1552E /* HHBusinessPresentModel.h */,
+				ED4DDE701DD5B7CB00C1552E /* HHBusinessPresentModel.m */,
+				ED214AC71DD1934D001D4199 /* HHCalculateResult.h */,
+				ED214AC81DD1934D001D4199 /* HHCalculateResult.m */,
+				ED214AC91DD1934D001D4199 /* HHFinanceProduct.h */,
+				ED214ACA1DD1934D001D4199 /* HHFinanceProduct.m */,
+				FA23BADA1DCC5976007B92DB /* HHUserInfo.h */,
+				FA23BADB1DCC5976007B92DB /* HHUserInfo.m */,
+				ED8BAB121DEEAEFB009CC662 /* HHProject.h */,
+				ED8BAB131DEEAEFB009CC662 /* HHProject.m */,
+				EDC0F4651DF811F300D1AB01 /* HHCustomerCellItem.h */,
+				EDC0F4661DF811F300D1AB01 /* HHCustomerCellItem.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		0D5696371D4A33380070F9DF /* Session */ = {
+			isa = PBXGroup;
+			children = (
+				0D5696381D4A33380070F9DF /* Core */,
+				0D56963B1D4A33380070F9DF /* Extension */,
+			);
+			path = Session;
+			sourceTree = "<group>";
+		};
+		0D5696381D4A33380070F9DF /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				0D5696391D4A33380070F9DF /* HHBaseSession.h */,
+				0D56963A1D4A33380070F9DF /* HHBaseSession.m */,
+				EDBD2FF11DB9DA100063417E /* HHSessionManager.h */,
+				EDBD2FF21DB9DA100063417E /* HHSessionManager.m */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		0D56963B1D4A33380070F9DF /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				37764BFA1FA2CDE000107CF4 /* ICClientSession.h */,
+				37764BFB1FA2CDE000107CF4 /* ICClientSession.m */,
+				0D5696C21D4A38140070F9DF /* HHAuthSession.h */,
+				0D5696C31D4A38140070F9DF /* HHAuthSession.m */,
+				37E3D4B31ED91C1100B89940 /* CRMWorkSession.h */,
+				37E3D4B41ED91C1100B89940 /* CRMWorkSession.m */,
+				3762CDB61F1C4B02005D2A5A /* CRMTececonfereceSession.h */,
+				3762CDB71F1C4B02005D2A5A /* CRMTececonfereceSession.m */,
+				37E3D47C1ED2CE9F00B89940 /* CRMHomeSession.h */,
+				37E3D47D1ED2CE9F00B89940 /* CRMHomeSession.m */,
+				A13E29FA1ED67EFF00148FE5 /* CRMMineInfoSession.h */,
+				A13E29FB1ED67EFF00148FE5 /* CRMMineInfoSession.m */,
+				F2F457701DD17655000FCDE2 /* HHVehicleSession.h */,
+				F2F457711DD17655000FCDE2 /* HHVehicleSession.m */,
+				ED214AC31DD19249001D4199 /* HHCalculateSession.h */,
+				ED214AC41DD19249001D4199 /* HHCalculateSession.m */,
+				ED0A12391DEE97B000B2BDBB /* HHProjectSession.h */,
+				ED0A123A1DEE97B000B2BDBB /* HHProjectSession.m */,
+				ED1F31DD1DF55BC800B939B0 /* HHFileSession.h */,
+				ED1F31DE1DF55BC800B939B0 /* HHFileSession.m */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		637ABE0A1D2E092500C0D8BB = {
+			isa = PBXGroup;
+			children = (
+				637ABE161D2E092500C0D8BB /* HHNetworking */,
+				637ABE151D2E092500C0D8BB /* Products */,
+				ED8DB2581DC1BD260037B5B8 /* Frameworks */,
+				E0AD39F6D3189A6D80527FBB /* Pods */,
+			);
+			sourceTree = "<group>";
+		};
+		637ABE151D2E092500C0D8BB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				637ABE141D2E092500C0D8BB /* HHNetworking.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		637ABE161D2E092500C0D8BB /* HHNetworking */ = {
+			isa = PBXGroup;
+			children = (
+				F23A8C44216B26AA009549B1 /* HHClient.h */,
+				F23A8C43216B26AA009549B1 /* HHClient.m */,
+				0D56962A1D4A33380070F9DF /* Config */,
+				0D56962E1D4A33380070F9DF /* Private */,
+				0D5696301D4A33380070F9DF /* Public */,
+				637ABE171D2E092500C0D8BB /* HHNetworking.h */,
+				637ABE191D2E092500C0D8BB /* Info.plist */,
+			);
+			path = HHNetworking;
+			sourceTree = "<group>";
+		};
+		E0AD39F6D3189A6D80527FBB /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C799F567FDB8696859A3202D /* Pods-HHNetworking.debug.xcconfig */,
+				D92096C19507E9FED831B77A /* Pods-HHNetworking.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		ED8DB2581DC1BD260037B5B8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A141487620A454A200352E9B /* HHSecurityNetwork.framework */,
+				3FDA6DBB2084891000E24778 /* libPods-HHNetworking.a */,
+				ED8DB2591DC1BD260037B5B8 /* Security.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		637ABE111D2E092500C0D8BB /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F23A8C46216B26AA009549B1 /* HHClient.h in Headers */,
+				37B604191FBD991B000879C8 /* ICUserCenterModel.h in Headers */,
+				37764BFC1FA2CDE000107CF4 /* ICClientSession.h in Headers */,
+				37764BF61FA1F45A00107CF4 /* JTDWebURL.h in Headers */,
+				3762CDB81F1C4B02005D2A5A /* CRMTececonfereceSession.h in Headers */,
+				37E3D4B91ED92FC200B89940 /* CRMWorkProject.h in Headers */,
+				37E3D4B51ED91C1100B89940 /* CRMWorkSession.h in Headers */,
+				A13E29FC1ED67EFF00148FE5 /* CRMMineInfoSession.h in Headers */,
+				37E3D4871ED30E8100B89940 /* HomeProject.h in Headers */,
+				37E3D47E1ED2CE9F00B89940 /* CRMHomeSession.h in Headers */,
+				EDC0F4671DF811F300D1AB01 /* HHCustomerCellItem.h in Headers */,
+				ED1F31DF1DF55BC800B939B0 /* HHFileSession.h in Headers */,
+				ED8BAB141DEEAEFB009CC662 /* HHProject.h in Headers */,
+				ED0A123B1DEE97B000B2BDBB /* HHProjectSession.h in Headers */,
+				ED4DDE711DD5B7CB00C1552E /* HHBusinessPresentModel.h in Headers */,
+				ED214AC51DD19249001D4199 /* HHCalculateSession.h in Headers */,
+				F2F457761DD17FF5000FCDE2 /* HHCar.h in Headers */,
+				F2F457721DD17655000FCDE2 /* HHVehicleSession.h in Headers */,
+				ED214ACB1DD1934D001D4199 /* HHCalculateResult.h in Headers */,
+				ED214ACD1DD1934D001D4199 /* HHFinanceProduct.h in Headers */,
+				FA23BADC1DCC5977007B92DB /* HHUserInfo.h in Headers */,
+				EDBD2FF31DB9DA100063417E /* HHSessionManager.h in Headers */,
+				0D5696831D4A33380070F9DF /* HHBaseSession.h in Headers */,
+				0D5696C41D4A38140070F9DF /* HHAuthSession.h in Headers */,
+				37E3D4801ED2D06500B89940 /* CRMHomeSession.m in Headers */,
+				0D56967E1D4A33380070F9DF /* HHInterface.h in Headers */,
+				637ABE181D2E092500C0D8BB /* HHNetworking.h in Headers */,
+				0D56967B1D4A33380070F9DF /* HHAPIConst.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		637ABE131D2E092500C0D8BB /* HHNetworking */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 637ABE281D2E092500C0D8BB /* Build configuration list for PBXNativeTarget "HHNetworking" */;
+			buildPhases = (
+				0BDE80121FBDE12969C6C476 /* [CP] Check Pods Manifest.lock */,
+				637ABE0F1D2E092500C0D8BB /* Sources */,
+				637ABE101D2E092500C0D8BB /* Frameworks */,
+				637ABE111D2E092500C0D8BB /* Headers */,
+				637ABE121D2E092500C0D8BB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = HHNetworking;
+			productName = HHNetworking;
+			productReference = 637ABE141D2E092500C0D8BB /* HHNetworking.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		637ABE0B1D2E092500C0D8BB /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0930;
+				ORGANIZATIONNAME = HHAuto;
+				TargetAttributes = {
+					637ABE131D2E092500C0D8BB = {
+						CreatedOnToolsVersion = 7.3.1;
+						ProvisioningStyle = Manual;
+					};
+					637ABE2F1D2E0B4600C0D8BB = {
+						CreatedOnToolsVersion = 7.3.1;
+					};
+				};
+			};
+			buildConfigurationList = 637ABE0E1D2E092500C0D8BB /* Build configuration list for PBXProject "HHNetworking" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 637ABE0A1D2E092500C0D8BB;
+			productRefGroup = 637ABE151D2E092500C0D8BB /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				637ABE131D2E092500C0D8BB /* HHNetworking */,
+				637ABE2F1D2E0B4600C0D8BB /* HHNetworkScript */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		637ABE121D2E092500C0D8BB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0BDE80121FBDE12969C6C476 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-HHNetworking-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		637ABE331D2E0B5400C0D8BB /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# 如果工程名称和Framework的Target名称不一样的话，要自定义FMKNAME\n# 例如: FMK_NAME = \"MyFramework\"\nFMK_NAME=${PROJECT_NAME}\n\n# 最后合成framework的文件目录\nINSTALL_DIR=${SRCROOT}/HH_FMW_PRODUCTS/${FMK_NAME}.framework\n\n# 编译完成后生成的真机环境和模拟器环境的framework文件目录\nWRK_DIR=build\nDEVICE_DIR=${WRK_DIR}/Release-iphoneos/${FMK_NAME}.framework\nSIMULATOR_DIR=${WRK_DIR}/Release-iphonesimulator/${FMK_NAME}.framework\n# -configuration ${CONFIGURATION}\n\n# 编译真机环境和模拟器环境\nxcodebuild -configuration \"Release\" -target \"${FMK_NAME}\" -sdk iphoneos clean build\n\nxcodebuild -configuration \"Release\" -target \"${FMK_NAME}\" -sdk iphonesimulator clean build\n#xcodebuild -target \"HHNetworking\" -configuration \"Release\" -project \"HHNetworking.xcodeproj\" -sdk iphonesimulator ARCHS=\"i386 x86_64\" VALID_ARCHS=\"i386 x86_64\" clean build\n\n#xcodebuild -target \"HHNetworking\" -configuration \"Release\" -project \"HHNetworking.xcodeproj\" -sdk iphoneos ARCHS=\"armv7 armv7s arm64\" VALID_ARCHS=\"armv7 armv7s arm64\" clean build\n# 将旧的framework删掉\nif [ -d \"${INSTALL_DIR}\" ]\nthen\nrm -rf \"${INSTALL_DIR}\"\nfi\n\n# 创建一个新的framework文件目录\nmkdir -p \"${INSTALL_DIR}\"\n\n# 将真机环境下编译完成的framework copy到最后合成的目录下\ncp -R \"${DEVICE_DIR}/\" \"${INSTALL_DIR}/\"\n# 将真机环境下的framework和模拟器环境下的framework合并 (i386 + armv6/armv7) 生成最终的文件\n\nlipo -create \"${DEVICE_DIR}/${FMK_NAME}\" \"${SIMULATOR_DIR}/${FMK_NAME}\" -output \"${INSTALL_DIR}/${FMK_NAME}\"\n\nrm -r \"${WRK_DIR}\"\n#打开合成的framework\n\n#open \"${INSTALL_DIR}\"\n\n\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		637ABE0F1D2E092500C0D8BB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F22A8F13216B55EB007CB5F3 /* HHClient.m in Sources */,
+				ED1F31E01DF55BC800B939B0 /* HHFileSession.m in Sources */,
+				ED0A123C1DEE97B000B2BDBB /* HHProjectSession.m in Sources */,
+				37E3D4881ED30E8100B89940 /* HomeProject.m in Sources */,
+				37B6041A1FBD991B000879C8 /* ICUserCenterModel.m in Sources */,
+				F2F457771DD17FF5000FCDE2 /* HHCar.m in Sources */,
+				ED4DDE721DD5B7CB00C1552E /* HHBusinessPresentModel.m in Sources */,
+				37E3D47F1ED2CE9F00B89940 /* CRMHomeSession.m in Sources */,
+				37E3D4B61ED91C1100B89940 /* CRMWorkSession.m in Sources */,
+				3762CDB91F1C4B02005D2A5A /* CRMTececonfereceSession.m in Sources */,
+				37E3D4BA1ED92FC200B89940 /* CRMWorkProject.m in Sources */,
+				EDBD2FF41DB9DA100063417E /* HHSessionManager.m in Sources */,
+				37764BFD1FA2CDE000107CF4 /* ICClientSession.m in Sources */,
+				EDC0F4681DF811F300D1AB01 /* HHCustomerCellItem.m in Sources */,
+				ED214AC61DD19249001D4199 /* HHCalculateSession.m in Sources */,
+				ED214ACE1DD1934D001D4199 /* HHFinanceProduct.m in Sources */,
+				ED214ACC1DD1934D001D4199 /* HHCalculateResult.m in Sources */,
+				0D5696841D4A33380070F9DF /* HHBaseSession.m in Sources */,
+				FA23BADD1DCC5977007B92DB /* HHUserInfo.m in Sources */,
+				0D5696C51D4A38140070F9DF /* HHAuthSession.m in Sources */,
+				ED8BAB151DEEAEFB009CC662 /* HHProject.m in Sources */,
+				37764BF71FA1F45A00107CF4 /* JTDWebURL.m in Sources */,
+				F2F457731DD17655000FCDE2 /* HHVehicleSession.m in Sources */,
+				A13E29FD1ED67EFF00148FE5 /* CRMMineInfoSession.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		637ABE261D2E092500C0D8BB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_BITCODE = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MACH_O_TYPE = staticlib;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		637ABE271D2E092500C0D8BB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_BITCODE = NO;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MACH_O_TYPE = staticlib;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		637ABE291D2E092500C0D8BB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C799F567FDB8696859A3202D /* Pods-HHNetworking.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = "";
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/HHNetworking",
+					"$(PROJECT_DIR)/HHSecurityNetwork/HH_FMW_PRODUCTS",
+				);
+				GCC_PREFIX_HEADER = "";
+				GCC_WARN_INHIBIT_ALL_WARNINGS = YES;
+				INFOPLIST_FILE = HHNetworking/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LINK_WITH_STANDARD_LIBRARIES = YES;
+				MACH_O_TYPE = staticlib;
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"$(inherited)",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.honghongauto.HHNetworking;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALID_ARCHS = "arm64 armv7 armv7s x86_64 i386";
+			};
+			name = Debug;
+		};
+		637ABE2A1D2E092500C0D8BB /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D92096C19507E9FED831B77A /* Pods-HHNetworking.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Manual;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = "";
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/HHNetworking",
+					"$(PROJECT_DIR)/HHSecurityNetwork/HH_FMW_PRODUCTS",
+				);
+				GCC_PREFIX_HEADER = "";
+				GCC_WARN_INHIBIT_ALL_WARNINGS = YES;
+				INFOPLIST_FILE = HHNetworking/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LINK_WITH_STANDARD_LIBRARIES = YES;
+				MACH_O_TYPE = staticlib;
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"$(inherited)",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.honghongauto.HHNetworking;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALID_ARCHS = "arm64 armv7 armv7s x86_64 i386";
+			};
+			name = Release;
+		};
+		637ABE311D2E0B4600C0D8BB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				DEAD_CODE_STRIPPING = YES;
+				ENABLE_BITCODE = NO;
+				MACH_O_TYPE = staticlib;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				VALID_ARCHS = "arm64 armv7 armv7s";
+			};
+			name = Debug;
+		};
+		637ABE321D2E0B4600C0D8BB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				DEAD_CODE_STRIPPING = YES;
+				ENABLE_BITCODE = NO;
+				MACH_O_TYPE = staticlib;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				VALID_ARCHS = "arm64 armv7 armv7s";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		637ABE0E1D2E092500C0D8BB /* Build configuration list for PBXProject "HHNetworking" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				637ABE261D2E092500C0D8BB /* Debug */,
+				637ABE271D2E092500C0D8BB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		637ABE281D2E092500C0D8BB /* Build configuration list for PBXNativeTarget "HHNetworking" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				637ABE291D2E092500C0D8BB /* Debug */,
+				637ABE2A1D2E092500C0D8BB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		637ABE301D2E0B4600C0D8BB /* Build configuration list for PBXAggregateTarget "HHNetworkScript" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				637ABE311D2E0B4600C0D8BB /* Debug */,
+				637ABE321D2E0B4600C0D8BB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 637ABE0B1D2E092500C0D8BB /* Project object */;
+}

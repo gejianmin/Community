@@ -128,16 +128,8 @@
         // 设置代理，如果不需要实现，可以不设置
         [_jsBridge setWebViewDelegate:self];
     [self registerJavaScriptHandler];
-//    NSString * token = [[[HHClient sharedInstance]user] token];
-//    NSString * vid = [[[HHClient sharedInstance]user] vid];
-//    NSString * lat = [NSString stringWithFormat:@"%.6f",[[[HHClient sharedInstance]user] lat]];
-//    NSString * lng = [NSString stringWithFormat:@"%.6f",[[[HHClient sharedInstance]user] lng]];
+
     [self.webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:Quarter_HTML5]]];
-//    [self.webView evaluateJavaScript:[NSString stringWithFormat:@"localStorage.setItem('token','%@')", token] completionHandler:nil];
-//    [self.webView evaluateJavaScript:[NSString stringWithFormat:@"localStorage.setItem('vid','%@')", vid] completionHandler:nil];
-//    [self.webView evaluateJavaScript:[NSString stringWithFormat:@"localStorage.setItem('lat','%@')", lat] completionHandler:nil];
-//    [self.webView evaluateJavaScript:[NSString stringWithFormat:@"localStorage.setItem('lng','%@')", lng] completionHandler:nil];
-//
     
 }
 - (void)back{
@@ -168,10 +160,10 @@
 //
 //        }
     }];
-    NSString * token = [[[HHClient sharedInstance]user] token];
-    NSString * vid = [[[HHClient sharedInstance]user] vid];
-    NSString * lat = [NSString stringWithFormat:@"%.6f",[[[HHClient sharedInstance]user] lat]];
-    NSString * lng = [NSString stringWithFormat:@"%.6f",[[[HHClient sharedInstance]user] lng]];
+    NSString * token = [[[HHComlient sharedInstance]user] token];
+    NSString * vid = [[[HHComlient sharedInstance]user] vid];
+    NSString * lat = [NSString stringWithFormat:@"%.6f",[[[HHComlient sharedInstance]user] lat]];
+    NSString * lng = [NSString stringWithFormat:@"%.6f",[[[HHComlient sharedInstance]user] lng]];
     [self.webView evaluateJavaScript:[NSString stringWithFormat:@"localStorage.setItem('token','%@')", token] completionHandler:nil];
     [self.webView evaluateJavaScript:[NSString stringWithFormat:@"localStorage.setItem('vid','%@')", vid] completionHandler:nil];
     [self.webView evaluateJavaScript:[NSString stringWithFormat:@"localStorage.setItem('lat','%@')", lat] completionHandler:nil];

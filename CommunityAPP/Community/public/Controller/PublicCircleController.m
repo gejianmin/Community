@@ -100,7 +100,7 @@
     __weak typeof(self) tyself = self;
     InforVillage_CarouselRequest *request = [[InforVillage_CarouselRequest alloc] init];
     
-    NSString *ord_ID = [[HHClient sharedInstance] user].vid;
+    NSString *ord_ID = [[HHComlient sharedInstance] user].vid;
     [request InforVillage_CarouselRequestWithID:ord_ID];
     [request setFinishedBlock:^(id object, id responseData) {
         [self hideHUD];

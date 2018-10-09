@@ -118,7 +118,7 @@ typedef NS_ENUM(NSInteger,RefreshState) {
     __weak typeof(self) tyself = self;
     InterAPPButtonRequest *request = [[InterAPPButtonRequest alloc] init];
     
-    NSString *ord_ID = [[HHClient sharedInstance] user].vid;
+    NSString *ord_ID = [[HHComlient sharedInstance] user].vid;
     [request interAPPButtonRequestWithID:ord_ID];
     [request setFinishedBlock:^(id object, id responseData) {
         
@@ -194,8 +194,8 @@ typedef NS_ENUM(NSInteger,RefreshState) {
     __weak typeof(self) tyself = self;
     InterNearPostRequest *request = [[InterNearPostRequest alloc] init];
     
-    CGFloat lng = [[HHClient sharedInstance] user].lng;
-    CGFloat lat = [[HHClient sharedInstance] user].lat;
+    CGFloat lng = [[HHComlient sharedInstance] user].lng;
+    CGFloat lat = [[HHComlient sharedInstance] user].lat;
     
     CGFloat miters = 0;
     if ([_rightTitle containsString:@"3"]) {
@@ -240,7 +240,7 @@ typedef NS_ENUM(NSInteger,RefreshState) {
     __weak typeof(self) tyself = self;
     InterCarouseRequest *request = [[InterCarouseRequest alloc] init];
     
-    NSString *ord_ID = [[HHClient sharedInstance] user].vid;
+    NSString *ord_ID = [[HHComlient sharedInstance] user].vid;
     [request interCarouseRequestWithID:ord_ID];
     [request setFinishedBlock:^(id object, id responseData) {
         
@@ -554,15 +554,9 @@ typedef NS_ENUM(NSInteger,RefreshState) {
     [CheckInViewController presentControllerWith:self callBack:^(NSInteger btnTag) {
         if (btnTag == hudongType) {
 //            [self enterCommunity];
-            [InterPostViewController pushController:self topicListArray:self.topicListArray postType:PostType_LinLiQuan];
-
+            [InterPostViewController pushController:self topicListArray:self.topicListArray postType:PostType_LinLiQuan topicId:@""];
         }else{//交易
-//                InterPostViewController *vc = [[InterPostViewController alloc] init];
-//                vc.topicListArray = self.topicListArray;
-//
-//                vc.hidesBottomBarWhenPushed = YES;
-//                [self.navigationController pushViewController:vc animated:YES];
-            [InterPostViewController pushController:self topicListArray:self.topicListArray postType:PostType_ErShou];
+            [InterPostViewController pushController:self topicListArray:self.topicListArray postType:PostType_ErShou topicId:_topic_id];
         }
     }];
 }

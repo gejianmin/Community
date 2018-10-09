@@ -15,6 +15,7 @@
 #import "AppDelegateTool.h"
 #import "ELCImagePickerController.h"
 #import "GSAPublishModel.h"
+#import "PPNetworkHelper.h"
 @interface InterPostViewDataSource ()<UITableViewDelegate,UITableViewDataSource,InterPostInfoCellDelegate,InterPostDescCellDelagate,ELCImagePickerControllerDelegate>
 {
     NSString * _titleText;
@@ -27,14 +28,15 @@
 @property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic, strong) NSMutableDictionary *postDic;
 @property (nonatomic, strong) NSMutableArray *picArray;
+@property (nonatomic, strong) NSMutableArray *picPathArray;
+
 
 @end
 
 @implementation InterPostViewDataSource
 
-//- (instancetype)init{
 - (instancetype)initWithType:(PostType )controllerType{
-
+    
     if (self = [super init]) {
         self.controllerType = controllerType;
         if (controllerType == PostType_LinLiQuan) {
@@ -150,6 +152,7 @@
     }
 }
 - (void)addButtonDidTap:(NSInteger)picCount{
+    
     UIViewController *vc = [AppDelegateTool topViewController];
     ELCImagePickerController *elcPicker = [[ELCImagePickerController alloc] initImagePicker];
     elcPicker.imagePickerDelegate  = self;
@@ -167,12 +170,21 @@
 {
     UIViewController *vc = [AppDelegateTool topViewController];
     [vc dismissViewControllerAnimated:YES completion:^{
-        NSMutableArray *array = [NSMutableArray array];
         for (NSDictionary *dic in info) {
             UIImage *image = dic[UIImagePickerControllerOriginalImage];
-            [array addObject:image];
             [self.picArray addObject:image];
-            [self.dataSourceDictionary setValue:self.picArray forKey:@"photos"];
+            NSString * url = [NSString stringWithFormat:@"%@%@",URI_MAIN,inter_path_postPicture];
+            [PPNetworkHelper uploadImagesWithURL:url parameters:nil name:@"upload" images:@[image] fileNames:@[image] imageScale:0.1 imageType:@"png" progress:^(NSProgress *progress) {
+            } success:^(id responseObject) {
+                if (responseObject) {
+                    NSString * imagePath = responseObject[@"data"][@"img_url"];
+                    [self.picPathArray addObject:imagePath];
+                    NSString *string = [self.picPathArray componentsJoinedByString:@","];
+                    [self.dataSourceDictionary setValue:string forKey:@"photos"];
+                }
+            } failure:^(NSError *error) {
+                HHLog(@"error==%@",error);
+            }];
         }
         [self.tableView reloadData];
     }];
@@ -188,6 +200,13 @@
     }
     return _picArray;
 }
+- (NSMutableArray *)picPathArray {
+    if (!_picPathArray) {
+        _picPathArray = [NSMutableArray array];
+    }
+    return _picPathArray;
+}
+
 - (NSMutableArray *)dataSourceArray {
     if (!_dataSourceArray) {
         _dataSourceArray = [NSMutableArray array];

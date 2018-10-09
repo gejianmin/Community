@@ -16,7 +16,7 @@
 #import "NearCommunityController.h"
 #import "NavigationViewController.h"
 #import "UserObjModel.h"
-#import "HHClient.h"
+#import "HHComlient.h"
 @interface LoginViewController ()<LoginViewDelegate>
     
 @property (nonatomic, strong) LoginView *logView;
@@ -55,7 +55,7 @@
         if(responseData){
             if([responseData[@"status"] isEqualToString:successCode]){
                 UserObjModel * model = [UserObjModel yy_modelWithJSON:responseData[@"data"]];
-                [[HHClient sharedInstance] setUser:model];
+                [[HHComlient sharedInstance] setUser:model];
                 [self loginSuccessEvent];
             }else if([responseData[@"status"] isEqualToString:failedCode]){
                 [self showToastHUD:responseData[@"error"][@"message"] complete:nil];
@@ -126,7 +126,7 @@
         if(responseData){
             if([responseData[@"status"] isEqualToString:successCode]){
                 UserObjModel * model = [UserObjModel yy_modelWithJSON:responseData[@"data"]];
-                [[HHClient sharedInstance] setUser:model];
+                [[HHComlient sharedInstance] setUser:model];
                 [WeakSelf loginSuccessEvent];
             }else if([responseData[@"status"] isEqualToString:failedCode]){
                 [WeakSelf showToastHUD:responseData[@"error"][@"message"] complete:nil];

@@ -118,19 +118,7 @@ static NSString  * const GSAContent_login_codeGet = @"获取验证码";
     
     [self.countDownTimer invalidate];
 }
-//- (void)getCaptcha {
-//    
-//    [[HHClient sharedInstance].authSession asyncFetchVerifyCodeWithPhone:self.phoneNumber complete:^(id response, HHError *error) {
-//        if (error) {
-//            [[NSNotificationCenter defaultCenter]postNotificationName:@"showerror" object:nil];
-//            
-//        }else{
-//            [[NSNotificationCenter defaultCenter]postNotificationName:@"showeSuccess" object:nil];
-//        }
-//    }];
-//    
-//    
-//}
+
 
 @end
 

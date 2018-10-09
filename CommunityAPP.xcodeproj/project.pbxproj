@@ -284,7 +284,7 @@
 		F224290F2143BCC20035D0F0 /* JTDSocialShare.m in Sources */ = {isa = PBXBuildFile; fileRef = F224290A2143BCC20035D0F0 /* JTDSocialShare.m */; };
 		F22429102143BCC20035D0F0 /* PresentTransition.m in Sources */ = {isa = PBXBuildFile; fileRef = F224290B2143BCC20035D0F0 /* PresentTransition.m */; };
 		F23A8C3B21606B63009549B1 /* InterButtonCateHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = F23A8C3921606B63009549B1 /* InterButtonCateHeaderView.m */; };
-		F24C5CEE21474F32003B5A87 /* HHClient.m in Sources */ = {isa = PBXBuildFile; fileRef = F24C5CED21474F32003B5A87 /* HHClient.m */; };
+		F24C5CEE21474F32003B5A87 /* HHComlient.m in Sources */ = {isa = PBXBuildFile; fileRef = F24C5CED21474F32003B5A87 /* HHComlient.m */; };
 		F24C5CF42147BA8E003B5A87 /* SetUpHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = F24C5CF32147BA8E003B5A87 /* SetUpHeaderView.m */; };
 		F24C5CF921490473003B5A87 /* PublicCircleController.m in Sources */ = {isa = PBXBuildFile; fileRef = F24C5CF821490473003B5A87 /* PublicCircleController.m */; };
 		F24C5CFE21490A41003B5A87 /* PublicCircleCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F24C5CFD21490A41003B5A87 /* PublicCircleCell.m */; };
@@ -854,8 +854,8 @@
 		F224290C2143BCC20035D0F0 /* CustomPresentation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomPresentation.h; sourceTree = "<group>"; };
 		F23A8C3921606B63009549B1 /* InterButtonCateHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InterButtonCateHeaderView.m; sourceTree = "<group>"; };
 		F23A8C3A21606B63009549B1 /* InterButtonCateHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InterButtonCateHeaderView.h; sourceTree = "<group>"; };
-		F24C5CEC21474F32003B5A87 /* HHClient.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HHClient.h; sourceTree = "<group>"; };
-		F24C5CED21474F32003B5A87 /* HHClient.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HHClient.m; sourceTree = "<group>"; };
+		F24C5CEC21474F32003B5A87 /* HHComlient.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HHComlient.h; sourceTree = "<group>"; };
+		F24C5CED21474F32003B5A87 /* HHComlient.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HHComlient.m; sourceTree = "<group>"; };
 		F24C5CF22147BA8E003B5A87 /* SetUpHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SetUpHeaderView.h; sourceTree = "<group>"; };
 		F24C5CF32147BA8E003B5A87 /* SetUpHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SetUpHeaderView.m; sourceTree = "<group>"; };
 		F24C5CF52148F33E003B5A87 /* CommunityAPP.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CommunityAPP.entitlements; sourceTree = "<group>"; };
@@ -1970,8 +1970,8 @@
 				50D77ACF1FE0CA91007052E7 /* UserObjModel.m */,
 				8614B7D920F463AB0086546E /* AppDelegateTool.h */,
 				8614B7DA20F463AB0086546E /* AppDelegateTool.m */,
-				F24C5CEC21474F32003B5A87 /* HHClient.h */,
-				F24C5CED21474F32003B5A87 /* HHClient.m */,
+				F24C5CEC21474F32003B5A87 /* HHComlient.h */,
+				F24C5CED21474F32003B5A87 /* HHComlient.m */,
 			);
 			path = Tool;
 			sourceTree = "<group>";
@@ -2549,7 +2549,7 @@
 				5079411F1FE563100093CDF9 /* MJRefreshAutoFooter.m in Sources */,
 				50BFFA431FD51FD9005F35CA /* BaseRequest.m in Sources */,
 				F213A654215F0A0A00C4C616 /* CheckInViewController.m in Sources */,
-				F24C5CEE21474F32003B5A87 /* HHClient.m in Sources */,
+				F24C5CEE21474F32003B5A87 /* HHComlient.m in Sources */,
 				8614B7C920F461840086546E /* JYBBaseViewController.m in Sources */,
 				50BFFAF61FD52818005F35CA /* NSString+JKTrims.m in Sources */,
 				F224290F2143BCC20035D0F0 /* JTDSocialShare.m in Sources */,

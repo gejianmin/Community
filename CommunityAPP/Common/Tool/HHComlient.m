@@ -1,24 +1,24 @@
 //
-//  HHClient.m
+//  HHComlient.m
 //  CommunityAPP
 //
 //  Created by gejianmin on 2018/9/11.
 //  Copyright © 2018年 zhangyipei. All rights reserved.
 //
 
-#import "HHClient.h"
+#import "HHComlient.h"
 
 static NSString *const HHUserCacheKey = @"HHUserCacheKey";
 
-@implementation HHClient
+@implementation HHComlient
     
 @synthesize user=_user;
     
 + (instancetype)sharedInstance{
-    static HHClient *instance=nil;
+    static HHComlient *instance=nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        instance=[[HHClient alloc] init];
+        instance=[[HHComlient alloc] init];
         
     });
     return instance;
@@ -44,7 +44,7 @@ static NSString *const HHUserCacheKey = @"HHUserCacheKey";
     return _user;
 }
 -(BOOL)isLogin{
-    if (kStringIsEmpty([[[HHClient sharedInstance]user]token]) ) {
+    if (kStringIsEmpty([[[HHComlient sharedInstance]user]token]) ) {
         return NO;
     }else{
         return YES;
