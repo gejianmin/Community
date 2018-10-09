@@ -115,6 +115,11 @@
             [SVProgressHUD showWithStatus:@"正在清除"];
             [SVProgressHUD dismissWithDelay:1];
         }
+        
+        if (indexPath.row == 2) {// 关于我们
+            [self showHUDText:@"关于我们"];
+        }
+        
         if (indexPath.row == 3) {// 联系客服
             UIAlertController *al = [UIAlertController alertControllerWithTitle:@"联系客服"
                                                                         message:@"010-62342201"
