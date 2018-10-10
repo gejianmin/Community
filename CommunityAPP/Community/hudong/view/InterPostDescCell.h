@@ -16,6 +16,7 @@
 - (void)endEditPostTitle:(NSString *)title;
 - (void)endEditPostPics:(NSString *)array;
 - (void)addButtonDidTap:(NSInteger)picCount;
+- (void)editImageBtn:(NSInteger)index withImage:(UIImage *)image;
 @end
 
 @interface InterPostDescCell : UITableViewCell

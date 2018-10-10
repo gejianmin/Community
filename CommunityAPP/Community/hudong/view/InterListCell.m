@@ -121,7 +121,9 @@
 - (void)imageViewTapClick:(UIGestureRecognizer *)tap {
     
     NSInteger index  =  tap.view.tag - 10;
-    self.tapBlock(index,self.photos);
+    if (self.tapBlock) {
+        self.tapBlock(index,self.photos);
+    }
     
 }
 - (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldReceiveTouch:(UITouch *)touch {

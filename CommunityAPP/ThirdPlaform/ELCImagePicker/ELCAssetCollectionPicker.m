@@ -109,14 +109,14 @@
         [self.choosedImages removeObject:cell.asset.asset];
         self.choosedCount --;
     } else {
-        if (self.currentCount + self.choosedCount >= 12) {
-            [self showTip:@"最多只能上传12张图片" dismissDelay:1];
+        if (self.currentCount + self.choosedCount >= 9) {
+            [self showTip:@"最多只能上传9张图片" dismissDelay:1];
             return;
         }
         [self.choosedImages addObject:cell.asset.asset];
         self.choosedCount ++;
     }
-    self.title = [NSString stringWithFormat:@"已选择%@/12", @(self.currentCount + self.choosedCount)];
+    self.title = [NSString stringWithFormat:@"已选择%@/9", @(self.currentCount + self.choosedCount)];
     cell.asset.choosed  = !cell.asset.choosed;
     cell.overlay.hidden = !cell.overlay.hidden;
 }

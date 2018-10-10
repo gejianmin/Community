@@ -19,8 +19,8 @@
 #import <SVProgressHUD.h>
 #import <Masonry.h>
 #import <HHKit/HHKit.h>
-#import <HHNetworking/HHNetworking.h>
-#import <HHSecurityNetwork/HHSecurityNetwork.h>
+//#import <HHNetworking/HHNetworking.h>
+//#import <HHSecurityNetwork/HHSecurityNetwork.h>
 #import <YYModel/YYModel.h>
 
 #import "GSAColorConfig.h"
@@ -33,7 +33,7 @@
 #import "CustomLab.h"
 #import "HHComlient.h"
 #import "UserObjModel.h"
-#import "JTDShareVC.h""
+#import "JTDShareVC.h"
 #import "MacroNetwork.h"
 #import "PPNetworkHelper.h"
 //#import "UINavigationController+FDFullscreenPopGesture.h"

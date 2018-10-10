@@ -15,6 +15,7 @@
 #import "JTDCommentView.h"
 #import "MLPhoto.h"
 #import "MLPhotoBrowserViewController.h"
+#import "PresentTransition.h"
 @interface InteractionDetailVC ()<UITableViewDelegate,UITableViewDataSource,PDTopViewDelegate>
 {
     NSString * _commentPid;
@@ -27,6 +28,8 @@
 @property(nonatomic,strong) NSMutableArray  * dataSourceArray;
 @property(nonatomic,strong)PSPersonSentView * commentsView;
 @property(nonatomic, strong) NSMutableArray<MLPhoto *> * photos;
+@property (nonatomic,strong) PresentTransition *transtionDelegate;
+
 @end
 
 @implementation InteractionDetailVC
@@ -127,14 +130,21 @@
         }
         JTDWeakSelf
         MLPhotoBrowserViewController *browserVC = [[MLPhotoBrowserViewController alloc] init];
+        browserVC.isSimpleSacnViewCotroller = YES;
         browserVC.curPage = indexPath.row;/** 点击的第几张图片*/
         browserVC.photos = self.photos; //存的是myphoto的对象
         browserVC.hidesBottomBarWhenPushed = YES;
+        browserVC.transitioningDelegate = WeakSelf.transtionDelegate;
+        browserVC.modalPresentationStyle = UIModalPresentationCustom;
+        [WeakSelf presentViewController:browserVC animated:YES completion:nil];
         [browserVC displayForVC:WeakSelf];
-//        interactionDetailImageModel *model = self.headerDataSourceArray[indexPath.row];
-        
-        
     }
+}
+-(PresentTransition *)transtionDelegate{
+    if (!_transtionDelegate) {
+        _transtionDelegate = [[PresentTransition alloc]init];
+    }
+    return _transtionDelegate;
 }
 #pragma mark--直接发评论
 -(void)sendButtonEventDelegateWithButton:(CustomBtn *)sender{

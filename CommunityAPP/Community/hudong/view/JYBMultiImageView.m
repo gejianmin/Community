@@ -49,8 +49,8 @@
 - (void)shareInit
 {
     if (self.lineCount == 0) self.lineCount = 4;
-    if (self.itemWidth == 0) self.itemWidth = 68*SCREEN_WIDTH/320.0;
-    if (self.maxItem == 0) self.maxItem = 12;
+    if (self.itemWidth == 0) self.itemWidth = 80*SCREEN_WIDTH/375.0;
+    if (self.maxItem == 0) self.maxItem = 9;
     
     self.images_MARR    = [NSMutableArray array];
     self.imageBtns_MARR = [NSMutableArray array];

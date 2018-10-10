@@ -35,6 +35,8 @@
 #import "CheckInViewController.h"
 #import "LoginViewController.h"
 #import "MyCommunityVC.h"
+#import "PresentTransition.h"
+
 typedef NS_ENUM(NSInteger,RefreshState) {
     RefreshState_Unknow,
     RefreshState_Refrsh,
@@ -63,6 +65,8 @@ typedef NS_ENUM(NSInteger,RefreshState) {
 
 @property (nonatomic, assign) NSInteger pageCount;
 @property (nonatomic, assign) RefreshState status;
+@property (nonatomic,strong) PresentTransition *transtionDelegate;
+
 @end
 
 @implementation InteractionViewController
@@ -326,9 +330,13 @@ typedef NS_ENUM(NSInteger,RefreshState) {
         __weak typeof(self) weakSelf = self;
         cell.tapBlock = ^(NSInteger index,NSMutableArray<MLPhoto *> *photos) {
             MLPhotoBrowserViewController *browserVC = [[MLPhotoBrowserViewController alloc] init];
+            browserVC.isSimpleSacnViewCotroller = YES;
             browserVC.curPage = index;/** 点击的第几张图片*/
             browserVC.photos = photos; //存的是myphoto的对象
             browserVC.hidesBottomBarWhenPushed = YES;
+            browserVC.transitioningDelegate = weakSelf.transtionDelegate;
+            browserVC.modalPresentationStyle = UIModalPresentationCustom;
+            [weakSelf presentViewController:browserVC animated:YES completion:nil];
             [browserVC displayForVC:weakSelf];
         };
         // 评论按钮的点击回调
@@ -346,6 +354,12 @@ typedef NS_ENUM(NSInteger,RefreshState) {
         return cell;
     }
     return nil;
+}
+-(PresentTransition *)transtionDelegate{
+    if (!_transtionDelegate) {
+        _transtionDelegate = [[PresentTransition alloc]init];
+    }
+    return _transtionDelegate;
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
@@ -551,6 +565,9 @@ typedef NS_ENUM(NSInteger,RefreshState) {
     
 }
 - (void)fabu:(UIButton *)sender{
+    if(![[HHComlient sharedInstance]isLogin]){
+        [self loginEvent];
+    }else{
     [CheckInViewController presentControllerWith:self callBack:^(NSInteger btnTag) {
         if (btnTag == hudongType) {
 //            [self enterCommunity];
@@ -559,6 +576,7 @@ typedef NS_ENUM(NSInteger,RefreshState) {
             [InterPostViewController pushController:self topicListArray:self.topicListArray postType:PostType_ErShou topicId:_topic_id];
         }
     }];
+    }
 }
 -(void)enterCommunity{
     [[HHAlertView alloc]initWithTitle:@"提示" message:@"这位居民您还未入驻小区，是否先去入驻小区呢？" showTarget:self handle:^(NSInteger index) {
