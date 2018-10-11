@@ -72,16 +72,17 @@ typedef NS_ENUM(NSInteger,RefreshState) {
 }
 -(void)setCateGaryHeaderRequest{
     __weak typeof(self) tyself = self;
-    Inter_categaryRequest *request = [[Inter_categaryRequest alloc] init];
-    [request InfoArt_categaryRequestWithLinkUrl:self.model.linkurl];
-    [request setFinishedBlock:^(id object, id responseData) {
-        Inter_categaryModel * model = [Inter_categaryModel yy_modelWithJSON:responseData[@"data"]];
-        self.headerView.model = model;
-        tyself.topic_id = model.topic_id;
-        [tyself postListRequest];
-        
-    } failedBlock:^(NSInteger error, id responseData) {
-        
+    [LoginViewController verificationTokenWithSuperViewController:self SuccessCallBack:^{
+        Inter_categaryRequest *request = [[Inter_categaryRequest alloc] init];
+        [request InfoArt_categaryRequestWithLinkUrl:tyself.model.linkurl];
+        [request setFinishedBlock:^(id object, id responseData) {
+            Inter_categaryModel * model = [Inter_categaryModel yy_modelWithJSON:responseData[@"data"]];
+            tyself.headerView.model = model;
+            tyself.topic_id = model.topic_id;
+            [tyself postListRequest];
+        } failedBlock:^(NSInteger error, id responseData) {
+            
+        }];
     }];
 }
 //

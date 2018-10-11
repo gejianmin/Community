@@ -7,9 +7,8 @@
 #define NETWORK_TIMEOUT 20//通用的超时时间，20秒
 
 #define URI_MAIN (@"http://api.sinoyjlm.com/")//主站URL
-
 //注册
-
+#define VerificationToken @"members/uptoken" //TOKEN验证
 #define registerCode @"sms/registerCode"//获取验证码
 #define Register       @"members/create"
 #define Login       @"auth"

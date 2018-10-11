@@ -296,6 +296,9 @@
 		F260305C216CA1BA0063739D /* BrowserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F260303C216CA1BA0063739D /* BrowserViewController.m */; };
 		F260305D216CA1BA0063739D /* DALabeledCircularProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = F260303F216CA1BA0063739D /* DALabeledCircularProgressView.m */; };
 		F260305E216CA1BA0063739D /* DACircularProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = F2603040216CA1BA0063739D /* DACircularProgressView.m */; };
+		F2603062216E0F580063739D /* VerificationToken_Request.m in Sources */ = {isa = PBXBuildFile; fileRef = F2603061216E0F580063739D /* VerificationToken_Request.m */; };
+		F2603065216E109F0063739D /* VerificationToken_Response.m in Sources */ = {isa = PBXBuildFile; fileRef = F2603064216E109F0063739D /* VerificationToken_Response.m */; };
+		F2603068216E10E40063739D /* VerificationToken_Model.m in Sources */ = {isa = PBXBuildFile; fileRef = F2603067216E10E40063739D /* VerificationToken_Model.m */; };
 		F2A44D37215343B1008F8549 /* JTDCommentView.m in Sources */ = {isa = PBXBuildFile; fileRef = F2A44D36215343B0008F8549 /* JTDCommentView.m */; };
 		F2A44D3A215379F6008F8549 /* MyHarvestAddressVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F2A44D39215379F6008F8549 /* MyHarvestAddressVC.m */; };
 		F2A44D3D21537E11008F8549 /* MyHarvestAddressCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F2A44D3C21537E11008F8549 /* MyHarvestAddressCell.m */; };
@@ -882,6 +885,12 @@
 		F2603041216CA1BA0063739D /* DALabeledCircularProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DALabeledCircularProgressView.h; sourceTree = "<group>"; };
 		F2603042216CA1BA0063739D /* DACircularProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DACircularProgressView.h; sourceTree = "<group>"; };
 		F2603043216CA1BA0063739D /* BrowserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BrowserViewController.h; sourceTree = "<group>"; };
+		F2603060216E0F580063739D /* VerificationToken_Request.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VerificationToken_Request.h; sourceTree = "<group>"; };
+		F2603061216E0F580063739D /* VerificationToken_Request.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VerificationToken_Request.m; sourceTree = "<group>"; };
+		F2603063216E109F0063739D /* VerificationToken_Response.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VerificationToken_Response.h; sourceTree = "<group>"; };
+		F2603064216E109F0063739D /* VerificationToken_Response.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VerificationToken_Response.m; sourceTree = "<group>"; };
+		F2603066216E10E40063739D /* VerificationToken_Model.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VerificationToken_Model.h; sourceTree = "<group>"; };
+		F2603067216E10E40063739D /* VerificationToken_Model.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VerificationToken_Model.m; sourceTree = "<group>"; };
 		F2A44D35215343B0008F8549 /* JTDCommentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JTDCommentView.h; sourceTree = "<group>"; };
 		F2A44D36215343B0008F8549 /* JTDCommentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JTDCommentView.m; sourceTree = "<group>"; };
 		F2A44D38215379F6008F8549 /* MyHarvestAddressVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyHarvestAddressVC.h; sourceTree = "<group>"; };
@@ -1301,6 +1310,7 @@
 		50BFFA271FD51FD9005F35CA /* NetWork */ = {
 			isa = PBXGroup;
 			children = (
+				F260305F216E0EBD0063739D /* Token */,
 				F24C5D0221491125003B5A87 /* publicCircle */,
 				5091B5531FE760F3003797EF /* hudong */,
 				50D77AD11FE107E2007052E7 /* zixun */,
@@ -2218,6 +2228,19 @@
 			path = DACircularProgress;
 			sourceTree = "<group>";
 		};
+		F260305F216E0EBD0063739D /* Token */ = {
+			isa = PBXGroup;
+			children = (
+				F2603060216E0F580063739D /* VerificationToken_Request.h */,
+				F2603061216E0F580063739D /* VerificationToken_Request.m */,
+				F2603063216E109F0063739D /* VerificationToken_Response.h */,
+				F2603064216E109F0063739D /* VerificationToken_Response.m */,
+				F2603066216E10E40063739D /* VerificationToken_Model.h */,
+				F2603067216E10E40063739D /* VerificationToken_Model.m */,
+			);
+			path = Token;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -2380,6 +2403,7 @@
 				F260304F216CA1BA0063739D /* MLPhotoBrowserViewController.m in Sources */,
 				50D77AF91FE11CD3007052E7 /* InforVillage_ADRequest.m in Sources */,
 				50BFFAE31FD52818005F35CA /* NSData+JKGzip.m in Sources */,
+				F2603062216E0F580063739D /* VerificationToken_Request.m in Sources */,
 				507941531FE647E00093CDF9 /* SGPageContentScrollView.m in Sources */,
 				50D77AEA1FE111FD007052E7 /* InforVillage_NoticeResponse.m in Sources */,
 				50BFFA4B1FD51FD9005F35CA /* NetWorkTool.m in Sources */,
@@ -2492,6 +2516,7 @@
 				50BFFAE71FD52818005F35CA /* NSString+JKBase64.m in Sources */,
 				5091B56F1FE79CCC003797EF /* InterTopicListResponse.m in Sources */,
 				F2603059216CA1BA0063739D /* MLPhotoKitData.m in Sources */,
+				F2603065216E109F0063739D /* VerificationToken_Response.m in Sources */,
 				507941551FE647E00093CDF9 /* SGPageTitleView.m in Sources */,
 				507941271FE563100093CDF9 /* MJRefreshBackGifFooter.m in Sources */,
 				5091B5871FE7DCB8003797EF /* ListTableView.m in Sources */,
@@ -2587,6 +2612,7 @@
 				507941521FE647E00093CDF9 /* UIView+SGFrame.m in Sources */,
 				F22428F721436CFD0035D0F0 /* CustomLab.m in Sources */,
 				F24C5D0521491184003B5A87 /* publicCircleList_Request.m in Sources */,
+				F2603068216E10E40063739D /* VerificationToken_Model.m in Sources */,
 				5077BBEA1FE92DB30047BE77 /* PostCircleAddPicView.m in Sources */,
 				F2603051216CA1BA0063739D /* MLPhotoPickerBrowserPhotoScrollView.m in Sources */,
 				5005FCA3216C51AC0071F3BD /* SetUpNickNameVC.m in Sources */,

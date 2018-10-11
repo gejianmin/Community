@@ -12,7 +12,6 @@
 #import "SetUpViewController.h"
 #import "LayerButton.h"
 #import "LayoutButton.h"
-#import "LoginViewController.h"
 #import "WebViewController.h"
 #import "MacroNetwork.h"
 @interface MineViewController ()

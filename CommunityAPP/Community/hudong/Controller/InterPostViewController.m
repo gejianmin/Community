@@ -78,25 +78,26 @@
             }
         }
     }
-    
     [dict setObject:@"39.23323" forKey:@"lat"];
     [dict setObject:@"166.312321" forKey:@"lng"];
     [dict setObject:@"北京市" forKey:@"address"];
-    
-    PublicCommunityRequest *request = [[PublicCommunityRequest alloc] init];
-    [request publicCommunityWithInfo:dict];
-    [request setFinishedBlock:^(id object, id responseData) {
-        if (responseData) {
-            if ([responseData[@"status"] isEqualToString:successCode]) {
-                [self showToastHUD:@"申请成功" complete:^{
-                    [self.navigationController popViewControllerAnimated:YES];
-                }];
-            }else{
-                [self showToastHUD:responseData[@"error"][@"message"] complete:nil];
+    JTDWeakSelf
+    [LoginViewController verificationTokenWithSuperViewController:self SuccessCallBack:^{
+        PublicCommunityRequest *request = [[PublicCommunityRequest alloc] init];
+        [request publicCommunityWithInfo:dict];
+        [request setFinishedBlock:^(id object, id responseData) {
+            if (responseData) {
+                if ([responseData[@"status"] isEqualToString:successCode]) {
+                    [WeakSelf showToastHUD:@"申请成功" complete:^{
+                        [WeakSelf.navigationController popViewControllerAnimated:YES];
+                    }];
+                }else{
+                    [WeakSelf showToastHUD:responseData[@"error"][@"message"] complete:nil];
+                }
             }
-        }
-    } failedBlock:^(NSInteger error, id responseData) {
-        NSLog(@"%ld",error);
+        } failedBlock:^(NSInteger error, id responseData) {
+            NSLog(@"%ld",error);
+        }];
     }];
 }
 

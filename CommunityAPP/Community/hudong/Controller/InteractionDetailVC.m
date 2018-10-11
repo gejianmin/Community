@@ -20,7 +20,7 @@
 {
     NSString * _commentPid;
     NSString * _commentComment;
-
+    
 }
 @property(nonatomic,strong) inter_commentHeaderView  * headerView;
 @property(nonatomic,strong) UITableView  * tableView;
@@ -84,7 +84,7 @@
     return headerView;
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
-   return 0.00001;
+    return 0.00001;
 }
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     static NSString * identifier;
@@ -157,29 +157,29 @@
             }
         }];
     }else{//表情
-//        if (!kStringIsEmpty(_commentPid)&&!kStringIsEmpty(_commentComment)) {
-//            [sender setTitle:_commentComment forState:UIControlStateNormal];
-//            [self interReplayCommentRequestWithCid:_commentPid comment:_commentComment commentUrl:inter_commentPost];
-//        }
+        //        if (!kStringIsEmpty(_commentPid)&&!kStringIsEmpty(_commentComment)) {
+        //            [sender setTitle:_commentComment forState:UIControlStateNormal];
+        //            [self interReplayCommentRequestWithCid:_commentPid comment:_commentComment commentUrl:inter_commentPost];
+        //        }
     }
 }
 #pragma mark--回复评论
 - (void)interReplayCommentRequestWithCid:(NSString *)cid comment:(NSString *)comment commentUrl:(NSString *)commentUrl{
     [self showHUDText:nil];
-    inter_replayCommentListReqest *request = [[inter_replayCommentListReqest alloc] init];
-    [request interReplayCommentListRequestWithID:cid comment:comment commentUrl:commentUrl];
-    
-    [request setFinishedBlock:^(id object, id responseData) {
-        [self hideHUD];
-        JTDWeakSelf
-        if ([responseData[@"status"] isEqualToString:successCode]) {
-            [self showToastHUD:@"评论成功" complete:nil];
-            [WeakSelf interCommentRequest];
-        }else if ([responseData[@"status"] isEqualToString:failedCode]) {
-//            [self showToastHUD:responseData[@"error"][@"message"] complete:nil];
-        }
-    } failedBlock:^(NSInteger error, id responseData) {
-        [self hideHUD];
+    JTDWeakSelf
+    [LoginViewController verificationTokenWithSuperViewController:self SuccessCallBack:^{
+        inter_replayCommentListReqest *request = [[inter_replayCommentListReqest alloc] init];
+        [request interReplayCommentListRequestWithID:cid comment:comment commentUrl:commentUrl];
+        [request setFinishedBlock:^(id object, id responseData) {
+            [WeakSelf hideHUD];
+            if ([responseData[@"status"] isEqualToString:successCode]) {
+                [WeakSelf showToastHUD:@"评论成功" complete:nil];
+                [WeakSelf interCommentRequest];
+            }else if ([responseData[@"status"] isEqualToString:failedCode]) {
+            }
+        } failedBlock:^(NSInteger error, id responseData) {
+            [WeakSelf hideHUD];
+        }];
     }];
 }
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
@@ -240,7 +240,7 @@
             }
             [WeakSelf.tableView reloadData];
         }else if ([responseData[@"status"] isEqualToString:failedCode]) {
-            [self showToastHUD:responseData[@"error"][@"message"] complete:nil];
+            //            [self showToastHUD:responseData[@"error"][@"message"] complete:nil];
         }
     } failedBlock:^(NSInteger error, id responseData) {
     }];

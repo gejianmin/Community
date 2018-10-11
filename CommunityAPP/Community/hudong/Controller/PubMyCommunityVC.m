@@ -135,24 +135,22 @@
     [dict setObject:@"1" forKey:@"have_parking"];
     [dict setObject:@"521S2" forKey:@"parking_number"];
     [dict setObject:@"12433" forKey:@"plate_number"];
-    
-    PubCommunityRequest *request = [[PubCommunityRequest alloc] init];
-    [request enterCommunityWithInfo:dict];
-    [request setFinishedBlock:^(id object, id responseData) {
-        if (responseData) {
-            if ([responseData[@"status"] isEqualToString:successCode]) {
-                [self showToastHUD:@"申请成功" complete:^{
-                    [self.navigationController popViewControllerAnimated:YES];
-                }];
+    JTDWeakSelf
+    [LoginViewController verificationTokenWithSuperViewController:self SuccessCallBack:^{
+        PubCommunityRequest *request = [[PubCommunityRequest alloc] init];
+        [request enterCommunityWithInfo:dict];
+        [request setFinishedBlock:^(id object, id responseData) {
+            if (responseData) {
+                if ([responseData[@"status"] isEqualToString:successCode]) {
+                    [WeakSelf showToastHUD:@"申请成功" complete:^{
+                        [WeakSelf.navigationController popViewControllerAnimated:YES];
+                    }];
+                }
             }
-        }
-        
-        
-    } failedBlock:^(NSInteger error, id responseData) {
-        NSLog(@"%ld",error);
-    }];
-    
-    
+        } failedBlock:^(NSInteger error, id responseData) {
+            NSLog(@"%ld",error);
+        }];
+    }];    
 }
 
 

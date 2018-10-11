@@ -36,6 +36,9 @@
 #import "JTDShareVC.h"
 #import "MacroNetwork.h"
 #import "PPNetworkHelper.h"
+#import "VerificationToken_Request.h"
+#import "LoginViewController.h"
+
 //#import "UINavigationController+FDFullscreenPopGesture.h"
 
 #define SCREEN_WIDTH                    CGRectGetWidth([[UIScreen mainScreen] bounds])

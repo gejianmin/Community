@@ -48,17 +48,18 @@
 - (void)requestData{
     [self showHUDText:nil];
     __weak typeof(self) tyself = self;
-    GetCommunityRequest *request = [[GetCommunityRequest alloc] init];
-    [request getCommunityListWithId:[[[HHComlient sharedInstance]user]uid]];
-    [request setFinishedBlock:^(id object, id responseData) {
-        [self hideHUD];
-        tyself.model = object;
-        [self.dataArr removeAllObjects];
-        [self.dataArr addObjectsFromArray:tyself.model.getCommunityArray];
-        [self.oa_tableView reloadData];
-    } failedBlock:^(NSInteger error, id responseData) {
-        [self hideHUD];
-        NSLog(@"%ld",error);
+    [LoginViewController verificationTokenWithSuperViewController:self SuccessCallBack:^{
+        GetCommunityRequest *request = [[GetCommunityRequest alloc] init];
+        [request getCommunityListWithId:[[[HHComlient sharedInstance]user]uid]];
+        [request setFinishedBlock:^(id object, id responseData) {
+            [tyself hideHUD];
+            tyself.model = object;
+            [tyself.dataArr removeAllObjects];
+            [tyself.dataArr addObjectsFromArray:tyself.model.getCommunityArray];
+            [tyself.oa_tableView reloadData];
+        } failedBlock:^(NSInteger error, id responseData) {
+            [tyself hideHUD];
+        }];
     }];
     
 }

@@ -18,9 +18,9 @@
 #import "UserObjModel.h"
 #import "HHComlient.h"
 @interface LoginViewController ()<LoginViewDelegate>
-    
+
 @property (nonatomic, strong) LoginView *logView;
-    
+
 @end
 
 @implementation LoginViewController
@@ -84,7 +84,7 @@
                 WeakSelf.logView.passwordField.text = password;
             }];
         }
-        break;
+            break;
         case 1002://忘记密码
         {
             [ForgotPasswordVC pushToForgotPasswordViewController:self callBack:^(NSString *phone, NSString *password){
@@ -93,7 +93,7 @@
                 WeakSelf.logView.passwordField.text = password;
             }];
         }
-        break;
+            break;
         case 1003://微信登录
         {
             [[JTDSocialShare ShareUMSocial] getUserInfoWithController:self withTag:weChatLoginType callBack:^(BOOL success, JTDUserInfoModel *model) {
@@ -105,13 +105,13 @@
             }];
             
         }
-        break;
+            break;
         case 1004:
         {
             [self loginCancelEvent];
         }
         default:
-        break;
+            break;
     }
     
     
@@ -175,7 +175,7 @@
             WeakSelf.loginSuccess();
         }
     }];
-    }
+}
 - (void)loginCancelEvent{
     JTDWeakSelf
     [self dismissViewControllerAnimated:YES completion:^{
@@ -184,7 +184,7 @@
         }
     }];
 }
-    
+
 - (void)setBar{
     self.title = @"账户登录";
     [self setLeftItemWithImageTarget:self];
@@ -193,8 +193,52 @@
 - (void)back{
     NSLog(@"1111");
 }
-    
-
+#pragma mark--TOKEN验证
++(void)verificationTokenWithSuperViewController:(UIViewController *)superController SuccessCallBack:(VFTokenSuccess )vFTokenSuccess{
+    LoginViewController * VC = [[LoginViewController alloc]init];
+    VC.vFTokenSuccess = vFTokenSuccess;
+    if (kStringIsEmpty([[[HHComlient sharedInstance]user]token])) {
+        [[HHAlertView alloc]initWithTitle:@"提示" message:@"这位居民您还未登录，是否先登录呢？" showTarget:superController handle:^(NSInteger index) {
+            switch (index) {
+                case 0:
+                    HHLog(@"取消");
+                    break;
+                case 1:HHLog(@"确定");
+                {
+                    [LoginViewController showControllerWithSuccess:nil cancel:nil];
+                }
+                    break;
+                default:
+                    break;
+            }
+        } cancle:@"继续浏览" others:@"去登录吧", nil];
+    }else{
+        VerificationToken_Request * token_request = [[VerificationToken_Request alloc]init];
+        [token_request verificationTokenWithToken:[[[HHComlient sharedInstance]user]token]];
+        [token_request setFinishedBlock:^(id object, id responseData) {
+            if (responseData) {
+                if ([responseData[@"status"] isEqualToString:failedCode]) {
+                    NSString *stringInt = [NSString stringWithFormat:@"%@",responseData[@"error"][@"status_code"]];
+                    if ([stringInt isEqualToString:TokenCodeLoginException]) {
+                        [superController showToastHUD:responseData[@"error"][@"message"] complete:^{
+                            [LoginViewController showControllerWithSuccess:nil cancel:nil];
+                        }];
+                    }else if ([stringInt isEqualToString:TokenCodeLoginTimeout]){
+                        [superController showToastHUD:@"登录超时,请重新登录!" complete:^{
+                            [LoginViewController showControllerWithSuccess:nil cancel:nil];
+                        }];
+                    }
+                }else if ([responseData[@"status"] isEqualToString:successCode]){
+                    if (VC.vFTokenSuccess) {
+                        VC.vFTokenSuccess();
+                    }
+                }
+            }
+        } failedBlock:^(NSInteger error, id responseData) {
+            HHLog(@"responseData==%@",responseData);
+        }];
+    }
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
 }
