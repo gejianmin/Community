@@ -165,9 +165,9 @@
 }
 #pragma mark--回复评论
 - (void)interReplayCommentRequestWithCid:(NSString *)cid comment:(NSString *)comment commentUrl:(NSString *)commentUrl{
-    [self showHUDText:nil];
     JTDWeakSelf
     [LoginViewController verificationTokenWithSuperViewController:self SuccessCallBack:^{
+        [WeakSelf showHUDText:nil];
         inter_replayCommentListReqest *request = [[inter_replayCommentListReqest alloc] init];
         [request interReplayCommentListRequestWithID:cid comment:comment commentUrl:commentUrl];
         [request setFinishedBlock:^(id object, id responseData) {

@@ -46,9 +46,9 @@
     return _oa_tableView;
 }
 - (void)requestData{
-    [self showHUDText:nil];
     __weak typeof(self) tyself = self;
     [LoginViewController verificationTokenWithSuperViewController:self SuccessCallBack:^{
+        [tyself showHUDText:nil];
         GetCommunityRequest *request = [[GetCommunityRequest alloc] init];
         [request getCommunityListWithId:[[[HHComlient sharedInstance]user]uid]];
         [request setFinishedBlock:^(id object, id responseData) {

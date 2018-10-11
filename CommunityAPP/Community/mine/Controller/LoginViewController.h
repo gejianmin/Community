@@ -21,7 +21,13 @@ typedef void(^VFTokenSuccess)(void);
 
 
 + (instancetype)showControllerWithSuccess:(LoginSuccess )loginSuccess cancel:(LoginCancel )loginCanel;
-    
+
+/**
+ 验证token是否失效，验证是否登录
+
+ @param superController 传过来的控制器
+ @param vFTokenSuccess 验证token成功回调
+ */
 +(void)verificationTokenWithSuperViewController:(UIViewController *)superController SuccessCallBack:(VFTokenSuccess )vFTokenSuccess;
 
 @end
