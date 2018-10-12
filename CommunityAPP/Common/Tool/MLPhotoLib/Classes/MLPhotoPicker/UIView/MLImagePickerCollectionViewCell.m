@@ -23,6 +23,7 @@
     self.tagButton.exclusiveTouch = YES;
     [self.tagButton setImage:[UIImage imageNamed:@"MLImagePickerController.bundle/zl_icon_image_no"] forState:UIControlStateNormal];
     [self.tagButton setImage:[UIImage imageNamed:@"MLImagePickerController.bundle/zl_icon_image_yes"] forState:UIControlStateSelected];
+    
 }
 
 - (void)setAsset:(MLPhotoAsset *)asset

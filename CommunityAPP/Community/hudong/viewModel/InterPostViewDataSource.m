@@ -15,7 +15,7 @@
 #import "AppDelegateTool.h"
 #import "ELCImagePickerController.h"
 #import "GSAPublishModel.h"
-#import "PPNetworkHelper.h"
+#import "MLPhotoBrowserViewController.h"
 @interface InterPostViewDataSource ()<UITableViewDelegate,UITableViewDataSource,InterPostInfoCellDelegate,InterPostDescCellDelagate,ELCImagePickerControllerDelegate>
 {
     NSString * _titleText;
@@ -29,6 +29,7 @@
 @property (nonatomic, strong) NSMutableDictionary *postDic;
 @property (nonatomic, strong) NSMutableArray *picArray;
 @property (nonatomic, strong) NSMutableArray *picPathArray;
+@property (nonatomic, strong)NSMutableArray<MLPhoto *> *photosArray;
 
 
 @end
@@ -151,6 +152,35 @@
         }
     }
 }
+-(void)editImageBtn:(NSInteger)index withImage:(UIImage *)image{
+    [self.photosArray removeAllObjects];
+    for (int i = 0 ; i< self.picPathArray.count; i++) {
+        MLPhoto *photo = [[MLPhoto alloc]init];
+        photo.thumbImageUrl = [NSURL URLWithString:self.picPathArray[i]];
+        photo.originalImageUrl = [NSURL URLWithString:self.picPathArray[i]];
+        photo.assetUrl = [NSURL URLWithString:self.picPathArray[i]];
+        [self.photosArray addObject:photo];
+    }
+    UIViewController *vc = [AppDelegateTool topViewController];
+    MLPhotoBrowserViewController *browserVC = [[MLPhotoBrowserViewController alloc] init];
+//    browserVC.isSimpleSacnViewCotroller = YES;
+    browserVC.curPage = index;/** 点击的第几张图片*/
+    browserVC.editMode = YES;
+    browserVC.photos = self.photosArray; //存的是myphoto的对象
+    browserVC.picArray = self.picArray;//存原图
+    browserVC.picPathArray = self.picPathArray;//存网络地址
+    browserVC.hidesBottomBarWhenPushed = YES;
+    [browserVC displayForVC:vc];
+    JTDWeakSelf
+    browserVC.callBack = ^(NSMutableArray<MLPhoto *> *photosArray,NSMutableArray *picArray,NSMutableArray * picPathArray) {
+        WeakSelf.photosArray = photosArray;
+        WeakSelf.picArray = picArray;
+        WeakSelf.picPathArray = picPathArray;
+        NSString *string = [WeakSelf.picPathArray componentsJoinedByString:@","];
+        [WeakSelf.dataSourceDictionary setValue:string forKey:@"photos"];
+        [WeakSelf.tableView reloadData];
+    };
+}
 - (void)addButtonDidTap:(NSInteger)picCount{
     
     UIViewController *vc = [AppDelegateTool topViewController];
@@ -159,16 +189,11 @@
     elcPicker.currentCount         = picCount;
     [vc presentViewController:elcPicker animated:YES completion:nil];
 }
-- (void)endEditPostMessage:(NSString *)message{
-    [self.dataSourceDictionary setValue:message forKey:@"p_content"];
-}
-- (void)endEditPostTitle:(NSString *)title{
-    [self.dataSourceDictionary setValue:title forKey:@"p_title"];
-}
 #pragma mark - ELCImagePickerController Delegate
 - (void)elcImagePickerController:(ELCImagePickerController *)picker didFinishPickingMediaWithInfo:(NSArray *)info
 {
     UIViewController *vc = [AppDelegateTool topViewController];
+    [vc showHUDText:nil];
     [vc dismissViewControllerAnimated:YES completion:^{
         for (NSDictionary *dic in info) {
             UIImage *image = dic[UIImagePickerControllerOriginalImage];
@@ -185,6 +210,7 @@
             } failure:^(NSError *error) {
                 HHLog(@"error==%@",error);
             }];
+            [vc hideHUD];
         }
         [self.tableView reloadData];
     }];
@@ -193,6 +219,12 @@
 {
     UIViewController *vc = [AppDelegateTool topViewController];
     [vc dismissViewControllerAnimated:YES completion:nil];
+}
+- (void)endEditPostMessage:(NSString *)message{
+    [self.dataSourceDictionary setValue:message forKey:@"p_content"];
+}
+- (void)endEditPostTitle:(NSString *)title{
+    [self.dataSourceDictionary setValue:title forKey:@"p_title"];
 }
 - (NSMutableArray *)picArray {
     if (!_picArray) {
@@ -213,6 +245,14 @@
     }
     return _dataSourceArray;
 }
+- (NSMutableArray<MLPhoto *> *)photosArray {
+    
+    if (!_photosArray) {
+        _photosArray = [[NSMutableArray alloc ] init];
+    }
+    return _photosArray;
+}
+
 - (NSMutableDictionary *)dataSourceDictionary {
     if (!_dataSourceDictionary) {
         _dataSourceDictionary = [NSMutableDictionary dictionaryWithCapacity:3];

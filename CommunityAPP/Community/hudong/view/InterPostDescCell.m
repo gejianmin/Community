@@ -29,7 +29,7 @@
 - (void)setUpUI{
         [self.contentView addSubview:self.titleField];
         [self.contentView addSubview:self.messageView];
-        [self.contentView addSubview:self.addPicButton];
+//        [self.contentView addSubview:self.addPicButton];
         [self.contentView addSubview:self.postCircleAddPicView];
     [self.titleField mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self.contentView.mas_top).offset(15);
@@ -53,16 +53,10 @@
         make.top.equalTo(self.messageView.mas_bottom).offset(5);
         make.left.equalTo(self.contentView.mas_left).offset(15);
         make.right.equalTo(self.contentView.mas_right).offset(-15);
-        make.height.equalTo(@(90 + 90 * (self.picArray.count/4)));
-        make.bottom.equalTo(self.contentView.mas_bottom).offset(0);
+        make.height.equalTo(@((80*SCREEN_WIDTH/375.0) + (90*SCREEN_WIDTH/375.0) * (self.picArray.count/4)));
+        make.bottom.equalTo(self.contentView.mas_bottom).offset(-5);
     }];
 }
-/*
- UITextBorderStyleNone,//无样式边框
- UITextBorderStyleLine,//直线
- UITextBorderStyleBezel,//上边框和左边框加重
- UITextBorderStyleRoundedRect  //圆角
- */
 - (UITextField *)titleField{
     if (!_titleField) {
         _titleField = [[UITextField alloc] init];
@@ -77,8 +71,6 @@
         _titleField.contentVerticalAlignment = UIControlContentVerticalAlignmentCenter;//垂直居中
         _titleField.keyboardType = UIKeyboardTypeDefault;
         [_titleField addTarget:self action:@selector(edit:) forControlEvents:UIControlEventAllEditingEvents];
-
-        
     }
     return _titleField;
 }
@@ -101,9 +93,6 @@
         _messageView.textColor = [UIColor colorWithHexStr:@"999999"];
         _messageView.placeholderColor = [UIColor hexStringToColor:@"999999" alpha:1.0];
         _messageView.placeholder = @"有什么新鲜事跟邻居说道说道";
-        
-
-//        _messageView.placeholder = @"描述您的宝贝";
     }
     return _messageView;
 }
@@ -139,6 +128,13 @@
 - (void)addButtonDidTap{
     if ([self.delegate respondsToSelector:@selector(addButtonDidTap:)]) {
         [self.delegate addButtonDidTap:_postCircleAddPicView.images_MARR.count];
+    }
+}
+#pragma mark--编辑图片
+- (void)multiImageBtn:(NSInteger)index withImage:(UIImage *)image{
+    HHLog(@"index==%ld",index);
+    if ([self.delegate respondsToSelector:@selector(editImageBtn:withImage:)]) {
+        [self.delegate editImageBtn:index withImage:image];
     }
 }
 

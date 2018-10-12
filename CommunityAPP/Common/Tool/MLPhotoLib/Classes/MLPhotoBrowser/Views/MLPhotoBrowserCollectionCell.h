@@ -10,9 +10,19 @@
 
 @class MLPhoto;
 typedef void(^didTapCellBlock)();
+
+@protocol MLPhotoPickerEditdelegate <NSObject>
+
+-(void)MLPhotoPickerEditdelegateWithIndexpathItem:(NSInteger )indexPath buttonType:(NSInteger )type;
+
+@end
+
 @interface MLPhotoBrowserCollectionCell : UICollectionViewCell
 /// Can Delete Photo
 @property (assign, nonatomic) BOOL editMode;
 @property (nonatomic, strong) MLPhoto *photo;
+@property (nonatomic, assign) NSInteger  indexPathItem;
+@property (nonatomic, weak) id<MLPhotoPickerEditdelegate>delegate;
+
 @property (nonatomic, copy) didTapCellBlock didTapBlock;
 @end

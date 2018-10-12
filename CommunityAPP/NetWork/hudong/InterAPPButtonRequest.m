@@ -22,7 +22,7 @@
 - (void)interAPPButtonRequestWithID:(NSString *)ID{
     self.headerFields = [NSMutableDictionary dictionary];
     [self.headerFields setObject:@"yezhu" forKey:@"identity"];
-    
+
     self.urlPathString = [NSString stringWithFormat:@"%@%@/%@",self.hostString,inter_FourmBtn,ID];
 }
 ResponserParserGenerate(InterAPPButtonResponse);

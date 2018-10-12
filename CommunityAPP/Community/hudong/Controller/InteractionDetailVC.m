@@ -15,11 +15,12 @@
 #import "JTDCommentView.h"
 #import "MLPhoto.h"
 #import "MLPhotoBrowserViewController.h"
+#import "PresentTransition.h"
 @interface InteractionDetailVC ()<UITableViewDelegate,UITableViewDataSource,PDTopViewDelegate>
 {
     NSString * _commentPid;
     NSString * _commentComment;
-
+    
 }
 @property(nonatomic,strong) inter_commentHeaderView  * headerView;
 @property(nonatomic,strong) UITableView  * tableView;
@@ -27,6 +28,8 @@
 @property(nonatomic,strong) NSMutableArray  * dataSourceArray;
 @property(nonatomic,strong)PSPersonSentView * commentsView;
 @property(nonatomic, strong) NSMutableArray<MLPhoto *> * photos;
+@property (nonatomic,strong) PresentTransition *transtionDelegate;
+
 @end
 
 @implementation InteractionDetailVC
@@ -81,7 +84,7 @@
     return headerView;
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
-   return 0.00001;
+    return 0.00001;
 }
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     static NSString * identifier;
@@ -127,14 +130,21 @@
         }
         JTDWeakSelf
         MLPhotoBrowserViewController *browserVC = [[MLPhotoBrowserViewController alloc] init];
+        browserVC.isSimpleSacnViewCotroller = YES;
         browserVC.curPage = indexPath.row;/** 点击的第几张图片*/
         browserVC.photos = self.photos; //存的是myphoto的对象
         browserVC.hidesBottomBarWhenPushed = YES;
+        browserVC.transitioningDelegate = WeakSelf.transtionDelegate;
+        browserVC.modalPresentationStyle = UIModalPresentationCustom;
+        [WeakSelf presentViewController:browserVC animated:YES completion:nil];
         [browserVC displayForVC:WeakSelf];
-//        interactionDetailImageModel *model = self.headerDataSourceArray[indexPath.row];
-        
-        
     }
+}
+-(PresentTransition *)transtionDelegate{
+    if (!_transtionDelegate) {
+        _transtionDelegate = [[PresentTransition alloc]init];
+    }
+    return _transtionDelegate;
 }
 #pragma mark--直接发评论
 -(void)sendButtonEventDelegateWithButton:(CustomBtn *)sender{
@@ -147,29 +157,29 @@
             }
         }];
     }else{//表情
-//        if (!kStringIsEmpty(_commentPid)&&!kStringIsEmpty(_commentComment)) {
-//            [sender setTitle:_commentComment forState:UIControlStateNormal];
-//            [self interReplayCommentRequestWithCid:_commentPid comment:_commentComment commentUrl:inter_commentPost];
-//        }
+        //        if (!kStringIsEmpty(_commentPid)&&!kStringIsEmpty(_commentComment)) {
+        //            [sender setTitle:_commentComment forState:UIControlStateNormal];
+        //            [self interReplayCommentRequestWithCid:_commentPid comment:_commentComment commentUrl:inter_commentPost];
+        //        }
     }
 }
 #pragma mark--回复评论
 - (void)interReplayCommentRequestWithCid:(NSString *)cid comment:(NSString *)comment commentUrl:(NSString *)commentUrl{
     [self showHUDText:nil];
-    inter_replayCommentListReqest *request = [[inter_replayCommentListReqest alloc] init];
-    [request interReplayCommentListRequestWithID:cid comment:comment commentUrl:commentUrl];
-    
-    [request setFinishedBlock:^(id object, id responseData) {
-        [self hideHUD];
-        JTDWeakSelf
-        if ([responseData[@"status"] isEqualToString:successCode]) {
-            [self showToastHUD:@"评论成功" complete:nil];
-            [WeakSelf interCommentRequest];
-        }else if ([responseData[@"status"] isEqualToString:failedCode]) {
-//            [self showToastHUD:responseData[@"error"][@"message"] complete:nil];
-        }
-    } failedBlock:^(NSInteger error, id responseData) {
-        [self hideHUD];
+    JTDWeakSelf
+    [LoginViewController verificationTokenWithSuperViewController:self SuccessCallBack:^{
+        inter_replayCommentListReqest *request = [[inter_replayCommentListReqest alloc] init];
+        [request interReplayCommentListRequestWithID:cid comment:comment commentUrl:commentUrl];
+        [request setFinishedBlock:^(id object, id responseData) {
+            [WeakSelf hideHUD];
+            if ([responseData[@"status"] isEqualToString:successCode]) {
+                [WeakSelf showToastHUD:@"评论成功" complete:nil];
+                [WeakSelf interCommentRequest];
+            }else if ([responseData[@"status"] isEqualToString:failedCode]) {
+            }
+        } failedBlock:^(NSInteger error, id responseData) {
+            [WeakSelf hideHUD];
+        }];
     }];
 }
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
@@ -230,7 +240,7 @@
             }
             [WeakSelf.tableView reloadData];
         }else if ([responseData[@"status"] isEqualToString:failedCode]) {
-            [self showToastHUD:responseData[@"error"][@"message"] complete:nil];
+            //            [self showToastHUD:responseData[@"error"][@"message"] complete:nil];
         }
     } failedBlock:^(NSInteger error, id responseData) {
     }];

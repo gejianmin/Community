@@ -90,37 +90,38 @@
     }];
 }
 - (void)setCateGaryRequest{
-    
     __weak typeof(self) tyself = self;
-    InfoArt_categaryRequest *request = [[InfoArt_categaryRequest alloc] init];
-    [request InfoArt_categaryRequestWithCat_ID:self.cat_id];
-    [request setFinishedBlock:^(id object, id responseData) {
-        
-        InfoArt_categaryModel *model = object;
-        tyself.cateArray = [model.data mutableCopy];
-        if (tyself.cateArray.count>0) {
+    [LoginViewController verificationTokenWithSuperViewController:self SuccessCallBack:^{
+        InfoArt_categaryRequest *request = [[InfoArt_categaryRequest alloc] init];
+        [request InfoArt_categaryRequestWithCat_ID:self.cat_id];
+        [request setFinishedBlock:^(id object, id responseData) {
             
-            [tyself setSGpage];
-            //创建模型
-            for (int i = 0; i<tyself.cateArray.count; i++) {
+            InfoArt_categaryModel *model = object;
+            tyself.cateArray = [model.data mutableCopy];
+            if (tyself.cateArray.count>0) {
                 
-                Art_categaryModel *cateModel = tyself.cateArray[i];
+                [tyself setSGpage];
+                //创建模型
+                for (int i = 0; i<tyself.cateArray.count; i++) {
+                    
+                    Art_categaryModel *cateModel = tyself.cateArray[i];
+                    
+                    InfoArtListTool *tool = [[InfoArtListTool alloc] init];
+                    tool.currentIndex = i;
+                    tool.cat_id = cateModel.cat_id;
+                    tool.pageIndex = 1;//要请求的页码数
+                    [tyself.listArray addObject:tool];
+                }
                 
-                InfoArtListTool *tool = [[InfoArtListTool alloc] init];
-                tool.currentIndex = i;
-                tool.cat_id = cateModel.cat_id;
-                tool.pageIndex = 1;//要请求的页码数
-                [tyself.listArray addObject:tool];
+                //            //默认请求第一个分类数据
+                //            [tyself requestDataList];
+                
+                
             }
             
-//            //默认请求第一个分类数据
-//            [tyself requestDataList];
+        } failedBlock:^(NSInteger error, id responseData) {
             
-            
-        }
-        
-    } failedBlock:^(NSInteger error, id responseData) {
-        
+        }];
     }];
 }
 - (void)setSGpage{

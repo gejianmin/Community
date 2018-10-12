@@ -13,7 +13,7 @@
 #import "MLImagePickerHUD.h"
 #import "MLPhotoRect.h"
 
-@interface MLPhotoBrowserViewController () <UICollectionViewDelegate, UICollectionViewDataSource,UICollectionViewDelegateFlowLayout>
+@interface MLPhotoBrowserViewController () <UICollectionViewDelegate, UICollectionViewDataSource,UICollectionViewDelegateFlowLayout,MLPhotoPickerEditdelegate>
 @property (nonatomic, weak) UICollectionView *collectionView;
 @property (nonatomic, strong) UIButton *titleButton;
 @property (nonatomic, strong) UIButton *nextButton;
@@ -42,15 +42,15 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
     [self.view setBackgroundColor:[UIColor whiteColor]];
     [self setAutomaticallyAdjustsScrollViewInsets:NO];
     
-    [self addNavigationBarTitleView];
     [self addNavigationBarRightView];
     [self addCollectionView];
     [self addNotification];
     [self updateTitleView];
+    [self addNavigationBarTitleView];
+    
 }
 
 - (void)dealloc
@@ -70,11 +70,15 @@
     
     self.nextButton.hidden = NO;
     self.titleButton.hidden = NO;
+    [self.navigationController.navigationBar setHidden:YES];
+    [self.navigationController setNavigationBarHidden:YES];
 }
 
 - (void)viewWillDisappear:(BOOL)animated{
     [super viewWillDisappear:animated];
-    
+    [self.navigationController.navigationBar setHidden:NO];
+    [self.navigationController setNavigationBarHidden:NO];
+
     self.nextButton.hidden = YES;
     self.titleButton.hidden = YES;
 }
@@ -128,6 +132,7 @@
         collectionView.backgroundColor = [UIColor clearColor];
         collectionView.dataSource = self;
         collectionView.delegate = self;
+        collectionView.bounces = NO;
         collectionView.showsVerticalScrollIndicator = NO;
         collectionView.showsHorizontalScrollIndicator = NO;
         [collectionView registerNib:[UINib nibWithNibName:NSStringFromClass([MLPhotoBrowserCollectionCell class]) bundle:nil] forCellWithReuseIdentifier:NSStringFromClass([MLPhotoBrowserCollectionCell class])];
@@ -142,18 +147,18 @@
     if (!self.editMode) {
         return;
     }
-    ({
-        UIButton *rightButton = [UIButton buttonWithType:UIButtonTypeCustom];
-        rightButton.titleLabel.font = [UIFont systemFontOfSize:14];
-        [rightButton setTitle:@"下一步" forState:UIControlStateNormal];
-        [rightButton setBackgroundColor:[UIColor orangeColor]];
-        [[rightButton layer] setCornerRadius:2.0];
-        [rightButton setFrame:CGRectMake(self.view.frame.size.width - 75, 8, 60, 30)];
-        [rightButton setContentHorizontalAlignment:UIControlContentHorizontalAlignmentCenter];
-        [rightButton addTarget:self action:@selector(nextBtnClick) forControlEvents:UIControlEventTouchUpInside];
-        [self.navigationController.navigationBar addSubview:rightButton];
-        self.nextButton = rightButton;
-    });
+//    ({
+//        UIButton *rightButton = [UIButton buttonWithType:UIButtonTypeCustom];
+//        rightButton.titleLabel.font = [UIFont systemFontOfSize:14];
+//        [rightButton setTitle:@"下一步" forState:UIControlStateNormal];
+//        [rightButton setBackgroundColor:[UIColor orangeColor]];
+//        [[rightButton layer] setCornerRadius:2.0];
+//        [rightButton setFrame:CGRectMake(self.view.frame.size.width - 75, 8, 60, 30)];
+//        [rightButton setContentHorizontalAlignment:UIControlContentHorizontalAlignmentCenter];
+//        [rightButton addTarget:self action:@selector(nextBtnClick) forControlEvents:UIControlEventTouchUpInside];
+//        [self.navigationController.navigationBar addSubview:rightButton];
+//        self.nextButton = rightButton;
+//    });
 }
 
 - (void)addNotification
@@ -171,13 +176,25 @@
         [titleButton setFrame:CGRectMake((self.view.frame.size.width - 150)*0.5, 0, 150, 44)];
         [titleButton setTitleColor:[UIColor darkTextColor] forState:UIControlStateNormal];
         titleButton.titleLabel.font = [UIFont systemFontOfSize:16];
-        [self.navigationController.navigationBar addSubview:titleButton];
+        if (_isSimpleSacnViewCotroller) {
+            [titleButton setFrame:CGRectMake((self.view.frame.size.width - 50)*0.5, 40, 50, 25)];
+            [titleButton makeCornerWithCornerRadius:5 borderWidth:0 borderColor:nil];
+            [titleButton setBackgroundColor:COLORHEX(0x676767)];
+            NSString *title = [NSString stringWithFormat:@"%@/%@",@(self.curPage+1),@(self.photos.count)];
+            [titleButton setTitle:title forState:UIControlStateNormal];
+            [titleButton setTitleColor:kColorWhite forState:UIControlStateNormal];
+
+            [self.view addSubview:titleButton];
+        }else{
+            [self.navigationController.navigationBar addSubview:titleButton];
+        }
         self.titleButton = titleButton;
     });
 }
 
 - (void)nextBtnClick
 {
+    
     [self.navigationController popViewControllerAnimated:NO];
     
     if ([self.viewController respondsToSelector:@selector(tappendDoneBtn)]) {
@@ -199,16 +216,48 @@
 - (MLPhotoBrowserCollectionCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     MLPhotoBrowserCollectionCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:NSStringFromClass([MLPhotoBrowserCollectionCell class]) forIndexPath:indexPath];
+    cell.delegate = self;
     cell.photo = [self.photos objectAtIndex:indexPath.item];
     cell.editMode = self.editMode;
+    cell.indexPathItem = indexPath.item;
+    [cell setBackgroundColor:kColorRed];
+
     __weak typeof(self)weakSelf = self;
+    
     cell.didTapBlock = ^{
-        [weakSelf setStatusBarHidden:!weakSelf.navigationController.navigationBar.isHidden];
-        [weakSelf.navigationController setNavigationBarHidden:!weakSelf.navigationController.navigationBar.isHidden animated:YES];
+//        [weakSelf setStatusBarHidden:!weakSelf.navigationController.navigationBar.isHidden];
+//        [weakSelf.navigationController setNavigationBarHidden:!weakSelf.navigationController.navigationBar.isHidden animated:YES];
+        if (_isSimpleSacnViewCotroller) {
+            [weakSelf dismissViewControllerAnimated:YES completion:nil];
+        }
     };
     return cell;
 }
 
+-(void)MLPhotoPickerEditdelegateWithIndexpathItem:(NSInteger)indexPath buttonType:(NSInteger)type{
+    if (type == 1000) {//删除
+        if (self.photos.count <2) {
+            [self.photos removeObjectAtIndex:indexPath];
+            [self.picArray removeObjectAtIndex:indexPath];
+            [self.picPathArray removeObjectAtIndex:indexPath];
+            [self reloadData];
+             [self back];
+        }else{
+            [self.photos removeObjectAtIndex:indexPath];
+            [self.picArray removeObjectAtIndex:indexPath];
+            [self.picPathArray removeObjectAtIndex:indexPath];
+            [self reloadData];
+        }
+    }else{//取消或确认
+        [self back];
+    }
+}
+-(void)back{
+    if (self.callBack) {
+        self.callBack(self.photos,self.picArray,self.picPathArray);
+    }
+    [self.navigationController popViewControllerAnimated:YES];
+}
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     return [UIScreen mainScreen].bounds.size;
@@ -237,8 +286,16 @@
     [self updateNextButton];
 }
 
-- (void)updateNextButton
-{
+- (void)updateNextButton{
+    if ([MLPhotoPickerManager manager].selectsUrls.count == 0) {
+        self.nextButton.userInteractionEnabled = NO;
+        [self.nextButton setBackgroundColor:[UIColor grayColor]];
+    }else{
+        [self.nextButton setBackgroundColor:[UIColor orangeColor]];
+
+        self.nextButton.userInteractionEnabled = YES;
+
+    }
     NSString *nextStr = @"下一步";
     if ([MLPhotoPickerManager manager].selectsUrls.count > 0) {
         nextStr = [NSString stringWithFormat:@"下一步(%lu)",(unsigned long)[MLPhotoPickerManager manager].selectsUrls.count];

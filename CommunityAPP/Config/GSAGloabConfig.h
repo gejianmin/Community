@@ -107,6 +107,8 @@ static NSString * kUMengShareNotification = @"kUMengShareNotification";
 #define successCode @"success"
 #define failedCode @"failed"
 #define ACCESSTOKEN @"ACCESSTOKEN"
+#define TokenCodeLoginException @"9999"//多设备登录
+#define TokenCodeLoginTimeout @"4004"//TOKEN失效
 
 
 
