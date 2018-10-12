@@ -10,11 +10,17 @@
 #import "SetUpTableViewCell.h"
 #import "MyHarvestAddressVC.h"
 #import "SetUpInfomationViewController.h"
+#import "SetUpRequest.h"
+#import "SetUpInfoModel.h"
+#import "ChangePasswordVC.h"
+#import "LoginRequest.h"
+#import "YiJianFanKuiViewController.h"
+#import "SafeJieBangViewController.h"
 @interface SetUpViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property (nonatomic,strong) UITableView *tableView;
 @property(nonatomic,strong) NSArray  * dataSourceArray;
-    @property(nonatomic,strong) NSArray  * rightLableArray;
-
+@property(nonatomic,strong) NSArray  * rightLableArray;
+@property(nonatomic, strong) SetUpInfoModel * infoModel;/** 信息模型*/
 @end
 
 @implementation SetUpViewController
@@ -26,7 +32,26 @@
     [super viewDidLoad];
     [self setUpUI];
     [self initData];
+    //网络请求
+    [self askServerData];
+    
+    
 }
+
+- (void)askServerData {
+    SetUpRequest  *request = [[SetUpRequest alloc]init];
+    [request setupRequestData];
+    [request setFinishedBlock:^(id object, id responseData) {
+        self.infoModel = object;
+        [self.tableView reloadData];
+    } failedBlock:^(NSInteger error, id responseData) {
+       
+    }];
+
+    
+    
+}
+
 -(void)initData{
     self.dataSourceArray = @[@[@""],@[@"我的收获地址"],@[@"手机",@"微信",@"密码"],@[@"推送设置"],@[@"清除本地缓存",@"意见反馈",@"关于我们",@"联系客服"]];
     self.rightLableArray = @[@[@""],@[@""],@[@"去绑定",@"去绑定",@"修改"],@[@""],@[@"1M",@"",@"",@""]];
@@ -92,13 +117,33 @@
     if (cell==nil) {
         cell=[[SetUpTableViewCell alloc] initWithReuseIdentifier:identifier indexPath:indexPath];
     }
+    
     NSArray * array = self.dataSourceArray[indexPath.section];
     NSArray * rightArray = self.rightLableArray[indexPath.section];
     if (indexPath.section != 0){
         cell.leftLabel.text = array[indexPath.row];
         cell.rightLabel.text = rightArray[indexPath.row];
     }
-
+    if (self.infoModel && indexPath.section == 2 &&indexPath.row == 1) {
+        if (self.infoModel.wx_openid) {
+            cell.rightLabel.text = @"解绑";
+        }else {
+            cell.rightLabel.text = @"未绑定";
+        }
+        //        [self.infoModel addObserver:cell forKeyPath:@"wx_openid" options:NSKeyValueObservingOptionNew|NSKeyValueObservingOptionOld context:nil];
+    }
+    
+    if (self.infoModel && indexPath.section == 2 && indexPath.row == 0) {
+        if (self.infoModel.mobile) {
+            
+            cell.rightLabel.text = self.infoModel.mobile;
+        }else{
+            cell.rightLabel.text = @"绑定手机";
+        }
+        
+        
+        
+    }
     return cell;
 }
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -107,19 +152,49 @@
         SetUpInfomationViewController *setinfoVC = [sb instantiateViewControllerWithIdentifier:@"setupinfomation"];
         [self.navigationController pushViewController:setinfoVC animated:YES];
         
-    }else if(indexPath.section == 1){
+    }else if(indexPath.section == 1){// 收货地址
         MyHarvestAddressVC * VC = [[MyHarvestAddressVC alloc]init];
         [self.navigationController pushViewController:VC animated:YES];
-    }else if(indexPath.section == 4){
+    }else if (indexPath.section == 2) {
+        
+        if (indexPath.row == 0) { // 手机
+            UIStoryboard *sb = [UIStoryboard storyboardWithName:@"SetUp" bundle:nil];
+            SafeJieBangViewController *safeVC = [sb instantiateViewControllerWithIdentifier:@"safejiebang"];
+            [self.navigationController pushViewController:safeVC animated:YES];
+            
+        }else if (indexPath.row == 1) {// 微信
+            if (!self.infoModel.wx_openid) {// 绑定微信
+                [[JTDSocialShare ShareUMSocial] getUserInfoWithController:self withTag:weChatLoginType callBack:^(BOOL success, JTDUserInfoModel *model) {
+                    if(success){
+                        [self thirdLoginWith:model loginType:weChatLoginType];
+                    }else{
+                        [self showToastHUD:@"登录异常" complete:nil];
+                    }
+                }];
+            }
+            
+        }else if (indexPath.row == 2) {// 密码
+            UIStoryboard *sb = [UIStoryboard storyboardWithName:@"SetUp" bundle:nil];
+            ChangePasswordVC *changeVC = [sb instantiateViewControllerWithIdentifier:@"changepassword"];
+            [self.navigationController pushViewController:changeVC animated:YES];
+        }
+        
+    }
+    
+    
+    
+    else if(indexPath.section == 4){
         if (indexPath.row == 0) {// 清除缓存
             [SVProgressHUD showWithStatus:@"正在清除"];
             [SVProgressHUD dismissWithDelay:1];
         }
-        
+        if (indexPath.row == 1) {
+            YiJianFanKuiViewController *yjfk = [[YiJianFanKuiViewController alloc]init];
+            [self.navigationController pushViewController:yjfk animated:YES];
+        }
         if (indexPath.row == 2) {// 关于我们
             [self showHUDText:@"关于我们"];
         }
-        
         if (indexPath.row == 3) {// 联系客服
             UIAlertController *al = [UIAlertController alertControllerWithTitle:@"联系客服"
                                                                         message:@"010-62342201"
@@ -168,6 +243,24 @@
         return 112;
     }
 }
+
+#pragma mark ---微信绑定
+
+-(void)thirdLoginWith:(JTDUserInfoModel *)model loginType:(NSInteger )loginType{
+    [self showHUDText:nil];
+    JTDWeakSelf
+    LoginRequest * request = [[LoginRequest alloc]init];
+    [request setUserBangdingWXWithThirdOpen_id:model.openid union_id:model.unionId];
+    [request setFinishedBlock:^(id object, id responseData) {
+        [self hideHUD];
+        if(responseData){
+            [WeakSelf askServerData];
+        }
+    } failedBlock:^(NSInteger error, id responseData) {
+        HHLog(@"%ld",error);
+    }];
+}
+
 #pragma mark--退出登录
 -(void)quitEvent:(CustomBtn *)sender{
     [[HHAlertView alloc]initWithTitle:@"退出登录" message:@"是否退出登录" showTarget:self handle:^(NSInteger index) {

@@ -7,8 +7,10 @@
 //
 
 #import "SetUpNickNameVC.h"
+#import "SaveNickNameRequest.h"
 
 @interface SetUpNickNameVC ()
+@property (weak, nonatomic) IBOutlet UITextField *nickNameTF;
 
 @end
 
@@ -29,7 +31,24 @@
     [self.navigationController popViewControllerAnimated:YES];
 }
 
+- (IBAction)saveBtnClick:(UIButton *)sender {
+    
+    if (self.nickNameTF.text.length != 0) {
+        //参数
+        SaveNickNameRequest *request = [[SaveNickNameRequest alloc]init];
+        [request saveNickName:self.nickNameTF.text];
+        [request setFinishedBlock:^(id object, id responseData) {
+           
+            HHLog(@"请求成功 = %@",responseData);
+            [HHComlient sharedInstance].user.nickname = self.nickNameTF.text;
+        } failedBlock:^(NSInteger error, id responseData) {
+            
+        }];
+    }
+}
+
 - (void)viewDidLoad {
+    
     [super viewDidLoad];
     self.title = @"修改昵称";
     

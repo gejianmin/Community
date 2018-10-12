@@ -53,6 +53,17 @@ static UserObjModel *userObj = nil;
     _org_name = org_name;
     [[HHComlient sharedInstance] setUser:self];
 }
+- (void)setFace:(NSString *)face {
+    _face = face;
+    [[HHComlient sharedInstance] setUser:self];
+
+}
+- (void)setNickname:(NSString *)nickname {
+    _nickname =nickname;
+    [[HHComlient sharedInstance] setUser:self];    
+}
+
+
 + (instancetype)shareIntance{
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{

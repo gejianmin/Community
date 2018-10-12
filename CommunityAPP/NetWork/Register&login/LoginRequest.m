@@ -54,6 +54,24 @@
     self.urlPathString = [NSString stringWithFormat:@"%@%@",self.hostString,Login];
     
 }
+- (void)setUserBangdingWXWithThirdOpen_id:(NSString *)open_id union_id:(NSString *)union_id {
+    
+    NSString *openIdKey = [RSAEncryptor encryptString:open_id publicKey:RSA_Public_key];
+    NSString *unionIdKey = [RSAEncryptor encryptString:union_id publicKey:RSA_Public_key];
+    
+    NSMutableDictionary *paramDic = [[NSMutableDictionary alloc] init];
+    [paramDic setValue:openIdKey forKey:@"wx_openid"];
+    [paramDic setValue:unionIdKey forKey:@"wx_unionid"];
+    self.parameters = paramDic;//post参数
+    
+    self.headerFields = [NSMutableDictionary dictionary];
+    [self.headerFields setObject:@"yezhu" forKey:@"identity"];
+    [self.headerFields setObject:@"weixin" forKey:@"loginway"];
+    
+    self.urlPathString = [NSString stringWithFormat:@"%@%@",self.hostString,bangDingWX];
+    
+}
+
 
 ResponserParserGenerate(LoginResponse);
 
