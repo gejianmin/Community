@@ -8,7 +8,7 @@
 #import "ELCAlbumPickerController.h"
 #import "ELCAssetCollectionPicker.h"
 #import "ELCImagePickerController.h"
-
+#import <Photos/Photos.h>
 @interface ELCAlbumPickerController ()
 
 @property (nonatomic, strong) ALAssetsLibrary *library;
@@ -32,16 +32,16 @@
     UIBarButtonItem *cancelButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self.parent action:@selector(cancelImagePicker)];
 	[self.navigationItem setRightBarButtonItem:cancelButton];
 
-    NSMutableArray *tempArray = [[NSMutableArray alloc] init];
-	self.assetGroups = tempArray;
-    
-    ALAssetsLibrary *assetLibrary = [[ALAssetsLibrary alloc] init];
-    self.library = assetLibrary;
-
+   
     // Load Albums into assetGroups
     dispatch_async(dispatch_get_main_queue(), ^
     {
         @autoreleasepool {
+            NSMutableArray *tempArray = [[NSMutableArray alloc] init];
+            self.assetGroups = tempArray;
+            
+            ALAssetsLibrary *assetLibrary = [[ALAssetsLibrary alloc] init];
+            self.library = assetLibrary;
         
         // Group enumerator Block
             void (^assetGroupEnumerator)(ALAssetsGroup *, BOOL *) = ^(ALAssetsGroup *group, BOOL *stop) 
@@ -52,13 +52,15 @@
                 
                 // added fix for camera albums order
                 NSUInteger nType = [[group valueForProperty:ALAssetsGroupPropertyType] intValue];
-                
+
                 if (nType == ALAssetsGroupSavedPhotos) {
                     [self.assetGroups insertObject:group atIndex:0];
                 }
                 else {
                     [self.assetGroups addObject:group];
                 }
+               
+//                [self.assetGroups addObject:arr];
 
                 // Reload albums
                 [self performSelectorOnMainThread:@selector(reloadTableView) withObject:nil waitUntilDone:YES];

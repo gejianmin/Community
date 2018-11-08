@@ -28,7 +28,9 @@ typedef NS_ENUM(NSInteger,Source) {
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.view.backgroundColor = RGB(246, 246, 246);
+//    self.view.backgroundColor = RGB(246, 246, 246);
+    self.view.backgroundColor = kColorGray9;
+
     self.title = @"消息中心";
     self.barBackGroundColor = [UIColor whiteColor];
     [self setLeftItemWithImageTarget:self];

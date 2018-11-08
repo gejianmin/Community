@@ -14,6 +14,7 @@
 #import "LayoutButton.h"
 #import "WebViewController.h"
 #import "MacroNetwork.h"
+#import "DWQCartViewController.h"
 @interface MineViewController ()
     
     @property (nonatomic,strong) UIView *headView;
@@ -34,7 +35,10 @@
     @end
 
 @implementation MineViewController
-    
+//-(void)viewWillAppear:(BOOL)animated{
+//    [super viewWillAppear:animated];
+//    [self loginState];
+//}
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -333,7 +337,12 @@
 - (void)orderList:(UIButton *)sender{
     switch (sender.tag - 1000) {
         case 0:
-        [self shareEvent];
+        {
+            DWQCartViewController *vc = [[DWQCartViewController alloc] init];
+            vc.hidesBottomBarWhenPushed = YES;
+            [self.navigationController pushViewController:vc animated:YES];
+            
+        }
         break;
         case 1:
         {
@@ -409,10 +418,10 @@
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
+    [self loginState];
     self.navigationController.navigationBarHidden = YES;
 }
 - (void)viewWillDisappear:(BOOL)animated{

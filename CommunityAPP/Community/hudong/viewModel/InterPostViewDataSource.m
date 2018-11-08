@@ -16,6 +16,8 @@
 #import "ELCImagePickerController.h"
 #import "GSAPublishModel.h"
 #import "MLPhotoBrowserViewController.h"
+#import <AssetsLibrary/AssetsLibrary.h>
+#import <Photos/Photos.h>
 @interface InterPostViewDataSource ()<UITableViewDelegate,UITableViewDataSource,InterPostInfoCellDelegate,InterPostDescCellDelagate,ELCImagePickerControllerDelegate>
 {
     NSString * _titleText;
@@ -163,7 +165,7 @@
     }
     UIViewController *vc = [AppDelegateTool topViewController];
     MLPhotoBrowserViewController *browserVC = [[MLPhotoBrowserViewController alloc] init];
-//    browserVC.isSimpleSacnViewCotroller = YES;
+    //    browserVC.isSimpleSacnViewCotroller = YES;
     browserVC.curPage = index;/** 点击的第几张图片*/
     browserVC.editMode = YES;
     browserVC.photos = self.photosArray; //存的是myphoto的对象
@@ -181,13 +183,77 @@
         [WeakSelf.tableView reloadData];
     };
 }
+- (BOOL)isPhotoAlbumNotDetermined
+{
+    ALAuthorizationStatus author = [ALAssetsLibrary authorizationStatus];
+    if (author == ALAuthorizationStatusNotDetermined)
+    {
+        return YES;
+    }
+    return NO;
+}
+- (BOOL)isPhotoAlbumDenied
+{
+    ALAuthorizationStatus author = [ALAssetsLibrary authorizationStatus];
+    if (author == ALAuthorizationStatusRestricted || author == ALAuthorizationStatusDenied)
+    {
+        return YES;
+    }
+    return NO;
+}
 - (void)addButtonDidTap:(NSInteger)picCount{
-    
-    UIViewController *vc = [AppDelegateTool topViewController];
-    ELCImagePickerController *elcPicker = [[ELCImagePickerController alloc] initImagePicker];
-    elcPicker.imagePickerDelegate  = self;
-    elcPicker.currentCount         = picCount;
-    [vc presentViewController:elcPicker animated:YES completion:nil];
+    if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypePhotoLibrary])
+    {
+        // 第一次安装App，还未确定权限，调用这里
+        if ([self isPhotoAlbumNotDetermined])
+        {
+            if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 8.0)
+            {
+                // 该API从iOS8.0开始支持
+                // 系统弹出授权对话框
+                [PHPhotoLibrary requestAuthorization:^(PHAuthorizationStatus status) {
+                    dispatch_async(dispatch_get_main_queue(), ^{
+                        if (status == PHAuthorizationStatusRestricted || status == PHAuthorizationStatusDenied)
+                        {// 用户拒绝，跳转到自定义提示页面
+                        }
+                        else if (status == PHAuthorizationStatusAuthorized)
+                        {
+                            // 用户授权，弹出相册对话框
+                            UIViewController *vc = [AppDelegateTool topViewController];
+                            ELCImagePickerController *elcPicker = [[ELCImagePickerController alloc] initImagePicker];
+                            elcPicker.imagePickerDelegate  = self;
+                            elcPicker.currentCount         = picCount;
+                            [vc presentViewController:elcPicker animated:YES completion:nil];
+                        }
+                    });
+                }];
+            }
+            else
+            {// 以上requestAuthorization接口只支持8.0以上，如果App支持7.0及以下，就只能调用这里。
+                //[vc presentToImagePickerController:UIImagePickerControllerSourceTypePhotoLibrary];
+            }
+        }
+        //        else if ([YFKit isPhotoAlbumDenied])
+        //        {
+        //            // 如果已经拒绝，则弹出对话框
+        //            [vc showAlertController:@"提示" message:@"拒绝访问相册，可去设置隐私里开启"];
+        //        }
+        else
+        {
+            // 已经授权，跳转到相册页面
+            UIViewController *vc = [AppDelegateTool topViewController];
+            ELCImagePickerController *elcPicker = [[ELCImagePickerController alloc] initImagePicker];
+            elcPicker.imagePickerDelegate  = self;
+            elcPicker.currentCount         = picCount;
+            [vc presentViewController:elcPicker animated:YES completion:nil];
+        }
+    }
+    //    else
+    //    {
+    //        // 当前设备不支持打开相册
+    //        [self showAlertController:@"提示" message:@"当前设备不支持相册"];
+    //    }
+   
 }
 #pragma mark - ELCImagePickerController Delegate
 - (void)elcImagePickerController:(ELCImagePickerController *)picker didFinishPickingMediaWithInfo:(NSArray *)info
@@ -198,18 +264,18 @@
         for (NSDictionary *dic in info) {
             UIImage *image = dic[UIImagePickerControllerOriginalImage];
             [self.picArray addObject:image];
-            NSString * url = [NSString stringWithFormat:@"%@%@",URI_MAIN,inter_path_postPicture];
-            [PPNetworkHelper uploadImagesWithURL:url parameters:nil name:@"upload" images:@[image] fileNames:@[image] imageScale:0.1 imageType:@"png" progress:^(NSProgress *progress) {
-            } success:^(id responseObject) {
-                if (responseObject) {
-                    NSString * imagePath = responseObject[@"data"][@"img_url"];
-                    [self.picPathArray addObject:imagePath];
-                    NSString *string = [self.picPathArray componentsJoinedByString:@","];
-                    [self.dataSourceDictionary setValue:string forKey:@"photos"];
-                }
-            } failure:^(NSError *error) {
-                HHLog(@"error==%@",error);
-            }];
+//            NSString * url = [NSString stringWithFormat:@"%@%@",URI_MAIN,inter_path_postPicture];
+//            [PPNetworkHelper uploadImagesWithURL:url parameters:nil name:@"upload" images:@[image] fileNames:@[image] imageScale:0.1 imageType:@"png" progress:^(NSProgress *progress) {
+//            } success:^(id responseObject) {
+//                if (responseObject) {
+//                    NSString * imagePath = responseObject[@"data"][@"img_url"];
+//                    [self.picPathArray addObject:imagePath];
+//                    NSString *string = [self.picPathArray componentsJoinedByString:@","];
+//                    [self.dataSourceDictionary setValue:string forKey:@"photos"];
+//                }
+//            } failure:^(NSError *error) {
+//                HHLog(@"error==%@",error);
+//            }];
             [vc hideHUD];
         }
         [self.tableView reloadData];

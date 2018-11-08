@@ -85,11 +85,10 @@ typedef NS_ENUM(NSInteger,RefreshState) {
     _status =RefreshState_Refrsh;
     
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-    self.fabuButton = [[CustomBtn alloc]initWithFrame:Frame(HH_SCREEN_W-24-65, HH_SCREEN_H-45-65-GSA_TabbarHeight-GSANavHeight, 65, 65) Tag:0 Title:@"" backgroundColor:kColorClear TitleTextColor:nil Font:0 Image:nil];
+    self.fabuButton = [[CustomBtn alloc]initWithFrame:Frame(HH_SCREEN_W-24-55, HH_SCREEN_H-45-55-GSA_TabbarHeight-GSANavHeight, 50, 50) Tag:0 Title:@"" backgroundColor:kColorClear TitleTextColor:nil Font:0 Image:nil];
     [self.view addSubview:self.fabuButton];
     [self.fabuButton setImage:ImageNamed(@"fabu") forState:UIControlStateNormal];
     [self.fabuButton addTarget:self action:@selector(fabu:) forControlEvents:UIControlEventTouchUpInside];
-//    [self.fabuButton makeCornerWithCornerRadius:32.5 borderWidth:0 borderColor:nil];
     [self addRefreshHeaderView];
     [self addRefreshFooterView];
     

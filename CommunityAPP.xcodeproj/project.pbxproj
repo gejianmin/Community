@@ -299,10 +299,41 @@
 		F2603062216E0F580063739D /* VerificationToken_Request.m in Sources */ = {isa = PBXBuildFile; fileRef = F2603061216E0F580063739D /* VerificationToken_Request.m */; };
 		F2603065216E109F0063739D /* VerificationToken_Response.m in Sources */ = {isa = PBXBuildFile; fileRef = F2603064216E109F0063739D /* VerificationToken_Response.m */; };
 		F2603068216E10E40063739D /* VerificationToken_Model.m in Sources */ = {isa = PBXBuildFile; fileRef = F2603067216E10E40063739D /* VerificationToken_Model.m */; };
+		F260306A216F343B0063739D /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F2603069216F343B0063739D /* AssetsLibrary.framework */; };
+		F260306D216F34490063739D /* PhotosUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F260306B216F34490063739D /* PhotosUI.framework */; };
+		F260306E216F34490063739D /* Photos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F260306C216F34490063739D /* Photos.framework */; };
 		F2A44D37215343B1008F8549 /* JTDCommentView.m in Sources */ = {isa = PBXBuildFile; fileRef = F2A44D36215343B0008F8549 /* JTDCommentView.m */; };
 		F2A44D3A215379F6008F8549 /* MyHarvestAddressVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F2A44D39215379F6008F8549 /* MyHarvestAddressVC.m */; };
 		F2A44D3D21537E11008F8549 /* MyHarvestAddressCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F2A44D3C21537E11008F8549 /* MyHarvestAddressCell.m */; };
 		F2ADAFA0214252C900837A98 /* HHKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F2ADAF9F214252C900837A98 /* HHKit.framework */; };
+		F2B7AB6A2170997400E8939C /* UIViewExt.m in Sources */ = {isa = PBXBuildFile; fileRef = F2B7AB432170997400E8939C /* UIViewExt.m */; };
+		F2B7AB6B2170997400E8939C /* DWQCartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F2B7AB462170997400E8939C /* DWQCartViewController.m */; };
+		F2B7AB6C2170997400E8939C /* cart_addBtn_nomal@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F2B7AB482170997400E8939C /* cart_addBtn_nomal@2x.png */; };
+		F2B7AB6D2170997400E8939C /* cart_default_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = F2B7AB492170997400E8939C /* cart_default_bg.png */; };
+		F2B7AB6E2170997400E8939C /* cart_addBtn_nomal@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = F2B7AB4A2170997400E8939C /* cart_addBtn_nomal@3x.png */; };
+		F2B7AB6F2170997400E8939C /* cart_unSelect_btn@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F2B7AB4B2170997400E8939C /* cart_unSelect_btn@2x.png */; };
+		F2B7AB702170997400E8939C /* cart_selected_btn@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F2B7AB4C2170997400E8939C /* cart_selected_btn@2x.png */; };
+		F2B7AB712170997400E8939C /* cart_selected_btn@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = F2B7AB4D2170997400E8939C /* cart_selected_btn@3x.png */; };
+		F2B7AB722170997400E8939C /* cart_unSelect_btn@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = F2B7AB4E2170997400E8939C /* cart_unSelect_btn@3x.png */; };
+		F2B7AB732170997400E8939C /* cart_cutBtn_nomal@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F2B7AB4F2170997400E8939C /* cart_cutBtn_nomal@2x.png */; };
+		F2B7AB742170997400E8939C /* back_button@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F2B7AB502170997400E8939C /* back_button@2x.png */; };
+		F2B7AB752170997400E8939C /* cart_cutBtn_nomal@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = F2B7AB512170997400E8939C /* cart_cutBtn_nomal@3x.png */; };
+		F2B7AB762170997400E8939C /* DWQShopModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F2B7AB542170997400E8939C /* DWQShopModel.m */; };
+		F2B7AB772170997400E8939C /* DWQGoodsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = F2B7AB572170997400E8939C /* DWQGoodsModel.m */; };
+		F2B7AB782170997400E8939C /* DWQCartTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F2B7AB5B2170997400E8939C /* DWQCartTableViewCell.m */; };
+		F2B7AB792170997400E8939C /* DWQTableHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = F2B7AB5C2170997400E8939C /* DWQTableHeaderView.m */; };
+		F2B7AB7A2170997400E8939C /* 香蕉.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F2B7AB5E2170997400E8939C /* 香蕉.jpg */; };
+		F2B7AB7B2170997400E8939C /* 橘子.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F2B7AB5F2170997400E8939C /* 橘子.jpg */; };
+		F2B7AB7C2170997400E8939C /* 牛鞭.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F2B7AB602170997400E8939C /* 牛鞭.jpg */; };
+		F2B7AB7D2170997400E8939C /* 放弃.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = F2B7AB612170997400E8939C /* 放弃.jpeg */; };
+		F2B7AB7E2170997400E8939C /* ShopCarSources.plist in Resources */ = {isa = PBXBuildFile; fileRef = F2B7AB622170997400E8939C /* ShopCarSources.plist */; };
+		F2B7AB7F2170997400E8939C /* 榴莲.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F2B7AB632170997400E8939C /* 榴莲.jpg */; };
+		F2B7AB802170997400E8939C /* 短裤.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F2B7AB642170997400E8939C /* 短裤.jpg */; };
+		F2B7AB812170997400E8939C /* 女装.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F2B7AB652170997400E8939C /* 女装.jpg */; };
+		F2B7AB822170997400E8939C /* 猪头肉.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F2B7AB662170997400E8939C /* 猪头肉.jpg */; };
+		F2B7AB832170997400E8939C /* 西服.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F2B7AB672170997400E8939C /* 西服.jpg */; };
+		F2B7AB842170997400E8939C /* swift.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F2B7AB682170997400E8939C /* swift.jpg */; };
+		F2B7AB852170997400E8939C /* iOS10编程指南.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F2B7AB692170997400E8939C /* iOS10编程指南.jpg */; };
 		F2BBFFC2214B617200C81E4F /* InterCateView.m in Sources */ = {isa = PBXBuildFile; fileRef = F2BBFFC1214B617200C81E4F /* InterCateView.m */; };
 		F2BBFFC5214B91CD00C81E4F /* InteractionAppButtonCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F2BBFFC4214B91CD00C81E4F /* InteractionAppButtonCell.m */; };
 		F2BBFFCB214F9B5800C81E4F /* InteractionDetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F2BBFFCA214F9B5800C81E4F /* InteractionDetailVC.m */; };
@@ -891,6 +922,9 @@
 		F2603064216E109F0063739D /* VerificationToken_Response.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VerificationToken_Response.m; sourceTree = "<group>"; };
 		F2603066216E10E40063739D /* VerificationToken_Model.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VerificationToken_Model.h; sourceTree = "<group>"; };
 		F2603067216E10E40063739D /* VerificationToken_Model.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VerificationToken_Model.m; sourceTree = "<group>"; };
+		F2603069216F343B0063739D /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
+		F260306B216F34490063739D /* PhotosUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PhotosUI.framework; path = System/Library/Frameworks/PhotosUI.framework; sourceTree = SDKROOT; };
+		F260306C216F34490063739D /* Photos.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Photos.framework; path = System/Library/Frameworks/Photos.framework; sourceTree = SDKROOT; };
 		F2A44D35215343B0008F8549 /* JTDCommentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JTDCommentView.h; sourceTree = "<group>"; };
 		F2A44D36215343B0008F8549 /* JTDCommentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JTDCommentView.m; sourceTree = "<group>"; };
 		F2A44D38215379F6008F8549 /* MyHarvestAddressVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyHarvestAddressVC.h; sourceTree = "<group>"; };
@@ -898,6 +932,41 @@
 		F2A44D3B21537E11008F8549 /* MyHarvestAddressCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyHarvestAddressCell.h; sourceTree = "<group>"; };
 		F2A44D3C21537E11008F8549 /* MyHarvestAddressCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyHarvestAddressCell.m; sourceTree = "<group>"; };
 		F2ADAF9F214252C900837A98 /* HHKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = HHKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F2B7AB432170997400E8939C /* UIViewExt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIViewExt.m; sourceTree = "<group>"; };
+		F2B7AB442170997400E8939C /* DWQConfigFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DWQConfigFile.h; sourceTree = "<group>"; };
+		F2B7AB452170997400E8939C /* UIViewExt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIViewExt.h; sourceTree = "<group>"; };
+		F2B7AB462170997400E8939C /* DWQCartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DWQCartViewController.m; sourceTree = "<group>"; };
+		F2B7AB482170997400E8939C /* cart_addBtn_nomal@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cart_addBtn_nomal@2x.png"; sourceTree = "<group>"; };
+		F2B7AB492170997400E8939C /* cart_default_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cart_default_bg.png; sourceTree = "<group>"; };
+		F2B7AB4A2170997400E8939C /* cart_addBtn_nomal@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cart_addBtn_nomal@3x.png"; sourceTree = "<group>"; };
+		F2B7AB4B2170997400E8939C /* cart_unSelect_btn@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cart_unSelect_btn@2x.png"; sourceTree = "<group>"; };
+		F2B7AB4C2170997400E8939C /* cart_selected_btn@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cart_selected_btn@2x.png"; sourceTree = "<group>"; };
+		F2B7AB4D2170997400E8939C /* cart_selected_btn@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cart_selected_btn@3x.png"; sourceTree = "<group>"; };
+		F2B7AB4E2170997400E8939C /* cart_unSelect_btn@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cart_unSelect_btn@3x.png"; sourceTree = "<group>"; };
+		F2B7AB4F2170997400E8939C /* cart_cutBtn_nomal@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cart_cutBtn_nomal@2x.png"; sourceTree = "<group>"; };
+		F2B7AB502170997400E8939C /* back_button@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "back_button@2x.png"; sourceTree = "<group>"; };
+		F2B7AB512170997400E8939C /* cart_cutBtn_nomal@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cart_cutBtn_nomal@3x.png"; sourceTree = "<group>"; };
+		F2B7AB522170997400E8939C /* DWQCartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DWQCartViewController.h; sourceTree = "<group>"; };
+		F2B7AB542170997400E8939C /* DWQShopModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DWQShopModel.m; sourceTree = "<group>"; };
+		F2B7AB552170997400E8939C /* DWQGoodsModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DWQGoodsModel.h; sourceTree = "<group>"; };
+		F2B7AB562170997400E8939C /* DWQShopModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DWQShopModel.h; sourceTree = "<group>"; };
+		F2B7AB572170997400E8939C /* DWQGoodsModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DWQGoodsModel.m; sourceTree = "<group>"; };
+		F2B7AB592170997400E8939C /* DWQCartTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DWQCartTableViewCell.h; sourceTree = "<group>"; };
+		F2B7AB5A2170997400E8939C /* DWQTableHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DWQTableHeaderView.h; sourceTree = "<group>"; };
+		F2B7AB5B2170997400E8939C /* DWQCartTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DWQCartTableViewCell.m; sourceTree = "<group>"; };
+		F2B7AB5C2170997400E8939C /* DWQTableHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DWQTableHeaderView.m; sourceTree = "<group>"; };
+		F2B7AB5E2170997400E8939C /* 香蕉.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "香蕉.jpg"; sourceTree = "<group>"; };
+		F2B7AB5F2170997400E8939C /* 橘子.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "橘子.jpg"; sourceTree = "<group>"; };
+		F2B7AB602170997400E8939C /* 牛鞭.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "牛鞭.jpg"; sourceTree = "<group>"; };
+		F2B7AB612170997400E8939C /* 放弃.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "放弃.jpeg"; sourceTree = "<group>"; };
+		F2B7AB622170997400E8939C /* ShopCarSources.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ShopCarSources.plist; sourceTree = "<group>"; };
+		F2B7AB632170997400E8939C /* 榴莲.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "榴莲.jpg"; sourceTree = "<group>"; };
+		F2B7AB642170997400E8939C /* 短裤.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "短裤.jpg"; sourceTree = "<group>"; };
+		F2B7AB652170997400E8939C /* 女装.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "女装.jpg"; sourceTree = "<group>"; };
+		F2B7AB662170997400E8939C /* 猪头肉.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "猪头肉.jpg"; sourceTree = "<group>"; };
+		F2B7AB672170997400E8939C /* 西服.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "西服.jpg"; sourceTree = "<group>"; };
+		F2B7AB682170997400E8939C /* swift.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = swift.jpg; sourceTree = "<group>"; };
+		F2B7AB692170997400E8939C /* iOS10编程指南.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "iOS10编程指南.jpg"; sourceTree = "<group>"; };
 		F2BBFFC0214B617200C81E4F /* InterCateView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InterCateView.h; sourceTree = "<group>"; };
 		F2BBFFC1214B617200C81E4F /* InterCateView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InterCateView.m; sourceTree = "<group>"; };
 		F2BBFFC3214B91CD00C81E4F /* InteractionAppButtonCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InteractionAppButtonCell.h; sourceTree = "<group>"; };
@@ -927,6 +996,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F260306D216F34490063739D /* PhotosUI.framework in Frameworks */,
+				F260306E216F34490063739D /* Photos.framework in Frameworks */,
+				F260306A216F343B0063739D /* AssetsLibrary.framework in Frameworks */,
 				F2ADAFA0214252C900837A98 /* HHKit.framework in Frameworks */,
 				5005613A1FDE66FA00B06F5F /* AdSupport.framework in Frameworks */,
 				500561381FDE66F200B06F5F /* libstdc++.6.0.9.tbd in Frameworks */,
@@ -1372,6 +1444,7 @@
 		50BFFA5C1FD523DB005F35CA /* mine */ = {
 			isa = PBXGroup;
 			children = (
+				F2B7AB402170995800E8939C /* ShoppingCar */,
 				50BFFA641FD5241B005F35CA /* Controller */,
 				50BFFA651FD5241B005F35CA /* model */,
 				50BFFA661FD5241B005F35CA /* view */,
@@ -1988,6 +2061,9 @@
 		CC7C40DE4DC26179FD8B69DA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				F260306C216F34490063739D /* Photos.framework */,
+				F260306B216F34490063739D /* PhotosUI.framework */,
+				F2603069216F343B0063739D /* AssetsLibrary.framework */,
 				F2ADAF9F214252C900837A98 /* HHKit.framework */,
 				500561391FDE66FA00B06F5F /* AdSupport.framework */,
 				500561371FDE66F200B06F5F /* libstdc++.6.0.9.tbd */,
@@ -2241,6 +2317,96 @@
 			path = Token;
 			sourceTree = "<group>";
 		};
+		F2B7AB402170995800E8939C /* ShoppingCar */ = {
+			isa = PBXGroup;
+			children = (
+				F2B7AB5D2170997400E8939C /* DataSources */,
+				F2B7AB412170997300E8939C /* DWQShoppingCart */,
+			);
+			path = ShoppingCar;
+			sourceTree = "<group>";
+		};
+		F2B7AB412170997300E8939C /* DWQShoppingCart */ = {
+			isa = PBXGroup;
+			children = (
+				F2B7AB422170997400E8939C /* ConfigFile */,
+				F2B7AB462170997400E8939C /* DWQCartViewController.m */,
+				F2B7AB472170997400E8939C /* icons */,
+				F2B7AB522170997400E8939C /* DWQCartViewController.h */,
+				F2B7AB532170997400E8939C /* LZCartModel */,
+				F2B7AB582170997400E8939C /* LZCartTableViewCell */,
+			);
+			path = DWQShoppingCart;
+			sourceTree = "<group>";
+		};
+		F2B7AB422170997400E8939C /* ConfigFile */ = {
+			isa = PBXGroup;
+			children = (
+				F2B7AB432170997400E8939C /* UIViewExt.m */,
+				F2B7AB442170997400E8939C /* DWQConfigFile.h */,
+				F2B7AB452170997400E8939C /* UIViewExt.h */,
+			);
+			path = ConfigFile;
+			sourceTree = "<group>";
+		};
+		F2B7AB472170997400E8939C /* icons */ = {
+			isa = PBXGroup;
+			children = (
+				F2B7AB482170997400E8939C /* cart_addBtn_nomal@2x.png */,
+				F2B7AB492170997400E8939C /* cart_default_bg.png */,
+				F2B7AB4A2170997400E8939C /* cart_addBtn_nomal@3x.png */,
+				F2B7AB4B2170997400E8939C /* cart_unSelect_btn@2x.png */,
+				F2B7AB4C2170997400E8939C /* cart_selected_btn@2x.png */,
+				F2B7AB4D2170997400E8939C /* cart_selected_btn@3x.png */,
+				F2B7AB4E2170997400E8939C /* cart_unSelect_btn@3x.png */,
+				F2B7AB4F2170997400E8939C /* cart_cutBtn_nomal@2x.png */,
+				F2B7AB502170997400E8939C /* back_button@2x.png */,
+				F2B7AB512170997400E8939C /* cart_cutBtn_nomal@3x.png */,
+			);
+			path = icons;
+			sourceTree = "<group>";
+		};
+		F2B7AB532170997400E8939C /* LZCartModel */ = {
+			isa = PBXGroup;
+			children = (
+				F2B7AB542170997400E8939C /* DWQShopModel.m */,
+				F2B7AB552170997400E8939C /* DWQGoodsModel.h */,
+				F2B7AB562170997400E8939C /* DWQShopModel.h */,
+				F2B7AB572170997400E8939C /* DWQGoodsModel.m */,
+			);
+			path = LZCartModel;
+			sourceTree = "<group>";
+		};
+		F2B7AB582170997400E8939C /* LZCartTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				F2B7AB592170997400E8939C /* DWQCartTableViewCell.h */,
+				F2B7AB5B2170997400E8939C /* DWQCartTableViewCell.m */,
+				F2B7AB5A2170997400E8939C /* DWQTableHeaderView.h */,
+				F2B7AB5C2170997400E8939C /* DWQTableHeaderView.m */,
+			);
+			path = LZCartTableViewCell;
+			sourceTree = "<group>";
+		};
+		F2B7AB5D2170997400E8939C /* DataSources */ = {
+			isa = PBXGroup;
+			children = (
+				F2B7AB5E2170997400E8939C /* 香蕉.jpg */,
+				F2B7AB5F2170997400E8939C /* 橘子.jpg */,
+				F2B7AB602170997400E8939C /* 牛鞭.jpg */,
+				F2B7AB612170997400E8939C /* 放弃.jpeg */,
+				F2B7AB622170997400E8939C /* ShopCarSources.plist */,
+				F2B7AB632170997400E8939C /* 榴莲.jpg */,
+				F2B7AB642170997400E8939C /* 短裤.jpg */,
+				F2B7AB652170997400E8939C /* 女装.jpg */,
+				F2B7AB662170997400E8939C /* 猪头肉.jpg */,
+				F2B7AB672170997400E8939C /* 西服.jpg */,
+				F2B7AB682170997400E8939C /* swift.jpg */,
+				F2B7AB692170997400E8939C /* iOS10编程指南.jpg */,
+			);
+			path = DataSources;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -2311,21 +2477,43 @@
 			buildActionMask = 2147483647;
 			files = (
 				508E51001FD1475B00D600C5 /* LaunchScreen.storyboard in Resources */,
+				F2B7AB7B2170997400E8939C /* 橘子.jpg in Resources */,
 				F2603053216CA1BA0063739D /* MLPhotoBrowserCollectionCell.xib in Resources */,
+				F2B7AB6E2170997400E8939C /* cart_addBtn_nomal@3x.png in Resources */,
 				50BFFA491FD51FD9005F35CA /* HTTPS证书.cer in Resources */,
+				F2B7AB812170997400E8939C /* 女装.jpg in Resources */,
+				F2B7AB702170997400E8939C /* cart_selected_btn@2x.png in Resources */,
+				F2B7AB7D2170997400E8939C /* 放弃.jpeg in Resources */,
+				F2B7AB742170997400E8939C /* back_button@2x.png in Resources */,
+				F2B7AB6F2170997400E8939C /* cart_unSelect_btn@2x.png in Resources */,
+				F2B7AB6C2170997400E8939C /* cart_addBtn_nomal@2x.png in Resources */,
 				8614B7C020F4617D0086546E /* goods_add_plus@3x.png in Resources */,
 				F260305B216CA1BA0063739D /* MLImagePickerController.bundle in Resources */,
+				F2B7AB722170997400E8939C /* cart_unSelect_btn@3x.png in Resources */,
+				F2B7AB822170997400E8939C /* 猪头肉.jpg in Resources */,
+				F2B7AB852170997400E8939C /* iOS10编程指南.jpg in Resources */,
+				F2B7AB752170997400E8939C /* cart_cutBtn_nomal@3x.png in Resources */,
+				F2B7AB7A2170997400E8939C /* 香蕉.jpg in Resources */,
+				F2B7AB832170997400E8939C /* 西服.jpg in Resources */,
+				F2B7AB6D2170997400E8939C /* cart_default_bg.png in Resources */,
 				8614B7BF20F4617D0086546E /* Overlay.png in Resources */,
 				50B662E7216B2E0300FFD9B3 /* SetUp.storyboard in Resources */,
 				508E50FD1FD1475B00D600C5 /* Assets.xcassets in Resources */,
 				8614B7C220F4617D0086546E /* Overlay@2x.png in Resources */,
+				F2B7AB7C2170997400E8939C /* 牛鞭.jpg in Resources */,
 				F2603047216CA1BA0063739D /* MLImagePickerCollectionViewCell.xib in Resources */,
 				F2603045216CA1BA0063739D /* MLImagePickerMenuTableViewCell.xib in Resources */,
 				5079412D1FE563100093CDF9 /* MJRefresh.bundle in Resources */,
+				F2B7AB712170997400E8939C /* cart_selected_btn@3x.png in Resources */,
 				508E50FB1FD1475B00D600C5 /* Main.storyboard in Resources */,
+				F2B7AB842170997400E8939C /* swift.jpg in Resources */,
+				F2B7AB802170997400E8939C /* 短裤.jpg in Resources */,
+				F2B7AB732170997400E8939C /* cart_cutBtn_nomal@2x.png in Resources */,
+				F2B7AB7F2170997400E8939C /* 榴莲.jpg in Resources */,
 				50C2F3FE21478F800048E5CB /* ArtDetailBottomView.xib in Resources */,
 				8614B7C120F4617D0086546E /* goods_add_plus@2x.png in Resources */,
 				8614B7BE20F4617D0086546E /* ELCAssetCollectionPicker.xib in Resources */,
+				F2B7AB7E2170997400E8939C /* ShopCarSources.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2407,6 +2595,7 @@
 				507941531FE647E00093CDF9 /* SGPageContentScrollView.m in Sources */,
 				50D77AEA1FE111FD007052E7 /* InforVillage_NoticeResponse.m in Sources */,
 				50BFFA4B1FD51FD9005F35CA /* NetWorkTool.m in Sources */,
+				F2B7AB6A2170997400E8939C /* UIViewExt.m in Sources */,
 				507940E91FE550D60093CDF9 /* InforVillage_ListRequest.m in Sources */,
 				507941251FE563100093CDF9 /* MJRefreshAutoNormalFooter.m in Sources */,
 				86BDCBB420EA3B4B00613FD9 /* AViewController.m in Sources */,
@@ -2421,6 +2610,7 @@
 				507FCB40214A0AB8000A0C9A /* InfoArt_SearchResponse.m in Sources */,
 				50BFFAEB1FD52818005F35CA /* NSString+JKEncrypt.m in Sources */,
 				506033702152301C006A1A83 /* CDZQRScanView.m in Sources */,
+				F2B7AB772170997400E8939C /* DWQGoodsModel.m in Sources */,
 				F24C5CF921490473003B5A87 /* PublicCircleController.m in Sources */,
 				86E907D420EB55C100208132 /* InterPostDescCell.m in Sources */,
 				50BFFAEE1FD52818005F35CA /* NSString+JKMatcher.m in Sources */,
@@ -2435,6 +2625,7 @@
 				50BFFAF01FD52818005F35CA /* NSString+JKNormalRegex.m in Sources */,
 				5091B5601FE78E6F003797EF /* InterCarouseRequest.m in Sources */,
 				F2A44D37215343B1008F8549 /* JTDCommentView.m in Sources */,
+				F2B7AB782170997400E8939C /* DWQCartTableViewCell.m in Sources */,
 				505FA8691FEA09540082AAB0 /* InterArtListTool.m in Sources */,
 				50BFFAFC1FD52818005F35CA /* UIImage+Helper.m in Sources */,
 				F22428F521436CFD0035D0F0 /* CustomBtn.m in Sources */,
@@ -2534,6 +2725,7 @@
 				F213A655215F0A0A00C4C616 /* MyCommunityVC.m in Sources */,
 				F22428E22142651F0035D0F0 /* HHValidateButton.m in Sources */,
 				8614B7D220F461990086546E /* JYBLoadingIndicator.m in Sources */,
+				F2B7AB762170997400E8939C /* DWQShopModel.m in Sources */,
 				F2BBFFCB214F9B5800C81E4F /* InteractionDetailVC.m in Sources */,
 				50BFFAF11FD52818005F35CA /* NSString+JKPinyin.m in Sources */,
 				50BFFA4A1FD51FD9005F35CA /* NetWorkConfig.m in Sources */,
@@ -2547,6 +2739,7 @@
 				5091B5841FE7D773003797EF /* InterCateCell.m in Sources */,
 				F22429102143BCC20035D0F0 /* PresentTransition.m in Sources */,
 				50BFFADF1FD52818005F35CA /* NSData+JKAPNSToken.m in Sources */,
+				F2B7AB6B2170997400E8939C /* DWQCartViewController.m in Sources */,
 				507941421FE647330093CDF9 /* InforButtonCateController.m in Sources */,
 				500561491FDE75EA00B06F5F /* NearCommunityResponse.m in Sources */,
 				F22428EB214274CC0035D0F0 /* ForgotPasswordVC.m in Sources */,
@@ -2584,6 +2777,7 @@
 				5015EE751FD91B0E00D1637B /* RegisterResponse.m in Sources */,
 				F2BBFFDD21508D5300C81E4F /* inter_commentModel.m in Sources */,
 				507941391FE563430093CDF9 /* HeaderRefreshView.m in Sources */,
+				F2B7AB792170997400E8939C /* DWQTableHeaderView.m in Sources */,
 				50BFFAE11FD52818005F35CA /* NSData+JKDataCache.m in Sources */,
 				507941591FE6520B0093CDF9 /* InfoArt_categaryRequest.m in Sources */,
 				500561201FDBF32A00B06F5F /* LoginResponse.m in Sources */,
