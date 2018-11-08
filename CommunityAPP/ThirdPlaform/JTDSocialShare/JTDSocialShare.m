@@ -25,7 +25,7 @@
 }
 -(void)setShareContentModel:(JTDShareContent *)shareContentModel{
     _shareContentModel = shareContentModel;
-    shareContentModel.shareURL=[NSString stringWithFormat:@"%@",@"www.baidu.com"];
+    shareContentModel.shareURL=[NSString stringWithFormat:@"%@",shareContentModel.shareURL];
     shareContentModel.shareTitle=[NSString stringWithFormat:@"%@",shareContentModel.name];
     shareContentModel.shareContent = shareContentModel.centent?:@" ";
     UIImageView * simage = [[UIImageView alloc]init];

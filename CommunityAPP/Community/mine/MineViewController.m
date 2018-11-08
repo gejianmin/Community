@@ -14,6 +14,7 @@
 #import "LayoutButton.h"
 #import "WebViewController.h"
 #import "MacroNetwork.h"
+#import "JifenshangchengViewController.h"
 @interface MineViewController ()
     
     @property (nonatomic,strong) UIView *headView;
@@ -288,6 +289,8 @@
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(shareSuccess) name:kUMengShareNotification object:nil];
 }
 
+
+
 #pragma mark --监听值变化
 -(void)observeValueForKeyPath:(NSString *)keyPath
                      ofObject:(id)object
@@ -380,6 +383,13 @@
         }
         break;
         case 3:
+        {
+            //积分商城
+            UIStoryboard *sb = [UIStoryboard storyboardWithName:@"SetUp" bundle:nil];
+            JifenshangchengViewController *jifenVC = [sb instantiateViewControllerWithIdentifier:@"jifenshangcheng"];
+            [self.navigationController pushViewController:jifenVC animated:YES];
+            
+        }
         
         break;
         default:

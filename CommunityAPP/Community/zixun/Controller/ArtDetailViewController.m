@@ -131,7 +131,7 @@
     JTDShareContent * model = [[JTDShareContent alloc]init];
     model.centent = self.artDetailModel.desc;
     model.name = self.artDetailModel.title;
-    model.shareURL = self.artDetailModel.shareurl;
+    model.shareURL = [NSString stringWithFormat:@"%@%@",@"http://quarter.sinoyjlm.com/article?",self.art_id];
     model.images = @"icon";
     [JTDShareVC shareToController:self shareModel:model shareType:PayStateShare];
     

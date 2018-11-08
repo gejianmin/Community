@@ -127,6 +127,7 @@
 		5091B5871FE7DCB8003797EF /* ListTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5091B5861FE7DCB8003797EF /* ListTableView.m */; };
 		50ADD6B921704803008F650A /* TouSuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 50ADD6B821704803008F650A /* TouSuViewController.m */; };
 		50ADD6BF217066FD008F650A /* SafeJieBangViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 50ADD6BE217066FD008F650A /* SafeJieBangViewController.m */; };
+		50ADD6C22170AC3A008F650A /* JifenshangchengViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 50ADD6C12170AC3A008F650A /* JifenshangchengViewController.m */; };
 		50B662E7216B2E0300FFD9B3 /* SetUp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50B662E6216B2E0300FFD9B3 /* SetUp.storyboard */; };
 		50B662ED216B2FE400FFD9B3 /* AddAddressVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 50B662EC216B2FE400FFD9B3 /* AddAddressVC.m */; };
 		50BFFA431FD51FD9005F35CA /* BaseRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 50BFFA2E1FD51FD9005F35CA /* BaseRequest.m */; };
@@ -557,6 +558,8 @@
 		50ADD6B821704803008F650A /* TouSuViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TouSuViewController.m; sourceTree = "<group>"; };
 		50ADD6BD217066FD008F650A /* SafeJieBangViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SafeJieBangViewController.h; sourceTree = "<group>"; };
 		50ADD6BE217066FD008F650A /* SafeJieBangViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SafeJieBangViewController.m; sourceTree = "<group>"; };
+		50ADD6C02170AC3A008F650A /* JifenshangchengViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JifenshangchengViewController.h; sourceTree = "<group>"; };
+		50ADD6C12170AC3A008F650A /* JifenshangchengViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JifenshangchengViewController.m; sourceTree = "<group>"; };
 		50B662E6216B2E0300FFD9B3 /* SetUp.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SetUp.storyboard; sourceTree = "<group>"; };
 		50B662EB216B2FE400FFD9B3 /* AddAddressVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AddAddressVC.h; sourceTree = "<group>"; };
 		50B662EC216B2FE400FFD9B3 /* AddAddressVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AddAddressVC.m; sourceTree = "<group>"; };
@@ -1602,6 +1605,8 @@
 				50ADD6B821704803008F650A /* TouSuViewController.m */,
 				50ADD6BD217066FD008F650A /* SafeJieBangViewController.h */,
 				50ADD6BE217066FD008F650A /* SafeJieBangViewController.m */,
+				50ADD6C02170AC3A008F650A /* JifenshangchengViewController.h */,
+				50ADD6C12170AC3A008F650A /* JifenshangchengViewController.m */,
 				50150C29216F33E4007B80F1 /* SYSelector.h */,
 				50150C2A216F33E4007B80F1 /* SYSelector.m */,
 				50B662E6216B2E0300FFD9B3 /* SetUp.storyboard */,
@@ -2450,6 +2455,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				50ADD6C22170AC3A008F650A /* JifenshangchengViewController.m in Sources */,
 				50D77B111FE148DF007052E7 /* InforADCell.m in Sources */,
 				50BFFAF81FD52818005F35CA /* NSString+JKUUID.m in Sources */,
 				50CA871221421DB100D1A204 /* AreaSelectorView.m in Sources */,
@@ -2466,10 +2472,7 @@
 				5091B5811FE7A46E003797EF /* InterNearPostResponse.m in Sources */,
 				5015EE721FD91AF400D1637B /* RegisterRequest.m in Sources */,
 				502473AD1FE26A47002EA673 /* InforADView.m in Sources */,
-				501F904E215366500083D8F8 /* UIButton+Animation.m in Sources */,
-				501F904A215366500083D8F8 /* MLPhotoPickerCollectionView.m in Sources */,
 				50150C2E216F3727007B80F1 /* YiJianFanKuiViewController.m in Sources */,
-				501F9056215366500083D8F8 /* MLPhotoPickerBrowserPhotoImageView.m in Sources */,
 				5031D8C4215E213000453A33 /* YKZSearchViewController.m in Sources */,
 				F2603048216CA1BA0063739D /* UIButton+Animation.m in Sources */,
 				F260305C216CA1BA0063739D /* BrowserViewController.m in Sources */,
@@ -2553,9 +2556,7 @@
 				507940EF1FE551080093CDF9 /* InforVillage_ListModel.m in Sources */,
 				5091B5751FE7A10E003797EF /* InterPostListRequest.m in Sources */,
 				50BFFAE61FD52818005F35CA /* NSData+JKzlib.m in Sources */,
-				501F9053215366500083D8F8 /* MLPhotoPickerData.m in Sources */,
 				50DBCD43216DEF2A0054A677 /* ChangePasswordVC.m in Sources */,
-				501F9058215366500083D8F8 /* MLPhotoPickerBrowserPhotoView.m in Sources */,
 				F2BBFFE32150A1F500C81E4F /* inter_commentCell.m in Sources */,
 				50D77B1A1FE15061007052E7 /* PageControl.m in Sources */,
 				50BFFAF31FD52818005F35CA /* NSString+JKScore.m in Sources */,
@@ -2699,7 +2700,6 @@
 				F2603068216E10E40063739D /* VerificationToken_Model.m in Sources */,
 				5077BBEA1FE92DB30047BE77 /* PostCircleAddPicView.m in Sources */,
 				50ADD6B921704803008F650A /* TouSuViewController.m in Sources */,
-				501F904C215366500083D8F8 /* MLImagePickerMenuTableViewCell.m in Sources */,
 				F2603051216CA1BA0063739D /* MLPhotoPickerBrowserPhotoScrollView.m in Sources */,
 				5005FCA3216C51AC0071F3BD /* SetUpNickNameVC.m in Sources */,
 				50D77AF61FE11715007052E7 /* InforVillage_ArticleCateModel.m in Sources */,
@@ -2723,7 +2723,6 @@
 				5077BBE41FE929660047BE77 /* PlaceholderTextView.m in Sources */,
 				50388DBF2057C761001AB86B /* SetUpViewController.m in Sources */,
 				8614B7CF20F4618F0086546E /* UIImage+Color.m in Sources */,
-				501F905C215366500083D8F8 /* MLPhotoPickerManager.m in Sources */,
 				5005FCA7216C935A0071F3BD /* SetUpRequest.m in Sources */,
 				5079412A1FE563100093CDF9 /* MJRefreshGifHeader.m in Sources */,
 				50D77AED1FE11211007052E7 /* InforVillage_NoticeModel.m in Sources */,
