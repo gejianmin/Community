@@ -19,6 +19,16 @@
     if (self = [ super initWithStyle:UITableViewCellStyleDefault reuseIdentifier:reuseIdentifier]) {
         self.accessoryType=UITableViewCellAccessoryDisclosureIndicator;
         self.selectionStyle = UITableViewCellSelectionStyleNone;
+        //注册KVO 方便别处监听昵称、头像的变化
+        [[HHComlient sharedInstance].user addObserver:self
+                                           forKeyPath:@"nickname"
+                                              options:NSKeyValueObservingOptionOld|NSKeyValueObservingOptionNew
+                                              context:nil];
+        [[HHComlient sharedInstance].user addObserver:self
+                                           forKeyPath:@"face"
+                                              options:NSKeyValueObservingOptionOld|NSKeyValueObservingOptionNew
+                                              context:nil];
+        
         [self setupUI];
         if(self.reuseIdentifier){
             
@@ -26,7 +36,26 @@
     }
     return self;
 }
+
+//keyPath:属性名称
+//object:被观察的对象
+//change:变化前后的值都存储在 change 字典中
+//context:注册观察者时，context 传过来的值
+-(void)observeValueForKeyPath:(NSString *)keyPath
+                     ofObject:(id)object
+                       change:(NSDictionary<NSString *,id> *)change
+                      context:(void *)context {
     
+    if ([keyPath isEqualToString:@"nickname"]) {// 昵称改变
+        self.nickLabel.text = [change valueForKey:@"new"];
+    }
+    if ([keyPath isEqualToString:@"face"]) {
+        [self.iconIma sd_setImageWithURL:[NSURL URLWithString:[change valueForKey:@"new"]] placeholderImage:ImageNamed(@"icon")];
+    }
+    
+    
+}
+
 -(void)setupUI{
     if(self.reuseIdentifier == kNormalCellReuseIdentifier){
         [self.contentView addSubview:self.leftLabel];
@@ -41,6 +70,8 @@
         }];
     }else if (self.reuseIdentifier == kImageCellReuseIdentifier){
         [self.contentView addSubview:self.iconIma];
+        HHLog(@"头像地址 =  %@ ",[HHComlient sharedInstance].user.face);
+        [self.iconIma sd_setImageWithURL:[NSURL URLWithString:[HHComlient sharedInstance].user.face] placeholderImage:ImageNamed(@"icon")];
         [self.iconIma mas_makeConstraints:^(MASConstraintMaker *make) {
             make.left.equalTo(self.contentView.mas_left).offset(15);
             make.width.height.equalTo(@45);

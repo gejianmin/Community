@@ -16,7 +16,7 @@
 
 #define resetPasswd @"sms/resetPasswd"//获取验证码
 #define forgetPassword @"members/forgetPassword"//忘记密码
-
+#define bangDingWX          @"members/bindingWx"
 //公共圈
 #define publicCircleList @"api/v1/public_apps"
 //资讯页面
@@ -35,6 +35,9 @@
 
 //互动
 /*!< 图片上传路径*/
+
+#define inter_peesoninfo            @"members/updateMyInfo"//更新个人信息
+#define inter_avater                @"commpont/Pic/uploadPic" //头像上传
 #define inter_path_postPicture      @"commpont/Pic/uploadPic"/*!< 图片上传路径*/
 #define inter_publicCommunity       @"posts/create"//发布
 #define inter_createCommunity       @"yezhus/create"//入住小区
@@ -50,6 +53,10 @@
 
 #define inter_postList                @"posts/getPosts"//互动帖子列表
 #define inter_NearPostList                @"posts/getPostsByKm"//互动附近帖子列表
+
+//设置
+
+#define setUp_getPersonInfo    @"members/getMyInfo"//设置界面获取个人信息
 
 //HTML5
 #define  MINE_BALANCE_RECHARGE  @"http://quarter.sinoyjlm.com/recharge"//余额

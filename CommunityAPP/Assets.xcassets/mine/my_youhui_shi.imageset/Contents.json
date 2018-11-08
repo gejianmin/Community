@@ -2,11 +2,11 @@
   "images" : [
     {
       "idiom" : "universal",
+      "filename" : "my_youhui_shi.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "register_code.jpg",
       "scale" : "2x"
     },
     {

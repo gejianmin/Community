@@ -15,6 +15,7 @@
 #import "WebViewController.h"
 #import "MacroNetwork.h"
 #import "DWQCartViewController.h"
+#import "JifenshangchengViewController.h"
 @interface MineViewController ()
     
     @property (nonatomic,strong) UIView *headView;
@@ -42,6 +43,16 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    //注册KVO 方便别处监听昵称、头像的变化
+    [[HHComlient sharedInstance].user addObserver:self
+                                       forKeyPath:@"nickname"
+                                          options:NSKeyValueObservingOptionOld|NSKeyValueObservingOptionNew
+                                          context:nil];
+    [[HHComlient sharedInstance].user addObserver:self
+                                       forKeyPath:@"face"
+                                          options:NSKeyValueObservingOptionOld|NSKeyValueObservingOptionNew
+                                          context:nil];
+    
     self.view.backgroundColor = [UIColor whiteColor];
     
     //    [self.navBar setRightItemWithTarget:self action:@selector(setUp) normalImage:[UIImage imageNamed:@"set"] selectedImage:[UIImage imageNamed:@"set"]];
@@ -63,9 +74,10 @@
         
     }];
     
-    
+    // 头像
     self.headImgView = [[UIImageView alloc] initWithFrame:CGRectMake(30, 70, 80, 80)];
     self.headImgView.backgroundColor = [UIColor whiteColor];
+    [self.headImgView sd_setImageWithURL:[NSURL URLWithString:[HHComlient sharedInstance].user.face] placeholderImage:nil];
     self.headImgView.layer.cornerRadius = 40.f;
     self.headImgView.layer.masksToBounds = YES;
     [self.headView addSubview:self.headImgView];
@@ -95,7 +107,7 @@
     alphaView.centerY =self.headImgView.centerY;
     
     self.jifenLabel = [[UILabel alloc] initWithFrame:CGRectMake(SCREEN_WIDTH - 100, 0, 300, 20)];
-    self.jifenLabel.text = @"签到积分300";
+    self.jifenLabel.text = [HHComlient sharedInstance].user.coin?:@"";
     self.jifenLabel.textColor = [UIColor whiteColor];
     self.jifenLabel.font = FONT(15);
     self.jifenLabel.clipsToBounds = YES;
@@ -280,6 +292,25 @@
     }
     [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(shareSuccess) name:kUMengShareNotification object:nil];
 }
+
+
+
+#pragma mark --监听值变化
+-(void)observeValueForKeyPath:(NSString *)keyPath
+                     ofObject:(id)object
+                       change:(NSDictionary<NSString *,id> *)change
+                      context:(void *)context {
+    
+    if ([keyPath isEqualToString:@"nickname"]) {// 昵称改变
+        [self.loginBtn setTitle:[HHComlient sharedInstance].user.nickname forState:UIControlStateNormal];
+    }
+    if ([keyPath isEqualToString:@"face"]) {
+        [self.headImgView sd_setImageWithURL:[NSURL URLWithString:[change valueForKey:@"new"]] placeholderImage:nil];
+    }
+
+    
+}
+
 #pragma mark--分享
 -(void)shareEvent{
 //    JTDShareContent * model = [[JTDShareContent alloc]init];
@@ -361,6 +392,13 @@
         }
         break;
         case 3:
+        {
+            //积分商城
+            UIStoryboard *sb = [UIStoryboard storyboardWithName:@"SetUp" bundle:nil];
+            JifenshangchengViewController *jifenVC = [sb instantiateViewControllerWithIdentifier:@"jifenshangcheng"];
+            [self.navigationController pushViewController:jifenVC animated:YES];
+            
+        }
         
         break;
         default:
@@ -390,7 +428,7 @@
         self.loginBtn.enabled = YES;
         [self.loginBtn setTitle:@"点击登录" forState:UIControlStateNormal];
     }else{
-        NSString * mobile = [NSString stringWithFormat:@"%@",[[HHComlient sharedInstance] user].mobile];
+        NSString * mobile = [NSString stringWithFormat:@"%@",[[HHComlient sharedInstance] user].nickname];
         [self.loginBtn setTitle:mobile forState:UIControlStateNormal];
         self.loginBtn.enabled = NO;
     }
